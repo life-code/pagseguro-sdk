@@ -1,5 +1,5 @@
 <p align="center">
-   <h1 align="center">Pagseguro SDK</h1>
+   <h1 align="center">PagSeguro SDK</h1>
 </p>
 
 <p align="center">
@@ -10,13 +10,13 @@
 </p>
 
 
-## About Pagseguro SDK
+## About PagSeguro SDK
 <p align="justify">
    
 <p>
 
 ## Contributing
-Contribute to the Pagseguro SDK and help bring this idea forward!
+Contribute to the PagSeguro SDK and help bring this idea forward!
 
 ## License
-The Pagseguro SDK is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The PagSeguro SDK is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).

@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-   <a href="https://travis-ci.org/life-code/pagseguro-sdk"><img src="https://travis-ci.org/life-code/pagseguro-sdk.svg" alt="Build Status"></a>
+   <a href="https://codeclimate.com/github/life-code/pagseguro-sdk"><img src="(https://codeclimate.com/github/pagseguro/pagseguro-php-sdk/badges/gpa.svg" alt="Build Status"></a>
    <a href="https://packagist.org/packages/life-code/pagseguro-sdk"><img src="https://poser.pugx.org/life-code/pagseguro-sdk/d/total.svg" alt="Total Downloads"></a>
    <a href="https://packagist.org/packages/life-code/pagseguro-sdk"><img src="https://poser.pugx.org/life-code/pagseguro-sdk/v/stable.svg" alt="Latest Stable Version"></a>
    <a href="https://packagist.org/packages/life-code/pagseguro-sdk"><img src="https://poser.pugx.org/life-code/pagseguro-sdk/license.svg" alt="License"></a>

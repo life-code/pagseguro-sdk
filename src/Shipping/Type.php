@@ -1,6 +1,6 @@
 <?php
 
-namespace Pagseguro\Shipping;
+namespace PagSeguro\Shipping;
 
 class Type
 {

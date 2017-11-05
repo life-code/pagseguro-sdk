@@ -1,13 +1,13 @@
 <?php
 
-namespace Pagseguro\Session;
+namespace PagSeguro\Session;
 
 class Session
 {
     /**
      * Create Session ID
      * 
-     * @return \Pagseguro\Responses\ResponseInterface
+     * @return \PagSeguro\Responses\ResponseInterface
      */
     public function create()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pagseguro\PreApprovals;
+namespace PagSeguro\PreApprovals;
 
 class PreApproval
 {
@@ -8,7 +8,7 @@ class PreApproval
      * Approves one payment
      * 
      * @param Customer $customer
-     * @return App\Pagseguro\Responses\ResponseInterface
+     * @return App\PagSeguro\Responses\ResponseInterface
      */
     public function approve(Customer $customer)
     {

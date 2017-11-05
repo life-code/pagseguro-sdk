@@ -1,11 +1,11 @@
 <?php
 
-namespace Pagseguro;
+namespace PagSeguro;
 
-class Paguseguro
+class PagSeguro
 {
     /**
-     * The Pagseguro version.
+     * The PagSeguro version.
      *
      * @var string
      */

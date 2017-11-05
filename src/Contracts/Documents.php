@@ -1,5 +1,5 @@
 <?php
-namespace Pagseguro\Contracts;
+namespace PagSeguro\Contracts;
 
 interface Documents
 {

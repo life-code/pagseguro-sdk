@@ -1,6 +1,6 @@
 <?php
 
-namespace Pagseguro\Customer;
+namespace PagSeguro\Customer;
 
 class Phone
 {

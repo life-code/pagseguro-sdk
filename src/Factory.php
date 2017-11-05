@@ -1,25 +1,25 @@
 <?php
 
-namespace Pagseguro;
+namespace PagSeguro;
 
-use Pagseguro\Pagseguro;
+use PagSeguro\PagSeguro;
 
 class Factory
 {
     /**
-     * @var \Pagseguro\Pagseguro
+     * @var \PagSeguro\PagSeguro
      */ 
     private static $pagseguro;
     
     /**
      * Handles pagseguro instance
      * 
-     * @return \Pagseguro\Pagseguro
+     * @return \PagSeguro\PagSeguro
      */ 
     public static function make()
     {
         if (!self::$pagseguro) {
-            self::$pagseguro = new Pagseguro();
+            self::$pagseguro = new PagSeguro();
         }
         
         return self::$pagseguro;

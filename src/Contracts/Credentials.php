@@ -2,7 +2,7 @@
 
 namespace Pagseguro\Interfaces;
 
-interface CredentialsInterface
+interface Credentials
 {
     // 
 }

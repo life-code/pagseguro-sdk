@@ -1,6 +1,6 @@
 <?php
 
-namespace Pagseguro\Interfaces;
+namespace Pagseguro\Contracts;
 
 interface Credentials
 {

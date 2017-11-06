@@ -9,7 +9,7 @@ interface Phone
      * 
      * @return string
      */
-    public function getAreaCode() : string
+    public function getAreaCode() : string;
 
     /**
      * Set code
@@ -17,14 +17,14 @@ interface Phone
      * @param string $code
      * @return $this
      */
-    public function setAreaCode(string $area_code)
+    public function setAreaCode(string $area_code);
 
     /**
      * Get number
      * 
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber() : string;
 
     /**
      * Set number
@@ -32,12 +32,12 @@ interface Phone
      * @param string $number
      * @return string
      */
-    public function setNumber(string $number)
+    public function setNumber(string $number);
     
     /**
      * To string phone
      * 
      * @return string
      */
-    public function toString() : string
+    public function toString() : string;
 }

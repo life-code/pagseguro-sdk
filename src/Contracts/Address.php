@@ -9,7 +9,7 @@ interface Address
      * 
      * @return string
      */
-    public function getCountry() : string
+    public function getCountry() : string;
 
     /**
      * Set country
@@ -17,14 +17,14 @@ interface Address
      * @param string $country
      * @return $this
      */
-    public function setCountry(string $country)
+    public function setCountry(string $country);
 
     /**
      * Get state
      * 
      * @return string
      */
-    public function getState() : string
+    public function getState() : string;
 
     /**
      * Set state
@@ -32,14 +32,14 @@ interface Address
      * @param string $state
      * @return $this
      */
-    public function setState(string $state)
+    public function setState(string $state);
 
     /**
      * Get city
      * 
      * @return string
      */
-    public function getCity() : string
+    public function getCity() : string;
 
     /**
      * Set city
@@ -47,14 +47,14 @@ interface Address
      * @param string $city
      * @return $this
      */
-    public function setCity(string $city)
+    public function setCity(string $city);
 
     /**
      * Get cep
      * 
      * @return string
      */
-    public function getCep() : string
+    public function getCep() : string;
 
     /**
      * Set cep
@@ -62,14 +62,14 @@ interface Address
      * @param string $cep
      * @return $this
      */
-    public function setCep(string $cep)
+    public function setCep(string $cep);
 
     /**
      * Get district
      * 
      * @return string
      */
-    public function getDistrict() : string
+    public function getDistrict() : string;
 
     /**
      * Set district
@@ -77,14 +77,14 @@ interface Address
      * @param string $district
      * @return $this
      */
-    public function setDistrict(string $district)
+    public function setDistrict(string $district);
 
     /**
      * Get street
      * 
      * @return string
      */
-    public function getStreet() : string
+    public function getStreet() : string;
 
     /**
      * Set street
@@ -92,14 +92,14 @@ interface Address
      * @param string $street
      * @return $this
      */
-    public function setStreet(string $street)
+    public function setStreet(string $street);
 
     /**
      * Get number
      * 
      * @return string
      */
-    public function getNumber() : string
+    public function getNumber() : string;
 
     /**
      * Set number
@@ -107,14 +107,14 @@ interface Address
      * @param string $number
      * @return $this
      */
-    public function setNumber(string $number)
+    public function setNumber(string $number);
 
     /**
      * Get complement
      * 
      * @return string
      */
-    public function getComplement() : string
+    public function getComplement() : string;
 
     /**
      * Set complement
@@ -122,5 +122,5 @@ interface Address
      * @param string $complement
      * @return $this
      */
-    public function setComplement(string $complement)
+    public function setComplement(string $complement);
 }

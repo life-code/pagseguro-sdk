@@ -2,7 +2,9 @@
 
 namespace PagSeguro\Customer;
 
-class Address
+use PagSeguro\Contracts\Address as AddressContract;
+
+class Address implements AddressContract
 {
     /**
      * @var string
@@ -12,44 +14,44 @@ class Address
     /**
      * @var string
      */
-    private $state;
+    private $state = '';
 
     /**
      * @var string
      */
-    private $city;
+    private $city = '';
 
     /**
      * @var string
      */
-    private $cep;
+    private $cep = '';
 
     /**
      * @var string
      */
-    private $district;
+    private $district = '';
 
     /**
      * @var string
      */
-    private $street;
+    private $street = '';
 
     /**
      * @var string
      */
-    private $number;
+    private $number = '';
 
     /**
      * @var string
      */
-    private $complement;
+    private $complement = '';
     
     /**
      * Get country
      * 
      * @return string
      */
-    public function getCountry()
+    public function getCountry() : string
     {
         return $this->country;
     }
@@ -72,7 +74,7 @@ class Address
      * 
      * @return string
      */
-    public function getState()
+    public function getState() : string
     {
         return $this->state;
     }
@@ -95,7 +97,7 @@ class Address
      * 
      * @return string
      */
-    public function getCity()
+    public function getCity() : string
     {
         return $this->city;
     }
@@ -118,7 +120,7 @@ class Address
      * 
      * @return string
      */
-    public function getCep()
+    public function getCep() : string
     {
         return $this->cep;
     }
@@ -141,7 +143,7 @@ class Address
      * 
      * @return string
      */
-    public function getDistrict()
+    public function getDistrict() : string
     {
         return $this->district;
     }
@@ -164,7 +166,7 @@ class Address
      * 
      * @return string
      */
-    public function getStreet()
+    public function getStreet() : string
     {
         return $this->street;
     }
@@ -187,7 +189,7 @@ class Address
      * 
      * @return string
      */
-    public function getNumber()
+    public function getNumber() : string
     {
         return $this->number;
     }
@@ -210,7 +212,7 @@ class Address
      * 
      * @return string
      */
-    public function getComplement()
+    public function getComplement() : string
     {
         return $this->complement;
     }

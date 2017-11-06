@@ -9,7 +9,7 @@ interface Documents
      * 
      * @return string
      */
-    public function getItem($type)
+    public function getItem($type);
     
     /**
      * Set CPF
@@ -17,7 +17,7 @@ interface Documents
      * @param string $cpf
      * @return $this
      */
-    public function setItem(string $type, string $item)
+    public function setItem(string $type, string $item);
     
     /**
      * Validate type
@@ -25,19 +25,12 @@ interface Documents
      * @param string $type
      * @return bool
      */
-    public function validate(string $type) : bool
+    public function validate(string $type) : bool;
     
     /**
      * Get types
      * 
      * @return array
      */
-    public function getTypes()
-    
-    /**
-     * Validate phone
-     * 
-     * @return bool
-     */
-    public function isValid()
+    public function getTypes();
 }

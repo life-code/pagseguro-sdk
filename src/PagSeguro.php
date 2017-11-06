@@ -9,7 +9,7 @@ class PagSeguro
      *
      * @var string
      */
-    const VERSION = '0.1';
+    const VERSION = '0.2';
 
     /**
      * Get the version number of the application.

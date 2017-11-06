@@ -12,9 +12,10 @@ interface Documents
     public function getItem($type);
     
     /**
-     * Set CPF
+     * Set item
      * 
      * @param string $cpf
+     * @param string $item
      * @return $this
      */
     public function setItem(string $type, string $item);

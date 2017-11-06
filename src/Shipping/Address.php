@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Customer;
+namespace PagSeguro\Shipping;
 
 use PagSeguro\Contracts\Address as AddressContract;
 

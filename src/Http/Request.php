@@ -63,4 +63,14 @@ abstract class Request implements RequestContract
      * @var strint
      */ 
     const XML = 'application/xml';
+    
+    /**
+     * Get request data
+     * 
+     * @return array
+     */
+    public function getData() : array
+    {
+        return [];
+    }
 }

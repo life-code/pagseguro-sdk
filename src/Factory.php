@@ -2,7 +2,8 @@
 
 namespace PagSeguro;
 
-use PagSeguro\PagSeguro;
+use PagSeguro\AccountCredentials;
+use PagSeguro\Session\Session;
 
 /**
  * PagSeguro SDK
@@ -17,21 +18,14 @@ use PagSeguro\PagSeguro;
 class Factory
 {
     /**
-     * @var \PagSeguro\PagSeguro
-     */ 
-    private static $pagseguro;
-    
-    /**
      * Handles pagseguro instance
      * 
      * @return \PagSeguro\PagSeguro
      */ 
-    public static function make()
+    public static function session(string $email = '', string $token = '')
     {
-        if (!self::$pagseguro) {
-            self::$pagseguro = new PagSeguro();
-        }
+        $credentials = new AccountCredentials($email, $token);
         
-        return self::$pagseguro;
+        return new Session($credentials);
     }
 }

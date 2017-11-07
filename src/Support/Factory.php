@@ -10,12 +10,12 @@ trait Factory
     /**
      * @var \PagSeguro\Credentials\Environment
      */ 
-    private $env;
+    private static $env;
     
     /**
      * @var \PagSeguro\Credentials\AccountCredentials
      */ 
-    private $credentials;
+    private static $credentials;
     
     /**
      * Get env

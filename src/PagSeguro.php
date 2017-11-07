@@ -43,8 +43,8 @@ class PagSeguro
      */ 
     public static function session()
     {
-        $env         = $this->getEnv();
-        $credentials = $this->getCredentials();
+        $env         = self::getEnv();
+        $credentials = self::getCredentials();
         
         return new Session($credentials, $env);
     }

@@ -39,7 +39,7 @@ trait Factory
     public static function getCredentials()
     {
         if (!self::$credentials) {
-            $env = $this->getEnv();
+            $env = self::getEnv();
             self::$credentials = new AccountCredentials($env->getEmail(), $env->getToken());
         }
         

@@ -5,6 +5,7 @@ namespace PagSeguro\Customer;
 use PagSeguro\Contracts\Customer as CustomerContract;
 use PagSeguro\Contracts\Address;
 use PagSeguro\Contracts\Phone;
+use PagSeguro\Contracts\Documents;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
 
@@ -33,6 +34,16 @@ class Customer implements CustomerContract
     private $name;
 
     /**
+     * @var string
+     */
+    private $ip;
+
+    /**
+     * @var string
+     */
+    private $hash;
+
+    /**
      * @var PagSeguro\Contracts\Phone
      */
     private $phone;
@@ -41,6 +52,11 @@ class Customer implements CustomerContract
      * @var PagSeguro\Contracts\Address
      */
     private $address;
+    
+    /**
+     * @var PagSeguro\Contracts\Documents
+     */
+    private $documents;
     
     /**
      * Get email
@@ -185,6 +201,29 @@ class Customer implements CustomerContract
     public function setAddress(Address $address)
     {
         $this->address = $address;
+        
+        return $this;
+    }
+    
+    /**
+     * Get documents
+     * 
+     * @return string | \PagSeguro\Contracts\Documents
+     */
+    public function getDocuments()
+    {
+        return $this->documents;
+    }
+    
+    /**
+     * Set documents
+     * 
+     * @param \PagSeguro\Contracts\Documents $documents
+     * @return $this
+     */
+    public function setDocuments(Documents $documents)
+    {
+        $this->documents = $documents;
         
         return $this;
     }

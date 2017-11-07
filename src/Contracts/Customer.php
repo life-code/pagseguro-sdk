@@ -108,4 +108,19 @@ interface Customer
      * @return $this
      */
     public function setAddress(Address $address);
+    
+    /**
+     * Get documents
+     * 
+     * @return string | \PagSeguro\Contracts\Documents
+     */
+    public function getDocuments();
+    
+    /**
+     * Set documents
+     * 
+     * @param \PagSeguro\Contracts\Documents $documents
+     * @return $this
+     */
+    public function setDocuments(Documents $documents);
 }

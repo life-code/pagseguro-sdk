@@ -2,7 +2,8 @@
 
 namespace PagSeguro\Session;
 
-use PagSeguro\AccountCredentials;
+use PagSeguro\Credentials\AccountCredentials;
+use PagSeguro\Credentials\Environment;
 
 /**
  * PagSeguro SDK
@@ -17,19 +18,26 @@ use PagSeguro\AccountCredentials;
 class Session
 {
     /**
-     * @var \PagSeguro\AccountCredentials
+     * @var \PagSeguro\Credentials\AccountCredentials
      */
     private $credentials;
     
     /**
+     * @var \PagSeguro\Credentials\Environment
+     */
+    private $env;
+    
+    /**
      * Make new instance of this class
      * 
-     * @param \PagSeguro\AccountCredentials $credentials
+     * @param \PagSeguro\Credentials\AccountCredentials $credentials
+     * @param \PagSeguro\Credentials\Environment $env
      * @return void
      */
-    public function __construct(AccountCredentials $credentials)
+    public function __construct(AccountCredentials $credentials, Environment $env)
     {
         $this->credentials = $credentials;
+        $this->env         = $env;
     }
     
     /**
@@ -39,6 +47,6 @@ class Session
      */
     public function create()
     {
-        $request = new Request($this->credentials);
+        $request = new Request($this->credentials, $this->env);
     }
 }

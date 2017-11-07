@@ -51,16 +51,16 @@ class Request extends BaseRequest
         $response = new Response();
         
         $response->setStatus($info['http_code']);
-        $this->setInfo($info);
+        $response->setInfo($info);
         
         if ($data === 'Unauthorized') {
-            return $this->setErrors($data);
+            return $response->setErrors($data);
         }
         
         if ($info['http_code'] === 404) {
-            return $this->setErrors('Not Found');
+            return $response->setErrors('Not Found');
         }
         
-        return $this->setData($data);
+        return $response->setData($data);
     }
 }

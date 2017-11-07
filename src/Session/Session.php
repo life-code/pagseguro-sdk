@@ -39,6 +39,6 @@ class Session
      */
     public function create()
     {
-        // 
+        $request = new Request($this->credentials);
     }
 }

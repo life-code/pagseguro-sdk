@@ -9,10 +9,9 @@ trait RequestBuilder
     /**
      * Send request
      * 
-     * @param \PagSeguro\Contracts\Http\Response as ResponseContract $response
      * @return \PagSeguro\Responses\Response
      */
-    public function send(ResponseContract $response)
+    public function send()
     {
         $curl = curl_init($this->getUrl());
         
@@ -33,6 +32,6 @@ trait RequestBuilder
         
         curl_close($curl);
         
-        return $response->create($data, $info);
+        return $this->createResponse($data, $info);
     }
 }

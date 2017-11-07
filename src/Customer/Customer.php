@@ -134,7 +134,7 @@ class Customer implements CustomerContract
      */
     public function setName(string $name)
     {
-        if (! preg_match('/[A-Z][a-z]* [A-Z][a-z]*/', $name)) {
+        if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
             throw new PagseguroException("The [$name] isn't a valid name. Required first and last name");
         }
         

@@ -14,12 +14,12 @@ abstract class Request implements RequestContract
     /**
      * @var \PagSeguro\Credentials\AccountCredentials
      */
-    private $credentials;
+    protected $credentials;
     
     /**
      * @var \PagSeguro\Credentials\Environment
      */
-    private $env;
+    protected $env;
     
     /**
      * Make new instance of this class

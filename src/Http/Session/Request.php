@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Requests\Session;
+namespace PagSeguro\Http\Session;
 
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Response;

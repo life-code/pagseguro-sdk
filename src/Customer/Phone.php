@@ -2,6 +2,7 @@
 
 namespace PagSeguro\Customer;
 
+use PagSeguro\Contracts\Phone as PhoneContract;
 use PagSeguro\Support\Mask;
 use PagSeguro\Exceptions\PagseguroException;
 
@@ -15,7 +16,7 @@ use PagSeguro\Exceptions\PagseguroException;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Phone
+class Phone implements PhoneContract
 {
     use Mask;
     

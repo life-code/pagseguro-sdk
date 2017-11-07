@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Session;
 
+use PagSeguro\AccountCredentials;
+
 /**
  * PagSeguro SDK
  * 
@@ -14,6 +16,22 @@ namespace PagSeguro\Session;
  */
 class Session
 {
+    /**
+     * @var \PagSeguro\AccountCredentials
+     */
+    private $credentials;
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @param \PagSeguro\AccountCredentials $credentials
+     * @return void
+     */
+    public function __construct(AccountCredentials $credentials)
+    {
+        $this->credentials = $credentials;
+    }
+    
     /**
      * Create Session ID
      * 

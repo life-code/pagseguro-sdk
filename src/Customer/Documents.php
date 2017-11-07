@@ -2,6 +2,7 @@
 
 namespace PagSeguro\Customer;
 
+use PagSeguro\Contracts\Documents as DocumentsContract;
 use PagSeguro\Exceptions\PagseguroException;
 
 /**
@@ -14,7 +15,7 @@ use PagSeguro\Exceptions\PagseguroException;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Documents
+class Documents implements DocumentsContract
 {
     /**
      * @var string

@@ -3,9 +3,8 @@
 namespace PagSeguro\Requests\Session;
 
 use PagSeguro\Http\Request as BaseRequest;
-use PagSeguro\Contracts\Http\Request as RequestContract;
 
-class Request extends BaseRequest implements RequestContract
+class Request extends BaseRequest
 {
     /**
      * Get request method

@@ -2,6 +2,9 @@
 
 namespace PagSeguro;
 
+use PagSeguro\Support\Factory;
+use PagSeguro\Session\Session;
+
 /**
  * PagSeguro SDK
  * 
@@ -14,6 +17,8 @@ namespace PagSeguro;
  */
 class PagSeguro
 {
+    use Factory;
+    
     /**
      * The PagSeguro version.
      *
@@ -26,8 +31,21 @@ class PagSeguro
      *
      * @return string
      */
-    public function version()
+    public static function version()
     {
-        return static::VERSION;
+        return self::VERSION;
+    }
+    
+    /**
+     * Handles pagseguro instance
+     * 
+     * @return \PagSeguro\PagSeguro
+     */ 
+    public static function session()
+    {
+        $env         = $this->getEnv();
+        $credentials = $this->getCredentials();
+        
+        return new Session($credentials, $env);
     }
 }

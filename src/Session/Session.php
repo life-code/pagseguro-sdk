@@ -4,6 +4,7 @@ namespace PagSeguro\Session;
 
 use PagSeguro\Credentials\AccountCredentials;
 use PagSeguro\Credentials\Environment;
+use PagSeguro\Http\Session\Request;
 
 /**
  * PagSeguro SDK
@@ -48,5 +49,7 @@ class Session
     public function create()
     {
         $request = new Request($this->credentials, $this->env);
+        
+        return $request->send();
     }
 }

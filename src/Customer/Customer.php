@@ -2,6 +2,7 @@
 
 namespace PagSeguro\Customer;
 
+use PagSeguro\Contracts\Customer as CustomerContract;
 use PagSeguro\Contracts\Address;
 use PagSeguro\Contracts\Phone;
 use PagSeguro\Exceptions\PagseguroException;
@@ -17,7 +18,7 @@ use PagSeguro\Support\Validator;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Customer
+class Customer implements CustomerContract
 {
     use Validator;
     

@@ -5,6 +5,13 @@ namespace PagSeguro\Contracts\Http;
 interface Request
 {
     /**
+     * Get request data
+     * 
+     * @return array
+     */
+    public function getData() : array;
+    
+    /**
      * Get request headers
      * 
      * @return array

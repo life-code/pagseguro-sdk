@@ -2,12 +2,15 @@
 
 namespace PagSeguro\Http;
 
+use PagSeguro\Http\RequestBuilder;
 use PagSeguro\Contracts\Http\Request as RequestContract;
 use PagSeguro\Credentials\AccountCredentials;
 use PagSeguro\Credentials\Environment;
 
 abstract class Request implements RequestContract
 {
+    use RequestBuilder;
+    
     /**
      * @var \PagSeguro\Credentials\AccountCredentials
      */

@@ -2,7 +2,8 @@
 
 namespace PagSeguro;
 
-use PagSeguro\AccountCredentials;
+use PagSeguro\Credentials\AccountCredentials;
+use PagSeguro\Credentials\Environment;
 use PagSeguro\Session\Session;
 
 /**
@@ -22,10 +23,11 @@ class Factory
      * 
      * @return \PagSeguro\PagSeguro
      */ 
-    public static function session(string $email = '', string $token = '')
+    public static function session()
     {
-        $credentials = new AccountCredentials($email, $token);
+        $env = new Environment();
+        $credentials = new AccountCredentials($env->getEmail(), $env->getToken());
         
-        return new Session($credentials);
+        return new Session($credentials, $env);
     }
 }

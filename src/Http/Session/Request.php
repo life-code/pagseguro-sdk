@@ -3,6 +3,7 @@
 namespace PagSeguro\Requests\Session;
 
 use PagSeguro\Http\Request as BaseRequest;
+use PagSeguro\Http\Response;
 
 class Request extends BaseRequest
 {
@@ -36,5 +37,30 @@ class Request extends BaseRequest
         return [
             'Content-Type: application/xml',
         ];
+    }
+    
+    /**
+     * Create response
+     * 
+     * @param mixed $data
+     * @param array $info
+     * @return \PagSeguro\Http\Response
+     */
+    public function createResponse($data, array $info)
+    {
+        $response = new Response();
+        
+        $response->setStatus($info['http_code']);
+        $this->setInfo($info);
+        
+        if ($data === 'Unauthorized') {
+            return $this->setErrors($data);
+        }
+        
+        if ($info['http_code'] === 404) {
+            return $this->setErrors('Not Found');
+        }
+        
+        return $this->setData($data);
     }
 }

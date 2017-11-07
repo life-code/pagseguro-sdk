@@ -3,7 +3,7 @@
 namespace PagSeguro\Http\Session;
 
 use PagSeguro\Http\Request as BaseRequest;
-use PagSeguro\Http\Response;
+use PagSeguro\Http\Session\Response;
 
 class Request extends BaseRequest
 {
@@ -32,7 +32,7 @@ class Request extends BaseRequest
      * 
      * @return array
      */
-    public function getHeaders() : arary
+    public function getHeaders() : array
     {
         return [
             'Content-Type: application/xml',
@@ -44,7 +44,7 @@ class Request extends BaseRequest
      * 
      * @param mixed $data
      * @param array $info
-     * @return \PagSeguro\Http\Response
+     * @return \PagSeguro\Contracts\Http\Response
      */
     public function createResponse($data, array $info)
     {

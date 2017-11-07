@@ -64,7 +64,7 @@ abstract class Response implements ResponseContract
      * 
      * @return array
      */
-    public function getInfo()
+    public function getInfo() : array
     {
         return $this->info;
     }

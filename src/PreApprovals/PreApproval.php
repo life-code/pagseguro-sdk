@@ -108,8 +108,6 @@ class PreApproval
     {
         $request = new Request($this->credentials, $this->env);
         
-        $request->exchangeData($this, $customer, $method);
-        
-        return $request->send();
+        $request->exchangeData($this, $customer, $method)->send();
     }
 }

@@ -8,6 +8,7 @@
    <a href="https://packagist.org/packages/life-code/pagseguro-sdk"><img src="https://poser.pugx.org/life-code/pagseguro-sdk/license.svg" alt="License"></a>
    <a href="https://codeclimate.com/github/life-code/pagseguro-sdk/maintainability"><img src="https://api.codeclimate.com/v1/badges/b889d75e5aa75226ffbb/maintainability" /></a>
    <a href="https://codeclimate.com/github/life-code/pagseguro-sdk/test_coverage"><img src="https://api.codeclimate.com/v1/badges/b889d75e5aa75226ffbb/test_coverage" /></a>
+   <a href="http://isitmaintained.com/project/life-code/pagseguro-sdk"><img src="http://isitmaintained.com/badge/resolution/life-code/pagseguro-sdk.svg" /></a>
 </p>
 
 

@@ -2,7 +2,6 @@
 
 
 ## Install:
-----------
 > Note: We recommend installation via **Composer**. You can also download the repository as a [zip file](https://github.com/life-code/pagseguro-sdk/archive/master.zip) or make a clone via Git. 
 
  

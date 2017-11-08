@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Customer;
+namespace PagSeguro\Payment;
 
 use PagSeguro\Contracts\Documents as DocumentsContract;
 use PagSeguro\Exceptions\PagseguroException;

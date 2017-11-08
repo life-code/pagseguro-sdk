@@ -52,6 +52,11 @@ abstract class Request implements RequestContract
     protected $env;
     
     /**
+     * @var array
+     */
+    protected $data = [];
+    
+    /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Credentials\AccountCredentials $credentials
@@ -71,6 +76,6 @@ abstract class Request implements RequestContract
      */
     public function getData() : array
     {
-        return [];
+        return $this->data;
     }
 }

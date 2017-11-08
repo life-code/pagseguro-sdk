@@ -26,6 +26,7 @@ interface Documents
      * 
      * @param string $cpf
      * @param string $item
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setItem(string $type, string $item);

@@ -26,6 +26,8 @@ The PagSeguro SDK library contains several features that PagSeguro offers in the
 - Consult **abandoned transactions**
 - Get **notifications**
 
+## Documentation
+[Click here to access the documentation.](https://github.com/life-code/pagseguro-sdk/tree/master/docs)
 
 ## Useful links
 - [API PagSeguro Documentation](https://dev.pagseguro.uol.com.br/referencia-da-api/api-de-pagamentos-pagseguro)

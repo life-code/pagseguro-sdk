@@ -44,7 +44,7 @@ class Session
     /**
      * Create Session ID
      * 
-     * @return \PagSeguro\Responses\ResponseInterface
+     * @return \PagSeguro\Contracts\Http\Response
      */
     public function create()
     {

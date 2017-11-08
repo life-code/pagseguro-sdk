@@ -4,6 +4,8 @@ namespace PagSeguro\Http\PreApprovals;
 
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\PreApprovals\Response;
+use PagSeguro\PreApprovals\PreApproval;
+use PagSeguro\Contracts\Documents;
 
 class Request extends BaseRequest
 {
@@ -42,27 +44,65 @@ class Request extends BaseRequest
     }
     
     /**
-     * Create response
+     * Exchange data
      * 
-     * @param mixed $data
-     * @param array $info
-     * @return \PagSeguro\Contracts\Http\Response
+     * @param \PagSeguro\PreApprovals\PreApproval $pre_approval
+     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Payment\Method $method
+     * @return $this
      */
-    public function createResponse($data, array $info)
+    public function exchangeData(PreApproval $pre_approval, Customer $customer, Method $method)
     {
-        $response = new Response();
+        $this->data = [
+            'plan'          => $pre_approval->getPlan(),
+            'reference'     => $pre_approval->getHash(),
+            'sender'        => [
+                'name'      => $customer->getName(),
+                'email'     => $customer->getEmail(),
+                'hash'      => $customer->getHash(),
+                'phone'     => [
+                    'areaCode' => $customer->getPhone()->getCode(),
+                    'number' => $customer->getPhone()->getNumber(),
+                ],
+                'address'   => [
+                    'street'     => $customer->getAddress()->getStreet(),
+                    'number'     => $customer->getAddress()->getNumber(),
+                    'complement' => $customer->getAddress()->getComplement(),
+                    'district'   => $customer->getAddress()->getDistrict(),
+                    'city'       => $customer->getAddress()->getCity(),
+                    'state'      => $customer->getAddress()->getState(),
+                    'country'    => $customer->getAddress()->getCountry(),
+                    'postalCode' => $customer->getAddress()->getCep(),
+                ],
+                'documents' => [
+                    [
+                        'type'  => Documents::CPF,
+                        'value' => $customer->getPayment()->getDocuments()->getItem(Documents::CPF),
+                    ]
+                ],
+            ],
+            'paymentMethod' => [
+                'type'       => $method->getType(),
+                'creditCard' => [
+                    'token'  => $method->getToken(),
+                    'holder' => [
+                        'name'      => $method->getHolder()->getName(),
+                        'birthDate' => $method->getHolder()->getBirthDate(),
+                        'documents' => [
+                            [
+                                'type'  => Documents::CPF,
+                                'value' => $method->getHolder()->getDocuments()->getItem(Documents::CPF),
+                            ]
+                        ],
+                        'phone'     => [
+                            'areaCode' => $method->getHolder()->getPhone()->getCode(),
+                            'number' => $method->getHolder()->getPhone()->getNumber(),
+                        ],
+                    ],
+                ],
+            ],
+        ];
         
-        $response->setStatus($info['http_code']);
-        $response->setInfo($info);
-        
-        if ($data === 'Unauthorized') {
-            return $response->setErrors($data);
-        }
-        
-        if ($info['http_code'] === 404) {
-            return $response->setErrors('Not Found');
-        }
-        
-        return $response->setData($data);
+        return $this;
     }
 }

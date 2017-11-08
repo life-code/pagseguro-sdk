@@ -1,14 +1,19 @@
 # Pagseguro SDK Documentation
 
 
-## Install by Composer:
+## Install:
+----------
+> Note: We recommend installation via **Composer**. You can also download the repository as a [zip file](https://github.com/life-code/pagseguro-sdk/archive/master.zip) or make a clone via Git. 
 
+ 
+## Install by Composer:
+> To download and install Composer in your environment go to https://getcomposer.org/download/ and if you have questions about how to use it, consult the [official Composer documentation](https://getcomposer.org/doc).
+
+Run the low command on the terminal
 ```sh
 $ composer require life-code/pagseguro-sdk
 ```
 
-
-## Docs:
 
 
 

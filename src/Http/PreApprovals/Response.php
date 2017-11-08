@@ -16,7 +16,7 @@ class Response extends BaseResponse
         $data = json_decode($data);
         
         if (isset($data->error) && $data->error) {
-            return $this->setErrors($data->errors);
+            return $this->setErrors((array) $data->errors);
         }
         
         $this->data = $data;

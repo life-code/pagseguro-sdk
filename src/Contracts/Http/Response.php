@@ -46,7 +46,7 @@ interface Response
      * @param array $errors
      * @return $this
      */
-    public function setErrors($errors) : array;
+    public function setErrors(array $errors);
     
     /**
      * Get info

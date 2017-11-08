@@ -13,7 +13,13 @@ class Response extends BaseResponse
      */ 
     public function setData($data)
     {
-        $this->data = json_decode($data);
+        $data = json_decode($data);
+        
+        if (isset($data->error) && $data->error) {
+            return $this->setErrors($data->errors);
+        }
+        
+        $this->data = $data;
         
         return $this;
     }

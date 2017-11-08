@@ -2,6 +2,10 @@
 
 namespace PagSeguro\PreApprovals;
 
+use PagSeguro\Credentials\AccountCredentials;
+use PagSeguro\Credentials\Environment;
+use PagSeguro\Http\PreApprovals\Request;
+
 /**
  * PagSeguro SDK
  * 
@@ -15,13 +19,38 @@ namespace PagSeguro\PreApprovals;
 class PreApproval
 {
     /**
+     * @var \PagSeguro\Credentials\AccountCredentials
+     */
+    private $credentials;
+    
+    /**
+     * @var \PagSeguro\Credentials\Environment
+     */
+    private $env;
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @param \PagSeguro\Credentials\AccountCredentials $credentials
+     * @param \PagSeguro\Credentials\Environment $env
+     * @return void
+     */
+    public function __construct(AccountCredentials $credentials, Environment $env)
+    {
+        $this->credentials = $credentials;
+        $this->env         = $env;
+    }
+    
+    /**
      * Approves one payment
      * 
      * @param Customer $customer
-     * @return App\PagSeguro\Responses\ResponseInterface
+     * @return \PagSeguro\Contracts\Http\Response
      */
     public function approve(Customer $customer)
     {
-        // 
+        $request = new Request($this->credentials, $this->env);
+        
+        return $request->send();
     }
 }

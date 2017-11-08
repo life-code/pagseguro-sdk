@@ -12,6 +12,36 @@ abstract class Request implements RequestContract
     use RequestBuilder;
     
     /**
+     * @var strint
+     */
+    const POST = 'POST';
+    
+    /**
+     * @var strint
+     */
+    const PUT = 'PUT';
+    
+    /**
+     * @var strint
+     */
+    const GET = 'GET';
+    
+    /**
+     * @var strint
+     */
+    const DELETE = 'DELETE';
+    
+    /**
+     * @var strint
+     */
+    const JSON = 'application/json';
+    
+    /**
+     * @var strint
+     */
+    const XML = 'application/xml';
+    
+    /**
      * @var \PagSeguro\Credentials\AccountCredentials
      */
     protected $credentials;
@@ -33,36 +63,6 @@ abstract class Request implements RequestContract
         $this->credentials = $credentials;
         $this->env         = $env;
     }
-    
-    /**
-     * @var strint
-     */ 
-    const POST = 'POST';
-    
-    /**
-     * @var strint
-     */ 
-    const PUT = 'PUT';
-    
-    /**
-     * @var strint
-     */ 
-    const GET = 'GET';
-    
-    /**
-     * @var strint
-     */ 
-    const DELETE = 'DELETE';
-    
-    /**
-     * @var strint
-     */ 
-    const JSON = 'application/json';
-    
-    /**
-     * @var strint
-     */ 
-    const XML = 'application/xml';
     
     /**
      * Get request data

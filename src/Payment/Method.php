@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\PaymentMethod;
+namespace PagSeguro\Payment;
 
 /**
  * PagSeguro SDK
@@ -12,7 +12,7 @@ namespace PagSeguro\PaymentMethod;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class PaymentMethod
+class Method
 {
 	// 
 }

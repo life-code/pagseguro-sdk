@@ -105,12 +105,21 @@ abstract class Response implements ResponseContract
     /**
      * Set errors
      * 
-     * @param mixed $errors
+     * @param array $errors
      * @return $this
      */
-    public function setErrors($errors)
+    public function setErrors(array $errors)
     {
-        $this->errors = $errors;
+        $exchange = [];
+        
+        foreach ($errors as $key => $value) {
+            $exchange[] = (object) [
+                'code'  => $key,
+                'value' => $value,
+            ];
+        }
+        
+        $this->errors = $exchange;
         
         return $this;
     }

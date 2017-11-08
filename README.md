@@ -16,15 +16,15 @@
 
 The PagSeguro SDK library contains several features that PagSeguro offers in the form of APIs. With it you can integrate features like:
 
-- Criar *requisições de pagamentos*
-- Criar *requisições de assinaturas transparentes* e gerenciá-las
-- Criar *requisições de assinaturas*
-- Cancelar *assinaturas*
-- Consultar *assinaturas*
-- Consultar *transações por código*
-- Consultar *transações por intervalo de datas*
-- Consultar *transações abandonadas*
-- Receber *notificações*
+- Create **payment requisitions**
+- Create **transparent signatures** and manage them
+- Create **subscription requisitions**
+- Cancel **signatures**
+- Consult **signatures**
+- Consult **transactions by code**
+- Consult **transactions by date range**
+- Consult **abandoned transactions**
+- Get **notifications**
 
 
 ## Useful links

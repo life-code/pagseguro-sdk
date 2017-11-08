@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Customer;
+namespace PagSeguro\Payment;
 
 use PagSeguro\Contracts\Phone as PhoneContract;
 use PagSeguro\Support\Mask;

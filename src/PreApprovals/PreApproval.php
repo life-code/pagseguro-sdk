@@ -29,6 +29,16 @@ class PreApproval
     private $env;
     
     /**
+     * @var string
+     */
+    private $plan;
+    
+    /**
+     * @var string
+     */
+    private $reference;
+    
+    /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Credentials\AccountCredentials $credentials
@@ -42,12 +52,59 @@ class PreApproval
     }
     
     /**
+     * Get plan
+     * 
+     * @return string
+     */
+    public function getPlan() : string
+    {
+        return $this->plan;
+    }
+    
+    /**
+     * Set plan
+     * 
+     * @param string $plan
+     * @return $this
+     */
+    public function setPlan(string $plan)
+    {
+        $this->plan = $plan;
+        
+        return $this;
+    }
+    
+    /**
+     * Get reference
+     * 
+     * @return string
+     */
+    public function getReference() : string
+    {
+        return $this->reference;
+    }
+    
+    /**
+     * Set reference
+     * 
+     * @param string $reference
+     * @return $this
+     */
+    public function setReference(string $reference)
+    {
+        $this->reference = $reference;
+        
+        return $this;
+    }
+    
+    /**
      * Approves one payment
      * 
-     * @param Customer $customer
+     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */
-    public function approve(Customer $customer)
+    public function approve(Customer $customer, Method $method)
     {
         $request = new Request($this->credentials, $this->env);
         

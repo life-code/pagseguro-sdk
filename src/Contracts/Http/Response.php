@@ -43,10 +43,10 @@ interface Response
     /**
      * Set error
      * 
-     * @param $errors
+     * @param array $errors
      * @return $this
      */
-    public function setErrors($errors);
+    public function setErrors($errors) : array;
     
     /**
      * Get info

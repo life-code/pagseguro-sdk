@@ -14,5 +14,31 @@ namespace PagSeguro\Payment;
  */
 class Type
 {
-	// 
+    /**
+     * @var string
+     */ 
+	const CREDITCARD = 'CREDITCARD';
+	
+    /**
+     * Validate type
+     * 
+     * @param string $type
+     * @return bool
+     */ 
+    public static function check(string $type) : bool
+    {
+        return in_array($type, self::getTypes());
+    }
+    
+    /**
+     * Get types
+     * 
+     * @return array
+     */ 
+    public static function getTypes()
+    {
+        return [
+            self::CREDITCARD,
+        ];
+    }
 }

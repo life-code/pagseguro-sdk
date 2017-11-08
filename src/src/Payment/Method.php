@@ -4,6 +4,7 @@ namespace PagSeguro\Payment;
 
 use PagSeguro\Payment\Type;
 use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Payment\CreditCard\CreditCard;
 
 /**
  * PagSeguro SDK

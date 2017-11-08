@@ -6,6 +6,8 @@ use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\PreApprovals\Response;
 use PagSeguro\PreApprovals\PreApproval;
 use PagSeguro\Contracts\Documents;
+use PagSeguro\Contracts\Customer;
+use PagSeguro\Payment\Method;
 
 class Request extends BaseRequest
 {
@@ -55,13 +57,13 @@ class Request extends BaseRequest
     {
         $this->data = [
             'plan'          => $pre_approval->getPlan(),
-            'reference'     => $pre_approval->getHash(),
+            'reference'     => $pre_approval->getReference(),
             'sender'        => [
                 'name'      => $customer->getName(),
                 'email'     => $customer->getEmail(),
                 'hash'      => $customer->getHash(),
                 'phone'     => [
-                    'areaCode' => $customer->getPhone()->getCode(),
+                    'areaCode' => $customer->getPhone()->getAreaCode(),
                     'number' => $customer->getPhone()->getNumber(),
                 ],
                 'address'   => [
@@ -77,26 +79,26 @@ class Request extends BaseRequest
                 'documents' => [
                     [
                         'type'  => Documents::CPF,
-                        'value' => $customer->getPayment()->getDocuments()->getItem(Documents::CPF),
+                        'value' => $customer->getDocuments()->getItem(Documents::CPF),
                     ]
                 ],
             ],
             'paymentMethod' => [
                 'type'       => $method->getType(),
                 'creditCard' => [
-                    'token'  => $method->getToken(),
+                    'token'  => $method->getCreditCard()->getToken(),
                     'holder' => [
-                        'name'      => $method->getHolder()->getName(),
-                        'birthDate' => $method->getHolder()->getBirthDate(),
+                        'name'      => $method->getCreditCard()->getHolder()->getName(),
+                        'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
                         'documents' => [
                             [
                                 'type'  => Documents::CPF,
-                                'value' => $method->getHolder()->getDocuments()->getItem(Documents::CPF),
+                                'value' => $method->getCreditCard()->getHolder()->getDocuments()->getItem(Documents::CPF),
                             ]
                         ],
                         'phone'     => [
-                            'areaCode' => $method->getHolder()->getPhone()->getCode(),
-                            'number' => $method->getHolder()->getPhone()->getNumber(),
+                            'areaCode' => $method->getCreditCard()->getHolder()->getPhone()->getAreaCode(),
+                            'number' => $method->getCreditCard()->getHolder()->getPhone()->getNumber(),
                         ],
                     ],
                 ],
@@ -104,5 +106,30 @@ class Request extends BaseRequest
         ];
         
         return $this;
+    }
+    
+    /**
+     * Create response
+     * 
+     * @param mixed $data
+     * @param array $info
+     * @return \PagSeguro\Contracts\Http\Response
+     */
+    public function createResponse($data, array $info)
+    {
+        $response = new Response();
+        
+        $response->setStatus($info['http_code']);
+        $response->setInfo($info);
+        
+        if ($data === 'Unauthorized') {
+            return $response->setErrors($data);
+        }
+        
+        if ($info['http_code'] === 404) {
+            return $response->setErrors('Not Found');
+        }
+        
+        return $response->setData($data);
     }
 }

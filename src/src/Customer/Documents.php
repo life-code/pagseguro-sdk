@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Payment\CreditCard;
+namespace PagSeguro\Customer;
 
 use PagSeguro\Contracts\Documents as DocumentsContract;
 use PagSeguro\Exceptions\PagseguroException;
@@ -17,11 +17,6 @@ use PagSeguro\Exceptions\PagseguroException;
  */
 class Documents implements DocumentsContract
 {
-    /**
-     * @var string
-     */
-    const CPF = 'CPF';
-    
     /**
      * @var array
      */
@@ -40,7 +35,7 @@ class Documents implements DocumentsContract
     /**
      * Set item
      * 
-     * @param string $type
+     * @param string $cpf
      * @param string $item
      * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
@@ -75,7 +70,7 @@ class Documents implements DocumentsContract
     public function getTypes()
     {
         return [
-            self::CPF,
+            DocumentsContract::CPF,
         ];
     }
 }

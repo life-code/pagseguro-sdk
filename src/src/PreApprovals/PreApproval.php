@@ -5,6 +5,8 @@ namespace PagSeguro\PreApprovals;
 use PagSeguro\Credentials\AccountCredentials;
 use PagSeguro\Credentials\Environment;
 use PagSeguro\Http\PreApprovals\Request;
+use PagSeguro\Contracts\Customer;
+use PagSeguro\Payment\Method;
 
 /**
  * PagSeguro SDK
@@ -108,6 +110,6 @@ class PreApproval
     {
         $request = new Request($this->credentials, $this->env);
         
-        $request->exchangeData($this, $customer, $method)->send();
+        return $request->exchangeData($this, $customer, $method)->send();
     }
 }

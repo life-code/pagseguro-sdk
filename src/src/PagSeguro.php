@@ -4,6 +4,7 @@ namespace PagSeguro;
 
 use PagSeguro\Support\Factory;
 use PagSeguro\Session\Session;
+use PagSeguro\PreApprovals\PreApproval;
 
 /**
  * PagSeguro SDK
@@ -37,9 +38,9 @@ class PagSeguro
     }
     
     /**
-     * Handles pagseguro instance
+     * Handles pagseguro session instance
      * 
-     * @return \PagSeguro\PagSeguro
+     * @return \PagSeguro\Session\Session
      */ 
     public static function session()
     {
@@ -47,5 +48,18 @@ class PagSeguro
         $credentials = self::getCredentials();
         
         return new Session($credentials, $env);
+    }
+    
+    /**
+     * Handles pagseguro pre-approvals instance
+     * 
+     * @return \PagSeguro\PreApprovals\PreApproval
+     */ 
+    public static function preApproval()
+    {
+        $env         = self::getEnv();
+        $credentials = self::getCredentials();
+        
+        return new PreApproval($credentials, $env);
     }
 }

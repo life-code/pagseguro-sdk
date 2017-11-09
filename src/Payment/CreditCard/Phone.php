@@ -23,12 +23,12 @@ class Phone implements PhoneContract
     /**
      * @var string
      */ 
-    private $area_code;
+    private $area_code = '';
     
     /**
      * @var string
      */ 
-    private $number;
+    private $number = '';
     
     /**
      * Get area code

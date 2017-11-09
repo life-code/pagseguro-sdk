@@ -19,12 +19,12 @@ class CreditCard
     /**
      * @var string
      */ 
-    private $token;
+    private $token = '';
     
     /**
      * @var \PagSeguro\Payment\CreditCard\Holder
      */ 
-    private $holder;
+    private $holder = '';
     
     /**
      * Get token

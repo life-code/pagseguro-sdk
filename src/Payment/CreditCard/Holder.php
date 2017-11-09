@@ -24,22 +24,22 @@ class Holder
     /**
      * @var string
      */
-    private $name;
+    private $name = '';
     
     /**
      * @var string
      */
-    private $birth_date;
+    private $birth_date = '';
 
     /**
      * @var PagSeguro\Contracts\Phone
      */
-    private $phone;
+    private $phone = '';
 
     /**
      * @var PagSeguro\Contracts\Documents
      */
-    private $documents;
+    private $documents = '';
     
     /**
      * Get name

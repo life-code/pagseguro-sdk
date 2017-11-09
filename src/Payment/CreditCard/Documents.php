@@ -20,7 +20,7 @@ class Documents implements DocumentsContract
     /**
      * @var array
      */
-    private $items;
+    private $items = [];
 
     /**
      * Get item

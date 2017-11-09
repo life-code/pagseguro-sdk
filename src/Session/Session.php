@@ -21,12 +21,12 @@ class Session
     /**
      * @var \PagSeguro\Credentials\AccountCredentials
      */
-    private $credentials;
+    private $credentials = '';
     
     /**
      * @var \PagSeguro\Credentials\Environment
      */
-    private $env;
+    private $env = '';
     
     /**
      * Make new instance of this class

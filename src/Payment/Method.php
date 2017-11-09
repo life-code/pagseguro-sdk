@@ -21,12 +21,12 @@ class Method
     /**
      * @var string
      */ 
-    private $type;
+    private $type = '';
     
     /**
      * @var \PagSeguro\Payment\CreditCard\CreditCard
      */ 
-    private $credit_card;
+    private $credit_card = '';
     
     /**
      * Get type

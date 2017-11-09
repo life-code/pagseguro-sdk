@@ -17,33 +17,33 @@ class Item
     /**
      * @var string
      */
-    private $id;
+    private $id = '';
     
     /**
      * @var string
      */
-    private $description;
+    private $description = '';
     
     /**
      * @var float
      */
-    private $amount;
+    private $amount = 0;
     
     /**
      * @var int
      */
      
-    private $quantity;
+    private $quantity = 0;
     
     /**
      * @var float
      */
-    private $shipping_cost;
+    private $shipping_cost = 0;
     
     /**
      * @var int
      */
-    private $weight;
+    private $weight = 0;
     
     /**
      * Get ID

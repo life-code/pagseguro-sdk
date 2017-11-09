@@ -26,37 +26,37 @@ class Customer implements CustomerContract
     /**
      * @var string
      */
-    private $email;
+    private $email = '';
 
     /**
      * @var string
      */
-    private $name;
+    private $name = '';
 
     /**
      * @var string
      */
-    private $ip;
+    private $ip = '';
 
     /**
      * @var string
      */
-    private $hash;
+    private $hash = '';
 
     /**
      * @var PagSeguro\Contracts\Phone
      */
-    private $phone;
+    private $phone = '';
 
     /**
      * @var PagSeguro\Contracts\Address
      */
-    private $address;
+    private $address = '';
     
     /**
      * @var PagSeguro\Contracts\Documents
      */
-    private $documents;
+    private $documents = '';
     
     /**
      * Get email

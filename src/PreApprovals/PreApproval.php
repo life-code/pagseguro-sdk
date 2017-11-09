@@ -23,22 +23,22 @@ class PreApproval
     /**
      * @var \PagSeguro\Credentials\AccountCredentials
      */
-    private $credentials;
+    private $credentials = '';
     
     /**
      * @var \PagSeguro\Credentials\Environment
      */
-    private $env;
+    private $env = '';
     
     /**
      * @var string
      */
-    private $plan;
+    private $plan = '';
     
     /**
      * @var string
      */
-    private $reference;
+    private $reference = '';
     
     /**
      * Make new instance of this class

@@ -14,14 +14,14 @@ class AccountCredentials
      * 
      * @var string
      */
-    private $email;
+    private $email = '';
     
     /**
      * Token pagSeguro
      * 
      * @var string
      */
-    private $token;
+    private $token = '';
     
     /**
      * Make new instance of this class

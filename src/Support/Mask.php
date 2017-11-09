@@ -74,9 +74,9 @@ trait Mask
         }
         
         if (strlen($phone) === 9) {
-            return sprintf("%s-%s", substr($phone, 0, 5), substr($phone, 8));
+            return sprintf("%s-%s", substr($phone, 0, 5), substr($phone, 5));
         }
         
-        return sprintf("%s-%s", substr($phone, 0, 4), substr($phone, 7));
+        return sprintf("%s-%s", substr($phone, 0, 4), substr($phone, 4));
     }
 }

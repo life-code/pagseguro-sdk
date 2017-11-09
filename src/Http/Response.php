@@ -9,7 +9,7 @@ abstract class Response implements ResponseContract
     /**
      * @var int
      */
-    protected $status;
+    protected $status = 0;
     
     /**
      * @var array
@@ -19,12 +19,12 @@ abstract class Response implements ResponseContract
     /**
      * @var array
      */
-    protected $info;
+    protected $info = [];
     
     /**
      * @var array
      */
-    protected $errors;
+    protected $errors = [];
     
     /**
      * Get status

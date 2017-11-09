@@ -21,17 +21,17 @@ class Shipping
     /**
      * @var \PagSeguro\Contracts\Address
      */
-    private $address;
+    private $address = '';
 
     /**
      * @var float
      */
-    private $cost;
+    private $cost = '';
     
     /**
      * @var int
      */
-    private $type;
+    private $type = '';
     
     /**
      * Get address

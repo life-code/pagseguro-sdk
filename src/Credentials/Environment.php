@@ -9,7 +9,7 @@ class Environment
     /**
      * @var string
      */ 
-    private $env_path = __DIR__ . '/../../../../';
+    private $env_path = __DIR__ . '/../../../../../';
     
     /**
      * Make new instance of this class

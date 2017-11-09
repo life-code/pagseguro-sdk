@@ -58,4 +58,35 @@ class CustomerTest extends TestCase
     {
         $this->instance()->setEmail('vinicius_puglies');
     }
+    
+    /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testSetName()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setName('Vinicius Pugliesi'));
+    }
+    
+    /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testGetName()
+    {
+        $this->assertEquals('Vinicius Pugliesi', $this->instance()->setName('Vinicius Pugliesi')->getName());
+    }
+    
+    /**
+     * Test instance
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testTrowSetName()
+    {
+        $this->instance()->setName('Vinicius');
+    }
 }

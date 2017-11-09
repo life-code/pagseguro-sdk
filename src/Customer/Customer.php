@@ -87,6 +87,33 @@ class Customer implements CustomerContract
     }
     
     /**
+     * Get name
+     * 
+     * @return string
+     */
+    public function getName() : string
+    {
+        return $this->name;
+    }
+    
+    /**
+     * Set name
+     * 
+     * @param string $name
+     * @return $this
+     */
+    public function setName(string $name)
+    {
+        if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
+            throw new PagseguroException("The [$name] isn't a valid name. Required first and last name");
+        }
+        
+        $this->name = $name;
+        
+        return $this;
+    }
+    
+    /**
      * Get ip
      * 
      * @return string
@@ -128,33 +155,6 @@ class Customer implements CustomerContract
     public function setHash(string $hash)
     {
         $this->hash = $hash;
-        
-        return $this;
-    }
-    
-    /**
-     * Get name
-     * 
-     * @return string
-     */
-    public function getName() : string
-    {
-        return $this->name;
-    }
-    
-    /**
-     * Set name
-     * 
-     * @param string $name
-     * @return $this
-     */
-    public function setName(string $name)
-    {
-        if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
-            throw new PagseguroException("The [$name] isn't a valid name. Required first and last name");
-        }
-        
-        $this->name = $name;
         
         return $this;
     }

@@ -2,8 +2,26 @@
 
 namespace PagSeguro\Credentials;
 
+use Dotenv\Dotenv;
+
 class Environment
 {
+    /**
+     * @var string
+     */ 
+    private $env_path = __DIR__ . '/../../../../';
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @return void
+     */ 
+    public function __construct()
+    {
+        $dotenv = new Dotenv($this->env_path);
+        $dotenv->load();
+    }
+    
     /**
      * Get environment
      * 
@@ -11,7 +29,7 @@ class Environment
      */
     public function getEnv()
     {
-        return strtoupper(env('PAGSEGURO_ENV'));
+        return strtoupper(env('PAGSEGURO_ENV', 'PRODUCTION'));
     }
     
     /**
@@ -21,7 +39,7 @@ class Environment
      */
     public function getEmail()
     {
-        return env('PAGSEGURO_EMAIL');
+        return env('PAGSEGURO_EMAIL', '');
     }
     
     /**
@@ -31,7 +49,7 @@ class Environment
      */
     public function getToken()
     {
-        return env('PAGSEGURO_TOKEN_' . $this->getEnv());
+        return env('PAGSEGURO_TOKEN_' . $this->getEnv(), '');
     }
     
     /**
@@ -41,7 +59,7 @@ class Environment
      */
     public function getAppID()
     {
-        return env('PAGSEGURO_APP_ID_' . $this->getEnv());
+        return env('PAGSEGURO_APP_ID_' . $this->getEnv(), '');
     }
     
     /**
@@ -51,7 +69,7 @@ class Environment
      */
     public function getAppKey()
     {
-        return env('PAGSEGURO_APP_KEY_' . $this->getEnv());
+        return env('PAGSEGURO_APP_KEY_' . $this->getEnv(), '');
     }
     
     /**
@@ -61,7 +79,7 @@ class Environment
      */
     public function getUrl()
     {
-        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_URL'));
+        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_URL', ''));
     }
     
     /**
@@ -71,7 +89,7 @@ class Environment
      */
     public function getScript()
     {
-        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_SCRIPT'));
+        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_SCRIPT', ''));
     }
     
     /**

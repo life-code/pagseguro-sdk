@@ -2,10 +2,18 @@
 
 use PHPUnit\Framework\TestCase;
 
-use PagSeguro\Contracts\Customer as CustomerContract;
-use PagSeguro\Contracts\Phone as PhoneContract;
 use PagSeguro\Customer\Customer;
+use PagSeguro\Contracts\Customer as CustomerContract;
+
 use PagSeguro\Customer\Phone;
+use PagSeguro\Contracts\Phone as PhoneContract;
+
+use PagSeguro\Customer\Address;
+use PagSeguro\Contracts\Address as AddressContract;
+
+use PagSeguro\Customer\Documents;
+use PagSeguro\Contracts\Documents as DocumentsContract;
+
 use PagSeguro\Exceptions\PagseguroException;
 
 class CustomerTest extends TestCase
@@ -28,6 +36,26 @@ class CustomerTest extends TestCase
     public static function phoneInstance()
     {
         return new Phone();
+    }
+    
+    /**
+     * Address Instance
+     * 
+     * @return \PagSeguro\Contracts\Address
+     */
+    public static function addressInstance()
+    {
+        return new Address();
+    }
+    
+    /**
+     * Documents Instance
+     * 
+     * @return \PagSeguro\Contracts\Documents
+     */
+    public static function documentsInstance()
+    {
+        return new Documents();
     }
     
     /**
@@ -163,5 +191,45 @@ class CustomerTest extends TestCase
     public function testGetPhone()
     {
         $this->assertInstanceOf(PhoneContract::class, $this->instance()->setPhone($this->phoneInstance())->getPhone());
+    }
+    
+    /**
+     * Test set address
+     *
+     * @return void
+     */
+    public function testSetAddress()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setAddress($this->addressInstance()));
+    }
+    
+    /**
+     * Test get address
+     *
+     * @return void
+     */
+    public function testGetAddress()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setAddress($this->addressInstance())->getAddress());
+    }
+    
+    /**
+     * Test set documents
+     *
+     * @return void
+     */
+    public function testSetDocuments()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setDocuments($this->documentsInstance()));
+    }
+    
+    /**
+     * Test get documents
+     *
+     * @return void
+     */
+    public function testGetDocuments()
+    {
+        $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setDocuments($this->documentsInstance())->getDocuments());
     }
 }

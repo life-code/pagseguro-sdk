@@ -36,7 +36,7 @@ class Request extends BaseRequest
     {
         return [
             'cache-control: no-cache',
-            'Content-Type: application/xml',
+            'Content-Type: ' . self::XML,
         ];
     }
     

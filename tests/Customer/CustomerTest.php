@@ -3,7 +3,9 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Contracts\Customer as CustomerContract;
+use PagSeguro\Contracts\Phone as PhoneContract;
 use PagSeguro\Customer\Customer;
+use PagSeguro\Customer\Phone;
 use PagSeguro\Exceptions\PagseguroException;
 
 class CustomerTest extends TestCase
@@ -13,9 +15,19 @@ class CustomerTest extends TestCase
      * 
      * @return \PagSeguro\Contracts\Customer
      */
-    public function instance()
+    public static function instance()
     {
         return new Customer();
+    }
+    
+    /**
+     * Phone Instance
+     * 
+     * @return \PagSeguro\Contracts\Phone
+     */
+    public static function phoneInstance()
+    {
+        return new Phone();
     }
     
     /**
@@ -131,5 +143,25 @@ class CustomerTest extends TestCase
             'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs', 
             $this->instance()->setHash('Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs')->getHash()
         );
+    }
+    
+    /**
+     * Test set phone
+     *
+     * @return void
+     */
+    public function testSetPhone()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setPhone($this->phoneInstance()));
+    }
+    
+    /**
+     * Test get phone
+     *
+     * @return void
+     */
+    public function testGetPhone()
+    {
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setPhone($this->phoneInstance())->getPhone());
     }
 }

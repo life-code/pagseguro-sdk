@@ -89,4 +89,24 @@ class CustomerTest extends TestCase
     {
         $this->instance()->setName('Vinicius');
     }
+    
+    /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testSetIp()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setIp('191.13.60.30'));
+    }
+    
+    /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testGetIp()
+    {
+        $this->assertEquals('191.13.60.30', $this->instance()->setIp('191.13.60.30')->getIp());
+    }
 }

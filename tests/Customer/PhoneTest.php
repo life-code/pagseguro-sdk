@@ -39,7 +39,7 @@ class PhoneTest extends TestCase
     }
     
     /**
-     * Test throw set AreaCode
+     * Test throw set area code
      *
      * @expectedException \PagSeguro\Exceptions\PagseguroException
      * @return void
@@ -48,5 +48,37 @@ class PhoneTest extends TestCase
     {
         $this->instance()->setAreaCode('134');
         $this->instance()->setAreaCode('1');
+    }
+    
+    /**
+     * Test set number
+     *
+     * @return void
+     */
+    public function testSetNumber()
+    {
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setNumber('997213459'));
+    }
+    
+    /**
+     * Test get number
+     *
+     * @return void
+     */
+    public function testGetNumber()
+    {
+        $this->assertEquals('997213459', $this->instance()->setNumber('997213459')->getNumber());
+    }
+    
+    /**
+     * Test throw set number
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetNumber()
+    {
+        $this->instance()->setNumber('9972134');
+        $this->instance()->setNumber('99721345954');
     }
 }

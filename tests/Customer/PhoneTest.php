@@ -81,4 +81,17 @@ class PhoneTest extends TestCase
         $this->instance()->setNumber('9972134');
         $this->instance()->setNumber('99721345954');
     }
+    
+    /**
+     * Test to string
+     *
+     * @return void
+     */
+    public function testToString()
+    {
+        $this->assertEquals('(13) 99721-3459', $this->instance()->setAreaCode('13')->setNumber('997213459')->toString());
+        $this->assertEquals('(13) 9721-3459', $this->instance()->setAreaCode('13')->setNumber('97213459')->toString());
+        $this->assertEquals('9721-3459', $this->instance()->setNumber('97213459')->toString());
+        $this->assertEquals('13997213459', $this->instance()->setAreaCode('13')->setNumber('997213459')->toString(false));
+    }
 }

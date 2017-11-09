@@ -65,6 +65,7 @@ class Request extends BaseRequest
         return [
             'cache-control: no-cache',
             'Content-Type: ' . self::JSON,
+            'Accept: application/vnd.pagseguro.com.br.v3+json;charset=ISO-8859-1',
         ];
     }
     

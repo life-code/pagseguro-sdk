@@ -29,7 +29,7 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test set email
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test get email
      *
      * @return void
      */
@@ -49,18 +49,18 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test throw set email
      *
      * @expectedException \PagSeguro\Exceptions\PagseguroException
      * @return void
      */
-    public function testTrowSetEmail()
+    public function testThrowSetEmail()
     {
         $this->instance()->setEmail('vinicius_puglies');
     }
     
     /**
-     * Test instance
+     * Test set name
      *
      * @return void
      */
@@ -70,7 +70,7 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test get name
      *
      * @return void
      */
@@ -80,18 +80,18 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test throw set name
      *
      * @expectedException \PagSeguro\Exceptions\PagseguroException
      * @return void
      */
-    public function testTrowSetName()
+    public function testThrowSetName()
     {
         $this->instance()->setName('Vinicius');
     }
     
     /**
-     * Test instance
+     * Test set IP
      *
      * @return void
      */
@@ -101,12 +101,35 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test get IP
      *
      * @return void
      */
     public function testGetIp()
     {
         $this->assertEquals('191.13.60.30', $this->instance()->setIp('191.13.60.30')->getIp());
+    }
+    
+    /**
+     * Test set hash
+     *
+     * @return void
+     */
+    public function testSetHash()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setHash('Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs'));
+    }
+    
+    /**
+     * Test get hash
+     *
+     * @return void
+     */
+    public function testGetHash()
+    {
+        $this->assertEquals(
+            'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs', 
+            $this->instance()->setHash('Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs')->getHash()
+        );
     }
 }

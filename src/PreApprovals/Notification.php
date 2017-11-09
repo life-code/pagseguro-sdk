@@ -4,8 +4,7 @@ namespace PagSeguro\PreApprovals;
 
 use PagSeguro\Credentials\AccountCredentials;
 use PagSeguro\Credentials\Environment;
-use PagSeguro\Http\PreApprovals\Notifications\Request;
-use PagSeguro\Http\PreApprovals\Notifications\Request;
+use PagSeguro\Http\Notifications\Request;
 
 /**
  * PagSeguro SDK

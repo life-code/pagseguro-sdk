@@ -66,11 +66,11 @@ trait Mask
     public function phoneMask(string $phone) : string
     {
         if (strlen($phone) === 11) {
-            return sprintf("(%s) %s-%s", substr($phone, 0, 2), substr($phone, 3, 5), substr($phone, 8));
+            return sprintf("(%s) %s-%s", substr($phone, 0, 2), substr($phone, 2, 5), substr($phone, 7));
         }
         
         if (strlen($phone) === 10) {
-            return sprintf("(%s) %s-%s", substr($phone, 0, 2), substr($phone, 3, 4), substr($phone, 7));
+            return sprintf("(%s) %s-%s", substr($phone, 0, 2), substr($phone, 2, 4), substr($phone, 6));
         }
         
         if (strlen($phone) === 9) {

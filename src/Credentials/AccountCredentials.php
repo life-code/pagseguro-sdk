@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Credentials;
 
-use PagSeguro\Contracts\AccountCredentials as AccountCredentialsContract;
+use PagSeguro\Contracts\Credentials\AccountCredentials as AccountCredentialsContract;
 use PagSeguro\Support\Validator;
 use PagSeguro\Exceptions\PagSeguroException;
 

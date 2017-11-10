@@ -5,22 +5,23 @@ namespace PagSeguro\Support;
 use PagSeguro\Credentials\AccountCredentials;
 use PagSeguro\Credentials\Environment;
 
+
 trait Factory
 {
     /**
-     * @var \PagSeguro\Credentials\Environment
+     * @var \PagSeguro\Credentials\Credentials\Environment
      */ 
     private static $env;
     
     /**
-     * @var \PagSeguro\Credentials\AccountCredentials
+     * @var \PagSeguro\Contracts\Credentials\AccountCredentials
      */ 
     private static $credentials;
     
     /**
      * Get env
      * 
-     * return \PagSeguro\Credentials\Environment
+     * return \PagSeguro\Credentials\Credentials\Environment
      */ 
     public static function getEnv()
     {
@@ -34,7 +35,7 @@ trait Factory
     /**
      * Get credentials
      * 
-     * return \PagSeguro\Credentials\AccountCredentials
+     * return \PagSeguro\Contracts\Credentials\AccountCredentials
      */ 
     public static function getCredentials()
     {

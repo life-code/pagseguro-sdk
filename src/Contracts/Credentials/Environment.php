@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Contracts;
+namespace PagSeguro\Contracts\Credentials;
 
 /**
  * PagSeguro SDK
@@ -12,23 +12,21 @@ namespace PagSeguro\Contracts;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-interface AccountCredentials
+interface Environment
 {
+    /**
+     * Get environment
+     * 
+     * @return string
+     */
+    public function getEnv() : string;
+
     /**
      * Get email
      * 
      * @return string
      */
     public function getEmail() : string;
-
-    /**
-     * Set email
-     * 
-     * @param string $email
-     * @throws \PagSeguro\Exceptions\PagSeguroException
-     * @return $this
-     */
-    public function setEmail(string $email);
 
     /**
      * Get token
@@ -38,24 +36,30 @@ interface AccountCredentials
     public function getToken() : string;
 
     /**
-     * Set token
-     * 
-     * @param string $token
-     * @return $this
-     */
-    public function setToken(string $token);
-
-    /**
-     * Get attributes to array
-     * 
-     * @return array
-     */
-    public function toArray() : array;
-
-    /**
-     * Get attributes to string
+     * Get token
      * 
      * @return string
      */
-    public function toString() : string;
+    public function getAppID() : string;
+
+    /**
+     * Get token
+     * 
+     * @return string
+     */
+    public function getAppKey() : string;
+
+    /**
+     * Get URL
+     * 
+     * @return string
+     */
+    public function getUrl() : string;
+
+    /**
+     * Get token
+     * 
+     * @return string
+     */
+    public function getScript() : string;
 }

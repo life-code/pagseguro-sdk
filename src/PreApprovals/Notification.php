@@ -2,8 +2,8 @@
 
 namespace PagSeguro\PreApprovals;
 
-use PagSeguro\Contracts\AccountCredentials;
-use PagSeguro\Contracts\Environment;
+use PagSeguro\Contracts\Credentials\AccountCredentials;
+use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Http\Notifications\Request;
 
 /**
@@ -19,20 +19,20 @@ use PagSeguro\Http\Notifications\Request;
 class Notification
 {
     /**
-     * @var \PagSeguro\Contracts\AccountCredentials
+     * @var \PagSeguro\Contracts\Credentials\AccountCredentials
      */
     private $credentials = '';
     
     /**
-     * @var \PagSeguro\Contracts\Environment
+     * @var \PagSeguro\Contracts\Credentials\Environment
      */
     private $env = '';
     
     /**
      * Make new instance of this class.
      * 
-     * @param \PagSeguro\Contracts\AccountCredentials $credentials
-     * @param \PagSeguro\Contracts\Environment $env
+     * @param \PagSeguro\Contracts\Credentials\AccountCredentials $credentials
+     * @param \PagSeguro\Contracts\Credentials\Environment $env
      * @return void
      */
     public function __construct(AccountCredentials $credentials, Environment $env)

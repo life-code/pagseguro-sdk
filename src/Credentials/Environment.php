@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Credentials;
 
-use PagSeguro\Contracts\Environment as EnvironmentContract;
+use PagSeguro\Contracts\Credentials\Environment as EnvironmentContract;
 use Dotenv\Dotenv;
 
 class Environment implements EnvironmentContract

@@ -27,7 +27,7 @@ class PagSeguro
      * @var string
      */
     const VERSION = '0.8.5';
-
+    
     /**
      * Get the version number of the application.
      *
@@ -42,7 +42,7 @@ class PagSeguro
      * Handles pagseguro session instance
      * 
      * @return \PagSeguro\Session\Session
-     */ 
+     */
     public static function session()
     {
         $env         = self::getEnv();
@@ -55,7 +55,7 @@ class PagSeguro
      * Handles pagseguro pre-approvals instance
      * 
      * @return \PagSeguro\PreApprovals\PreApproval
-     */ 
+     */
     public static function preApproval()
     {
         $env         = self::getEnv();
@@ -68,7 +68,7 @@ class PagSeguro
      * Handles pagseguro notifications instance
      * 
      * @return \PagSeguro\PreApprovals\Notification
-     */ 
+     */
     public static function notification()
     {
         $env         = self::getEnv();

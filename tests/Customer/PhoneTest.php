@@ -25,7 +25,7 @@ class PhoneTest extends TestCase
      */
     public function testSetAreaCode()
     {
-        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setAreaCode('13'));
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setAreaCode('82'));
     }
     
     /**
@@ -35,7 +35,7 @@ class PhoneTest extends TestCase
      */
     public function testGetAreaCode()
     {
-        $this->assertEquals('13', $this->instance()->setAreaCode('13')->getAreaCode());
+        $this->assertEquals('82', $this->instance()->setAreaCode('82')->getAreaCode());
     }
     
     /**
@@ -57,7 +57,7 @@ class PhoneTest extends TestCase
      */
     public function testSetNumber()
     {
-        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setNumber('997213459'));
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setNumber('28634136'));
     }
     
     /**
@@ -67,7 +67,7 @@ class PhoneTest extends TestCase
      */
     public function testGetNumber()
     {
-        $this->assertEquals('997213459', $this->instance()->setNumber('997213459')->getNumber());
+        $this->assertEquals('28634136', $this->instance()->setNumber('28634136')->getNumber());
     }
     
     /**
@@ -79,7 +79,7 @@ class PhoneTest extends TestCase
     public function testThrowSetNumber()
     {
         $this->instance()->setNumber('9972134');
-        $this->instance()->setNumber('99721345954');
+        $this->instance()->setNumber('2863413654');
     }
     
     /**
@@ -89,10 +89,10 @@ class PhoneTest extends TestCase
      */
     public function testToString()
     {
-        $this->assertEquals('(13) 99721-3459', $this->instance()->setAreaCode('13')->setNumber('997213459')->toString());
-        $this->assertEquals('(13) 9721-3459', $this->instance()->setAreaCode('13')->setNumber('97213459')->toString());
-        $this->assertEquals('99721-3459', $this->instance()->setNumber('997213459')->toString());
-        $this->assertEquals('9721-3459', $this->instance()->setNumber('97213459')->toString());
-        $this->assertEquals('13997213459', $this->instance()->setAreaCode('13')->setNumber('997213459')->toString(false));
+        $this->assertEquals('(82) 2863-4136', $this->instance()->setAreaCode('82')->setNumber('28634136')->toString());
+        $this->assertEquals('(82) 98653-8036', $this->instance()->setAreaCode('82')->setNumber('986538036')->toString());
+        $this->assertEquals('2863-4136', $this->instance()->setNumber('28634136')->toString());
+        $this->assertEquals('98653-8036', $this->instance()->setNumber('986538036')->toString());
+        $this->assertEquals('8228634136', $this->instance()->setAreaCode('82')->setNumber('28634136')->toString(false));
     }
 }

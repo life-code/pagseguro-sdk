@@ -29,9 +29,9 @@ interface Response
     /**
      * Get error
      * 
-     * @return array
+     * @return \PagSeguro\Contracts\Http\ErrorBag
      */
-    public function getErrors() : array;
+    public function getErrors();
     
     /**
      * Has errors

@@ -3,6 +3,8 @@
 namespace Pagseguro\Http;
 
 use PagSeguro\Contracts\Http\ErrorBag as ErrorBagContracts;
+use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Languages\Language;
 
 /**
  * PagSeguro SDK
@@ -18,15 +20,31 @@ class ErrorBag implements ErrorBagContracts
 {
     /**
      * @var array
-     */ 
-    private $data;
+     */
+    private $data = [];
+    
+    /**
+     * @var \PagSeguro\Languages\Language
+     */
+    private $language;
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @param \PagSeguro\Contracts\Credentials\Environment $env
+     * @return void
+     */
+    public function __construct(Environment $env)
+    {
+        $this->language = new Language($env, 'PreApprovals');
+    }
     
     /**
      * Set data
      * 
      * @param array $errors
      * @return $this
-     */ 
+     */
     public function setData(array $errors)
     {
         $exchange = [];
@@ -34,7 +52,7 @@ class ErrorBag implements ErrorBagContracts
         foreach ($errors as $key => $value) {
             $exchange[] = (object) [
                 'code'  => $key,
-                'value' => $value,
+                'value' => $this->language->translate($key, $value),
             ];
         }
         

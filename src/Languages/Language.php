@@ -3,7 +3,6 @@
 namespace PagSeguro\Languages;
 
 use PagSeguro\Exceptions\PagseguroException;
-use PagSeguro\Languages\Type;
 use PagSeguro\Contracts\Credentials\Environment;
 
 /**
@@ -85,10 +84,6 @@ class Language
     public function getTranslations() : array
     {
         $lang = $this->env->getLocation();
-        
-        if (!Type::check($lang)) {
-            throw new PagSeguroException("The lang [$type] ins't a valid language.");
-        }
         
         $file = $this->base_path . $lang . '.php';
         

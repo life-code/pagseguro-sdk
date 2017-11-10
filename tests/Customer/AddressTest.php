@@ -157,4 +157,24 @@ class AddressTest extends TestCase
     {
         $this->assertEquals('155', $this->instance()->setNumber('155')->getNumber());
     }
+    
+    /**
+     * Test set complement
+     *
+     * @return void
+     */
+    public function testSetComplement()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setComplement('apt. 306'));
+    }
+    
+    /**
+     * Test get complement
+     *
+     * @return void
+     */
+    public function testGetComplement()
+    {
+        $this->assertEquals('apt. 306', $this->instance()->setComplement('apt. 306')->getComplement());
+    }
 }

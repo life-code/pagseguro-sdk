@@ -137,4 +137,24 @@ class AddressTest extends TestCase
     {
         $this->assertEquals('Rua Dom João VI', $this->instance()->setStreet('Rua Dom João VI')->getStreet());
     }
+    
+    /**
+     * Test set number
+     *
+     * @return void
+     */
+    public function testSetNumber()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setNumber('155'));
+    }
+    
+    /**
+     * Test get number
+     *
+     * @return void
+     */
+    public function testGetNumber()
+    {
+        $this->assertEquals('155', $this->instance()->setNumber('155')->getNumber());
+    }
 }

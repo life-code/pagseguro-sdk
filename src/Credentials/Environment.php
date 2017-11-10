@@ -126,6 +126,6 @@ class Environment implements EnvironmentContract
      */
     public function getLocation() : string
     {
-        return env('PAGSEGURO_LOCATION');
+        return env('PAGSEGURO_LOCATION', '');
     }
 }

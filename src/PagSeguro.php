@@ -11,7 +11,7 @@ use PagSeguro\PreApprovals\Notification;
  * PagSeguro SDK
  * 
  * @type        library
- * @version     0.8.5
+ * @version     0.8.6
  * @package     life-code/pagseguro-sdk
  * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
@@ -26,7 +26,7 @@ class PagSeguro
      *
      * @var string
      */
-    const VERSION = '0.8.5';
+    const VERSION = '0.8.6';
     
     /**
      * Get the version number of the application.

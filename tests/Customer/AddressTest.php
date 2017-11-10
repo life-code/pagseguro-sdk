@@ -35,9 +35,26 @@ class AddressTest extends TestCase
      */
     public function testGetCountry()
     {
-        $this->assertEquals(
-            'BRA', 
-            $this->instance()->setCountry('BRA')->getCountry()
-        );
+        $this->assertEquals('BRA', $this->instance()->setCountry('BRA')->getCountry());
+    }
+    
+    /**
+     * Test set state
+     *
+     * @return void
+     */
+    public function testSetState()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setState('SP'));
+    }
+    
+    /**
+     * Test get state
+     *
+     * @return void
+     */
+    public function testGetState()
+    {
+        $this->assertEquals('SP', $this->instance()->setState('SP')->getState());
     }
 }

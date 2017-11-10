@@ -19,14 +19,14 @@ class Environment implements EnvironmentContract
 {
     /**
      * @var string
-     */ 
+     */
     private $env_path = __DIR__ . '/../../../../../';
     
     /**
      * Make new instance of this class
      * 
      * @return void
-     */ 
+     */
     public function __construct()
     {
         $dotenv = new Dotenv($this->env_path);
@@ -107,7 +107,7 @@ class Environment implements EnvironmentContract
      * Get replace
      * 
      * @return string
-     */ 
+     */
     private function getReplace() : string
     {
         $replace = '';
@@ -117,5 +117,15 @@ class Environment implements EnvironmentContract
         }
         
         return $replace;
+    }
+    
+    /**
+     * Get location
+     * 
+     * @return string
+     */
+    public function getLocation() : string
+    {
+        return env('PAGSEGURO_LOCATION');
     }
 }

@@ -69,16 +69,6 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set email
-     *
-     * @return void
-     */
-    public function testSetEmail()
-    {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setEmail('vinicius_puglies@outlook.com'));
-    }
-    
-    /**
      * Test get email
      *
      * @return void
@@ -86,6 +76,16 @@ class CustomerTest extends TestCase
     public function testGetEmail()
     {
         $this->assertEquals('vinicius_puglies@outlook.com', $this->instance()->setEmail('vinicius_puglies@outlook.com')->getEmail());
+    }
+    
+    /**
+     * Test set email
+     *
+     * @return void
+     */
+    public function testSetEmail()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setEmail('vinicius_puglies@outlook.com'));
     }
     
     /**
@@ -100,16 +100,6 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set name
-     *
-     * @return void
-     */
-    public function testSetName()
-    {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setName('Vinicius Pugliesi'));
-    }
-    
-    /**
      * Test get name
      *
      * @return void
@@ -117,6 +107,16 @@ class CustomerTest extends TestCase
     public function testGetName()
     {
         $this->assertEquals('Vinicius Pugliesi', $this->instance()->setName('Vinicius Pugliesi')->getName());
+    }
+    
+    /**
+     * Test set name
+     *
+     * @return void
+     */
+    public function testSetName()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setName('Vinicius Pugliesi'));
     }
     
     /**
@@ -131,16 +131,6 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set IP
-     *
-     * @return void
-     */
-    public function testSetIp()
-    {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setIp('191.13.60.30'));
-    }
-    
-    /**
      * Test get IP
      *
      * @return void
@@ -151,13 +141,13 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set hash
+     * Test set IP
      *
      * @return void
      */
-    public function testSetHash()
+    public function testSetIp()
     {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setHash('Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs'));
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setIp('191.13.60.30'));
     }
     
     /**
@@ -174,13 +164,13 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set phone
+     * Test set hash
      *
      * @return void
      */
-    public function testSetPhone()
+    public function testSetHash()
     {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setPhone($this->phoneInstance()));
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setHash('Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs'));
     }
     
     /**
@@ -194,13 +184,13 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set address
+     * Test set phone
      *
      * @return void
      */
-    public function testSetAddress()
+    public function testSetPhone()
     {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setAddress($this->addressInstance()));
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setPhone($this->phoneInstance()));
     }
     
     /**
@@ -214,13 +204,13 @@ class CustomerTest extends TestCase
     }
     
     /**
-     * Test set documents
+     * Test set address
      *
      * @return void
      */
-    public function testSetDocuments()
+    public function testSetAddress()
     {
-        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setDocuments($this->documentsInstance()));
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setAddress($this->addressInstance()));
     }
     
     /**
@@ -231,5 +221,15 @@ class CustomerTest extends TestCase
     public function testGetDocuments()
     {
         $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setDocuments($this->documentsInstance())->getDocuments());
+    }
+    
+    /**
+     * Test set documents
+     *
+     * @return void
+     */
+    public function testSetDocuments()
+    {
+        $this->assertInstanceOf(CustomerContract::class, $this->instance()->setDocuments($this->documentsInstance()));
     }
 }

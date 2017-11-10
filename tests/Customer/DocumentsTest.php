@@ -19,13 +19,13 @@ class DocumentsTest extends TestCase
     }
     
     /**
-     * Test set item
+     * Test instance
      *
      * @return void
      */
-    public function testSetItem()
+    public function testInstance()
     {
-        $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setItem(DocumentsContract::CPF, '24227052009'));
+        $this->assertInstanceOf(DocumentsContract::class, $this->instance());
     }
     
     /**
@@ -39,6 +39,16 @@ class DocumentsTest extends TestCase
             '24227052009', 
             $this->instance()->setItem(DocumentsContract::CPF, '24227052009')->getItem(DocumentsContract::CPF)
         );
+    }
+    
+    /**
+     * Test set item
+     *
+     * @return void
+     */
+    public function testSetItem()
+    {
+        $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setItem(DocumentsContract::CPF, '24227052009'));
     }
     
     /**

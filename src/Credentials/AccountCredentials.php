@@ -2,10 +2,11 @@
 
 namespace PagSeguro\Credentials;
 
+use PagSeguro\Contracts\AccountCredentials as AccountCredentialsContract;
 use PagSeguro\Support\Validator;
 use PagSeguro\Exceptions\PagSeguroException;
 
-class AccountCredentials
+class AccountCredentials implements AccountCredentialsContract
 {
     use Validator;
     

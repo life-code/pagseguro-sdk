@@ -25,7 +25,7 @@ class DocumentsTest extends TestCase
      */
     public function testSetItem()
     {
-        $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setItem(DocumentsContract::CPF, '44827813809'));
+        $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setItem(DocumentsContract::CPF, '24227052009'));
     }
     
     /**
@@ -36,8 +36,8 @@ class DocumentsTest extends TestCase
     public function testGetItem()
     {
         $this->assertEquals(
-            '44827813809', 
-            $this->instance()->setItem(DocumentsContract::CPF, '44827813809')->getItem(DocumentsContract::CPF)
+            '24227052009', 
+            $this->instance()->setItem(DocumentsContract::CPF, '24227052009')->getItem(DocumentsContract::CPF)
         );
     }
     
@@ -49,6 +49,6 @@ class DocumentsTest extends TestCase
      */
     public function testThrowSetItem()
     {
-        $this->instance()->setItem('RG', '44827813809');
+        $this->instance()->setItem('RG', '24227052009');
     }
 }

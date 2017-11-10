@@ -19,7 +19,7 @@ class DocumentsTest extends TestCase
     }
     
     /**
-     * Test set area code
+     * Test set item
      *
      * @return void
      */
@@ -29,7 +29,7 @@ class DocumentsTest extends TestCase
     }
     
     /**
-     * Test get area code
+     * Test get item
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class DocumentsTest extends TestCase
     }
     
     /**
-     * Test throw set area code
+     * Test throw set item
      *
      * @expectedException \PagSeguro\Exceptions\PagseguroException
      * @return void

@@ -85,9 +85,9 @@ abstract class Response implements ResponseContract
     /**
      * Get errors
      * 
-     * @return array
+     * @return \PagSeguro\Contracts\Http\ErrorBag
      */
-    public function getErrors() : array
+    public function getErrors()
     {
         return $this->errors;
     }
@@ -110,16 +110,11 @@ abstract class Response implements ResponseContract
      */
     public function setErrors(array $errors)
     {
-        $exchange = [];
-        
-        foreach ($errors as $key => $value) {
-            $exchange[] = (object) [
-                'code'  => $key,
-                'value' => $value,
-            ];
+        if (!$this->errors) {
+            $this->errors = new ErrorBag();
         }
         
-        $this->errors = $exchange;
+        $this->errors->setData($errors);
         
         return $this;
     }

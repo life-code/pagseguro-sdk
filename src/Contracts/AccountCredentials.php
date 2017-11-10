@@ -12,7 +12,7 @@ namespace PagSeguro\Contracts;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-interface Credentials
+interface AccountCredentials
 {
     // 
 }

@@ -19,16 +19,6 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set country
-     *
-     * @return void
-     */
-    public function testSetCountry()
-    {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCountry('BRA'));
-    }
-    
-    /**
      * Test get country
      *
      * @return void
@@ -39,13 +29,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set state
+     * Test set country
      *
      * @return void
      */
-    public function testSetState()
+    public function testSetCountry()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setState('RS'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCountry('BRA'));
     }
     
     /**
@@ -59,13 +49,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set city
+     * Test set state
      *
      * @return void
      */
-    public function testSetCity()
+    public function testSetState()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCity('Alvorada'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setState('RS'));
     }
     
     /**
@@ -79,13 +69,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set cep
+     * Test set city
      *
      * @return void
      */
-    public function testSetCep()
+    public function testSetCity()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCep('57040644'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCity('Alvorada'));
     }
     
     /**
@@ -99,13 +89,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set district
+     * Test set cep
      *
      * @return void
      */
-    public function testSetDistrict()
+    public function testSetCep()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setDistrict('Jacintinho'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCep('57040644'));
     }
     
     /**
@@ -119,13 +109,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set street
+     * Test set district
      *
      * @return void
      */
-    public function testSetStreet()
+    public function testSetDistrict()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setStreet('Rua Dom João VI'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setDistrict('Jacintinho'));
     }
     
     /**
@@ -139,13 +129,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set number
+     * Test set street
      *
      * @return void
      */
-    public function testSetNumber()
+    public function testSetStreet()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setNumber('155'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setStreet('Rua Dom João VI'));
     }
     
     /**
@@ -159,13 +149,13 @@ class AddressTest extends TestCase
     }
     
     /**
-     * Test set complement
+     * Test set number
      *
      * @return void
      */
-    public function testSetComplement()
+    public function testSetNumber()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setComplement('apt. 306'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setNumber('155'));
     }
     
     /**
@@ -176,5 +166,15 @@ class AddressTest extends TestCase
     public function testGetComplement()
     {
         $this->assertEquals('apt. 306', $this->instance()->setComplement('apt. 306')->getComplement());
+    }
+    
+    /**
+     * Test set complement
+     *
+     * @return void
+     */
+    public function testSetComplement()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setComplement('apt. 306'));
     }
 }

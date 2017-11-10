@@ -19,6 +19,16 @@ class AddressTest extends TestCase
     }
     
     /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testInstance()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance());
+    }
+    
+    /**
      * Test get country
      *
      * @return void

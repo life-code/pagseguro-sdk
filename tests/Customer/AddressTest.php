@@ -97,4 +97,24 @@ class AddressTest extends TestCase
     {
         $this->assertEquals('57040644', $this->instance()->setCep('57040644')->getCep());
     }
+    
+    /**
+     * Test set district
+     *
+     * @return void
+     */
+    public function testSetDistrict()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setDistrict('Jacintinho'));
+    }
+    
+    /**
+     * Test get district
+     *
+     * @return void
+     */
+    public function testGetDistrict()
+    {
+        $this->assertEquals('Jacintinho', $this->instance()->setDistrict('Jacintinho')->getDistrict());
+    }
 }

@@ -30,4 +30,89 @@ class ErrorBag implements ErrorBagContracts
         
         $this->data = $exchange;
     }
+    
+    /**
+     * Get first error
+     * 
+     * @return bool | object
+     */
+    public function first()
+    {
+        $values = array_values($this->all());
+        
+        return $values[0] ?? false;
+    }
+    
+    /**
+     * Get last error
+     * 
+     * @return bool | object
+     */
+    public function last()
+    {
+        $values = array_values($this->all());
+        
+        $reverse = array_reverse($values);
+        
+        return $reverse[0] ?? false;
+    }
+    
+    /**
+     * Check code exists
+     * 
+     * @param int $code
+     * @return bool
+     */
+    public function codeExists(int $code)
+    {
+        $values = array_values($this->all());
+        
+        $codes = array_map(function($item){
+            return $item->code;
+        }, $values);
+        
+        return in_array($code, $codes);
+    }
+    
+    /**
+     * Get all errors
+     * 
+     * @return array
+     */
+    public function all()
+    {
+        return $this->data;
+    }
+    
+    /**
+     * Get all error codes
+     * 
+     * @return array
+     */
+    public function allCodes()
+    {
+        $values = array_values($this->all());
+        
+        $codes = array_map(function($item){
+            return $item->code;
+        }, $values);
+        
+        return $codes;
+    }
+    
+    /**
+     * Get all error values
+     * 
+     * @return array
+     */
+    public function allValues()
+    {
+        $values = array_values($this->all());
+        
+        $values = array_map(function($item){
+            return $item->value;
+        }, $values);
+        
+        return $values;
+    }
 }

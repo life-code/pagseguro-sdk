@@ -2,8 +2,8 @@
 
 namespace PagSeguro\Session;
 
-use PagSeguro\Credentials\AccountCredentials;
-use PagSeguro\Credentials\Environment;
+use PagSeguro\Contracts\AccountCredentials;
+use PagSeguro\Contracts\Environment;
 use PagSeguro\Http\Session\Request;
 
 /**
@@ -19,20 +19,20 @@ use PagSeguro\Http\Session\Request;
 class Session
 {
     /**
-     * @var \PagSeguro\Credentials\AccountCredentials
+     * @var \PagSeguro\Contracts\AccountCredentials
      */
     private $credentials = '';
     
     /**
-     * @var \PagSeguro\Credentials\Environment
+     * @var \PagSeguro\Contracts\Environment
      */
     private $env = '';
     
     /**
      * Make new instance of this class
      * 
-     * @param \PagSeguro\Credentials\AccountCredentials $credentials
-     * @param \PagSeguro\Credentials\Environment $env
+     * @param \PagSeguro\Contracts\AccountCredentials $credentials
+     * @param \PagSeguro\Contracts\Environment $env
      * @return void
      */
     public function __construct(AccountCredentials $credentials, Environment $env)

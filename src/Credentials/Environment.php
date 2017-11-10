@@ -2,9 +2,10 @@
 
 namespace PagSeguro\Credentials;
 
+use PagSeguro\Contracts\Environment as EnvironmentContract;
 use Dotenv\Dotenv;
 
-class Environment
+class Environment implements EnvironmentContract
 {
     /**
      * @var string
@@ -27,7 +28,7 @@ class Environment
      * 
      * @return string
      */
-    public function getEnv()
+    public function getEnv() : string
     {
         return strtoupper(env('PAGSEGURO_ENV', 'PRODUCTION'));
     }
@@ -37,7 +38,7 @@ class Environment
      * 
      * @return string
      */
-    public function getEmail()
+    public function getEmail() : string
     {
         return env('PAGSEGURO_EMAIL', '');
     }
@@ -47,7 +48,7 @@ class Environment
      * 
      * @return string
      */
-    public function getToken()
+    public function getToken() : string
     {
         return env('PAGSEGURO_TOKEN_' . $this->getEnv(), '');
     }
@@ -57,7 +58,7 @@ class Environment
      * 
      * @return string
      */
-    public function getAppID()
+    public function getAppID() : string
     {
         return env('PAGSEGURO_APP_ID_' . $this->getEnv(), '');
     }
@@ -67,7 +68,7 @@ class Environment
      * 
      * @return string
      */
-    public function getAppKey()
+    public function getAppKey() : string
     {
         return env('PAGSEGURO_APP_KEY_' . $this->getEnv(), '');
     }
@@ -77,7 +78,7 @@ class Environment
      * 
      * @return string
      */
-    public function getUrl()
+    public function getUrl() : string
     {
         return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_URL', ''));
     }
@@ -87,7 +88,7 @@ class Environment
      * 
      * @return string
      */
-    public function getScript()
+    public function getScript() : string
     {
         return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_SCRIPT', ''));
     }
@@ -97,7 +98,7 @@ class Environment
      * 
      * @return string
      */ 
-    private function getReplace()
+    private function getReplace() : string
     {
         $replace = '';
         

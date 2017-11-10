@@ -42,9 +42,11 @@ class AccountCredentials implements AccountCredentialsContract
     }
 
     /**
+     * Get email
+     * 
      * @return string
      */
-    public function getEmail()
+    public function getEmail() : string
     {
         return $this->email;
     }
@@ -72,7 +74,7 @@ class AccountCredentials implements AccountCredentialsContract
      * 
      * @return string
      */
-    public function getToken()
+    public function getToken() : string
     {
         return $this->token;
     }
@@ -95,7 +97,7 @@ class AccountCredentials implements AccountCredentialsContract
      * 
      * @return array
      */
-    public function toArray()
+    public function toArray() : array
     {
         return [
             'email' => $this->getEmail(),
@@ -108,7 +110,7 @@ class AccountCredentials implements AccountCredentialsContract
      * 
      * @return string
      */
-    public function toString()
+    public function toString() : string
     {
         return 'email=' . $this->getEmail() . '&token=' . $this->getToken();
     }

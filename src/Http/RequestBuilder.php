@@ -2,14 +2,12 @@
 
 namespace PagSeguro\Http;
 
-use PagSeguro\Contracts\Http\Response as ResponseContract;
-
 trait RequestBuilder
 {
     /**
      * Send request
      * 
-     * @return \PagSeguro\Responses\Response
+     * @return \PagSeguro\Contracts\Http\Response
      */
     public function send()
     {

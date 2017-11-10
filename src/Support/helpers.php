@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * PagSeguro SDK
+ * 
+ * @type        library
+ * @version     0.8.5
+ * @package     life-code/pagseguro-sdk
+ * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
+ * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
+ * @license     MIT
+ */
 if (! function_exists('env')) {
     /**
      * Gets the value of an environment variable.

@@ -7,6 +7,16 @@ use PagSeguro\Contracts\Http\Request as RequestContract;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 
+/**
+ * PagSeguro SDK
+ * 
+ * @type        library
+ * @version     0.8.5
+ * @package     life-code/pagseguro-sdk
+ * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
+ * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
+ * @license     MIT
+ */
 abstract class Request implements RequestContract
 {
     use RequestBuilder;

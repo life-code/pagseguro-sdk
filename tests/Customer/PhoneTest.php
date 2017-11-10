@@ -19,13 +19,13 @@ class PhoneTest extends TestCase
     }
     
     /**
-     * Test set area code
+     * Test instance
      *
      * @return void
      */
-    public function testSetAreaCode()
+    public function testInstance()
     {
-        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setAreaCode('82'));
+        $this->assertInstanceOf(PhoneContract::class, $this->instance());
     }
     
     /**
@@ -36,6 +36,16 @@ class PhoneTest extends TestCase
     public function testGetAreaCode()
     {
         $this->assertEquals('82', $this->instance()->setAreaCode('82')->getAreaCode());
+    }
+    
+    /**
+     * Test set area code
+     *
+     * @return void
+     */
+    public function testSetAreaCode()
+    {
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setAreaCode('82'));
     }
     
     /**
@@ -51,16 +61,6 @@ class PhoneTest extends TestCase
     }
     
     /**
-     * Test set number
-     *
-     * @return void
-     */
-    public function testSetNumber()
-    {
-        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setNumber('28634136'));
-    }
-    
-    /**
      * Test get number
      *
      * @return void
@@ -68,6 +68,16 @@ class PhoneTest extends TestCase
     public function testGetNumber()
     {
         $this->assertEquals('28634136', $this->instance()->setNumber('28634136')->getNumber());
+    }
+    
+    /**
+     * Test set number
+     *
+     * @return void
+     */
+    public function testSetNumber()
+    {
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setNumber('28634136'));
     }
     
     /**

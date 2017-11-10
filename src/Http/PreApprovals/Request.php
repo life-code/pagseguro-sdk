@@ -127,7 +127,7 @@ class Request extends BaseRequest
      */
     public function createResponse($data, array $info)
     {
-        $response = new Response();
+        $response = new Response($this->env);
         
         $response->setStatus($info['http_code']);
         $response->setInfo($info);

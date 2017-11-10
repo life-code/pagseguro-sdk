@@ -3,6 +3,7 @@
 namespace PagSeguro\Http;
 
 use PagSeguro\Contracts\Http\Response as ResponseContract;
+use PagSeguro\Contracts\Credentials\Environment;
 
 /**
  * PagSeguro SDK
@@ -35,6 +36,22 @@ abstract class Response implements ResponseContract
      * @var array
      */
     protected $errors = [];
+    
+    /**
+     * @var \PagSeguro\Contracts\Credentials\Environment
+     */
+    protected $env;
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @param \PagSeguro\Contracts\Credentials\Environment $env
+     * @return void
+     */
+    public function __construct(Environment $env)
+    {
+        $this->env = $env;
+    }
     
     /**
      * Get status
@@ -121,7 +138,7 @@ abstract class Response implements ResponseContract
     public function setErrors(array $errors)
     {
         if (!$this->errors) {
-            $this->errors = new ErrorBag();
+            $this->errors = new ErrorBag($this->env);
         }
         
         $this->errors->setData($errors);

@@ -19,7 +19,7 @@ return [
     '11013' => "senderAreaCode invalid value: {0}",
     '11014' => "senderPhone invalid value: {0}",
     '11027' => "Item quantity out of range: {0}",
-    '11028' => "Item amount is required. (e.g. "12.00")",
+    '11028' => "Item amount is required. (e.g. '12.00')",
     '11040' => "maxAge invalid pattern: {0}. Must be an integer.",
     '11041' => "maxAge out of range: {0}",
     '11042' => "maxUses invalid pattern: {0}. Must be an integer.",

@@ -41,4 +41,13 @@ interface Request
      * @return string
      */
     public function getUrl() : string;
+    
+    /**
+     * Create response
+     * 
+     * @param mixed $data
+     * @param array $info
+     * @return \PagSeguro\Contracts\Http\Response
+     */
+    public function createResponse($data, array $info);
 }

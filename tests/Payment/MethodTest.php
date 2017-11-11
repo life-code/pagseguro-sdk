@@ -38,6 +38,17 @@ class MethodTest extends TestCase
     }
     
     /**
+     * Test throw set type
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetType()
+    {
+        $this->instance()->setType('CREDIT');
+    }
+    
+    /**
      * Test set type
      *
      * @return void

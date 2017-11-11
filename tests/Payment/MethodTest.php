@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Payment\Method;
+use PagSeguro\Payment\CreditCard\CreditCard;
 
 class MethodTest extends TestCase
 {
@@ -27,7 +28,7 @@ class MethodTest extends TestCase
     }
     
     /**
-     * Test get Type
+     * Test get type
      *
      * @return void
      */
@@ -37,12 +38,38 @@ class MethodTest extends TestCase
     }
     
     /**
-     * Test set Type
+     * Test set type
      *
      * @return void
      */
     public function testSetType()
     {
         $this->assertInstanceOf(Method::class, $this->instance()->setType('CREDITCARD'));
+    }
+    
+    /**
+     * Test get credit card
+     *
+     * @return void
+     */
+    public function testGetCreditCard()
+    {
+        $this->assertInstanceOf(
+            CreditCard::class, 
+            $this->instance()->setCreditCard(new CreditCard())->getCreditCard()
+        );
+    }
+    
+    /**
+     * Test set credit card
+     *
+     * @return void
+     */
+    public function testSetCreditCard()
+    {
+        $this->assertInstanceOf(
+            Method::class, 
+            $this->instance()->setCreditCard(new CreditCard())
+        );
     }
 }

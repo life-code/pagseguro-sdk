@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Http;
 
+use PagSeguro\Contracts\Http\RequestBuilder as RequestBuilderContract;
+
 /**
  * PagSeguro SDK
  * 
@@ -12,7 +14,7 @@ namespace PagSeguro\Http;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-trait RequestBuilder
+abstract class RequestBuilder implements RequestBuilderContract
 {
     /**
      * Send request

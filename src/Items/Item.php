@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Items;
 
+use PagSeguro\Contracts\Items\Item as ItemContract;
+
 /**
  * PagSeguro SDK
  * 
@@ -12,7 +14,7 @@ namespace PagSeguro\Items;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Item
+class Item implements ItemContract
 {
     /**
      * @var string
@@ -32,18 +34,7 @@ class Item
     /**
      * @var int
      */
-     
     private $quantity = 0;
-    
-    /**
-     * @var float
-     */
-    private $shipping_cost = 0;
-    
-    /**
-     * @var int
-     */
-    private $weight = 0;
     
     /**
      * Get ID
@@ -133,52 +124,6 @@ class Item
     public function setQuantity(int $quantity)
     {
         $this->quantity = $quantity;
-        
-        return $this;
-    }
-    
-    /**
-     * Get shipping cost
-     * 
-     * @return string
-     */
-    public function getShippingCost() : string
-    {
-        return $this->shipping_cost;
-    }
-
-    /**
-     * Set shipping cost
-     * 
-     * @param string $shipping_cost
-     * @return $this
-     */
-    public function setShippingCost(string $shipping_cost)
-    {
-        $this->shipping_cost = $shipping_cost;
-        
-        return $this;
-    }
-    
-    /**
-     * Get weight
-     * 
-     * @return int
-     */
-    public function getWeight() : int
-    {
-        return $this->weight;
-    }
-
-    /**
-     * Set weight
-     * 
-     * @param int $weight
-     * @return $this
-     */
-    public function setWeight(int $weight)
-    {
-        $this->weight = $weight;
         
         return $this;
     }

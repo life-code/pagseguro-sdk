@@ -17,10 +17,8 @@ use PagSeguro\Contracts\Credentials\Environment;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-abstract class Request implements RequestContract
+abstract class Request extends RequestBuilder implements RequestContract
 {
-    use RequestBuilder;
-    
     /**
      * @var strint
      */

@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Payment\CreditCard\CreditCard;
+use PagSeguro\Payment\CreditCard\Holder;
 
 class CreditCardTest extends TestCase
 {
@@ -50,5 +51,25 @@ class CreditCardTest extends TestCase
             CreditCard::class, 
             $this->instance()->setToken('$2y$10$fTMKmH8fmR9wUa0x35norOY46Y86T7wwsVz/0FwC7B33T.87WaFAy')
         );
+    }
+    
+    /**
+     * Test get holder
+     *
+     * @return void
+     */
+    public function testGetHolder()
+    {
+        $this->assertInstanceOf(Holder::class, $this->instance()->setHolder(new Holder())->getHolder());
+    }
+    
+    /**
+     * Test set holder
+     *
+     * @return void
+     */
+    public function testSetHolder()
+    {
+        $this->assertInstanceOf(CreditCard::class, $this->instance()->setHolder(new Holder()));
     }
 }

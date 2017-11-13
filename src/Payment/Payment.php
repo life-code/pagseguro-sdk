@@ -69,4 +69,83 @@ class Payment
         $this->credentials = $credentials;
         $this->env         = $env;
     }
+    
+    /**
+     * Get currency
+     * 
+     * @return string
+     */
+    public function getCurrency() : string
+    {
+        return $this->currency;
+    }
+    
+    /**
+     * Set currency
+     * 
+     * @param string $currency
+     * @return $this
+     */
+    public function setCurrency(string $currency)
+    {
+        $this->currency = $currency;
+        
+        return $this;
+    }
+    
+    /**
+     * Get mode
+     * 
+     * @return string
+     */
+    public function getMode() : string
+    {
+        return $this->mode;
+    }
+    
+    /**
+     * Set mode
+     * 
+     * @param string $mode
+     * @return $this
+     */
+    public function setMode(string $mode)
+    {
+        $this->mode = $mode;
+        
+        return $this;
+    }
+    
+    /**
+     * Get notification_url
+     * 
+     * @return string
+     */
+    public function getNotificationURL() : string
+    {
+        return $this->notification_url;
+    }
+    
+    /**
+     * Set notification_url
+     * 
+     * @param string $notification_url
+     * @return $this
+     */
+    public function setNotificationURL(string $notification_url)
+    {
+        $this->notification_url = $notification_url;
+        
+        return $this;
+    }
+    
+    /**
+     * Get receive_email
+     * 
+     * @return string
+     */
+    public function getReceiveEmail() : string
+    {
+        return $this->receive_email;
+    }
 }

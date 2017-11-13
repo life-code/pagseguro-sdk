@@ -6,7 +6,7 @@ use PagSeguro\Contracts\Phone as PhoneContract;
 use PagSeguro\Customer\Phone;
 use PagSeguro\Exceptions\PagseguroException;
 
-class PhoneTest extends TestCase
+class CustomerPhoneTest extends TestCase
 {
     /**
      * Phone Instance

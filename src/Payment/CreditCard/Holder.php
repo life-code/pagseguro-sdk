@@ -69,7 +69,7 @@ class Holder
     }
     
     /**
-     * Get birth_date
+     * Get birth date
      * 
      * @return string
      */
@@ -79,7 +79,7 @@ class Holder
     }
     
     /**
-     * Set birth_date
+     * Set birth date
      * 
      * @param string $birth_date
      * @return $this

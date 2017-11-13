@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Payment\CreditCard;
 
+use PagSeguro\Payment\CreditCard\Holder;
+use PagSeguro\Payment\CreditCard\Installment;
 use PagSeguro\Exceptions\PagseguroException;
 
 /**
@@ -25,6 +27,11 @@ class CreditCard
      * @var \PagSeguro\Payment\CreditCard\Holder
      */ 
     private $holder = '';
+    
+    /**
+     * @var \PagSeguro\Payment\CreditCard\Installment
+     */ 
+    private $installment = '';
     
     /**
      * Get token
@@ -68,6 +75,29 @@ class CreditCard
     public function setHolder(Holder $holder)
     {
         $this->holder = $holder;
+        
+        return $this;
+    }
+    
+    /**
+     * Get installment
+     * 
+     * @return string | \PagSeguro\Payment\CreditCard\Installment
+     */
+    public function getInstallment()
+    {
+        return $this->installment;
+    }
+    
+    /**
+     * Set installment
+     * 
+     * @param \PagSeguro\Payment\CreditCard\Installment $installment
+     * @return $this
+     */
+    public function setInstallment(Installment $installment)
+    {
+        $this->installment = $installment;
         
         return $this;
     }

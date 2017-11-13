@@ -14,4 +14,18 @@ namespace PagSeguro\Payment\CreditCard;
  */
 class Installment
 {
+    /**
+     * @var integer
+     */
+    private $quantity = 0;
+    
+    /**
+     * @var integer
+     */
+    private $no_interest_installment_quantity = 0;
+    
+    /**
+     * @var integer
+     */
+    private $value = 0;
 }

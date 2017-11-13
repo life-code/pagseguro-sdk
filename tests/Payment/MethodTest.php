@@ -22,7 +22,7 @@ class MethodTest extends TestCase
      *
      * @return void
      */
-    public function testinstance()
+    public function testInstance()
     {
         $this->assertInstanceOf(Method::class, $this->instance());
     }

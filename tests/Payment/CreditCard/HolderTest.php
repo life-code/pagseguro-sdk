@@ -102,4 +102,24 @@ class HolderTest extends TestCase
     {
         $this->assertInstanceOf(Holder::class, $this->instance()->setPhone($this->phoneInstance()));
     }
+    
+    /**
+     * Test get documents
+     *
+     * @return void
+     */
+    public function testGetDocuments()
+    {
+        $this->assertInstanceOf(DocumentsContract::class, $this->instance()->setDocuments($this->documentsInstance())->getDocuments());
+    }
+    
+    /**
+     * Test set documents
+     *
+     * @return void
+     */
+    public function testSetDocuments()
+    {
+        $this->assertInstanceOf(Holder::class, $this->instance()->setDocuments($this->documentsInstance()));
+    }
 }

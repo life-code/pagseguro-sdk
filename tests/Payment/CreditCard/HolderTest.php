@@ -25,4 +25,35 @@ class HolderTest extends TestCase
     {
         $this->assertInstanceOf(Holder::class, $this->instance());
     }
+    
+    /**
+     * Test get name
+     *
+     * @return void
+     */
+    public function testGetName()
+    {
+        $this->assertEquals('Vinicius Pugliesi', $this->instance()->setName('Vinicius Pugliesi')->getName());
+    }
+    
+    /**
+     * Test set name
+     *
+     * @return void
+     */
+    public function testSetName()
+    {
+        $this->assertInstanceOf(Holder::class, $this->instance()->setName('Vinicius Pugliesi'));
+    }
+    
+    /**
+     * Test throw set name
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetName()
+    {
+        $this->instance()->setName('Vinicius');
+    }
 }

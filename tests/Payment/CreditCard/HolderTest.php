@@ -84,6 +84,26 @@ class HolderTest extends TestCase
     }
     
     /**
+     * Test get birth date
+     *
+     * @return void
+     */
+    public function testGetBirthDate()
+    {
+        $this->assertEquals('17/08/1995', $this->instance()->setBirthDate('17/08/1995')->getBirthDate());
+    }
+    
+    /**
+     * Test set birth date
+     *
+     * @return void
+     */
+    public function testSetBirthDate()
+    {
+        $this->assertInstanceOf(Holder::class, $this->instance()->setBirthDate('17/08/1995'));
+    }
+    
+    /**
      * Test get phone
      *
      * @return void

@@ -148,4 +148,45 @@ class Payment
     {
         return $this->receive_email;
     }
+    
+    /**
+     * Set receive_email
+     * 
+     * @param string $receive_email
+     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @return $this
+     */
+    public function setReceiveEmail(string $receive_email)
+    {
+        if (!$this->validateEmail($receive_email)) {
+            throw new PagseguroException("The [$receive_email] isn't a valid email.");
+        }
+        
+        $this->receive_email = $receive_email;
+        
+        return $this;
+    }
+    
+    /**
+     * Get reference
+     * 
+     * @return string
+     */
+    public function getReference() : string
+    {
+        return $this->reference;
+    }
+    
+    /**
+     * Set reference
+     * 
+     * @param string $reference
+     * @return $this
+     */
+    public function setReference(string $reference)
+    {
+        $this->reference = $reference;
+        
+        return $this;
+    }
 }

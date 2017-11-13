@@ -16,4 +16,14 @@ class TypeTest extends TestCase
         $this->assertTrue(Type::check(Type::CREDITCARD));
         $this->assertTrue(! Type::check('CREDIT'));
     }
+    
+    /**
+     * Test get type
+     *
+     * @return void
+     */
+    public function testGetTypes()
+    {
+        $this->assertCount(1, Type::getTypes());
+    }
 }

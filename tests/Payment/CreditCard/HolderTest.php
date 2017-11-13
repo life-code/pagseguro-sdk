@@ -4,6 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Payment\CreditCard\Holder;
 
+use PagSeguro\Payment\CreditCard\Phone;
+use PagSeguro\Contracts\Phone as PhoneContract;
+
+use PagSeguro\Payment\CreditCard\Documents;
+use PagSeguro\Contracts\Documents as DocumentsContract;
+
 class HolderTest extends TestCase
 {
     /**
@@ -14,6 +20,26 @@ class HolderTest extends TestCase
     public function instance()
     {
         return new Holder();
+    }
+    
+    /**
+     * Phone Instance
+     * 
+     * @return \PagSeguro\Contracts\Phone
+     */
+    public static function phoneInstance()
+    {
+        return new Phone();
+    }
+    
+    /**
+     * Documents Instance
+     * 
+     * @return \PagSeguro\Contracts\Documents
+     */
+    public static function documentsInstance()
+    {
+        return new Documents();
     }
     
     /**
@@ -55,5 +81,25 @@ class HolderTest extends TestCase
     public function testThrowSetName()
     {
         $this->instance()->setName('Vinicius');
+    }
+    
+    /**
+     * Test get phone
+     *
+     * @return void
+     */
+    public function testGetPhone()
+    {
+        $this->assertInstanceOf(PhoneContract::class, $this->instance()->setPhone($this->phoneInstance())->getPhone());
+    }
+    
+    /**
+     * Test set phone
+     *
+     * @return void
+     */
+    public function testSetPhone()
+    {
+        $this->assertInstanceOf(Holder::class, $this->instance()->setPhone($this->phoneInstance()));
     }
 }

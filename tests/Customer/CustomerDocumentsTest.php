@@ -6,7 +6,7 @@ use PagSeguro\Contracts\Documents as DocumentsContract;
 use PagSeguro\Customer\Documents;
 use PagSeguro\Exceptions\PagseguroException;
 
-class DocumentsTest extends TestCase
+class CustomerDocumentsTest extends TestCase
 {
     /**
      * Documents Instance

@@ -1,7 +1,7 @@
 {
     "name": "life-code/pagseguro-sdk",
     "description": "PagSeguro SDK for PHP",
-    "keywords": ["pagseguro", "pagseguro-sdk", "sdk"],
+    "keywords": ["pagseguro", "pagseguro-sdk", "sdk", "library", "php"],
     "type": "library",
     "license": "MIT",
     "authors": [

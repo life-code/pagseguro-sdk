@@ -78,11 +78,11 @@ class Installment
     /**
      * Get value
      * 
-     * @return float
+     * @return string
      */
-    public function getValue() : int
+    public function getValue() : string
     {
-        return $this->value;
+        return (string) $this->value;
     }
     
     /**
@@ -93,7 +93,7 @@ class Installment
      */
     public function setValue(float $value)
     {
-        $this->value = $value;
+        $this->value = number_format($value, 2, '.', '');
         
         return $this;
     }

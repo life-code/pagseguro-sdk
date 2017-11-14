@@ -59,6 +59,11 @@ class Payment
     private $reference = '';
     
     /**
+     * @var array
+     */
+    private $items = [];
+    
+    /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Contracts\Credentials\AccountCredentials $credentials
@@ -192,17 +197,39 @@ class Payment
     }
     
     /**
+     * Get items
+     * 
+     * @return array
+     */
+    public function getItems() : array
+    {
+        return $this->items;
+    }
+    
+    /**
+     * Set items
+     * 
+     * @param \PagSeguro\Items\Item $item
+     * @return $this
+     */
+    public function setItems(Item $item)
+    {
+        $this->items[] = $item;
+        
+        return $this;
+    }
+    
+    /**
      * Approves one payment
      * 
      * @param \PagSeguro\Contracts\Customer $customer
      * @param \PagSeguro\Payment\Method $method
-     * @param \PagSeguro\Items\Item $item
      * @return \PagSeguro\Contracts\Http\Response
      */
-    public function pay(Customer $customer, Item $item, Method $method)
+    public function pay(Customer $customer, Method $method)
     {
         $request = new Request($this->credentials, $this->env);
         
-        return $request->exchangeData($this, $customer, $item, $method)->send();
+        return $request->exchangeData($this, $customer, $method)->send();
     }
 }

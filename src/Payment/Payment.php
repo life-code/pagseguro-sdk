@@ -4,6 +4,7 @@ namespace PagSeguro\Payment;
 
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Contracts\Customer;
 use PagSeguro\Items\Item;
 use PagSeguro\Http\Payment\Request;
 use PagSeguro\Exceptions\PagseguroException;

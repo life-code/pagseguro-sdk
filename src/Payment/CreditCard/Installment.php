@@ -15,12 +15,12 @@ namespace PagSeguro\Payment\CreditCard;
 class Installment
 {
     /**
-     * @var integer
+     * @var int
      */
     private $quantity = 0;
     
     /**
-     * @var integer
+     * @var int
      */
     private $no_interest_installment_quantity = 0;
     
@@ -32,9 +32,9 @@ class Installment
     /**
      * Get quantity
      * 
-     * @return integer
+     * @return int
      */
-    public function getQuantity() : integer
+    public function getQuantity() : int
     {
         return $this->quantity;
     }
@@ -42,10 +42,10 @@ class Installment
     /**
      * Set quantity
      * 
-     * @param integer $quantity
+     * @param int $quantity
      * @return $this
      */
-    public function setQuantity(integer $quantity)
+    public function setQuantity(int $quantity)
     {
         $this->quantity = $quantity;
         
@@ -55,9 +55,9 @@ class Installment
     /**
      * Get no interest installment quantity
      * 
-     * @return integer
+     * @return int
      */
-    public function getNoInterestInstallmentQuantity() : integer
+    public function getNoInterestInstallmentQuantity() : int
     {
         return $this->no_interest_installment_quantity;
     }
@@ -65,10 +65,10 @@ class Installment
     /**
      * Set no interest installment quantity
      * 
-     * @param integer $no_interest_installment_quantity
+     * @param int $no_interest_installment_quantity
      * @return $this
      */
-    public function setNoInterestInstallmentQuantity(integer $no_interest_installment_quantity)
+    public function setNoInterestInstallmentQuantity(int $no_interest_installment_quantity)
     {
         $this->no_interest_installment_quantity = $no_interest_installment_quantity;
         
@@ -80,7 +80,7 @@ class Installment
      * 
      * @return float
      */
-    public function getValue() : integer
+    public function getValue() : int
     {
         return $this->value;
     }

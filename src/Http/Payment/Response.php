@@ -20,17 +20,34 @@ class Response extends BaseResponse
      * Set data
      * 
      * @return $this
-     */ 
+     */
     public function setData($data)
     {
         $data = json_decode(json_encode(simplexml_load_string($data)));
         
         if (isset($data->error) && $data->error) {
-            return $this->setErrors((array) $data->errors);
+            return $this->setErrors($this->normalizeErrors($data->error));
         }
         
         $this->data = $data;
         
         return $this;
+    }
+    
+    /**
+     * Normalize errors
+     * 
+     * @param array $errors
+     * @return array
+     */
+    private function normalizeErrors(array $errors) : array
+    {
+        $response = [];
+        
+        foreach ($errors as $key => $value) {
+            $response[$value->code] = $value->message;
+        }
+        
+        return $response;
     }
 }

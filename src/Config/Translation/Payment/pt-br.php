@@ -109,5 +109,6 @@ return [
     '53140' => "Quantidade de parcelas fora do limite. O valor deve ser maior que zero",
     '53141' => "Comprador bloqueado",
     '53142' => "Token do cartão de crédito inválido",
-    '14007' => "status da transação não permite reembolso",
+    '14007' => "Status da transação não permite reembolso",
+    '53149' => 'IP inválido',
 ];

@@ -90,7 +90,6 @@ class Request extends BaseRequest
                 'name'      => $customer->getName(),
                 'email'     => $customer->getEmail(),
                 'hash'      => $customer->getHash(),
-                'ip'        => $customer->getIp(),
                 'phone'     => [
                     'areaCode' => $customer->getPhone()->getAreaCode(),
                     'number'   => $customer->getPhone()->getNumber(),
@@ -104,29 +103,17 @@ class Request extends BaseRequest
             ],
             'items'           => $items,
             'shipping'        => [
-                'address'         => [
-                    'street'     => $shipping->getAddress()->getStreet(),
-                    'number'     => $shipping->getAddress()->getNumber(),
-                    'complement' => $shipping->getAddress()->getComplement(),
-                    'district'   => $shipping->getAddress()->getDistrict(),
-                    'city'       => $shipping->getAddress()->getCity(),
-                    'state'      => $shipping->getAddress()->getState(),
-                    'country'    => $shipping->getAddress()->getCountry(),
-                    'postalCode' => $shipping->getAddress()->getCep(),
-                ],
-                'type'            => $shipping->getType(),
-                'cost'            => $shipping->getCost(),
                 'addressRequired' => $shipping->getAddressRequired(),
             ],
             'method'          => $method->getType(),
             'creditCard'      => [
-                'token'       => $method->getCreditCard()->getToken(),
-                'installment' => [
+                'token'          => $method->getCreditCard()->getToken(),
+                'installment'    => [
                     'quantity'                      => $method->getCreditCard()->getInstallment()->getQuantity(),
                     'noInterestInstallmentQuantity' => $method->getCreditCard()->getInstallment()->getNoInterestInstallmentQuantity(),
                     'value'                         => $method->getCreditCard()->getInstallment()->getValue(),
                 ],
-                'holder'      => [
+                'holder'         => [
                     'name'      => $method->getCreditCard()->getHolder()->getName(),
                     'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
                     'documents' => [
@@ -140,7 +127,7 @@ class Request extends BaseRequest
                         'number'   => $method->getCreditCard()->getHolder()->getPhone()->getNumber(),
                     ],
                 ],
-                'address'     => [
+                'billingAddress' => [
                     'street'     => $method->getCreditCard()->getAddress()->getStreet(),
                     'number'     => $method->getCreditCard()->getAddress()->getNumber(),
                     'complement' => $method->getCreditCard()->getAddress()->getComplement(),

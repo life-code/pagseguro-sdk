@@ -5,6 +5,7 @@ namespace PagSeguro\Http\Payment;
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Payment\Response;
 use PagSeguro\Payment\Payment;
+use PagSeguro\Shipping\Shipping;
 use PagSeguro\Contracts\Documents;
 use PagSeguro\Contracts\Customer;
 use PagSeguro\Payment\Method;
@@ -52,7 +53,6 @@ class Request extends BaseRequest
         return [
             'cache-control: no-cache',
             'Content-Type: ' . self::XML,
-            // 'Accept: application/vnd.pagseguro.com.br.v3+xml;charset=ISO-8859-1',
         ];
     }
     
@@ -60,11 +60,12 @@ class Request extends BaseRequest
      * Exchange data
      * 
      * @param \PagSeguro\PreApprovals\Payment $payment
+     * @param \PagSeguro\Shipping\Shipping $shipping
      * @param \PagSeguro\Contracts\Customer $customer
      * @param \PagSeguro\Payment\Method $method
      * @return $this
      */
-    public function exchangeData(Payment $payment, Customer $customer, Method $method)
+    public function exchangeData(Payment $payment, Shipping $shipping, Customer $customer, Method $method)
     {
         $items = [];
         
@@ -98,10 +99,25 @@ class Request extends BaseRequest
                     'document' => [
                         'type'  => Documents::CPF,
                         'value' => $customer->getDocuments()->getItem(Documents::CPF),
-                    ]
+                    ],
                 ],
             ],
             'items'           => $items,
+            'shipping'        => [
+                'address'         => [
+                    'street'     => $shipping->getAddress()->getStreet(),
+                    'number'     => $shipping->getAddress()->getNumber(),
+                    'complement' => $shipping->getAddress()->getComplement(),
+                    'district'   => $shipping->getAddress()->getDistrict(),
+                    'city'       => $shipping->getAddress()->getCity(),
+                    'state'      => $shipping->getAddress()->getState(),
+                    'country'    => $shipping->getAddress()->getCountry(),
+                    'postalCode' => $shipping->getAddress()->getCep(),
+                ],
+                'type'            => $shipping->getType(),
+                'cost'            => $shipping->getCost(),
+                'addressRequired' => $shipping->getAddressRequired(),
+            ],
             'method'          => $method->getType(),
             'creditCard'      => [
                 'token'       => $method->getCreditCard()->getToken(),
@@ -117,12 +133,22 @@ class Request extends BaseRequest
                         'document' => [
                             'type'  => Documents::CPF,
                             'value' => $method->getCreditCard()->getHolder()->getDocuments()->getItem(Documents::CPF),
-                        ]
+                        ],
                     ],
                     'phone'     => [
                         'areaCode' => $method->getCreditCard()->getHolder()->getPhone()->getAreaCode(),
                         'number'   => $method->getCreditCard()->getHolder()->getPhone()->getNumber(),
                     ],
+                ],
+                'address'     => [
+                    'street'     => $method->getCreditCard()->getAddress()->getStreet(),
+                    'number'     => $method->getCreditCard()->getAddress()->getNumber(),
+                    'complement' => $method->getCreditCard()->getAddress()->getComplement(),
+                    'district'   => $method->getCreditCard()->getAddress()->getDistrict(),
+                    'city'       => $method->getCreditCard()->getAddress()->getCity(),
+                    'state'      => $method->getCreditCard()->getAddress()->getState(),
+                    'country'    => $method->getCreditCard()->getAddress()->getCountry(),
+                    'postalCode' => $method->getCreditCard()->getAddress()->getCep(),
                 ],
             ],
         ];

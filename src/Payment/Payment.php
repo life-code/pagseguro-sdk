@@ -5,6 +5,7 @@ namespace PagSeguro\Payment;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Customer;
+use PagSeguro\Shipping\Shipping;
 use PagSeguro\Items\Item;
 use PagSeguro\Http\Payment\Request;
 use PagSeguro\Exceptions\PagseguroException;
@@ -223,14 +224,15 @@ class Payment
     /**
      * Approves one payment
      * 
+     * @param \PagSeguro\Shipping\Shipping $shipping
      * @param \PagSeguro\Contracts\Customer $customer
      * @param \PagSeguro\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */
-    public function pay(Customer $customer, Method $method)
+    public function pay(Shipping $shipping, Customer $customer, Method $method)
     {
         $request = new Request($this->credentials, $this->env);
         
-        return $request->exchangeData($this, $customer, $method)->send();
+        return $request->exchangeData($this, $shipping, $customer, $method)->send();
     }
 }

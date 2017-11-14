@@ -85,9 +85,9 @@ class Item implements ItemContract
     /**
      * Get amount
      * 
-     * @return float
+     * @return string
      */
-    public function getAmount() : float
+    public function getAmount() : string
     {
         return $this->amount;
     }
@@ -100,7 +100,7 @@ class Item implements ItemContract
      */
     public function setAmount(float $amount)
     {
-        $this->amount = $amount;
+        $this->amount = number_format($amount, 2, '.', '');
         
         return $this;
     }

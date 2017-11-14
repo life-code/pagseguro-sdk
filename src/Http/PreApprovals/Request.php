@@ -65,7 +65,7 @@ class Request extends BaseRequest
      */
     public function exchangeData(PreApproval $pre_approval, Customer $customer, Method $method)
     {
-        $this->data = [
+        $data = [
             'plan'          => $pre_approval->getPlan(),
             'reference'     => $pre_approval->getReference(),
             'sender'        => [
@@ -114,6 +114,8 @@ class Request extends BaseRequest
                 ],
             ],
         ];
+        
+        $this->data = json_encode($data);
         
         return $this;
     }

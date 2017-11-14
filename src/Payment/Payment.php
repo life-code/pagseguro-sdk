@@ -36,7 +36,7 @@ class Payment
     /**
      * @var string
      */
-    private $mode = '';
+    private $mode = 'default';
     
     /**
      * @var string

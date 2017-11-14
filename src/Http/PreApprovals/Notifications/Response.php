@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Http\Notifications;
+namespace PagSeguro\Http\PreApprovals\Notifications;
 
 use PagSeguro\Http\Response as BaseResponse;
 

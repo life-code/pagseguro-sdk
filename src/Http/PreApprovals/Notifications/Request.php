@@ -1,9 +1,9 @@
 <?php
 
-namespace PagSeguro\Http\Notifications;
+namespace PagSeguro\Http\PreApprovals\Notifications;
 
 use PagSeguro\Http\Request as BaseRequest;
-use PagSeguro\Http\Notifications\Response;
+use PagSeguro\Http\PreApprovals\Notifications\Response;
 
 /**
  * PagSeguro SDK

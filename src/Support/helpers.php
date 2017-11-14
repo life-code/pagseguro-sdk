@@ -38,7 +38,7 @@ if (! function_exists('env')) {
                 return '';
             case 'null':
             case '(null)':
-                return;
+                return null;
         }
         
         if (strlen($value) > 1 && substr($value, 0, 1) === '"' && substr($value, -1) === '"') {

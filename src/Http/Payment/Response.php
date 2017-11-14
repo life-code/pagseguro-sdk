@@ -37,12 +37,18 @@ class Response extends BaseResponse
     /**
      * Normalize errors
      * 
-     * @param array $errors
+     * @param mixed $errors
      * @return array
      */
-    private function normalizeErrors(array $errors) : array
+    private function normalizeErrors($errors) : array
     {
         $response = [];
+        
+        if (isset($errors->code)) {
+            $response[$errors->code] = $errors->message;
+            
+            return $response;
+        }
         
         foreach ($errors as $key => $value) {
             $response[$value->code] = $value->message;

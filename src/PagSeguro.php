@@ -4,9 +4,10 @@ namespace PagSeguro;
 
 use PagSeguro\Support\Factory;
 use PagSeguro\Session\Session;
-use PagSeguro\Payment\Payment;
 use PagSeguro\PreApprovals\PreApproval;
-use PagSeguro\PreApprovals\Notification;
+use PagSeguro\PreApprovals\Notification as NotificationPreApproval;
+use PagSeguro\Payment\Payment;
+use PagSeguro\Payment\Notification as NotificationPayment;
 
 /**
  * PagSeguro SDK
@@ -75,7 +76,7 @@ class PagSeguro
         $env         = self::getEnv();
         $credentials = self::getCredentials();
         
-        return new Notification($credentials, $env);
+        return new NotificationPreApproval($credentials, $env);
     }
     
     /**
@@ -89,5 +90,18 @@ class PagSeguro
         $credentials = self::getCredentials();
         
         return new Payment($credentials, $env);
+    }
+    
+    /**
+     * Handles pagseguro notifications instance
+     * 
+     * @return \PagSeguro\Payment\Notification
+     */
+    public static function notificationPayment()
+    {
+        $env         = self::getEnv();
+        $credentials = self::getCredentials();
+        
+        return new NotificationPayment($credentials, $env);
     }
 }

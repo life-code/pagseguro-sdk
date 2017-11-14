@@ -34,9 +34,9 @@ class ErrorBag implements ErrorBagContracts
      * @param \PagSeguro\Contracts\Credentials\Environment $env
      * @return void
      */
-    public function __construct(Environment $env)
+    public function __construct(Environment $env, string $transation)
     {
-        $this->language = new Language($env, 'PreApprovals');
+        $this->language = new Language($env, $transation);
     }
     
     /**

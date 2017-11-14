@@ -129,7 +129,7 @@ class Request extends BaseRequest
      */
     public function createResponse($data, array $info)
     {
-        $response = new Response($this->env);
+        $response = new Response($this->env, 'PreApprovals');
         
         $response->setStatus($info['http_code']);
         $response->setInfo($info);

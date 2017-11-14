@@ -15,7 +15,7 @@ use Spatie\ArrayToXml\ArrayToXml;
  * PagSeguro SDK
  * 
  * @type        library
- * @version     0.8.8
+ * @version     0.8.7
  * @package     life-code/pagseguro-sdk
  * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
@@ -167,7 +167,7 @@ class Request extends BaseRequest
      */
     public function createResponse($data, array $info)
     {
-        $response = new Response($this->env);
+        $response = new Response($this->env, 'Payment');
         
         $response->setStatus($info['http_code']);
         $response->setInfo($info);

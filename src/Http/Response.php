@@ -43,14 +43,20 @@ abstract class Response implements ResponseContract
     protected $env;
     
     /**
+     * @var string
+     */
+    private $transation;
+    
+    /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Contracts\Credentials\Environment $env
      * @return void
      */
-    public function __construct(Environment $env)
+    public function __construct(Environment $env, string $transation)
     {
-        $this->env = $env;
+        $this->env        = $env;
+        $this->transation = $transation;
     }
     
     /**
@@ -138,7 +144,7 @@ abstract class Response implements ResponseContract
     public function setErrors(array $errors)
     {
         if (!$this->errors) {
-            $this->errors = new ErrorBag($this->env);
+            $this->errors = new ErrorBag($this->env, $this->transation);
         }
         
         $this->errors->setData($errors);

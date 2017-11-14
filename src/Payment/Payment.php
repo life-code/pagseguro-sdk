@@ -41,7 +41,7 @@ class Payment
     /**
      * @var string
      */
-    private $currency = '';
+    private $currency = 'BRL';
     
     /**
      * @var string

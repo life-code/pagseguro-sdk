@@ -17,9 +17,9 @@ interface Request
     /**
      * Get request data
      * 
-     * @return array
+     * @return mixed
      */
-    public function getData() : array;
+    public function getData();
     
     /**
      * Get request headers

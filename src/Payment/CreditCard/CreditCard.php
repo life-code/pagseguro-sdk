@@ -4,6 +4,7 @@ namespace PagSeguro\Payment\CreditCard;
 
 use PagSeguro\Payment\CreditCard\Holder;
 use PagSeguro\Payment\CreditCard\Installment;
+use PagSeguro\Contracts\Address;
 use PagSeguro\Exceptions\PagseguroException;
 
 /**
@@ -32,6 +33,11 @@ class CreditCard
      * @var \PagSeguro\Payment\CreditCard\Installment
      */ 
     private $installment = '';
+
+    /**
+     * @var PagSeguro\Contracts\Address
+     */
+    private $address = '';
     
     /**
      * Get token
@@ -98,6 +104,29 @@ class CreditCard
     public function setInstallment(Installment $installment)
     {
         $this->installment = $installment;
+        
+        return $this;
+    }
+    
+    /**
+     * Get address
+     * 
+     * @return string | \PagSeguro\Contracts\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+    
+    /**
+     * Set address
+     * 
+     * @param \PagSeguro\Contracts\Address $address
+     * @return $this
+     */
+    public function setAddress(Address $address)
+    {
+        $this->address = $address;
         
         return $this;
     }

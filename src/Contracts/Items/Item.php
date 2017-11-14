@@ -37,9 +37,9 @@ interface Item
     /**
      * Get amount
      * 
-     * @return float
+     * @return string
      */
-    public function getAmount() : float;
+    public function getAmount() : string;
 
     /**
      * Set amount

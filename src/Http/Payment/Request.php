@@ -8,6 +8,7 @@ use PagSeguro\Payment\Payment;
 use PagSeguro\Contracts\Documents;
 use PagSeguro\Contracts\Customer;
 use PagSeguro\Payment\Method;
+use Spatie\ArrayToXml\ArrayToXml;
 
 /**
  * PagSeguro SDK
@@ -51,7 +52,7 @@ class Request extends BaseRequest
         return [
             'cache-control: no-cache',
             'Content-Type: ' . self::XML,
-            'Accept: application/vnd.pagseguro.com.br.v3+json;charset=ISO-8859-1',
+            // 'Accept: application/vnd.pagseguro.com.br.v3+xml;charset=ISO-8859-1',
         ];
     }
     
@@ -69,14 +70,16 @@ class Request extends BaseRequest
         
         foreach ($payment->getItems() as $item) {
             $items[] = [
-                'id'          => $item->getId(),
-                'description' => $item->getDescription(),
-                'amount'      => $item->getAmount(),
-                'quantity'    => $item->getQuantity(),
+                'item' => [
+                    'id'          => $item->getId(),
+                    'description' => $item->getDescription(),
+                    'amount'      => $item->getAmount(),
+                    'quantity'    => $item->getQuantity(),
+                ],
             ];
         }
         
-        $this->data = [
+        $data = [
             'mode'            => $payment->getMode(),
             'currency'        => $payment->getCurrency(),
             'notificationURL' => $payment->getNotificationURL(),
@@ -91,18 +94,8 @@ class Request extends BaseRequest
                     'areaCode' => $customer->getPhone()->getAreaCode(),
                     'number'   => $customer->getPhone()->getNumber(),
                 ],
-                'address'   => [
-                    'street'     => $customer->getAddress()->getStreet(),
-                    'number'     => $customer->getAddress()->getNumber(),
-                    'complement' => $customer->getAddress()->getComplement(),
-                    'district'   => $customer->getAddress()->getDistrict(),
-                    'city'       => $customer->getAddress()->getCity(),
-                    'state'      => $customer->getAddress()->getState(),
-                    'country'    => $customer->getAddress()->getCountry(),
-                    'postalCode' => $customer->getAddress()->getCep(),
-                ],
                 'documents' => [
-                    [
+                    'document' => [
                         'type'  => Documents::CPF,
                         'value' => $customer->getDocuments()->getItem(Documents::CPF),
                     ]
@@ -121,7 +114,7 @@ class Request extends BaseRequest
                     'name'      => $method->getCreditCard()->getHolder()->getName(),
                     'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
                     'documents' => [
-                        [
+                        'document' => [
                             'type'  => Documents::CPF,
                             'value' => $method->getCreditCard()->getHolder()->getDocuments()->getItem(Documents::CPF),
                         ]
@@ -133,6 +126,8 @@ class Request extends BaseRequest
                 ],
             ],
         ];
+        
+        $this->data = ArrayToXml::convert($data, 'payment');
         
         return $this;
     }

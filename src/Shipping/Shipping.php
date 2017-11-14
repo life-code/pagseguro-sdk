@@ -34,6 +34,11 @@ class Shipping
     private $type = '';
     
     /**
+     * @var bool
+     */
+    private $address_required = false;
+    
+    /**
      * Get address
      * 
      * @return string | \PagSeguro\Contracts\Address
@@ -102,6 +107,29 @@ class Shipping
         }
         
         $this->type = $type;
+        
+        return $this;
+    }
+    
+    /**
+     * Get address required
+     * 
+     * @return bool
+     */
+    public function getAddressRequired() : bool
+    {
+        return $this->address_required;
+    }
+
+    /**
+     * Set address required
+     * 
+     * @param bool $address_required
+     * @return $this
+     */
+    public function setAddressRequired(bool $address_required)
+    {
+        $this->address_required = $address_required;
         
         return $this;
     }

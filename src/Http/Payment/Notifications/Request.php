@@ -62,7 +62,7 @@ class Request extends BaseRequest
      */
     public function getUrl() : string
     {
-        return $this->env->getUrl() . '/notifications/' . $this->getCode() . '?' . $this->credentials->toString();
+        return $this->env->getUrl() . 'v3/transactions/notifications/' . $this->getCode() . '?' . $this->credentials->toString();
     }
     
     /**
@@ -74,8 +74,6 @@ class Request extends BaseRequest
     {
         return [
             'cache-control: no-cache',
-            'Content-Type: ' . self::JSON,
-            'Accept: application/vnd.pagseguro.com.br.v3+json;charset=ISO-8859-1',
         ];
     }
     
@@ -88,7 +86,7 @@ class Request extends BaseRequest
      */
     public function createResponse($data, array $info)
     {
-        $response = new Response($this->env, 'Notifications');
+        $response = new Response($this->env, 'Payment');
         
         $response->setStatus($info['http_code']);
         $response->setInfo($info);

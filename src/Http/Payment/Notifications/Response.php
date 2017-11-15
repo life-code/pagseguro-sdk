@@ -23,7 +23,7 @@ class Response extends BaseResponse
      */ 
     public function setData($data)
     {
-        $this->data = json_decode($data);
+        $this->data = json_decode(json_encode(simplexml_load_string($data)));
         
         return $this;
     }

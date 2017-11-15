@@ -5,7 +5,9 @@ use PHPUnit\Framework\TestCase;
 use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
 use PagSeguro\PreApprovals\PreApproval;
-use PagSeguro\PreApprovals\Notification;
+use PagSeguro\PreApprovals\Notification as NotificationPreApproval;
+use PagSeguro\Payment\Payment;
+use PagSeguro\Payment\Notification as PaymentNotification;
 
 class PagSeguroTest extends TestCase
 {
@@ -46,6 +48,16 @@ class PagSeguroTest extends TestCase
      */
     public function testNotification()
     {
-        $this->assertInstanceOf(Notification::class, PagSeguro::Notification());
+        $this->assertInstanceOf(NotificationPreApproval::class, PagSeguro::notification());
+    }
+    
+    /**
+     * Test instance notification
+     *
+     * @return void
+     */
+    public function testPaymentNotification()
+    {
+        $this->assertInstanceOf(PaymentNotification::class, PagSeguro::paymentNotification());
     }
 }

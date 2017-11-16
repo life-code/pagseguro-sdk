@@ -67,4 +67,24 @@ class AddressTest extends TestCase
     {
         $this->assertInstanceOf(AddressContract::class, $this->instance()->setState('RS'));
     }
+    
+    /**
+     * Test get city
+     *
+     * @return void
+     */
+    public function testGetCity()
+    {
+        $this->assertEquals('Alvorada', $this->instance()->setCity('Alvorada')->getCity());
+    }
+    
+    /**
+     * Test set city
+     *
+     * @return void
+     */
+    public function testSetCity()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCity('Alvorada'));
+    }
 }

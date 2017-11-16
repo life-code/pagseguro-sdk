@@ -2,9 +2,10 @@
 
 namespace PagSeguro\Payment\CreditCard;
 
-use PagSeguro\Payment\CreditCard\Holder;
-use PagSeguro\Payment\CreditCard\Installment;
 use PagSeguro\Contracts\Address;
+use PagSeguro\Contracts\Payment\CreditCard\Holder;
+use PagSeguro\Contracts\Payment\CreditCard\Installment;
+use PagSeguro\Contracts\Payment\CreditCard\CreditCard as CreditCardContract;
 use PagSeguro\Exceptions\PagseguroException;
 
 /**
@@ -17,7 +18,7 @@ use PagSeguro\Exceptions\PagseguroException;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class CreditCard
+class CreditCard implements CreditCardContract
 {
     /**
      * @var string

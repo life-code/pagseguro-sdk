@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Payment\CreditCard;
 
+use PagSeguro\Contracts\Payment\CreditCard\Installment as InstallmentContract;
+
 /**
  * PagSeguro SDK
  * 
@@ -12,7 +14,7 @@ namespace PagSeguro\Payment\CreditCard;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Installment
+class Installment implements InstallmentContract
 {
     /**
      * @var int

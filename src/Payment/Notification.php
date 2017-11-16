@@ -4,6 +4,7 @@ namespace PagSeguro\Payment;
 
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Contracts\Payment\Notification as NotificationContract;
 use PagSeguro\Http\Payment\Notifications\Request;
 
 /**
@@ -16,7 +17,7 @@ use PagSeguro\Http\Payment\Notifications\Request;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Notification
+class Notification implements NotificationContract
 {
     /**
      * @var \PagSeguro\Contracts\Credentials\AccountCredentials

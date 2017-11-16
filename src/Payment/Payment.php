@@ -4,6 +4,7 @@ namespace PagSeguro\Payment;
 
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Contracts\Payment\Payment as PaymentContract;
 use PagSeguro\Contracts\Customer;
 use PagSeguro\Shipping\Shipping;
 use PagSeguro\Items\Item;
@@ -21,7 +22,7 @@ use PagSeguro\Support\Validator;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Payment
+class Payment implements PaymentContract
 {
     use Validator;
     

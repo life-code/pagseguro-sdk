@@ -5,6 +5,7 @@ namespace PagSeguro\PreApprovals;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\PreApprovals\PreApproval as PreApprovalContract;
 use PagSeguro\Http\PreApprovals\Request;
 use PagSeguro\Payment\Method;
 
@@ -18,7 +19,7 @@ use PagSeguro\Payment\Method;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class PreApproval
+class PreApproval implements PreApprovalContract
 {
     /**
      * @var \PagSeguro\Contracts\Credentials\AccountCredentials

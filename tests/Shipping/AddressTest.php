@@ -87,4 +87,24 @@ class AddressTest extends TestCase
     {
         $this->assertInstanceOf(AddressContract::class, $this->instance()->setCity('Alvorada'));
     }
+    
+    /**
+     * Test get cep
+     *
+     * @return void
+     */
+    public function testGetCep()
+    {
+        $this->assertEquals('57040644', $this->instance()->setCep('57040644')->getCep());
+    }
+    
+    /**
+     * Test set cep
+     *
+     * @return void
+     */
+    public function testSetCep()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setCep('57040644'));
+    }
 }

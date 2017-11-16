@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Payment;
 
+use PagSeguro\Contracts\Payment\Type as TypeContract;
+
 /**
  * PagSeguro SDK
  * 
@@ -12,7 +14,7 @@ namespace PagSeguro\Payment;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Type
+class Type implements TypeContract
 {
     /**
      * @var string

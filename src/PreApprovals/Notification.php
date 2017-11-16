@@ -4,6 +4,7 @@ namespace PagSeguro\PreApprovals;
 
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Contracts\PreApprovals\Notification as NotificationContact;
 use PagSeguro\Http\PreApprovals\Notifications\Request;
 
 /**
@@ -16,7 +17,7 @@ use PagSeguro\Http\PreApprovals\Notifications\Request;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Notification
+class Notification implements NotificationContact
 {
     /**
      * @var \PagSeguro\Contracts\Credentials\AccountCredentials

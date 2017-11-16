@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Contracts\Payment;
+namespace PagSeguro\Contracts\Payment\CreditCard;
 
 use PagSeguro\Contracts\Phone;
 use PagSeguro\Contracts\Documents;
@@ -16,7 +16,7 @@ use PagSeguro\Exceptions\PagseguroException;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-interface CreditCard
+interface Holder
 {
     /**
      * Get name

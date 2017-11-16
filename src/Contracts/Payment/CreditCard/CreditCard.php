@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Contracts\Payment;
+namespace PagSeguro\Contracts\Payment\CreditCard;
 
 use PagSeguro\Contracts\Address;
 use PagSeguro\Contracts\Payment\CreditCard\Holder;

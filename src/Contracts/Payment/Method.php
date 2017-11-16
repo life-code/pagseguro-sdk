@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Contracts\Payment;
 
+use PagSeguro\Contracts\Payment\CreditCard\CreditCard;
+
 /**
  * PagSeguro SDK
  * 

@@ -4,8 +4,8 @@ namespace PagSeguro\Payment;
 
 use PagSeguro\Payment\Type;
 use PagSeguro\Contracts\Payment\Method as MethodContract;
+use PagSeguro\Contracts\Payment\CreditCard\CreditCard;
 use PagSeguro\Exceptions\PagseguroException;
-use PagSeguro\Payment\CreditCard\CreditCard;
 
 /**
  * PagSeguro SDK

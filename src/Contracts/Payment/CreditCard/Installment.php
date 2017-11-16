@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Contracts\Payment;
+namespace PagSeguro\Contracts\Payment\CreditCard;
 
 /**
  * PagSeguro SDK
@@ -12,7 +12,7 @@ namespace PagSeguro\Contracts\Payment;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-interface CreditCard
+interface Installment
 {
     /**
      * Get quantity

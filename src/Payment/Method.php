@@ -3,6 +3,7 @@
 namespace PagSeguro\Payment;
 
 use PagSeguro\Payment\Type;
+use PagSeguro\Contracts\Payment\Method as MethodContract;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Payment\CreditCard\CreditCard;
 
@@ -16,7 +17,7 @@ use PagSeguro\Payment\CreditCard\CreditCard;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Method
+class Method implements MethodContract
 {
     /**
      * @var string

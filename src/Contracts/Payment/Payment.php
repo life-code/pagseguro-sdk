@@ -5,6 +5,7 @@ namespace PagSeguro\Contracts\Payment;
 use PagSeguro\Contracts\Customer;
 use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Items\Item;
+use PagSeguro\Contracts\Payment\Method;
 
 /**
  * PagSeguro SDK
@@ -114,7 +115,7 @@ interface Payment
      * 
      * @param \PagSeguro\Shipping\Shipping $shipping
      * @param \PagSeguro\Contracts\Customer $customer
-     * @param \PagSeguro\Payment\Method $method
+     * @param \PagSeguro\Contracts\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */
     public function pay(Shipping $shipping, Customer $customer, Method $method);

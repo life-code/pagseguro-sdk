@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class Address extends TestCase
+class TypeTest extends TestCase
 {
     // 
 }

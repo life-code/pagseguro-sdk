@@ -25,7 +25,7 @@ class Method implements MethodContract
     private $type = '';
     
     /**
-     * @var \PagSeguro\Payment\CreditCard\CreditCard
+     * @var \PagSeguro\Contracts\Payment\CreditCard\CreditCard
      */ 
     private $credit_card = '';
     
@@ -60,7 +60,7 @@ class Method implements MethodContract
     /**
      * Get credit card
      * 
-     * @return string | \PagSeguro\Payment\CreditCard\CreditCard
+     * @return string | \PagSeguro\Contracts\Payment\CreditCard\CreditCard
      */
     public function getCreditCard()
     {
@@ -70,7 +70,7 @@ class Method implements MethodContract
     /**
      * Set credit card
      * 
-     * @param \PagSeguro\Payment\CreditCard\CreditCard $credit_card
+     * @param \PagSeguro\Contracts\Payment\CreditCard\CreditCard $credit_card
      * @return $this
      */
     public function setCreditCard(CreditCard $credit_card)

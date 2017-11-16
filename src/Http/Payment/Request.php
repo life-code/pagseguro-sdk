@@ -4,11 +4,11 @@ namespace PagSeguro\Http\Payment;
 
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Payment\Response;
-use PagSeguro\Payment\Payment;
-use PagSeguro\Shipping\Shipping;
+use PagSeguro\Contracts\Payment\Payment;
+use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Documents;
 use PagSeguro\Contracts\Customer;
-use PagSeguro\Payment\Method;
+use PagSeguro\Contracts\Payment\Method;
 use Spatie\ArrayToXml\ArrayToXml;
 
 /**
@@ -60,9 +60,9 @@ class Request extends BaseRequest
      * Exchange data
      * 
      * @param \PagSeguro\PreApprovals\Payment $payment
-     * @param \PagSeguro\Shipping\Shipping $shipping
+     * @param \PagSeguro\Contracts\Shipping\Shipping $shipping
      * @param \PagSeguro\Contracts\Customer $customer
-     * @param \PagSeguro\Payment\Method $method
+     * @param \PagSeguro\Contracts\Payment\Method $method
      * @return $this
      */
     public function exchangeData(Payment $payment, Shipping $shipping, Customer $customer, Method $method)

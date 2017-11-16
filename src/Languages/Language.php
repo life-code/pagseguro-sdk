@@ -2,9 +2,9 @@
 
 namespace PagSeguro\Languages;
 
-use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Languages\Language as LanguageContract;
+use PagSeguro\Exceptions\PagseguroException;
 
 /**
  * PagSeguro SDK

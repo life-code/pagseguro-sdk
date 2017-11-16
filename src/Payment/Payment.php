@@ -6,8 +6,8 @@ use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Payment\Payment as PaymentContract;
 use PagSeguro\Contracts\Customer;
-use PagSeguro\Shipping\Shipping;
-use PagSeguro\Items\Item;
+use PagSeguro\Contracts\Shipping\Shipping;
+use PagSeguro\Contracts\Items\Item;
 use PagSeguro\Http\Payment\Request;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
@@ -212,7 +212,7 @@ class Payment implements PaymentContract
     /**
      * Set items
      * 
-     * @param \PagSeguro\Items\Item $item
+     * @param \PagSeguro\Contracts\Items\Item $item
      * @return $this
      */
     public function setItems(Item $item)
@@ -225,7 +225,7 @@ class Payment implements PaymentContract
     /**
      * Approves one payment
      * 
-     * @param \PagSeguro\Shipping\Shipping $shipping
+     * @param \PagSeguro\Contracts\Shipping\Shipping $shipping
      * @param \PagSeguro\Contracts\Customer $customer
      * @param \PagSeguro\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response

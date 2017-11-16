@@ -3,7 +3,7 @@
 namespace PagSeguro\Contracts\PreApprovals;
 
 use PagSeguro\Contracts\Customer;
-use PagSeguro\Payment\Method;
+use PagSeguro\Contracts\Payment\Method;
 
 /**
  * PagSeguro SDK

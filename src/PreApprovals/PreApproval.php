@@ -7,7 +7,7 @@ use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Customer;
 use PagSeguro\Contracts\PreApprovals\PreApproval as PreApprovalContract;
 use PagSeguro\Http\PreApprovals\Request;
-use PagSeguro\Payment\Method;
+use PagSeguro\Contracts\Payment\Method;
 
 /**
  * PagSeguro SDK
@@ -104,7 +104,7 @@ class PreApproval implements PreApprovalContract
      * Approves one payment
      * 
      * @param \PagSeguro\Contracts\Customer $customer
-     * @param \PagSeguro\Payment\Method $method
+     * @param \PagSeguro\Contracts\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */
     public function approve(Customer $customer, Method $method)

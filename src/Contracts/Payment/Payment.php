@@ -3,8 +3,8 @@
 namespace PagSeguro\Contracts\Payment;
 
 use PagSeguro\Contracts\Customer;
-use PagSeguro\Shipping\Shipping;
-use PagSeguro\Items\Item;
+use PagSeguro\Contracts\Shipping\Shipping;
+use PagSeguro\Contracts\Items\Item;
 
 /**
  * PagSeguro SDK

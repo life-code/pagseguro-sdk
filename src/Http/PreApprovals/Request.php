@@ -4,10 +4,10 @@ namespace PagSeguro\Http\PreApprovals;
 
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\PreApprovals\Response;
-use PagSeguro\PreApprovals\PreApproval;
+use PagSeguro\Contracts\PreApprovals\PreApproval;
 use PagSeguro\Contracts\Documents;
 use PagSeguro\Contracts\Customer;
-use PagSeguro\Payment\Method;
+use PagSeguro\Contracts\Payment\Method;
 
 /**
  * PagSeguro SDK
@@ -58,9 +58,9 @@ class Request extends BaseRequest
     /**
      * Exchange data
      * 
-     * @param \PagSeguro\PreApprovals\PreApproval $pre_approval
+     * @param \PagSeguro\Contracts\PreApprovals\PreApproval $pre_approval
      * @param \PagSeguro\Contracts\Customer $customer
-     * @param \PagSeguro\Payment\Method $method
+     * @param \PagSeguro\Contracts\Payment\Method $method
      * @return $this
      */
     public function exchangeData(PreApproval $pre_approval, Customer $customer, Method $method)

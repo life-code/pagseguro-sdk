@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class TypeTest extends TestCase
+class ShippingTypeTest extends TestCase
 {
     // 
 }

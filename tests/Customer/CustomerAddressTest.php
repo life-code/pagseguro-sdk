@@ -6,7 +6,7 @@ use PagSeguro\Contracts\Address as AddressContract;
 use PagSeguro\Customer\Address;
 use PagSeguro\Exceptions\PagseguroException;
 
-class AddressTest extends TestCase
+class CustomerAddressTest extends TestCase
 {
     /**
      * Address Instance

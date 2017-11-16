@@ -4,6 +4,7 @@ namespace PagSeguro\Payment\CreditCard;
 
 use PagSeguro\Contracts\Phone;
 use PagSeguro\Contracts\Documents;
+use PagSeguro\Contracts\Payment\CreditCard\Holder as HolderContract;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
 
@@ -17,7 +18,7 @@ use PagSeguro\Support\Validator;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Holder
+class Holder implements HolderContract
 {
     use Validator;
     

@@ -4,6 +4,7 @@ namespace PagSeguro\Languages;
 
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Contracts\Languages\Language as LanguageContract;
 
 /**
  * PagSeguro SDK
@@ -15,7 +16,7 @@ use PagSeguro\Contracts\Credentials\Environment;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Language
+class Language implements LanguageContract
 {
     /**
      * Base path to language files

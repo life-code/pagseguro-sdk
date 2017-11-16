@@ -46,4 +46,24 @@ class ShippingTest extends TestCase
     {
         $this->assertInstanceOf(Shipping::class, $this->instance()->setAddress(new Address()));
     }
+    
+    /**
+     * Test get cost
+     *
+     * @return void
+     */
+    public function testGetCost()
+    {
+        $this->assertEquals('100.00', $this->instance()->setCost('100.00')->getCost());
+    }
+    
+    /**
+     * Test set cost
+     *
+     * @return void
+     */
+    public function testSetCost()
+    {
+        $this->assertInstanceOf(Shipping::class, $this->instance()->setCost('100.00'));
+    }
 }

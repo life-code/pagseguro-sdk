@@ -36,7 +36,7 @@ interface Shipping
      * 
      * @return float
      */
-    public function getCost() : float
+    public function getCost() : float;
 
     /**
      * Set cost
@@ -44,7 +44,7 @@ interface Shipping
      * @param float $cost
      * @return $this
      */
-    public function setCost(float $cost)
+    public function setCost(float $cost);
     
     /**
      * Get type

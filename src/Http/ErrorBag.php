@@ -4,7 +4,7 @@ namespace Pagseguro\Http;
 
 use PagSeguro\Contracts\Http\ErrorBag as ErrorBagContracts;
 use PagSeguro\Contracts\Credentials\Environment;
-use PagSeguro\Contracts\Languages\Language;
+use PagSeguro\Languages\Language;
 
 /**
  * PagSeguro SDK
@@ -24,7 +24,7 @@ class ErrorBag implements ErrorBagContracts
     private $data = [];
     
     /**
-     * @var \PagSeguro\Contracts\Languages\Language
+     * @var \PagSeguro\Languages\Language
      */
     private $language;
     

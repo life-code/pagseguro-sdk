@@ -4,6 +4,8 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Shipping\Shipping;
 use PagSeguro\Shipping\Address;
+use PagSeguro\Shipping\Type;
+use PagSeguro\Exceptions\PagseguroException;
 
 class ShippingTest extends TestCase
 {
@@ -65,5 +67,36 @@ class ShippingTest extends TestCase
     public function testSetCost()
     {
         $this->assertInstanceOf(Shipping::class, $this->instance()->setCost('100.00'));
+    }
+    
+    /**
+     * Test get type
+     *
+     * @return void
+     */
+    public function testGetType()
+    {
+        $this->assertEquals(Type::TYPE_PAC, $this->instance()->setType(Type::TYPE_PAC)->getType());
+    }
+    
+    /**
+     * Test set type
+     *
+     * @return void
+     */
+    public function testSetType()
+    {
+        $this->assertInstanceOf(Shipping::class, $this->instance()->setType(Type::TYPE_PAC));
+    }
+    
+    /**
+     * Test throw set type
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetType()
+    {
+        $this->assertInstanceOf(Shipping::class, $this->instance()->setType(10));
     }
 }

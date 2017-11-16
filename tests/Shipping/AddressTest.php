@@ -8,5 +8,23 @@ use PagSeguro\Exceptions\PagseguroException;
 
 class AddressTest extends TestCase
 {
-    // 
+    /**
+     * Address Instance
+     * 
+     * @return \PagSeguro\Contracts\Address
+     */
+    public function instance()
+    {
+        return new Address();
+    }
+    
+    /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testInstance()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance());
+    }
 }

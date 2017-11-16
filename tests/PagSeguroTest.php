@@ -18,7 +18,7 @@ class PagSeguroTest extends TestCase
      */
     public function testVersion()
     {
-        $this->assertEquals('0.8.92', PagSeguro::version());
+        $this->assertEquals('0.8.95', PagSeguro::version());
     }
     
     /**

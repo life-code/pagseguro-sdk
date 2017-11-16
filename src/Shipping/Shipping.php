@@ -2,8 +2,9 @@
 
 namespace PagSeguro\Shipping;
 
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Contracts\Shipping\Shipping as ShippingContract;
 use PagSeguro\Contracts\Address;
+use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Shipping\Type;
 
 /**
@@ -16,7 +17,7 @@ use PagSeguro\Shipping\Type;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Shipping
+class Shipping implements ShippingContract
 {
     /**
      * @var \PagSeguro\Contracts\Address

@@ -5,6 +5,7 @@ namespace PagSeguro\Payment;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Payment\Payment as PaymentContract;
+use PagSeguro\Contracts\Payment\Method;
 use PagSeguro\Contracts\Customer;
 use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Items\Item;
@@ -227,7 +228,7 @@ class Payment implements PaymentContract
      * 
      * @param \PagSeguro\Contracts\Shipping\Shipping $shipping
      * @param \PagSeguro\Contracts\Customer $customer
-     * @param \PagSeguro\Payment\Method $method
+     * @param \PagSeguro\Contracts\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */
     public function pay(Shipping $shipping, Customer $customer, Method $method)

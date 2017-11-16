@@ -2,6 +2,8 @@
 
 namespace PagSeguro\Shipping;
 
+use PagSeguro\Contracts\Shipping\Type as TypeContract;
+
 /**
  * PagSeguro SDK
  * 
@@ -12,7 +14,7 @@ namespace PagSeguro\Shipping;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Type
+class Type implements TypeContract
 {
     /**
      * @var int

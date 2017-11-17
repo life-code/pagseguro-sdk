@@ -8,17 +8,51 @@
 ## Install by Composer:
 > To download and install Composer in your environment go to https://getcomposer.org/download/ and if you have questions about how to use it, consult the [official Composer documentation](https://getcomposer.org/doc).
 
-Run the low command on the terminal
+Run the low command on the terminal:
 ```sh
 $ composer require life-code/pagseguro-sdk
 ```
 
+## Configuration: ##
+Create a file named .env at the root of your project (at the same level as the vendor folder). The example below:
+
+```sh
+* project-name
+    * vendor/
+    * .env
+```
+
+
+Within file .env, declare the following variables:
+
+```sh
+PAGSEGURO_ENV=PRODUCTION
+PAGSEGURO_EMAIL=your-pagseguro-email@example.com
+
+PAGSEGURO_TOKEN_PRODUCTION=your-production-pagseguro-token
+PAGSEGURO_TOKEN_SANDBOX=your-sandbox-pagseguro-token
+
+PAGSEGURO_APP_ID_PRODUCTION=your-production-pagseguro-app-id
+PAGSEGURO_APP_ID_SANDBOX=your-sandbox-pagseguro-app-id
+
+PAGSEGURO_APP_KEY_PRODUCTION=your-production-pagseguro-app-key
+PAGSEGURO_APP_KEY_SANDBOX=your-sandbox-pagseguro-app-key
+
+PAGSEGURO_URL=https://ws.{PAGSEGURO_ENV}pagseguro.uol.com.br/
+
+PAGSEGURO_LOCATION=pt-br
+```
+
+Ready, your PagSeguro library is ready for use!
+
+
+
 Links:
-* [Create Session ID](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Session.md)
-* [Create Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Create.md)
-* [Consult Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Notification.md)
-* [Create Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Signature/Create.md)
-* [Consult Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Signature/Notification.md)
+- [Create Session ID](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Session.md)
+- [Create Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Create.md)
+- [Consult Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Notification.md)
+- [Create Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Signature/Create.md)
+- [Consult Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Signature/Notification.md)
 
 
 ## Contribution Guidelines

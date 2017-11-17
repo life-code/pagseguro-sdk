@@ -9,6 +9,16 @@ use PagSeguro\PreApprovals\Notification as NotificationPreApproval;
 use PagSeguro\Payment\Payment;
 use PagSeguro\Payment\Notification as PaymentNotification;
 
+/**
+ * PagSeguro SDK
+ * 
+ * @type        library
+ * @version     0.8.95
+ * @package     life-code/pagseguro-sdk
+ * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
+ * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
+ * @license     MIT
+ */
 class PagSeguroTest extends TestCase
 {
     /**

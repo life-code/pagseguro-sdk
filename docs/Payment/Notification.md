@@ -1,5 +1,7 @@
 # Pagseguro SDK Documentation
 
+[Return documentation](https://github.com/life-code/pagseguro-sdk/blob/master/docs/README.md)
+
 ## Notification Payment documentation
 
 ```sh

@@ -1,5 +1,7 @@
 # Pagseguro SDK Documentation
 
+[Return documentation](https://github.com/life-code/pagseguro-sdk/blob/master/docs/README.md)
+
 ## Create Payment documentation
 > Whenever you use PagSeguro checkout, you must create a session. [Click here to learn more](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Session.md).
 

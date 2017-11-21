@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Common;
 
-use PagSeguro\Contracts\Address as AddressContract;
+use PagSeguro\Contracts\Common\Address as AddressContract;
 
 /**
  * PagSeguro SDK

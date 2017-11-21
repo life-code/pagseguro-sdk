@@ -6,8 +6,8 @@ use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Payment\Response;
 use PagSeguro\Contracts\Payment\Payment;
 use PagSeguro\Contracts\Shipping\Shipping;
-use PagSeguro\Contracts\Documents;
-use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\Common\Documents;
+use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Payment\Method;
 use Spatie\ArrayToXml\ArrayToXml;
 
@@ -61,7 +61,7 @@ class Request extends BaseRequest
      * 
      * @param \PagSeguro\PreApprovals\Payment $payment
      * @param \PagSeguro\Contracts\Shipping\Shipping $shipping
-     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
      * @param \PagSeguro\Contracts\Payment\Method $method
      * @return $this
      */

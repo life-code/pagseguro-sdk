@@ -5,8 +5,8 @@ namespace PagSeguro\Http\PreApprovals;
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\PreApprovals\Response;
 use PagSeguro\Contracts\PreApprovals\PreApproval;
-use PagSeguro\Contracts\Documents;
-use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\Common\Documents;
+use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Payment\Method;
 
 /**
@@ -59,7 +59,7 @@ class Request extends BaseRequest
      * Exchange data
      * 
      * @param \PagSeguro\Contracts\PreApprovals\PreApproval $pre_approval
-     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
      * @param \PagSeguro\Contracts\Payment\Method $method
      * @return $this
      */

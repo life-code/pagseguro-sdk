@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Common;
 
-use PagSeguro\Contracts\Documents as DocumentsContract;
+use PagSeguro\Contracts\Common\Documents as DocumentsContract;
 use PagSeguro\Exceptions\PagseguroException;
 
 /**

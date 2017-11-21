@@ -15,15 +15,15 @@
 
 The PagSeguro SDK library contains several features that PagSeguro offers in the form of APIs. With it you can integrate features like:
 
-- Create **payment requisitions**
-- Create **transparent signatures** and manage them
-- Create **subscription requisitions**
-- Cancel **signatures**
-- Consult **signatures**
+- Create **payment requisitions** (pending)
+- Create **signatures requisitions** (pending)
+- Create **transparent signatures**
+- Create **transparent payment requisitions**
+- Cancel **signatures** (pending)
+- Consult **signatures by code**
 - Consult **transactions by code**
-- Consult **transactions by date range**
-- Consult **abandoned transactions**
-- Get **notifications**
+- Consult **transactions by date range** (pending)
+- Consult **abandoned transactions** (pending)
 
 ## Documentation
 [Click here to access the documentation.](https://github.com/life-code/pagseguro-sdk/tree/master/docs)

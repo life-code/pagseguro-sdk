@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Common;
 
-use PagSeguro\Contracts\Phone as PhoneContract;
+use PagSeguro\Contracts\Common\Phone as PhoneContract;
 use PagSeguro\Support\Mask;
 use PagSeguro\Exceptions\PagseguroException;
 

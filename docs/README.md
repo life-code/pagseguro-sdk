@@ -51,8 +51,8 @@ Links:
 - [Create Session ID](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Session.md)
 - [Create Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Create.md)
 - [Consult Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Notification.md)
-- [Create Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Signature/Create.md)
-- [Consult Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Signature/Notification.md)
+- [Create Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Create.md)
+- [Consult Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Notification.md)
 
 
 ## Contribution Guidelines

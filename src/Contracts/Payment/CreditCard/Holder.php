@@ -2,8 +2,8 @@
 
 namespace PagSeguro\Contracts\Payment\CreditCard;
 
-use PagSeguro\Contracts\Phone;
-use PagSeguro\Contracts\Documents;
+use PagSeguro\Contracts\Common\Phone;
+use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Exceptions\PagseguroException;
 
 /**
@@ -51,14 +51,14 @@ interface Holder
     /**
      * Get phone
      * 
-     * @return string | \PagSeguro\Contracts\Phone
+     * @return string | \PagSeguro\Contracts\Common\Phone
      */
     public function getPhone();
     
     /**
      * Set phone
      * 
-     * @param \PagSeguro\Contracts\Phone $phone
+     * @param \PagSeguro\Contracts\Common\Phone $phone
      * @return $this
      */
     public function setPhone(Phone $phone);
@@ -66,14 +66,14 @@ interface Holder
     /**
      * Get documents
      * 
-     * @return string | \PagSeguro\Contracts\Documents
+     * @return string | \PagSeguro\Contracts\Common\Documents
      */
     public function getDocuments();
     
     /**
      * Set documents
      * 
-     * @param \PagSeguro\Contracts\Documents $documents
+     * @param \PagSeguro\Contracts\Common\Documents $documents
      * @return $this
      */
     public function setDocuments(Documents $documents);

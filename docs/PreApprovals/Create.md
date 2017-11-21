@@ -21,16 +21,16 @@ $pre_approval->setReference('54a6sg54a6ds5f1g3a5sdfg4');
 
 // Create customer instance for payment
 $customer   = new \PagSeguro\Customer\Customer();
-$documents  = new \PagSeguro\Customer\Documents();
-$phone      = new \PagSeguro\Customer\Phone();
-$address    = new \PagSeguro\Customer\Address();
+$documents  = new \PagSeguro\Common\Documents();
+$phone      = new \PagSeguro\Common\Phone();
+$address    = new \PagSeguro\Common\Address();
 
 try {
     $customer->setName('John Mark');
     $customer->setEmail('jonh.mark@example.com');
     $customer->setHash('da39a3ee5e6b4b0d3255bfef95601890afd80709');
     
-    $documents->setItem(\PagSeguro\Contracts\Documents::CPF, '591.391.503-80');
+    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '591.391.503-80');
     $customer->setDocuments($documents);
     
     $phone->setAreaCode('92');
@@ -55,14 +55,14 @@ try {
 $method      = new \PagSeguro\Payment\Method();
 $holder      = new \PagSeguro\Payment\CreditCard\Holder();
 $credit_card = new \PagSeguro\Payment\CreditCard\CreditCard();
-$documents   = new \PagSeguro\Payment\CreditCard\Documents();
-$phone       = new \PagSeguro\Payment\CreditCard\Phone();
+$documents   = new \PagSeguro\Common\Documents();
+$phone       = new \PagSeguro\Common\Phone();
 
 try {
     $holder->setName('Credit Card Client Name');
     $holder->setBirthDate('12/01/1995');
     
-    $documents->setItem(\PagSeguro\Contracts\Documents::CPF, '591.391.503-80'));
+    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '591.391.503-80'));
     $holder->setDocuments($documents);
     
     $phone->setAreaCode('34');

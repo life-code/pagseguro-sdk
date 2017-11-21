@@ -3,7 +3,8 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Shipping\Shipping;
-use PagSeguro\Shipping\Address;
+use PagSeguro\Contracts\Common\Address as AddressContract;
+use PagSeguro\Common\Address;
 use PagSeguro\Shipping\Type;
 use PagSeguro\Exceptions\PagseguroException;
 
@@ -46,7 +47,7 @@ class ShippingTest extends TestCase
      */
     public function testGetAddress()
     {
-        $this->assertInstanceOf(Address::class, $this->instance()->setAddress(new Address())->getAddress());
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setAddress(new Address())->getAddress());
     }
     
     /**

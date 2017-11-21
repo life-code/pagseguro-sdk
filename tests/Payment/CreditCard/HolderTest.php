@@ -4,11 +4,11 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Payment\CreditCard\Holder;
 
-use PagSeguro\Payment\CreditCard\Phone;
-use PagSeguro\Contracts\Phone as PhoneContract;
+use PagSeguro\Common\Phone;
+use PagSeguro\Contracts\Common\Phone as PhoneContract;
 
-use PagSeguro\Payment\CreditCard\Documents;
-use PagSeguro\Contracts\Documents as DocumentsContract;
+use PagSeguro\Common\Documents;
+use PagSeguro\Contracts\Common\Documents as DocumentsContract;
 
 /**
  * PagSeguro SDK
@@ -35,7 +35,7 @@ class HolderTest extends TestCase
     /**
      * Phone Instance
      * 
-     * @return \PagSeguro\Contracts\Phone
+     * @return \PagSeguro\Contracts\Common\Phone
      */
     public static function phoneInstance()
     {
@@ -45,7 +45,7 @@ class HolderTest extends TestCase
     /**
      * Documents Instance
      * 
-     * @return \PagSeguro\Contracts\Documents
+     * @return \PagSeguro\Contracts\Common\Documents
      */
     public static function documentsInstance()
     {

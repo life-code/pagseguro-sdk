@@ -3,16 +3,16 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Customer\Customer;
-use PagSeguro\Contracts\Customer as CustomerContract;
+use PagSeguro\Contracts\Customer\Customer as CustomerContract;
 
-use PagSeguro\Customer\Phone;
-use PagSeguro\Contracts\Phone as PhoneContract;
+use PagSeguro\Common\Phone;
+use PagSeguro\Contracts\Common\Phone as PhoneContract;
 
-use PagSeguro\Customer\Address;
-use PagSeguro\Contracts\Address as AddressContract;
+use PagSeguro\Common\Address;
+use PagSeguro\Contracts\Common\Address as AddressContract;
 
-use PagSeguro\Customer\Documents;
-use PagSeguro\Contracts\Documents as DocumentsContract;
+use PagSeguro\Common\Documents;
+use PagSeguro\Contracts\Common\Documents as DocumentsContract;
 
 use PagSeguro\Exceptions\PagseguroException;
 
@@ -31,7 +31,7 @@ class CustomerTest extends TestCase
     /**
      * Customer Instance
      * 
-     * @return \PagSeguro\Contracts\Customer
+     * @return \PagSeguro\Contracts\Customer\Customer
      */
     public static function instance()
     {
@@ -41,7 +41,7 @@ class CustomerTest extends TestCase
     /**
      * Phone Instance
      * 
-     * @return \PagSeguro\Contracts\Phone
+     * @return \PagSeguro\Contracts\Common\Phone
      */
     public static function phoneInstance()
     {
@@ -51,7 +51,7 @@ class CustomerTest extends TestCase
     /**
      * Address Instance
      * 
-     * @return \PagSeguro\Contracts\Address
+     * @return \PagSeguro\Contracts\Common\Address
      */
     public static function addressInstance()
     {
@@ -61,7 +61,7 @@ class CustomerTest extends TestCase
     /**
      * Documents Instance
      * 
-     * @return \PagSeguro\Contracts\Documents
+     * @return \PagSeguro\Contracts\Common\Documents
      */
     public static function documentsInstance()
     {

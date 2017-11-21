@@ -2,10 +2,10 @@
 
 namespace PagSeguro\Customer;
 
-use PagSeguro\Contracts\Customer as CustomerContract;
-use PagSeguro\Contracts\Address;
-use PagSeguro\Contracts\Phone;
-use PagSeguro\Contracts\Documents;
+use PagSeguro\Contracts\Customer\Customer as CustomerContract;
+use PagSeguro\Contracts\Common\Address;
+use PagSeguro\Contracts\Common\Phone;
+use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
 
@@ -44,17 +44,17 @@ class Customer implements CustomerContract
     private $hash = '';
 
     /**
-     * @var PagSeguro\Contracts\Phone
+     * @var PagSeguro\Contracts\Common\Phone
      */
     private $phone = '';
 
     /**
-     * @var PagSeguro\Contracts\Address
+     * @var PagSeguro\Contracts\Common\Address
      */
     private $address = '';
     
     /**
-     * @var PagSeguro\Contracts\Documents
+     * @var PagSeguro\Contracts\Common\Documents
      */
     private $documents = '';
     
@@ -162,7 +162,7 @@ class Customer implements CustomerContract
     /**
      * Get phone
      * 
-     * @return string | \PagSeguro\Contracts\Phone
+     * @return string | \PagSeguro\Contracts\Common\Phone
      */
     public function getPhone()
     {
@@ -172,7 +172,7 @@ class Customer implements CustomerContract
     /**
      * Set phone
      * 
-     * @param \PagSeguro\Contracts\Phone $phone
+     * @param \PagSeguro\Contracts\Common\Phone $phone
      * @return $this
      */
     public function setPhone(Phone $phone)
@@ -185,7 +185,7 @@ class Customer implements CustomerContract
     /**
      * Get address
      * 
-     * @return string | \PagSeguro\Contracts\Address
+     * @return string | \PagSeguro\Contracts\Common\Address
      */
     public function getAddress()
     {
@@ -195,7 +195,7 @@ class Customer implements CustomerContract
     /**
      * Set address
      * 
-     * @param \PagSeguro\Contracts\Address $address
+     * @param \PagSeguro\Contracts\Common\Address $address
      * @return $this
      */
     public function setAddress(Address $address)
@@ -208,7 +208,7 @@ class Customer implements CustomerContract
     /**
      * Get documents
      * 
-     * @return string | \PagSeguro\Contracts\Documents
+     * @return string | \PagSeguro\Contracts\Common\Documents
      */
     public function getDocuments()
     {
@@ -218,7 +218,7 @@ class Customer implements CustomerContract
     /**
      * Set documents
      * 
-     * @param \PagSeguro\Contracts\Documents $documents
+     * @param \PagSeguro\Contracts\Common\Documents $documents
      * @return $this
      */
     public function setDocuments(Documents $documents)

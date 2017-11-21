@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Payment\CreditCard;
 
-use PagSeguro\Contracts\Address;
+use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Contracts\Payment\CreditCard\Holder;
 use PagSeguro\Contracts\Payment\CreditCard\Installment;
 use PagSeguro\Contracts\Payment\CreditCard\CreditCard as CreditCardContract;
@@ -36,7 +36,7 @@ class CreditCard implements CreditCardContract
     private $installment = '';
 
     /**
-     * @var PagSeguro\Contracts\Address
+     * @var PagSeguro\Contracts\Common\Address
      */
     private $address = '';
     
@@ -112,7 +112,7 @@ class CreditCard implements CreditCardContract
     /**
      * Get address
      * 
-     * @return string | \PagSeguro\Contracts\Address
+     * @return string | \PagSeguro\Contracts\Common\Address
      */
     public function getAddress()
     {
@@ -122,7 +122,7 @@ class CreditCard implements CreditCardContract
     /**
      * Set address
      * 
-     * @param \PagSeguro\Contracts\Address $address
+     * @param \PagSeguro\Contracts\Common\Address $address
      * @return $this
      */
     public function setAddress(Address $address)

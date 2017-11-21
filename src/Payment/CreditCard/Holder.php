@@ -2,8 +2,8 @@
 
 namespace PagSeguro\Payment\CreditCard;
 
-use PagSeguro\Contracts\Phone;
-use PagSeguro\Contracts\Documents;
+use PagSeguro\Contracts\Common\Phone;
+use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Payment\CreditCard\Holder as HolderContract;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
@@ -33,12 +33,12 @@ class Holder implements HolderContract
     private $birth_date = '';
 
     /**
-     * @var PagSeguro\Contracts\Phone
+     * @var PagSeguro\Contracts\Common\Phone
      */
     private $phone = '';
 
     /**
-     * @var PagSeguro\Contracts\Documents
+     * @var PagSeguro\Contracts\Common\Documents
      */
     private $documents = '';
     
@@ -95,7 +95,7 @@ class Holder implements HolderContract
     /**
      * Get phone
      * 
-     * @return string | \PagSeguro\Contracts\Phone
+     * @return string | \PagSeguro\Contracts\Common\Phone
      */
     public function getPhone()
     {
@@ -105,7 +105,7 @@ class Holder implements HolderContract
     /**
      * Set phone
      * 
-     * @param \PagSeguro\Contracts\Phone $phone
+     * @param \PagSeguro\Contracts\Common\Phone $phone
      * @return $this
      */
     public function setPhone(Phone $phone)
@@ -118,7 +118,7 @@ class Holder implements HolderContract
     /**
      * Get documents
      * 
-     * @return string | \PagSeguro\Contracts\Documents
+     * @return string | \PagSeguro\Contracts\Common\Documents
      */
     public function getDocuments()
     {
@@ -128,7 +128,7 @@ class Holder implements HolderContract
     /**
      * Set documents
      * 
-     * @param \PagSeguro\Contracts\Documents $documents
+     * @param \PagSeguro\Contracts\Common\Documents $documents
      * @return $this
      */
     public function setDocuments(Documents $documents)

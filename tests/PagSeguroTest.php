@@ -13,7 +13,7 @@ use PagSeguro\Payment\Notification as PaymentNotification;
  * PagSeguro SDK
  * 
  * @type        library
- * @version     0.8.95
+ * @version     0.8.96
  * @package     life-code/pagseguro-sdk
  * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
@@ -28,7 +28,7 @@ class PagSeguroTest extends TestCase
      */
     public function testVersion()
     {
-        $this->assertEquals('0.8.95', PagSeguro::version());
+        $this->assertEquals('0.8.96', PagSeguro::version());
     }
     
     /**

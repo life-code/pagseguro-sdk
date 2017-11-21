@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Contracts\Payment\CreditCard;
 
-use PagSeguro\Contracts\Address;
+use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Contracts\Payment\CreditCard\Holder;
 use PagSeguro\Contracts\Payment\CreditCard\Installment;
 use PagSeguro\Exceptions\PagseguroException;
@@ -67,14 +67,14 @@ interface CreditCard
     /**
      * Get address
      * 
-     * @return string | \PagSeguro\Contracts\Address
+     * @return string | \PagSeguro\Contracts\Common\Address
      */
     public function getAddress();
     
     /**
      * Set address
      * 
-     * @param \PagSeguro\Contracts\Address $address
+     * @param \PagSeguro\Contracts\Common\Address $address
      * @return $this
      */
     public function setAddress(Address $address);

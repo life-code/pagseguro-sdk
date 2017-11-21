@@ -32,12 +32,6 @@ PAGSEGURO_EMAIL=your-pagseguro-email@example.com
 PAGSEGURO_TOKEN_PRODUCTION=your-production-pagseguro-token
 PAGSEGURO_TOKEN_SANDBOX=your-sandbox-pagseguro-token
 
-PAGSEGURO_APP_ID_PRODUCTION=your-production-pagseguro-app-id
-PAGSEGURO_APP_ID_SANDBOX=your-sandbox-pagseguro-app-id
-
-PAGSEGURO_APP_KEY_PRODUCTION=your-production-pagseguro-app-key
-PAGSEGURO_APP_KEY_SANDBOX=your-sandbox-pagseguro-app-key
-
 PAGSEGURO_URL=https://ws.{PAGSEGURO_ENV}pagseguro.uol.com.br/
 
 PAGSEGURO_LOCATION=pt-br

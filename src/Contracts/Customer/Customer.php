@@ -1,6 +1,6 @@
 <?php
 
-namespace PagSeguro\Contracts;
+namespace PagSeguro\Contracts\Customer;
 
 use PagSeguro\Contracts\Address;
 use PagSeguro\Contracts\Phone;

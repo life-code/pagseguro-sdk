@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Contracts\PreApprovals;
 
-use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Payment\Method;
 
 /**
@@ -50,7 +50,7 @@ interface PreApproval
     /**
      * Approves one payment
      * 
-     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
      * @param \PagSeguro\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */

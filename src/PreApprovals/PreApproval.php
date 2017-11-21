@@ -4,7 +4,7 @@ namespace PagSeguro\PreApprovals;
 
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
-use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\PreApprovals\PreApproval as PreApprovalContract;
 use PagSeguro\Http\PreApprovals\Request;
 use PagSeguro\Contracts\Payment\Method;
@@ -103,7 +103,7 @@ class PreApproval implements PreApprovalContract
     /**
      * Approves one payment
      * 
-     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
      * @param \PagSeguro\Contracts\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */

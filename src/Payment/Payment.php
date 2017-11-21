@@ -6,7 +6,7 @@ use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Payment\Payment as PaymentContract;
 use PagSeguro\Contracts\Payment\Method;
-use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Items\Item;
 use PagSeguro\Http\Payment\Request;
@@ -227,7 +227,7 @@ class Payment implements PaymentContract
      * Approves one payment
      * 
      * @param \PagSeguro\Contracts\Shipping\Shipping $shipping
-     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
      * @param \PagSeguro\Contracts\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */

@@ -3,7 +3,7 @@
 namespace PagSeguro\Shipping;
 
 use PagSeguro\Contracts\Shipping\Shipping as ShippingContract;
-use PagSeguro\Contracts\Address;
+use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Shipping\Type;
 
@@ -20,7 +20,7 @@ use PagSeguro\Shipping\Type;
 class Shipping implements ShippingContract
 {
     /**
-     * @var \PagSeguro\Contracts\Address
+     * @var \PagSeguro\Contracts\Common\Address
      */
     private $address = '';
 
@@ -42,7 +42,7 @@ class Shipping implements ShippingContract
     /**
      * Get address
      * 
-     * @return string | \PagSeguro\Contracts\Address
+     * @return string | \PagSeguro\Contracts\Common\Address
      */
     public function getAddress()
     {
@@ -52,7 +52,7 @@ class Shipping implements ShippingContract
     /**
      * Set address
      * 
-     * @param \PagSeguro\Contracts\Address $address
+     * @param \PagSeguro\Contracts\Common\Address $address
      * @return $this
      */
     public function setAddress(Address $address)

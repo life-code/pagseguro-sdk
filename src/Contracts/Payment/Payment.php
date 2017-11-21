@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Contracts\Payment;
 
-use PagSeguro\Contracts\Customer;
+use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Items\Item;
 use PagSeguro\Contracts\Payment\Method;
@@ -114,7 +114,7 @@ interface Payment
      * Approves one payment
      * 
      * @param \PagSeguro\Shipping\Shipping $shipping
-     * @param \PagSeguro\Contracts\Customer $customer
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
      * @param \PagSeguro\Contracts\Payment\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */

@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Contracts\Shipping;
 
-use PagSeguro\Contracts\Address;
+use PagSeguro\Contracts\Common\Address;
 
 /**
  * PagSeguro SDK
@@ -19,14 +19,14 @@ interface Shipping
     /**
      * Get address
      * 
-     * @return string | \PagSeguro\Contracts\Address
+     * @return string | \PagSeguro\Contracts\Common\Address
      */
     public function getAddress();
 
     /**
      * Set address
      * 
-     * @param \PagSeguro\Contracts\Address $address
+     * @param \PagSeguro\Contracts\Common\Address $address
      * @return $this
      */
     public function setAddress(Address $address);

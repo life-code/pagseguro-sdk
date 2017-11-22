@@ -40,7 +40,7 @@ class Request extends BaseRequest
      */
     public function getUrl() : string
     {
-        return $this->env->getUrl() . 'v2/transactions?' . $this->credentials->toString();
+        return $this->env->getUrl() . '/v2/checkout?' . $this->credentials->toString();
     }
     
     /**
@@ -72,24 +72,24 @@ class Request extends BaseRequest
         foreach ($payment->getItems() as $item) {
             $items[] = [
                 'item' => [
-                    'id'          => $item->getId(),
-                    'description' => $item->getDescription(),
-                    'amount'      => $item->getAmount(),
-                    'quantity'    => $item->getQuantity(),
+                    'id'           => $item->getId(),
+                    'description'  => $item->getDescription(),
+                    'amount'       => $item->getAmount(),
+                    'quantity'     => $item->getQuantity(),
+                    'weight'       => $item->getWeight(),
+                    'shippingCost' => $item->getShippingCost(),
                 ],
             ];
         }
         
         $data = [
-            'mode'            => $payment->getMode(),
-            'currency'        => $payment->getCurrency(),
-            'notificationURL' => $payment->getNotificationURL(),
-            'receiverEmail'   => $payment->getReceiveEmail(),
-            'reference'       => $payment->getReference(),
-            'sender'          => [
+            'currency'    => $payment->getCurrency(),
+            'redirectURL' => $payment->getRedirectURL(),
+            'reference'   => $payment->getReference(),
+            'sender'      => [
                 'name'      => $customer->getName(),
                 'email'     => $customer->getEmail(),
-                'hash'      => $customer->getHash(),
+                'ip'        => $customer->getIp(),
                 'phone'     => [
                     'areaCode' => $customer->getPhone()->getAreaCode(),
                     'number'   => $customer->getPhone()->getNumber(),
@@ -101,46 +101,16 @@ class Request extends BaseRequest
                     ],
                 ],
             ],
-            'items'           => $items,
-            'shipping'        => [
+            'items'       => $items,
+            'shipping'    => [
                 'addressRequired' => $shipping->getAddressRequired(),
             ],
-            'method'          => $method->getType(),
-            'creditCard'      => [
-                'token'          => $method->getCreditCard()->getToken(),
-                'installment'    => [
-                    'quantity'                      => $method->getCreditCard()->getInstallment()->getQuantity(),
-                    'noInterestInstallmentQuantity' => $method->getCreditCard()->getInstallment()->getNoInterestInstallmentQuantity(),
-                    'value'                         => $method->getCreditCard()->getInstallment()->getValue(),
-                ],
-                'holder'         => [
-                    'name'      => $method->getCreditCard()->getHolder()->getName(),
-                    'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
-                    'documents' => [
-                        'document' => [
-                            'type'  => Documents::CPF,
-                            'value' => $method->getCreditCard()->getHolder()->getDocuments()->getItem(Documents::CPF),
-                        ],
-                    ],
-                    'phone'     => [
-                        'areaCode' => $method->getCreditCard()->getHolder()->getPhone()->getAreaCode(),
-                        'number'   => $method->getCreditCard()->getHolder()->getPhone()->getNumber(),
-                    ],
-                ],
-                'billingAddress' => [
-                    'street'     => $method->getCreditCard()->getAddress()->getStreet(),
-                    'number'     => $method->getCreditCard()->getAddress()->getNumber(),
-                    'complement' => $method->getCreditCard()->getAddress()->getComplement(),
-                    'district'   => $method->getCreditCard()->getAddress()->getDistrict(),
-                    'city'       => $method->getCreditCard()->getAddress()->getCity(),
-                    'state'      => $method->getCreditCard()->getAddress()->getState(),
-                    'country'    => $method->getCreditCard()->getAddress()->getCountry(),
-                    'postalCode' => $method->getCreditCard()->getAddress()->getCep(),
-                ],
+            'receiver'    => [
+                'email' => $payment->getReceiveEmail(),
             ],
         ];
         
-        $this->data = ArrayToXml::convert($data, 'payment');
+        $this->data = ArrayToXml::convert($data, 'checkout');
         
         return $this;
     }

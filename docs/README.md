@@ -43,8 +43,9 @@ Ready, your PagSeguro library is ready for use!
 
 Links:
 - [Create Session ID](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Session.md)
-- [Create Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Create.md)
-- [Consult Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Notification.md)
+- [Create Transparent Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Transparent/Create.md)
+- [Consult Transparent Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Transparent/Notification.md)
+- [Create Simple Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Payment/Create.md)
 - [Create Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Create.md)
 - [Consult Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Notification.md)
 

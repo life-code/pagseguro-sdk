@@ -9,6 +9,7 @@ use PagSeguro\Contracts\Payment\Method;
 use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Items\Item;
+use PagSeguro\Http\Payment\Transparent\Request as TransparentRequest;
 use PagSeguro\Http\Payment\Request;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
@@ -51,6 +52,11 @@ class Payment implements PaymentContract
      * @var string
      */
     private $notification_url = '';
+    
+    /**
+     * @var string
+     */
+    private $redirect_url = '';
     
     /**
      * @var string
@@ -150,7 +156,30 @@ class Payment implements PaymentContract
     }
     
     /**
-     * Get receive_email
+     * Get redirect_url
+     * 
+     * @return string
+     */
+    public function getRedirectURL() : string
+    {
+        return $this->redirect_url;
+    }
+    
+    /**
+     * Set redirect_url
+     * 
+     * @param string $redirect_url
+     * @return $this
+     */
+    public function setRedirectURL(string $redirect_url)
+    {
+        $this->redirect_url = $redirect_url;
+        
+        return $this;
+    }
+    
+    /**
+     * Get receive email
      * 
      * @return string
      */
@@ -160,7 +189,7 @@ class Payment implements PaymentContract
     }
     
     /**
-     * Set receive_email
+     * Set receive email
      * 
      * @param string $receive_email
      * @throws \PagSeguro\Exceptions\PagseguroException
@@ -221,6 +250,21 @@ class Payment implements PaymentContract
         $this->items[] = $item;
         
         return $this;
+    }
+    
+    /**
+     * Approves one transparent payment
+     * 
+     * @param \PagSeguro\Contracts\Shipping\Shipping $shipping
+     * @param \PagSeguro\Contracts\Customer\Customer $customer
+     * @param \PagSeguro\Contracts\Payment\Method $method
+     * @return \PagSeguro\Contracts\Http\Response
+     */
+    public function transparentPay(Shipping $shipping, Customer $customer, Method $method)
+    {
+        $request = new TransparentRequest($this->credentials, $this->env);
+        
+        return $request->exchangeData($this, $shipping, $customer, $method)->send();
     }
     
     /**

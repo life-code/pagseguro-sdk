@@ -32,6 +32,7 @@ return [
     '11101' => "Pre-approval data is required.",
     '11163' => "You must configure a transactions notifications URL before using this service.",
     '11211' => "Pre-approval cannot be paid twice on the same day.",
+    '13001' => "Invalid notification code value.",
     '13005' => "Initial date must be lower than allowed limit.",
     '13006' => "Initial date must not be older than 180 days.",
     '13007' => "Initial date must be lower than or equal finalDate.",

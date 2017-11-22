@@ -56,12 +56,12 @@ interface ErrorBag
      * 
      * @return array
      */
-    public function allCodes();
+    public function codes();
     
     /**
      * Get all error values
      * 
      * @return array
      */
-    public function allValues();
+    public function values();
 }

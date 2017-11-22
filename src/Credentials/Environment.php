@@ -108,7 +108,7 @@ class Environment implements EnvironmentContract
      * 
      * @return string
      */
-    private function getReplace() : string
+    public function getReplace() : string
     {
         $replace = '';
         

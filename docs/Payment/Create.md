@@ -47,7 +47,7 @@ try {
     $customer->setEmail('jonh.mark@example.com');
     $customer->setHash('da39a3ee5e6b4b0d3255bfef95601890afd80709');
     
-    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '591.391.503-80');
+    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '59139150380');
     $customer->setDocuments($documents);
     
     $phone->setAreaCode('92');
@@ -71,7 +71,7 @@ try {
     $holder->setName('Credit Card Client Name');
     $holder->setBirthDate('12/01/1995');
     
-    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '591.391.503-80'));
+    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '59139150380');
     $holder->setDocuments($documents);
     
     $phone->setAreaCode('34');

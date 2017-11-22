@@ -166,6 +166,20 @@ abstract class Response implements ResponseContract
     /**
      * Proxy accessing an attribute onto the response data.
      *
+     * @param string $key
+     * @param mixed $value
+     * @return mixed
+     */
+    public function __set(string $key, mixed $value)
+    {
+        $this->data->$key = $value;
+        
+        return $this;
+    }
+
+    /**
+     * Proxy accessing an attribute onto the response data.
+     *
      * @return json
      */
     public function __toString()

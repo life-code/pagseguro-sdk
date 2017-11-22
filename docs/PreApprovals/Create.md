@@ -51,7 +51,7 @@ try {
     die();
 }
 
-// Create method instance for payment
+// Create method instance for signature
 $method      = new \PagSeguro\Payment\Method();
 $holder      = new \PagSeguro\Payment\CreditCard\Holder();
 $credit_card = new \PagSeguro\Payment\CreditCard\CreditCard();

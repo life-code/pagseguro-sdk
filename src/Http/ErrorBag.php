@@ -117,7 +117,7 @@ class ErrorBag implements ErrorBagContracts
      * 
      * @return array
      */
-    public function allCodes()
+    public function codes()
     {
         $values = array_values($this->all());
         
@@ -133,7 +133,7 @@ class ErrorBag implements ErrorBagContracts
      * 
      * @return array
      */
-    public function allValues()
+    public function values()
     {
         $values = array_values($this->all());
         

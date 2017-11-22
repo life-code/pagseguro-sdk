@@ -70,13 +70,11 @@ class Request extends BaseRequest
         $items = [];
         
         foreach ($payment->getItems() as $item) {
-            $items[] = [
-                'item' => [
-                    'id'          => $item->getId(),
-                    'description' => $item->getDescription(),
-                    'amount'      => $item->getAmount(),
-                    'quantity'    => $item->getQuantity(),
-                ],
+            $items['item'][] = [
+                'id'          => $item->getId(),
+                'description' => $item->getDescription(),
+                'amount'      => $item->getAmount(),
+                'quantity'    => $item->getQuantity(),
             ];
         }
         

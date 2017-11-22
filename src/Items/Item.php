@@ -37,6 +37,16 @@ class Item implements ItemContract
     private $quantity = 0;
     
     /**
+     * @var int
+     */
+    private $weight = 0;
+    
+    /**
+     * @var float
+     */
+    private $shipping_cost = 0;
+    
+    /**
      * Get ID
      * 
      * @return string
@@ -89,7 +99,7 @@ class Item implements ItemContract
      */
     public function getAmount() : string
     {
-        return $this->amount;
+        return number_format($this->amount, 2, '.', '');
     }
 
     /**
@@ -124,6 +134,52 @@ class Item implements ItemContract
     public function setQuantity(int $quantity)
     {
         $this->quantity = $quantity;
+        
+        return $this;
+    }
+    
+    /**
+     * Get weight
+     * 
+     * @return int
+     */
+    public function getWeight() : int
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Set weight
+     * 
+     * @param int $weight
+     * @return $this
+     */
+    public function setWeight(int $weight)
+    {
+        $this->weight = $weight;
+        
+        return $this;
+    }
+    
+    /**
+     * Get shipping cost
+     * 
+     * @return float
+     */
+    public function getShippingCost() : string
+    {
+        return number_format($this->shipping_cost, 2, '.', '');
+    }
+
+    /**
+     * Set shipping cost
+     * 
+     * @param float $shipping_cost
+     * @return $this
+     */
+    public function setShippingCost(float $shipping_cost)
+    {
+        $this->shipping_cost = number_format($shipping_cost, 2, '.', '');
         
         return $this;
     }

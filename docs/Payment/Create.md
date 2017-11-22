@@ -15,15 +15,15 @@ use PagSeguro\PagSeguro;
 // Create instance of PagSeguro\Payment\Payment::class
 $payment = PagSeguro::payment();
 
-$payment->setNotificationURL('http://example.com/notification');
-$payment->setReceiveEmail('your_pagseguro_email@example.com');
+$payment->setRedirectURL('http://example.com/payment-completed');
+$payment->setReceiveEmail(env('PAGSEGURO_EMAIL'));
 $payment->setReference('9uggPD8p');
 
 
 // Exchange items in payment
 $item = new \PagSeguro\Items\Item();
 $item->setId('737');
-$item->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit');
+$item->setDescription('Lorem ipsum');
 $item->setAmount('100.00');
 $item->setQuantity(1);
 $payment->setItems($item);
@@ -54,8 +54,7 @@ try {
     $phone->setNumber('39545410');
     $customer->setPhone($phone);
 } catch (\PagSeguro\Exceptions\PagseguroException $e) {
-    var_dump($e);
-    die();
+    dd($e);
 }
 
 // Create method instance for payment
@@ -100,8 +99,7 @@ try {
     $method->setCreditCard($credit_card);
     
 } catch (\PagSeguro\Exceptions\PagseguroException $e) {
-    var_dump($e);
-    die();
+    dd($e);
 }
 
 // Create shipping instance for payment
@@ -110,11 +108,9 @@ $shipping = new \PagSeguro\Shipping\Shipping();
 $response = $payment->pay($shipping, $customer, $method);
 
 if ($response->hasErrors()) {
-    var_dump($response->getErrors()->all());
-    die();
+    dd($response, $response->getErrors(), $response->getErrors()->allValues());
 }
 
-var_dump($response);
-die();
+header('Location: ' . $response->redirect());
 
 ```

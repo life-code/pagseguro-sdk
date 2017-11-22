@@ -71,7 +71,7 @@ try {
     $holder->setName('Credit Card Client Name');
     $holder->setBirthDate('12/01/1995');
     
-    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '591.391.503-80'));
+    $documents->setItem(\PagSeguro\Contracts\Common\Documents::CPF, '591.391.503-80');
     $holder->setDocuments($documents);
     
     $phone->setAreaCode('34');

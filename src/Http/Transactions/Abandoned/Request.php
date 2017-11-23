@@ -4,7 +4,7 @@ namespace PagSeguro\Http\Transactions\Abandoned;
 
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Transactions\Abandoned\Response;
-use PagSeguro\Contracts\Transations\Interval as IntervalContract;
+use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 
 /**
  * PagSeguro SDK
@@ -19,14 +19,14 @@ use PagSeguro\Contracts\Transations\Interval as IntervalContract;
 class Request extends BaseRequest
 {
     /**
-     * @var \PagSeguro\Contracts\Transations\Interval
+     * @var \PagSeguro\Contracts\Transactions\Interval
      */
     private $interval = '';
     
     /**
      * Get interval
      * 
-     * @retrn \PagSeguro\Contracts\Transations\Interval
+     * @retrn \PagSeguro\Contracts\Transactions\Interval
      */
     public function getInterval()
     {
@@ -36,7 +36,7 @@ class Request extends BaseRequest
     /**
      * Set interval
      * 
-     * @param \PagSeguro\Contracts\Transations\Interval $interval
+     * @param \PagSeguro\Contracts\Transactions\Interval $interval
      * @return $this
      */
     public function setInterval(IntervalContract $interval)

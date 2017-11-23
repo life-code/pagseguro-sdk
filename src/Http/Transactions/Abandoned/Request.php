@@ -63,10 +63,10 @@ class Request extends BaseRequest
      */
     public function getUrl() : string
     {
-        $initialDate = '';
-        $finalDate = '';
-        $page = '';
-        $maxPageResults = '';
+        $initialDate    = $this->getInterval()->getInitialDate()->format('Y-m-d\TH:i');
+        $finalDate      = $this->getInterval()->getFinalDate()->format('Y-m-d\TH:i');
+        $page           = $this->getInterval()->getPage();
+        $maxPageResults = $this->getInterval()->getMaxPageResults();
         
         return $this->env->getUrl() . 'v2/transactions/abandoned?' . 'initialDate=' . $initialDate . '&finalDate=' . $finalDate . '&page=' . $page . '&maxPageResults=' . $maxPageResults . '&' . $this->credentials->toString();
     }

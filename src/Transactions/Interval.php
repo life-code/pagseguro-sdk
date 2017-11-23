@@ -4,6 +4,7 @@ namespace PagSeguro\Transactions;
 
 use PagSeguro\Contracts\Transactions\Payment as IntervalContract;
 use PagSeguro\Exceptions\PagseguroException;
+use DateTime;
 
 /**
  * PagSeguro SDK
@@ -17,4 +18,31 @@ use PagSeguro\Exceptions\PagseguroException;
  */
 class Interval implements IntervalContract
 {
+    /**
+     * @var \DateTime
+     */
+    private $initial_date;
+    
+    /**
+     * Get initial date
+     * 
+     * @return string
+     */
+    public function getTnitialDate() : string
+    {
+        return $this->initial_date;
+    }
+    
+    /**
+     * Set initial date
+     * 
+     * @param \DateTime $initial_date
+     * @return $this
+     */
+    public function setTnitialDate(DateTime $initial_date)
+    {
+        $this->initial_date = $initial_date;
+        
+        return $this;
+    }
 }

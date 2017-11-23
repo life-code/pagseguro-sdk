@@ -42,7 +42,7 @@ class Interval implements IntervalContract
      * 
      * @return \DateTime
      */
-    public function getTnitialDate()
+    public function getInitialDate()
     {
         return $this->initial_date;
     }
@@ -53,7 +53,7 @@ class Interval implements IntervalContract
      * @param \DateTime $initial_date
      * @return $this
      */
-    public function setTnitialDate(DateTime $initial_date)
+    public function setInitialDate(DateTime $initial_date)
     {
         $this->initial_date = $initial_date;
         

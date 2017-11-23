@@ -21,7 +21,7 @@ interface Interval
      * 
      * @return \DateTime
      */
-    public function getTnitialDate();
+    public function getInitialDate();
     
     /**
      * Set initial date
@@ -29,7 +29,7 @@ interface Interval
      * @param \DateTime $initial_date
      * @return $this
      */
-    public function setTnitialDate(DateTime $initial_date);
+    public function setInitialDate(DateTime $initial_date);
     
     /**
      * Get final date

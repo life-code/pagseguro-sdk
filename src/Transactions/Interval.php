@@ -29,6 +29,11 @@ class Interval implements IntervalContract
     private $final_date;
     
     /**
+     * @var int
+     */
+    private $page = 1;
+    
+    /**
      * Get initial date
      * 
      * @return string
@@ -70,6 +75,29 @@ class Interval implements IntervalContract
     public function setFinalDate(DateTime $final_date)
     {
         $this->final_date = $final_date;
+        
+        return $this;
+    }
+    
+    /**
+     * Get page
+     * 
+     * @return int
+     */
+    public function getPage() : int
+    {
+        return $this->page;
+    }
+    
+    /**
+     * Set page
+     * 
+     * @param int $page
+     * @return $this
+     */
+    public function setPage(int $page)
+    {
+        $this->page = $page;
         
         return $this;
     }

@@ -24,6 +24,11 @@ class Interval implements IntervalContract
     private $initial_date;
     
     /**
+     * @var \DateTime
+     */
+    private $final_date;
+    
+    /**
      * Get initial date
      * 
      * @return string
@@ -42,6 +47,29 @@ class Interval implements IntervalContract
     public function setTnitialDate(DateTime $initial_date)
     {
         $this->initial_date = $initial_date;
+        
+        return $this;
+    }
+    
+    /**
+     * Get final date
+     * 
+     * @return string
+     */
+    public function getFinalDate() : string
+    {
+        return $this->final_date;
+    }
+    
+    /**
+     * Set final date
+     * 
+     * @param \DateTime $final_date
+     * @return $this
+     */
+    public function setFinalDate(DateTime $final_date)
+    {
+        $this->final_date = $final_date;
         
         return $this;
     }

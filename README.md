@@ -23,7 +23,7 @@ The PagSeguro SDK library contains several features that PagSeguro offers in the
 - Consult **signatures by code** *(done)*
 - Consult **transactions by code** *(done)*
 - Consult **transactions by date range** *(doing)*
-- Consult **abandoned transactions** *(doing)*
+- Consult **abandoned transactions** *(done)*
 
 ## Documentation
 [Click here to access the documentation.](https://github.com/life-code/pagseguro-sdk/tree/master/docs)

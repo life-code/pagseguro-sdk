@@ -3,7 +3,7 @@
 namespace PagSeguro\Contracts\PreApprovals;
 
 use PagSeguro\Contracts\Customer\Customer;
-use PagSeguro\Contracts\Payment\Method;
+use PagSeguro\Contracts\Transactions\Method;
 
 /**
  * PagSeguro SDK
@@ -51,7 +51,7 @@ interface PreApproval
      * Approves one payment
      * 
      * @param \PagSeguro\Contracts\Customer\Customer $customer
-     * @param \PagSeguro\Payment\Method $method
+     * @param \PagSeguro\Transactions\Method $method
      * @return \PagSeguro\Contracts\Http\Response
      */
     public function approve(Customer $customer, Method $method);

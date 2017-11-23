@@ -6,8 +6,8 @@ use PagSeguro\Support\Factory;
 use PagSeguro\Session\Session;
 use PagSeguro\PreApprovals\PreApproval;
 use PagSeguro\PreApprovals\Notification as PreApprovalNotification;
-use PagSeguro\Payment\Payment;
-use PagSeguro\Payment\Notification as PaymentNotification;
+use PagSeguro\Transactions\Payment;
+use PagSeguro\Transactions\Notification as PaymentNotification;
 
 /**
  * PagSeguro SDK
@@ -82,7 +82,7 @@ class PagSeguro
     /**
      * Handles pagseguro payment instance
      * 
-     * @return \PagSeguro\Payment\Payment
+     * @return \PagSeguro\Transactions\Payment
      */
     public static function payment()
     {
@@ -95,7 +95,7 @@ class PagSeguro
     /**
      * Handles pagseguro notifications instance
      * 
-     * @return \PagSeguro\Payment\Notification
+     * @return \PagSeguro\Transactions\Notification
      */
     public static function paymentNotification()
     {

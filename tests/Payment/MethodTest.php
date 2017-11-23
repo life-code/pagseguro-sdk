@@ -2,8 +2,8 @@
 
 use PHPUnit\Framework\TestCase;
 
-use PagSeguro\Payment\Method;
-use PagSeguro\Payment\CreditCard\CreditCard;
+use PagSeguro\Transactions\Method;
+use PagSeguro\Transactions\CreditCard\CreditCard;
 
 /**
  * PagSeguro SDK
@@ -20,7 +20,7 @@ class MethodTest extends TestCase
     /**
      * Make instance
      *
-     * @return \PagSeguro\Payment\Method
+     * @return \PagSeguro\Transactions\Method
      */
     public function instance()
     {

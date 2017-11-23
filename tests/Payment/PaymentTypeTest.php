@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use PagSeguro\Payment\Type;
+use PagSeguro\Transactions\Type;
 
 /**
  * PagSeguro SDK

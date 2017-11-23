@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use PagSeguro\Payment\CreditCard\Holder;
+use PagSeguro\Transactions\CreditCard\Holder;
 
 use PagSeguro\Common\Phone;
 use PagSeguro\Contracts\Common\Phone as PhoneContract;

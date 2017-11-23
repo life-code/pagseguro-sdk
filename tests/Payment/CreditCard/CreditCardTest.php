@@ -2,8 +2,8 @@
 
 use PHPUnit\Framework\TestCase;
 
-use PagSeguro\Payment\CreditCard\CreditCard;
-use PagSeguro\Payment\CreditCard\Holder;
+use PagSeguro\Transactions\CreditCard\CreditCard;
+use PagSeguro\Transactions\CreditCard\Holder;
 
 /**
  * PagSeguro SDK

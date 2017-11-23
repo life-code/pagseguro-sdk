@@ -7,7 +7,7 @@ use PagSeguro\Http\PreApprovals\Response;
 use PagSeguro\Contracts\PreApprovals\PreApproval;
 use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Customer\Customer;
-use PagSeguro\Contracts\Payment\Method;
+use PagSeguro\Contracts\Transactions\Method;
 
 /**
  * PagSeguro SDK
@@ -60,7 +60,7 @@ class Request extends BaseRequest
      * 
      * @param \PagSeguro\Contracts\PreApprovals\PreApproval $pre_approval
      * @param \PagSeguro\Contracts\Customer\Customer $customer
-     * @param \PagSeguro\Contracts\Payment\Method $method
+     * @param \PagSeguro\Contracts\Transactions\Method $method
      * @return $this
      */
     public function exchangeData(PreApproval $pre_approval, Customer $customer, Method $method)

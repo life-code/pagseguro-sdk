@@ -6,8 +6,8 @@ use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
 use PagSeguro\PreApprovals\PreApproval;
 use PagSeguro\PreApprovals\Notification as NotificationPreApproval;
-use PagSeguro\Payment\Payment;
-use PagSeguro\Payment\Notification as PaymentNotification;
+use PagSeguro\Transactions\Payment;
+use PagSeguro\Transactions\Notification as PaymentNotification;
 
 /**
  * PagSeguro SDK

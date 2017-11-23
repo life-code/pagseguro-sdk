@@ -4,8 +4,8 @@ namespace PagSeguro\Transactions;
 
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
-use PagSeguro\Contracts\Transations\Abandoned as AbandonedContract;
-use PagSeguro\Contracts\Transations\Interval as IntervalContract;
+use PagSeguro\Contracts\Transactions\Abandoned as AbandonedContract;
+use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 use PagSeguro\Http\Transactions\Abandoned\Request;
 
 /**
@@ -44,9 +44,9 @@ class Abandoned implements AbandonedContract
     }
     
     /**
-     * Search abandoned transactions
+     * Search abandoned Transactions
      * 
-     * @param \PagSeguro\Contracts\Transations\Interval $interval
+     * @param \PagSeguro\Contracts\Transactions\Interval $interval
      * @return \PagSeguro\Contracts\Http\Response
      */
     public function search(IntervalContract $interval)

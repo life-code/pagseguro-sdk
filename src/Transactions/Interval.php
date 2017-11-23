@@ -2,8 +2,7 @@
 
 namespace PagSeguro\Transactions;
 
-use PagSeguro\Contracts\Transactions\Payment as IntervalContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 use DateTime;
 
 /**

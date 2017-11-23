@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Contracts\Transactions;
 
-use PagSeguro\Contracts\Transations\Interval as IntervalContract;
+use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 
 /**
  * PagSeguro SDK
@@ -19,7 +19,7 @@ interface Abandoned
     /**
      * Search abandoned transactions
      * 
-     * @param \PagSeguro\Contracts\Transations\Interval $interval
+     * @param \PagSeguro\Contracts\Transactions\Interval $interval
      * @return \PagSeguro\Contracts\Http\Response
      */
     public function search(IntervalContract $interval);

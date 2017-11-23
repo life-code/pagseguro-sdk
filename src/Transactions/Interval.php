@@ -41,9 +41,9 @@ class Interval implements IntervalContract
     /**
      * Get initial date
      * 
-     * @return string
+     * @return \DateTime
      */
-    public function getTnitialDate() : string
+    public function getTnitialDate()
     {
         return $this->initial_date;
     }
@@ -64,9 +64,9 @@ class Interval implements IntervalContract
     /**
      * Get final date
      * 
-     * @return string
+     * @return \DateTime
      */
-    public function getFinalDate() : string
+    public function getFinalDate()
     {
         return $this->final_date;
     }

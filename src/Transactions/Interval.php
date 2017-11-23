@@ -34,6 +34,11 @@ class Interval implements IntervalContract
     private $page = 1;
     
     /**
+     * @var int
+     */
+    private $max_page_results = 1;
+    
+    /**
      * Get initial date
      * 
      * @return string
@@ -98,6 +103,29 @@ class Interval implements IntervalContract
     public function setPage(int $page)
     {
         $this->page = $page;
+        
+        return $this;
+    }
+    
+    /**
+     * Get max page results
+     * 
+     * @return int
+     */
+    public function getMaxPageResults() : int
+    {
+        return $this->max_page_results;
+    }
+    
+    /**
+     * Set max page results
+     * 
+     * @param int $max_page_results
+     * @return $this
+     */
+    public function setMaxPageResults(int $max_page_results)
+    {
+        $this->max_page_results = $max_page_results;
         
         return $this;
     }

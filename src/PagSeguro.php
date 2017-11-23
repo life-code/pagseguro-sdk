@@ -8,6 +8,7 @@ use PagSeguro\PreApprovals\PreApproval;
 use PagSeguro\PreApprovals\Notification as PreApprovalNotification;
 use PagSeguro\Transactions\Payment;
 use PagSeguro\Transactions\Notification as PaymentNotification;
+use PagSeguro\Transactions\Abandoned;
 
 /**
  * PagSeguro SDK
@@ -103,5 +104,18 @@ class PagSeguro
         $credentials = self::getCredentials();
         
         return new PaymentNotification($credentials, $env);
+    }
+    
+    /**
+     * Handles pagseguro abandoned transactions instance
+     * 
+     * @return \PagSeguro\Transactions\Abandoned
+     */
+    public static function abandoned()
+    {
+        $env         = self::getEnv();
+        $credentials = self::getCredentials();
+        
+        return new Abandoned($credentials, $env);
     }
 }

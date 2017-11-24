@@ -67,4 +67,24 @@ class AccountCredentialsTest extends TestCase
     {
         $this->instance()->setEmail('vinicius_puglies');
     }
+    
+    /**
+     * Test get token
+     *
+     * @return void
+     */
+    public function testGetToken()
+    {
+        $this->assertEquals('654645621635321651687435', $this->instance()->setToken('654645621635321651687435')->getToken());
+    }
+    
+    /**
+     * Test set token
+     *
+     * @return void
+     */
+    public function testSetToken()
+    {
+        $this->assertInstanceOf(AccountCredentialsContract::class, $this->instance()->setToken('654645621635321651687435'));
+    }
 }

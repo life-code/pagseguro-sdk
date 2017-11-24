@@ -97,4 +97,14 @@ class AccountCredentialsTest extends TestCase
     {
         $this->assertCount(2, $this->instance()->toArray());
     }
+    
+    /**
+     * Test to string
+     *
+     * @return void
+     */
+    public function testToString()
+    {
+        $this->assertRegExp('/email=*.+&token.+/', $this->instance()->toString());
+    }
 }

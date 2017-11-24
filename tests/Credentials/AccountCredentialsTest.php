@@ -87,4 +87,14 @@ class AccountCredentialsTest extends TestCase
     {
         $this->assertInstanceOf(AccountCredentialsContract::class, $this->instance()->setToken('654645621635321651687435'));
     }
+    
+    /**
+     * Test to array
+     *
+     * @return void
+     */
+    public function testToArray()
+    {
+        $this->assertCount(2, $this->instance()->toArray());
+    }
 }

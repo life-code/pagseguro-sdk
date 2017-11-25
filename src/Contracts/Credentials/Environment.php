@@ -62,4 +62,18 @@ interface Environment
      * @return string
      */
     public function getScript() : string;
+    
+    /**
+     * Get replace
+     * 
+     * @return string
+     */
+    public function getReplace() : string;
+    
+    /**
+     * Get location
+     * 
+     * @return string
+     */
+    public function getLocation() : string;
 }

@@ -86,4 +86,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertTrue((bool) $this->instance()->getAppKey());
     }
+    
+    /**
+     * Test get URL
+     *
+     * @return void
+     */
+    public function testGetUrl()
+    {
+        $this->assertEquals('https://ws.sandbox.pagseguro.uol.com.br/', $this->instance()->getUrl());
+    }
 }

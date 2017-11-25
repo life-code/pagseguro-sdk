@@ -94,16 +94,6 @@ class Environment implements EnvironmentContract
     }
     
     /**
-     * Get token
-     * 
-     * @return string
-     */
-    public function getScript() : string
-    {
-        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_SCRIPT', ''));
-    }
-    
-    /**
      * Get replace
      * 
      * @return string

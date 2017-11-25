@@ -96,4 +96,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertEquals('https://ws.sandbox.pagseguro.uol.com.br/', $this->instance()->getUrl());
     }
+    
+    /**
+     * Test get replace
+     *
+     * @return void
+     */
+    public function testGetReplace()
+    {
+        $this->assertEquals('sandbox.', $this->instance()->getReplace());
+    }
 }

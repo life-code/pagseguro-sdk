@@ -55,13 +55,6 @@ interface Environment
      * @return string
      */
     public function getUrl() : string;
-
-    /**
-     * Get token
-     * 
-     * @return string
-     */
-    public function getScript() : string;
     
     /**
      * Get replace

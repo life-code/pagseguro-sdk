@@ -56,4 +56,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertTrue((bool) $this->instance()->getEmail());
     }
+    
+    /**
+     * Test get token
+     *
+     * @return void
+     */
+    public function testGetToken()
+    {
+        $this->assertTrue((bool) $this->instance()->getToken());
+    }
 }

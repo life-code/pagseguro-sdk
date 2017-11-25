@@ -106,4 +106,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertEquals('sandbox.', $this->instance()->getReplace());
     }
+    
+    /**
+     * Test get location
+     *
+     * @return void
+     */
+    public function testGetLocation()
+    {
+        $this->assertEquals('pt-br', $this->instance()->getLocation());
+    }
 }

@@ -66,4 +66,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertTrue((bool) $this->instance()->getToken());
     }
+    
+    /**
+     * Test get app ID
+     *
+     * @return void
+     */
+    public function testGetAppID()
+    {
+        $this->assertTrue((bool) $this->instance()->getAppID());
+    }
 }

@@ -36,4 +36,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertInstanceOf(Environment::class, $this->instance());
     }
+    
+    /**
+     * Test get env
+     *
+     * @return void
+     */
+    public function testGetEnv()
+    {
+        $this->assertEquals('SANDBOX', $this->instance()->getEnv());
+    }
 }

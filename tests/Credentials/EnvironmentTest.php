@@ -46,4 +46,14 @@ class EnvironmentTest extends TestCase
     {
         $this->assertEquals('SANDBOX', $this->instance()->getEnv());
     }
+    
+    /**
+     * Test get email
+     *
+     * @return void
+     */
+    public function testGetEmail()
+    {
+        $this->assertTrue((bool) $this->instance()->getEmail());
+    }
 }

@@ -6,6 +6,7 @@ use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
 use PagSeguro\PreApprovals\PreApproval;
 use PagSeguro\PreApprovals\Notification as NotificationPreApproval;
+use PagSeguro\PreApprovals\Cancelation as CancelationPreApproval;
 use PagSeguro\Transactions\Payment;
 use PagSeguro\Transactions\Notification as PaymentNotification;
 
@@ -52,13 +53,23 @@ class PagSeguroTest extends TestCase
     }
     
     /**
-     * Test instance notification
+     * Test instance pre approvals notification
      *
      * @return void
      */
     public function testPreApprovalNotification()
     {
-        $this->assertInstanceOf(NotificationPreApproval::class, PagSeguro::notification());
+        $this->assertInstanceOf(NotificationPreApproval::class, PagSeguro::preApprovalNotification());
+    }
+    
+    /**
+     * Test instance pre approvals cancelation
+     *
+     * @return void
+     */
+    public function testPreApprovalCancelation()
+    {
+        $this->assertInstanceOf(CancelationPreApproval::class, PagSeguro::preApprovalCancelation());
     }
     
     /**

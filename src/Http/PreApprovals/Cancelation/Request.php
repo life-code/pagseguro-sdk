@@ -62,7 +62,7 @@ class Request extends BaseRequest
      */
     public function getUrl() : string
     {
-        return $this->env->getUrl() . '/pre-approvals/' . $this->getCode() . '/cancel?' . $this->credentials->toString();
+        return $this->env->getUrl() . 'pre-approvals/' . $this->getCode() . '/cancel?' . $this->credentials->toString();
     }
     
     /**
@@ -74,6 +74,7 @@ class Request extends BaseRequest
     {
         return [
             'cache-control: no-cache',
+            'Accept: application/vnd.pagseguro.com.br.v3+json;charset=ISO-8859-1',
         ];
     }
     
@@ -86,7 +87,11 @@ class Request extends BaseRequest
      */
     public function createResponse($data, array $info)
     {
-        $response = new Response($this->env, 'Notifications');
+        $response = new Response($this->env, 'PreApprovals');
+        
+        if ((int) $info['http_code'] === 204) {
+            $info['http_code'] = 200;
+        }
         
         $response->setStatus($info['http_code']);
         $response->setInfo($info);

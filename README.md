@@ -19,7 +19,7 @@ The PagSeguro SDK library contains several features that PagSeguro offers in the
 - Create **signatures requisitions** *(doing)*
 - Create **transparent signatures** *(done)*
 - Create **transparent payment requisitions** *(done)*
-- Cancel **signatures** *(doing)*
+- Cancel **signatures** *(done)*
 - Consult **signatures by code** *(done)*
 - Consult **transactions by code** *(done)*
 - Consult **transactions by date range** *(doing)*

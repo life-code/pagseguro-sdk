@@ -48,6 +48,7 @@ Links:
 - [Create Simple Payment](https://github.com/life-code/pagseguro-sdk/blob/master/docs/Transactions/Create.md)
 - [Create Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Create.md)
 - [Consult Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Notification.md)
+- [Cancel Signature](https://github.com/life-code/pagseguro-sdk/blob/master/docs/PreApprovals/Cancelation.md)
 
 
 ## Contribution Guidelines

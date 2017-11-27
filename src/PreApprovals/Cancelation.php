@@ -5,7 +5,7 @@ namespace PagSeguro\PreApprovals;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\PreApprovals\Cancelation as CancelationContact;
-use PagSeguro\Http\PreApprovals\Cancelations\Request;
+use PagSeguro\Http\PreApprovals\Cancelation\Request;
 
 /**
  * PagSeguro SDK

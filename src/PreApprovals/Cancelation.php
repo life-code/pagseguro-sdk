@@ -43,7 +43,7 @@ class Cancelation implements CancelationContact
     }
     
     /**
-     * Allows you to view the data of a recurrence by the notification code.
+     * Allows you cancel of a recurrence by the pre approvals code.
      * 
      * @param string $code
      * @return \PagSeguro\Contracts\Http\Response

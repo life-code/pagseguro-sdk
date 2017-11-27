@@ -4,11 +4,11 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
-use PagSeguro\PreApprovals\PreApproval;
-use PagSeguro\PreApprovals\Notification as NotificationPreApproval;
-use PagSeguro\PreApprovals\Cancelation as CancelationPreApproval;
-use PagSeguro\Transactions\Payment;
-use PagSeguro\Transactions\Notification as PaymentNotification;
+use PagSeguro\Contracts\PreApprovals\PreApproval;
+use PagSeguro\Contracts\PreApprovals\Notification as NotificationPreApproval;
+use PagSeguro\Contracts\PreApprovals\Cancelation as CancelationPreApproval;
+use PagSeguro\Contracts\Transactions\Payment;
+use PagSeguro\Contracts\Transactions\Notification as PaymentNotification;
 
 /**
  * PagSeguro SDK

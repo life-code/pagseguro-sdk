@@ -56,7 +56,7 @@ class PagSeguroTest extends TestCase
      *
      * @return void
      */
-    public function testNotification()
+    public function testPreApprovalNotification()
     {
         $this->assertInstanceOf(NotificationPreApproval::class, PagSeguro::notification());
     }

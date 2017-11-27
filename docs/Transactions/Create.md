@@ -108,7 +108,7 @@ $shipping = new \PagSeguro\Shipping\Shipping();
 $response = $payment->pay($shipping, $customer, $method);
 
 if ($response->hasErrors()) {
-    dd($response, $response->getErrors(), $response->getErrors()->allValues());
+    dd($response, $response->getErrors(), $response->getErrors()->values());
 }
 
 header('Location: ' . $response->redirect());

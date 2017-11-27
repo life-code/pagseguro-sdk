@@ -68,11 +68,11 @@ class PagSeguro
     }
     
     /**
-     * Handles pagseguro notifications instance
+     * Handles pagseguro pre-approvals notifications instance
      * 
      * @return \PagSeguro\PreApprovals\Notification
      */
-    public static function notification()
+    public static function preApprovalNotification()
     {
         $env         = self::getEnv();
         $credentials = self::getCredentials();

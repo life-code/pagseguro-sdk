@@ -12,7 +12,7 @@ require('./vendor/autoload.php');
 use PagSeguro\PagSeguro;
 
 // Create instance of PagSeguro\PreApprovals\Notification::class
-$notification = \PagSeguro\PagSeguro::notification();
+$notification = \PagSeguro\PagSeguro::preApprovalNotification();
 
 $response = $notification->forCode('674653134565163543784613526');
 

@@ -5,6 +5,7 @@ namespace PagSeguro;
 use PagSeguro\Support\Factory;
 use PagSeguro\Session\Session;
 use PagSeguro\PreApprovals\PreApproval;
+use PagSeguro\PreApprovals\Cancelation;
 use PagSeguro\PreApprovals\Notification as PreApprovalNotification;
 use PagSeguro\Transactions\Payment;
 use PagSeguro\Transactions\Notification as PaymentNotification;
@@ -78,6 +79,19 @@ class PagSeguro
         $credentials = self::getCredentials();
         
         return new PreApprovalNotification($credentials, $env);
+    }
+    
+    /**
+     * Handles pagseguro pre-approvals cancelation instance
+     * 
+     * @return \PagSeguro\PreApprovals\Cancelation
+     */
+    public static function preApprovalCancelation()
+    {
+        $env         = self::getEnv();
+        $credentials = self::getCredentials();
+        
+        return new Cancelation($credentials, $env);
     }
     
     /**

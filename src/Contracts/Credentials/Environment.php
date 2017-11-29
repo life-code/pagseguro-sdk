@@ -36,20 +36,6 @@ interface Environment
     public function getToken() : string;
 
     /**
-     * Get token
-     * 
-     * @return string
-     */
-    public function getAppID() : string;
-
-    /**
-     * Get token
-     * 
-     * @return string
-     */
-    public function getAppKey() : string;
-
-    /**
      * Get URL
      * 
      * @return string

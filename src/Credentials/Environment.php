@@ -69,26 +69,6 @@ class Environment implements EnvironmentContract
     }
     
     /**
-     * Get token
-     * 
-     * @return string
-     */
-    public function getAppID() : string
-    {
-        return env('PAGSEGURO_APP_ID_' . $this->getEnv(), '');
-    }
-    
-    /**
-     * Get token
-     * 
-     * @return string
-     */
-    public function getAppKey() : string
-    {
-        return env('PAGSEGURO_APP_KEY_' . $this->getEnv(), '');
-    }
-    
-    /**
      * Get URL
      * 
      * @return string

@@ -22,6 +22,16 @@ class Type implements TypeContract
 	const CREDITCARD = 'CREDITCARD';
 	
     /**
+     * @var string
+     */ 
+	const EFT = 'EFT';
+	
+    /**
+     * @var string
+     */ 
+	const BOLETO = 'BOLETO';
+	
+    /**
      * Validate type
      * 
      * @param string $type
@@ -41,6 +51,8 @@ class Type implements TypeContract
     {
         return [
             self::CREDITCARD,
+            self::EFT,
+            self::BOLETO,
         ];
     }
 }

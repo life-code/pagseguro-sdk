@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
+use PagSeguro\Contracts\Session\Session as SessionContract;
 use PagSeguro\Contracts\Http\Response;
 
 /**
@@ -18,6 +19,16 @@ use PagSeguro\Contracts\Http\Response;
  */
 class SessionTest extends TestCase
 {
+    /**
+     * Test instance
+     * 
+     * @return void
+     */
+    public function testInstance()
+    {
+        $this->assertInstanceOf(SessionContract::class, PagSeguro::session());
+    }
+    
     /**
      * Create session
      *

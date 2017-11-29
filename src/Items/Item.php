@@ -183,4 +183,21 @@ class Item implements ItemContract
         
         return $this;
     }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return [
+            'id'           => $this->getId(),
+            'description'  => $this->getDescription(),
+            'amount'       => $this->getAmount(),
+            'quantity'     => $this->getQuantity(),
+            'weight'       => $this->getWeight(),
+            'shippingCost' => $this->getShippingCost(),
+        ];
+    }
 }

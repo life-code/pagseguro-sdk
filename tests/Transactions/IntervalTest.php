@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\Interval;
+use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 
 /**
  * PagSeguro SDK
@@ -16,4 +17,23 @@ use PagSeguro\Transactions\Interval;
  */
 class IntervalTest extends TestCase
 {
+    /**
+     * Make instance
+     *
+     * @return \PagSeguro\Transactions\Interval
+     */
+    public function instance()
+    {
+        return new Interval();
+    }
+    
+    /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testInstance()
+    {
+        $this->assertInstanceOf(IntervalContract::class, $this->instance());
+    }
 }

@@ -34,6 +34,6 @@ class PaymentTypeTest extends TestCase
      */
     public function testGetTypes()
     {
-        $this->assertCount(1, Type::getTypes());
+        $this->assertCount(3, Type::getTypes());
     }
 }

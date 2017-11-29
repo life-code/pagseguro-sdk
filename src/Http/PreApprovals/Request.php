@@ -72,10 +72,7 @@ class Request extends BaseRequest
                 'name'      => $customer->getName(),
                 'email'     => $customer->getEmail(),
                 'hash'      => $customer->getHash(),
-                'phone'     => [
-                    'areaCode' => $customer->getPhone()->getAreaCode(),
-                    'number' => $customer->getPhone()->getNumber(),
-                ],
+                'phone'     => $customer->getPhone()->toArray(),
                 'address'   => $customer->getAddress()->toArray(),
                 'documents' => [
                     $customer->getDocuments()->toArray(),
@@ -85,14 +82,7 @@ class Request extends BaseRequest
                 'type'       => $method->getType(),
                 'creditCard' => [
                     'token'  => $method->getCreditCard()->getToken(),
-                    'holder' => [
-                        'name'      => $method->getCreditCard()->getHolder()->getName(),
-                        'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
-                        'documents' => [
-                            $method->getCreditCard()->getHolder()->getDocuments()->toArray(),
-                        ],
-                        'phone'     => $method->getCreditCard()->getHolder()->getPhone()->toArray(),
-                    ],
+                    'holder' => $method->getCreditCard()->getHolder()->toArray(),
                 ],
             ],
         ];

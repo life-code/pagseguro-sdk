@@ -96,14 +96,7 @@ class Request extends BaseRequest
             'creditCard'      => [
                 'token'          => $method->getCreditCard()->getToken(),
                 'installment'    => $method->getCreditCard()->getInstallment()->toArray(),
-                'holder'         => [
-                    'name'      => $method->getCreditCard()->getHolder()->getName(),
-                    'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
-                    'documents' => [
-                        'document' => $method->getCreditCard()->getHolder()->getDocuments()->toArray(),
-                    ],
-                    'phone'     => $method->getCreditCard()->getHolder()->getPhone()->toArray(),
-                ],
+                'holder'         => $method->getCreditCard()->getHolder()->toArray(true),
                 'billingAddress' => $method->getCreditCard()->getAddress()->toArray(),
             ],
         ];

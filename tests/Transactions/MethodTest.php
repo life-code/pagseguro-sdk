@@ -4,6 +4,8 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\Method;
 use PagSeguro\Transactions\CreditCard\CreditCard;
+use PagSeguro\Transactions\Type;
+use PagSeguro\Transactions\Bank;
 
 /**
  * PagSeguro SDK
@@ -44,7 +46,9 @@ class MethodTest extends TestCase
      */
     public function testGetType()
     {
-        $this->assertEquals('CREDITCARD', $this->instance()->setType('CREDITCARD')->getType());
+        $this->assertEquals(Type::CREDITCARD, $this->instance()->setType(Type::CREDITCARD)->getType());
+        $this->assertEquals(Type::EFT, $this->instance()->setType(Type::EFT)->getType());
+        $this->assertEquals(Type::BOLETO, $this->instance()->setType(Type::BOLETO)->getType());
     }
     
     /**
@@ -65,7 +69,46 @@ class MethodTest extends TestCase
      */
     public function testSetType()
     {
-        $this->assertInstanceOf(Method::class, $this->instance()->setType('CREDITCARD'));
+        $this->assertInstanceOf(Method::class, $this->instance()->setType(Type::CREDITCARD));
+        $this->assertInstanceOf(Method::class, $this->instance()->setType(Type::EFT));
+        $this->assertInstanceOf(Method::class, $this->instance()->setType(Type::BOLETO));
+    }
+    
+    /**
+     * Test get bank
+     *
+     * @return void
+     */
+    public function testGetBank()
+    {
+        $this->assertEquals(Bank::BANCO_DO_BRASIL, $this->instance()->setBank(Bank::BANCO_DO_BRASIL)->getBank());
+        $this->assertEquals(Bank::BANCO_BANRISUL, $this->instance()->setBank(Bank::BANCO_BANRISUL)->getBank());
+        $this->assertEquals(Bank::BRADESCO, $this->instance()->setBank(Bank::BRADESCO)->getBank());
+        $this->assertEquals(Bank::ITAU, $this->instance()->setBank(Bank::ITAU)->getBank());
+    }
+    
+    /**
+     * Test throw set bank
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetBank()
+    {
+        $this->instance()->setBank('BANCO_DO_BRASIL');
+    }
+    
+    /**
+     * Test set bank
+     *
+     * @return void
+     */
+    public function testSetBank()
+    {
+        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::BANCO_DO_BRASIL));
+        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::BANCO_BANRISUL));
+        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::BRADESCO));
+        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::ITAU));
     }
     
     /**

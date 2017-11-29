@@ -23,7 +23,10 @@ class BankTest extends TestCase
      */
     public function testCheck()
     {
-        $this->assertTrue(Bank::check(Bank::BANCO_BRASIL));
+        $this->assertTrue(Bank::check(Bank::BANCO_DO_BRASIL));
+        $this->assertTrue(Bank::check(Bank::BANCO_BANRISUL));
+        $this->assertTrue(Bank::check(Bank::BRADESCO));
+        $this->assertTrue(Bank::check(Bank::ITAU));
         $this->assertTrue(! Bank::check('BRASIL'));
     }
     
@@ -34,6 +37,6 @@ class BankTest extends TestCase
      */
     public function testGetBanks()
     {
-        $this->assertCount(1, Bank::getBanks());
+        $this->assertCount(4, Bank::getBanks());
     }
 }

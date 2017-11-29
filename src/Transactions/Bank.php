@@ -19,7 +19,22 @@ class Bank implements BankContract
     /**
      * @var string
      */ 
-	const BANCO_BRASIL = 'BANCO_BRASIL';
+	const BANCO_DO_BRASIL = 'BANCO_BRASIL';
+	
+    /**
+     * @var string
+     */ 
+	const BANCO_BANRISUL = 'BANRISUL';
+	
+    /**
+     * @var string
+     */ 
+	const BRADESCO = 'BRADESCO';
+	
+    /**
+     * @var string
+     */ 
+	const ITAU = 'ITAU';
 	
     /**
      * Validate bank
@@ -40,7 +55,10 @@ class Bank implements BankContract
     public static function getBanks()
     {
         return [
-            self::BANCO_BRASIL,
+            self::BANCO_DO_BRASIL,
+            self::BANCO_BANRISUL,
+            self::BRADESCO,
+            self::ITAU,
         ];
     }
 }

@@ -65,11 +65,11 @@ class Shipping implements ShippingContract
     /**
      * Get cost
      * 
-     * @return float
+     * @return string
      */
-    public function getCost() : float
+    public function getCost() : string
     {
-        return $this->cost;
+        return (string) $this->cost;
     }
 
     /**
@@ -80,7 +80,7 @@ class Shipping implements ShippingContract
      */
     public function setCost(float $cost)
     {
-        $this->cost = $cost;
+        $this->cost = number_format($cost, 2, '.', '');
         
         return $this;
     }
@@ -133,5 +133,33 @@ class Shipping implements ShippingContract
         $this->address_required = $address_required;
         
         return $this;
+    }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        if (!$this->getAddressRequired()) {
+            return [
+                'addressRequired' => $this->getAddressRequired(),
+            ];
+        }
+        
+        $response = [
+            'address' => $this->getAddress()->toArray(),
+        ];
+        
+        if ($type = $ths->getType()) {
+            $response['type'] = $type;
+        }
+        
+        if ($cost = $ths->getCost()) {
+            $response['cost'] = $cost;
+        }
+        
+        return $response;
     }
 }

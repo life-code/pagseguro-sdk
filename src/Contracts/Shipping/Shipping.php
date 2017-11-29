@@ -34,9 +34,9 @@ interface Shipping
     /**
      * Get cost
      * 
-     * @return float
+     * @return string
      */
-    public function getCost() : float;
+    public function getCost() : string;
 
     /**
      * Set cost
@@ -75,4 +75,11 @@ interface Shipping
      * @return $this
      */
     public function setAddressRequired(bool $address_required);
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array;
 }

@@ -2,6 +2,7 @@
 
 namespace PagSeguro\Session;
 
+use PagSeguro\Contracts\Session\Session as SessionContract;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Http\Session\Request;
@@ -16,7 +17,7 @@ use PagSeguro\Http\Session\Request;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Session
+class Session implements SessionContract
 {
     /**
      * @var \PagSeguro\Contracts\Credentials\AccountCredentials

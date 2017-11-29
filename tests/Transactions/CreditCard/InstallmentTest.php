@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\CreditCard\Installment;
+use PagSeguro\Contracts\Transactions\CreditCard\Installment as InstallmentContract;
 
 /**
  * PagSeguro SDK
@@ -33,7 +34,7 @@ class InstallmentTest extends TestCase
      */
     public function testInstance()
     {
-        $this->assertInstanceOf(Installment::class, $this->instance());
+        $this->assertInstanceOf(InstallmentContract::class, $this->instance());
     }
     
     /**
@@ -53,7 +54,7 @@ class InstallmentTest extends TestCase
      */
     public function testSetQuantity()
     {
-        $this->assertInstanceOf(Installment::class, $this->instance()->setQuantity(1));
+        $this->assertInstanceOf(InstallmentContract::class, $this->instance()->setQuantity(1));
     }
     
     /**
@@ -73,7 +74,7 @@ class InstallmentTest extends TestCase
      */
     public function testSetNoInterestInstallmentQuantity()
     {
-        $this->assertInstanceOf(Installment::class, $this->instance()->setNoInterestInstallmentQuantity(1));
+        $this->assertInstanceOf(InstallmentContract::class, $this->instance()->setNoInterestInstallmentQuantity(1));
     }
     
     /**
@@ -93,6 +94,6 @@ class InstallmentTest extends TestCase
      */
     public function testSetValue()
     {
-        $this->assertInstanceOf(Installment::class, $this->instance()->setValue(1.00));
+        $this->assertInstanceOf(InstallmentContract::class, $this->instance()->setValue(1.00));
     }
 }

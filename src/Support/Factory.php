@@ -30,7 +30,7 @@ trait Factory
     /**
      * Get env
      * 
-     * return \PagSeguro\Credentials\Credentials\Environment
+     * return \PagSeguro\Contracts\Credentials\Environment
      */ 
     public static function getEnv()
     {

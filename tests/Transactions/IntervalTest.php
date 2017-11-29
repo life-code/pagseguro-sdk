@@ -77,4 +77,24 @@ class IntervalTest extends TestCase
     {
         $this->assertInstanceOf(IntervalContract::class, $this->instance()->setFinalDate(new DateTime()));
     }
+    
+    /**
+     * Test get page
+     *
+     * @return void
+     */
+    public function testGetPage()
+    {
+        $this->assertEquals(1, $this->instance()->setPage(1)->getPage());
+    }
+    
+    /**
+     * Test set page
+     *
+     * @return void
+     */
+    public function testSetPage()
+    {
+        $this->assertInstanceOf(IntervalContract::class, $this->instance()->setPage(1));
+    }
 }

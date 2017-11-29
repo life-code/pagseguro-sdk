@@ -70,6 +70,18 @@ class Documents implements DocumentsContract
     }
     
     /**
+     * Get types
+     * 
+     * @return array
+     */
+    public function getTypes()
+    {
+        return [
+            self::CPF,
+        ];
+    }
+    
+    /**
      * Get all attributes to convert array
      * 
      * @return array
@@ -79,18 +91,6 @@ class Documents implements DocumentsContract
         return [
             'type'  => self::CPF,
             'value' => $this->getItem(self::CPF),
-        ];
-    }
-    
-    /**
-     * Get types
-     * 
-     * @return array
-     */
-    public function getTypes()
-    {
-        return [
-            self::CPF,
         ];
     }
 }

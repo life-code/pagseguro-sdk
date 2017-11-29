@@ -33,7 +33,7 @@ trait Validator
      */ 
     private function validateUrl(string $url) : bool
     {
-        return filter_var($email, FILTER_VALIDATE_URL);
+        return filter_var($url, FILTER_VALIDATE_URL);
     }
     
     /**
@@ -45,6 +45,6 @@ trait Validator
     private function isJSON($data) : bool
     {
         json_decode($data);
-        return (json_last_error() == JSON_ERROR_NONE);
+        return (json_last_error() === JSON_ERROR_NONE);
     }
 }

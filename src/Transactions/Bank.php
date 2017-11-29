@@ -19,7 +19,7 @@ class Bank implements BankContract
     /**
      * @var string
      */ 
-	const CREDITCARD = 'CREDITCARD';
+	const BANCO_BRASIL = 'BANCO_BRASIL';
 	
     /**
      * Validate bank
@@ -40,9 +40,7 @@ class Bank implements BankContract
     public static function getBanks()
     {
         return [
-            self::CREDITCARD,
-            self::EFT,
-            self::BOLETO,
+            self::BANCO_BRASIL,
         ];
     }
 }

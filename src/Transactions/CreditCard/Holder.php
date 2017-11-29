@@ -137,4 +137,30 @@ class Holder implements HolderContract
         
         return $this;
     }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray(bool $xml_format = false) : array
+    {
+        $response = [
+            'name'      => $this->getName(),
+            'birthDate' => $this->getBirthDate(),
+            'phone'     => $this->getPhone()->toArray(),
+        ];
+        
+        if ($xml_format) {
+            $response['documents'] = [
+                'document' => $this->getDocuments()->toArray(),
+            ];
+        } else {
+            $response['documents'] = [
+                $this->getDocuments()->toArray(),
+            ];
+        }
+        
+        return $response;
+    }
 }

@@ -97,4 +97,24 @@ class IntervalTest extends TestCase
     {
         $this->assertInstanceOf(IntervalContract::class, $this->instance()->setPage(1));
     }
+    
+    /**
+     * Test get max page results
+     *
+     * @return void
+     */
+    public function testGetMaxPageResults()
+    {
+        $this->assertEquals(1, $this->instance()->setMaxPageResults(1)->getMaxPageResults());
+    }
+    
+    /**
+     * Test set max page results
+     *
+     * @return void
+     */
+    public function testSetMaxPageResults()
+    {
+        $this->assertInstanceOf(IntervalContract::class, $this->instance()->setMaxPageResults(1));
+    }
 }

@@ -79,19 +79,9 @@ class Request extends BaseRequest
             'notificationURL' => $payment->getNotificationURL(),
             'receiverEmail'   => $payment->getReceiveEmail(),
             'reference'       => $payment->getReference(),
-            'sender'          => [
-                'name'      => $customer->getName(),
-                'email'     => $customer->getEmail(),
-                'hash'      => $customer->getHash(),
-                'phone'     => $customer->getPhone()->toArray(),
-                'documents' => [
-                    'document' => $customer->getDocuments()->toArray(),
-                ],
-            ],
+            'sender'          => $customer->toArray(true),
             'items'           => $items,
-            'shipping'        => [
-                'addressRequired' => $shipping->getAddressRequired(),
-            ],
+            'shipping'        => $shipping->toArray(),
             'method'          => $method->getType(),
             'creditCard'      => [
                 'token'          => $method->getCreditCard()->getToken(),

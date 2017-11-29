@@ -68,16 +68,7 @@ class Request extends BaseRequest
         $data = [
             'plan'          => $pre_approval->getPlan(),
             'reference'     => $pre_approval->getReference(),
-            'sender'        => [
-                'name'      => $customer->getName(),
-                'email'     => $customer->getEmail(),
-                'hash'      => $customer->getHash(),
-                'phone'     => $customer->getPhone()->toArray(),
-                'address'   => $customer->getAddress()->toArray(),
-                'documents' => [
-                    $customer->getDocuments()->toArray(),
-                ],
-            ],
+            'sender'        => $customer->toArray(),
             'paymentMethod' => [
                 'type'       => $method->getType(),
                 'creditCard' => [

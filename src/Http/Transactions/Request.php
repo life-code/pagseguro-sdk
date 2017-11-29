@@ -77,19 +77,9 @@ class Request extends BaseRequest
             'currency'    => $payment->getCurrency(),
             'redirectURL' => $payment->getRedirectURL(),
             'reference'   => $payment->getReference(),
-            'sender'      => [
-                'name'      => $customer->getName(),
-                'email'     => $customer->getEmail(),
-                'ip'        => $customer->getIp(),
-                'phone'     => $customer->getPhone()->toArray(),
-                'documents' => [
-                    'document' => $customer->getDocuments()->toArray(),
-                ],
-            ],
+            'sender'      => $customer->toArray(true),
             'items'       => $items,
-            'shipping'    => [
-                'addressRequired' => $shipping->getAddressRequired(),
-            ],
+            'shipping'    => $shipping->toArray(),
             'receiver'    => [
                 'email' => $payment->getReceiveEmail(),
             ],

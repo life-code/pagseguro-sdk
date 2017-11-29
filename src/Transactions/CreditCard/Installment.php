@@ -99,4 +99,18 @@ class Installment implements InstallmentContract
         
         return $this;
     }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return [
+            'quantity'                      => $this->getQuantity(),
+            'noInterestInstallmentQuantity' => $this->getNoInterestInstallmentQuantity(),
+            'value'                         => $this->getValue(),
+        ];
+    }
 }

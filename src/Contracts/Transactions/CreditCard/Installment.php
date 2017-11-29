@@ -58,4 +58,11 @@ interface Installment
      * @return $this
      */
     public function setValue(float $value);
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array;
 }

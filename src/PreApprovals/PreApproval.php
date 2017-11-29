@@ -6,8 +6,8 @@ use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\PreApprovals\PreApproval as PreApprovalContract;
-use PagSeguro\Http\PreApprovals\Request;
 use PagSeguro\Contracts\Transactions\Method;
+use PagSeguro\Http\PreApprovals\Request;
 
 /**
  * PagSeguro SDK

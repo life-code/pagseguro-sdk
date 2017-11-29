@@ -68,6 +68,19 @@ class Documents implements DocumentsContract
     }
     
     /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return [
+            'type'  => self::CPF,
+            'value' => $this->getItem(self::CPF),
+        ];
+    }
+    
+    /**
      * Get types
      * 
      * @return array

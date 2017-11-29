@@ -87,6 +87,19 @@ class Phone implements PhoneContract
     }
     
     /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return [
+            'areaCode' => $this->getAreaCode(),
+            'number'   => $this->getNumber(),
+        ];
+    }
+    
+    /**
      * To string phone
      * 
      * @param bool $mask

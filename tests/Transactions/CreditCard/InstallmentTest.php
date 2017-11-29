@@ -20,7 +20,7 @@ class InstallmentTest extends TestCase
     /**
      * Make instance
      *
-     * @return \PagSeguro\Payment\Installment
+     * @return \PagSeguro\Transactions\CreditCard\Installment
      */
     public function instance()
     {

@@ -57,4 +57,24 @@ class IntervalTest extends TestCase
     {
         $this->assertInstanceOf(IntervalContract::class, $this->instance()->setInitialDate(new DateTime()));
     }
+    
+    /**
+     * Test get final date
+     *
+     * @return void
+     */
+    public function testGetFinalDate()
+    {
+        $this->assertInstanceOf(DateTime::class, $this->instance()->setFinalDate(new DateTime())->getFinalDate());
+    }
+    
+    /**
+     * Test set final date
+     *
+     * @return void
+     */
+    public function testSetFinalDate()
+    {
+        $this->assertInstanceOf(IntervalContract::class, $this->instance()->setFinalDate(new DateTime()));
+    }
 }

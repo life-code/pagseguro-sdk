@@ -35,4 +35,24 @@ class InstallmentTest extends TestCase
     {
         $this->assertInstanceOf(Installment::class, $this->instance());
     }
+    
+    /**
+     * Test get quantity
+     *
+     * @return void
+     */
+    public function testGetQuantity()
+    {
+        $this->assertEquals(1, $this->instance()->setQuantity(1)->getQuantity());
+    }
+    
+    /**
+     * Test set quantity
+     *
+     * @return void
+     */
+    public function testSetQuantity()
+    {
+        $this->assertInstanceOf(Installment::class, $this->instance()->setQuantity(1));
+    }
 }

@@ -239,4 +239,23 @@ class Address implements AddressContract
         
         return $this;
     }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return [
+            'street'     => $this->getStreet(),
+            'number'     => $this->getNumber(),
+            'complement' => $this->getComplement(),
+            'district'   => $this->getDistrict(),
+            'city'       => $this->getCity(),
+            'state'      => $this->getState(),
+            'country'    => $this->getCountry(),
+            'postalCode' => $this->getCep(),
+        ];
+    }
 }

@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\Interval;
 use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
+use \DateTime;
 
 /**
  * PagSeguro SDK
@@ -35,5 +36,25 @@ class IntervalTest extends TestCase
     public function testInstance()
     {
         $this->assertInstanceOf(IntervalContract::class, $this->instance());
+    }
+    
+    /**
+     * Test get initial date
+     *
+     * @return void
+     */
+    public function testGetInitialDate()
+    {
+        $this->assertInstanceOf(DateTime::class, $this->instance()->setInitialDate(new DateTime())->getInitialDate());
+    }
+    
+    /**
+     * Test set initial date
+     *
+     * @return void
+     */
+    public function testSetInitialDate()
+    {
+        $this->assertInstanceOf(IntervalContract::class, $this->instance()->setInitialDate(new DateTime()));
     }
 }

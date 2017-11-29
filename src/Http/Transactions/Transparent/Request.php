@@ -4,9 +4,9 @@ namespace PagSeguro\Http\Transactions\Transparent;
 
 use PagSeguro\Contracts\Transactions\Payment;
 use PagSeguro\Contracts\Shipping\Shipping;
-use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Transactions\Method;
+use PagSeguro\Common\Documents;
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Transactions\Transparent\Response;
 use Spatie\ArrayToXml\ArrayToXml;
@@ -88,15 +88,9 @@ class Request extends BaseRequest
                 'name'      => $customer->getName(),
                 'email'     => $customer->getEmail(),
                 'hash'      => $customer->getHash(),
-                'phone'     => [
-                    'areaCode' => $customer->getPhone()->getAreaCode(),
-                    'number'   => $customer->getPhone()->getNumber(),
-                ],
+                'phone'     => $customer->getPhone()->toArray(),
                 'documents' => [
-                    'document' => [
-                        'type'  => Documents::CPF,
-                        'value' => $customer->getDocuments()->getItem(Documents::CPF),
-                    ],
+                    'document' => $customer->getDocuments()->toArray(),
                 ],
             ],
             'items'           => $items,
@@ -106,35 +100,16 @@ class Request extends BaseRequest
             'method'          => $method->getType(),
             'creditCard'      => [
                 'token'          => $method->getCreditCard()->getToken(),
-                'installment'    => [
-                    'quantity'                      => $method->getCreditCard()->getInstallment()->getQuantity(),
-                    'noInterestInstallmentQuantity' => $method->getCreditCard()->getInstallment()->getNoInterestInstallmentQuantity(),
-                    'value'                         => $method->getCreditCard()->getInstallment()->getValue(),
-                ],
+                'installment'    => $method->getCreditCard()->getInstallment()->toArray(),
                 'holder'         => [
                     'name'      => $method->getCreditCard()->getHolder()->getName(),
                     'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
                     'documents' => [
-                        'document' => [
-                            'type'  => Documents::CPF,
-                            'value' => $method->getCreditCard()->getHolder()->getDocuments()->getItem(Documents::CPF),
-                        ],
+                        'document' => $method->getCreditCard()->getHolder()->getDocuments()->toArray(),
                     ],
-                    'phone'     => [
-                        'areaCode' => $method->getCreditCard()->getHolder()->getPhone()->getAreaCode(),
-                        'number'   => $method->getCreditCard()->getHolder()->getPhone()->getNumber(),
-                    ],
+                    'phone'     => $method->getCreditCard()->getHolder()->getPhone()->toArray(),
                 ],
-                'billingAddress' => [
-                    'street'     => $method->getCreditCard()->getAddress()->getStreet(),
-                    'number'     => $method->getCreditCard()->getAddress()->getNumber(),
-                    'complement' => $method->getCreditCard()->getAddress()->getComplement(),
-                    'district'   => $method->getCreditCard()->getAddress()->getDistrict(),
-                    'city'       => $method->getCreditCard()->getAddress()->getCity(),
-                    'state'      => $method->getCreditCard()->getAddress()->getState(),
-                    'country'    => $method->getCreditCard()->getAddress()->getCountry(),
-                    'postalCode' => $method->getCreditCard()->getAddress()->getCep(),
-                ],
+                'billingAddress' => $method->getCreditCard()->getAddress()->toArray(),
             ],
         ];
         

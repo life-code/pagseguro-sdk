@@ -3,9 +3,9 @@
 namespace PagSeguro\Http\PreApprovals;
 
 use PagSeguro\Contracts\PreApprovals\PreApproval;
-use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Transactions\Method;
+use PagSeguro\Common\Documents;
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\PreApprovals\Response;
 
@@ -76,21 +76,9 @@ class Request extends BaseRequest
                     'areaCode' => $customer->getPhone()->getAreaCode(),
                     'number' => $customer->getPhone()->getNumber(),
                 ],
-                'address'   => [
-                    'street'     => $customer->getAddress()->getStreet(),
-                    'number'     => $customer->getAddress()->getNumber(),
-                    'complement' => $customer->getAddress()->getComplement(),
-                    'district'   => $customer->getAddress()->getDistrict(),
-                    'city'       => $customer->getAddress()->getCity(),
-                    'state'      => $customer->getAddress()->getState(),
-                    'country'    => $customer->getAddress()->getCountry(),
-                    'postalCode' => $customer->getAddress()->getCep(),
-                ],
+                'address'   => $customer->getAddress()->toArray(),
                 'documents' => [
-                    [
-                        'type'  => Documents::CPF,
-                        'value' => $customer->getDocuments()->getItem(Documents::CPF),
-                    ]
+                    $customer->getDocuments()->toArray(),
                 ],
             ],
             'paymentMethod' => [
@@ -101,15 +89,9 @@ class Request extends BaseRequest
                         'name'      => $method->getCreditCard()->getHolder()->getName(),
                         'birthDate' => $method->getCreditCard()->getHolder()->getBirthDate(),
                         'documents' => [
-                            [
-                                'type'  => Documents::CPF,
-                                'value' => $method->getCreditCard()->getHolder()->getDocuments()->getItem(Documents::CPF),
-                            ]
+                            $method->getCreditCard()->getHolder()->getDocuments()->toArray(),
                         ],
-                        'phone'     => [
-                            'areaCode' => $method->getCreditCard()->getHolder()->getPhone()->getAreaCode(),
-                            'number' => $method->getCreditCard()->getHolder()->getPhone()->getNumber(),
-                        ],
+                        'phone'     => $method->getCreditCard()->getHolder()->getPhone()->toArray(),
                     ],
                 ],
             ],

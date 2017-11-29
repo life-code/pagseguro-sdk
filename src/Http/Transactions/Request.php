@@ -88,15 +88,9 @@ class Request extends BaseRequest
                 'name'      => $customer->getName(),
                 'email'     => $customer->getEmail(),
                 'ip'        => $customer->getIp(),
-                'phone'     => [
-                    'areaCode' => $customer->getPhone()->getAreaCode(),
-                    'number'   => $customer->getPhone()->getNumber(),
-                ],
+                'phone'     => $customer->getPhone()->toArray(),
                 'documents' => [
-                    'document' => [
-                        'type'  => Documents::CPF,
-                        'value' => $customer->getDocuments()->getItem(Documents::CPF),
-                    ],
+                    'document' => $customer->getDocuments()->toArray(),
                 ],
             ],
             'items'       => $items,

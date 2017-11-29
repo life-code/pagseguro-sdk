@@ -18,6 +18,11 @@ use PagSeguro\Exceptions\PagseguroException;
 class Documents implements DocumentsContract
 {
     /**
+     * @var string
+     */
+    const CPF = 'CPF';
+    
+    /**
      * @var array
      */
     private $items = [];
@@ -70,7 +75,7 @@ class Documents implements DocumentsContract
     public function getTypes()
     {
         return [
-            DocumentsContract::CPF,
+            self::CPF,
         ];
     }
 }

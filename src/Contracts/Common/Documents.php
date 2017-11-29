@@ -15,11 +15,6 @@ namespace PagSeguro\Contracts\Common;
 interface Documents
 {
     /**
-     * @var string
-     */
-    const CPF = 'CPF';
-    
-    /**
      * Get item
      * 
      * @return string

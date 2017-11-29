@@ -2,10 +2,10 @@
 
 namespace PagSeguro\Http;
 
-use PagSeguro\Http\RequestBuilder;
 use PagSeguro\Contracts\Http\Request as RequestContract;
 use PagSeguro\Contracts\Credentials\AccountCredentials;
 use PagSeguro\Contracts\Credentials\Environment;
+use PagSeguro\Http\RequestBuilder;
 
 /**
  * PagSeguro SDK

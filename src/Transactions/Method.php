@@ -3,6 +3,7 @@
 namespace PagSeguro\Transactions;
 
 use PagSeguro\Transactions\Type;
+use PagSeguro\Transactions\Bank;
 use PagSeguro\Contracts\Transactions\Method as MethodContract;
 use PagSeguro\Contracts\Transactions\CreditCard\CreditCard;
 use PagSeguro\Exceptions\PagseguroException;
@@ -23,6 +24,11 @@ class Method implements MethodContract
      * @var string
      */ 
     private $type = '';
+    
+    /**
+     * @var string
+     */ 
+    private $bank = '';
     
     /**
      * @var \PagSeguro\Contracts\Transactions\CreditCard\CreditCard
@@ -53,6 +59,34 @@ class Method implements MethodContract
         }
         
         $this->type = $type;
+        
+        return $this;
+    }
+    
+    /**
+     * Get bank
+     * 
+     * @return string
+     */
+    public function getBank() : string
+    {
+        return $this->bank;
+    }
+    
+    /**
+     * Set bank
+     * 
+     * @param string $bank
+     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @return $this
+     */
+    public function setBank(string $bank)
+    {
+        if (!Bank::check($bank)) {
+            throw new PagseguroException("The [$bank] isn't a valid bank.");
+        }
+        
+        $this->bank = $bank;
         
         return $this;
     }

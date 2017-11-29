@@ -55,4 +55,24 @@ class InstallmentTest extends TestCase
     {
         $this->assertInstanceOf(Installment::class, $this->instance()->setQuantity(1));
     }
+    
+    /**
+     * Test get no interest installment quantity
+     *
+     * @return void
+     */
+    public function testGetNoInterestInstallmentQuantity()
+    {
+        $this->assertEquals(1, $this->instance()->setNoInterestInstallmentQuantity(1)->getNoInterestInstallmentQuantity());
+    }
+    
+    /**
+     * Test set no interest installment quantity
+     *
+     * @return void
+     */
+    public function testSetNoInterestInstallmentQuantity()
+    {
+        $this->assertInstanceOf(Installment::class, $this->instance()->setNoInterestInstallmentQuantity(1));
+    }
 }

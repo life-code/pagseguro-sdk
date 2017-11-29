@@ -227,4 +227,39 @@ class Customer implements CustomerContract
         
         return $this;
     }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray(bool $xml_format = false) : array
+    {
+        $response = [
+            'name'      => $this->getName(),
+            'email'     => $this->getEmail(),
+            'hash'      => $this->getHash(),
+            'phone'     => $this->getPhone()->toArray(),
+        ];
+        
+        if ($ip = $this->getIp()) {
+            $response['ip'] = $ip;
+        }
+        
+        if ($address = $this->getAddress()) {
+            $response['address'] = $address->toArray();
+        }
+        
+        if ($xml_format) {
+            $response['documents'] = [
+                'document' => $this->getDocuments()->toArray(),
+            ];
+        } else {
+            $response['documents'] = [
+                $this->getDocuments()->toArray(),
+            ];
+        }
+        
+        return $response;
+    }
 }

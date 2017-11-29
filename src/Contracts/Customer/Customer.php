@@ -124,4 +124,11 @@ interface Customer
      * @return $this
      */
     public function setDocuments(Documents $documents);
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray(bool $xml_format = false) : array;
 }

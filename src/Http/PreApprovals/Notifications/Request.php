@@ -9,7 +9,7 @@ use PagSeguro\Http\PreApprovals\Notifications\Response;
  * PagSeguro SDK
  * 
  * @type        library
- * @version     0.8.97
+ * @version     1.0.0
  * @package     life-code/pagseguro-sdk
  * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>

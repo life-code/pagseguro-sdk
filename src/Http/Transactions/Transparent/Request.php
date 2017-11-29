@@ -2,13 +2,13 @@
 
 namespace PagSeguro\Http\Transactions\Transparent;
 
-use PagSeguro\Http\Request as BaseRequest;
-use PagSeguro\Http\Transactions\Transparent\Response;
 use PagSeguro\Contracts\Transactions\Payment;
 use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Transactions\Method;
+use PagSeguro\Http\Request as BaseRequest;
+use PagSeguro\Http\Transactions\Transparent\Response;
 use Spatie\ArrayToXml\ArrayToXml;
 
 /**

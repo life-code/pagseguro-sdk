@@ -2,9 +2,9 @@
 
 namespace PagSeguro\Http\Transactions\Abandoned;
 
+use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\Transactions\Abandoned\Response;
-use PagSeguro\Contracts\Transactions\Interval as IntervalContract;
 
 /**
  * PagSeguro SDK

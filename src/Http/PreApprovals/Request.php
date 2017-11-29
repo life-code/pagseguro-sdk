@@ -2,12 +2,12 @@
 
 namespace PagSeguro\Http\PreApprovals;
 
-use PagSeguro\Http\Request as BaseRequest;
-use PagSeguro\Http\PreApprovals\Response;
 use PagSeguro\Contracts\PreApprovals\PreApproval;
 use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\Transactions\Method;
+use PagSeguro\Http\Request as BaseRequest;
+use PagSeguro\Http\PreApprovals\Response;
 
 /**
  * PagSeguro SDK

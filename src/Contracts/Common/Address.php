@@ -133,4 +133,11 @@ interface Address
      * @return $this
      */
     public function setComplement(string $complement);
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array;
 }

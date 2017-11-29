@@ -47,6 +47,13 @@ interface Phone
     public function setNumber(string $number);
     
     /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array;
+    
+    /**
      * To string phone
      * 
      * @param bool $mask

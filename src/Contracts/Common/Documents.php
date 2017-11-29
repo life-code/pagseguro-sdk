@@ -45,4 +45,11 @@ interface Documents
      * @return array
      */
     public function getTypes();
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array;
 }

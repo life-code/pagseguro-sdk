@@ -103,6 +103,16 @@ class PhoneTest extends TestCase
     }
     
     /**
+     * Test to array
+     * 
+     * @return void
+     */
+    public function testToArray()
+    {
+        $this->assertCount(2, $this->instance()->toArray());
+    }
+    
+    /**
      * Test to string
      *
      * @return void

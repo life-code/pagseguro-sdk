@@ -71,4 +71,14 @@ class DocumentsTest extends TestCase
     {
         $this->instance()->setItem('RG', '24227052009');
     }
+    
+    /**
+     * Test to array
+     * 
+     * @return void
+     */
+    public function testToArray()
+    {
+        $this->assertCount(2, $this->instance()->toArray());
+    }
 }

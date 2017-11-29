@@ -197,4 +197,14 @@ class AddressTest extends TestCase
     {
         $this->assertInstanceOf(AddressContract::class, $this->instance()->setComplement('apt. 306'));
     }
+    
+    /**
+     * Test to array
+     * 
+     * @return void
+     */
+    public function testToArray()
+    {
+        $this->assertCount(8, $this->instance()->toArray());
+    }
 }

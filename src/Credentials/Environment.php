@@ -23,6 +23,11 @@ class Environment implements EnvironmentContract
     private $env_path = __DIR__ . '/../../../../../';
     
     /**
+     * @var string
+     */
+    private $pagseguro_url = 'https://ws.{PAGSEGURO_ENV}pagseguro.uol.com.br/';
+    
+    /**
      * Make new instance of this class
      * 
      * @return void
@@ -90,7 +95,7 @@ class Environment implements EnvironmentContract
      */
     public function getUrl() : string
     {
-        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), env('PAGSEGURO_URL', ''));
+        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), $this->pagseguro_url);
     }
     
     /**

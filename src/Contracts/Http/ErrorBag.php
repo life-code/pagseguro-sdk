@@ -19,7 +19,7 @@ interface ErrorBag
      * 
      * @param array $errors
      * @return $this
-     */ 
+     */
     public function setData(array $errors);
     
     /**

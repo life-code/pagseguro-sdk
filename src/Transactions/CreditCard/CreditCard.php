@@ -22,17 +22,17 @@ class CreditCard implements CreditCardContract
 {
     /**
      * @var string
-     */ 
+     */
     private $token = '';
     
     /**
      * @var \PagSeguro\Transactions\CreditCard\Holder
-     */ 
+     */
     private $holder = '';
     
     /**
      * @var \PagSeguro\Transactions\CreditCard\Installment
-     */ 
+     */
     private $installment = '';
 
     /**

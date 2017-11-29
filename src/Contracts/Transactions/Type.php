@@ -19,13 +19,13 @@ interface Type
      * 
      * @param string $type
      * @return bool
-     */ 
+     */
     public static function check(string $type) : bool;
     
     /**
      * Get types
      * 
      * @return array
-     */ 
+     */
     public static function getTypes();
 }

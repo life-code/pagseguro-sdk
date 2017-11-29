@@ -19,13 +19,13 @@ interface Bank
      * 
      * @param string $bank
      * @return bool
-     */ 
+     */
     public static function check(string $bank) : bool;
     
     /**
      * Get banks
      * 
      * @return array
-     */ 
+     */
     public static function getBanks();
 }

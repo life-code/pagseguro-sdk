@@ -18,17 +18,17 @@ class Type implements TypeContract
 {
     /**
      * @var string
-     */ 
+     */
 	const CREDITCARD = 'CREDITCARD';
 	
     /**
      * @var string
-     */ 
+     */
 	const EFT = 'EFT';
 	
     /**
      * @var string
-     */ 
+     */
 	const BOLETO = 'BOLETO';
 	
     /**
@@ -36,7 +36,7 @@ class Type implements TypeContract
      * 
      * @param string $type
      * @return bool
-     */ 
+     */
     public static function check(string $type) : bool
     {
         return in_array($type, self::getTypes());
@@ -46,7 +46,7 @@ class Type implements TypeContract
      * Get types
      * 
      * @return array
-     */ 
+     */
     public static function getTypes()
     {
         return [

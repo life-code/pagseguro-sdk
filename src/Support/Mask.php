@@ -16,7 +16,7 @@ trait Mask
 {
     /**
      * @var array
-     */ 
+     */
     private $search = [
         '.', ',', '-', '(', ')', ' ', '/', '_'
     ];
@@ -30,7 +30,7 @@ trait Mask
      * Get search
      * 
      * @return array
-     */ 
+     */
     private function getSearch() : array
     {
         return $this->search;
@@ -40,7 +40,7 @@ trait Mask
      * Get replace
      * 
      * @return string
-     */ 
+     */
     private function getReplace() : string
     {
         return $this->replace;
@@ -51,7 +51,7 @@ trait Mask
      * 
      * @param mixed $item
      * @return string
-     */ 
+     */
     public function removeMask($item) : string
     {
         return (string) str_replace($this->getSearch(), $this->getReplace(), $item);
@@ -62,7 +62,7 @@ trait Mask
      * 
      * @param string $phone
      * @return string
-     */ 
+     */
     public function phoneMask(string $phone) : string
     {
         if (strlen($phone) === 11) {

@@ -19,19 +19,19 @@ trait Factory
 {
     /**
      * @var \PagSeguro\Credentials\Credentials\Environment
-     */ 
+     */
     private static $env;
     
     /**
      * @var \PagSeguro\Contracts\Credentials\AccountCredentials
-     */ 
+     */
     private static $credentials;
     
     /**
      * Get env
      * 
      * return \PagSeguro\Contracts\Credentials\Environment
-     */ 
+     */
     public static function getEnv()
     {
         if (!self::$env) {
@@ -45,7 +45,7 @@ trait Factory
      * Get credentials
      * 
      * return \PagSeguro\Contracts\Credentials\AccountCredentials
-     */ 
+     */
     public static function getCredentials()
     {
         if (!self::$credentials) {

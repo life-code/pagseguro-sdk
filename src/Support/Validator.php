@@ -19,7 +19,7 @@ trait Validator
      * 
      * @param string $email
      * @return bool
-     */ 
+     */
     private function validateEmail(string $email) : bool
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -30,7 +30,7 @@ trait Validator
      * 
      * @param string $url
      * @return bool
-     */ 
+     */
     private function validateUrl(string $url) : bool
     {
         return filter_var($url, FILTER_VALIDATE_URL);
@@ -41,7 +41,7 @@ trait Validator
      * 
      * @param mixed $data
      * @return bool
-     */ 
+     */
     private function isJSON($data) : bool
     {
         json_decode($data);

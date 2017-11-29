@@ -22,17 +22,17 @@ class Method implements MethodContract
 {
     /**
      * @var string
-     */ 
+     */
     private $type = '';
     
     /**
      * @var string
-     */ 
+     */
     private $bank = '';
     
     /**
      * @var \PagSeguro\Contracts\Transactions\CreditCard\CreditCard
-     */ 
+     */
     private $credit_card = '';
     
     /**

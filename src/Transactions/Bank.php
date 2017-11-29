@@ -18,22 +18,22 @@ class Bank implements BankContract
 {
     /**
      * @var string
-     */ 
+     */
 	const BANCO_DO_BRASIL = 'BANCO_BRASIL';
 	
     /**
      * @var string
-     */ 
+     */
 	const BANCO_BANRISUL = 'BANRISUL';
 	
     /**
      * @var string
-     */ 
+     */
 	const BRADESCO = 'BRADESCO';
 	
     /**
      * @var string
-     */ 
+     */
 	const ITAU = 'ITAU';
 	
     /**
@@ -41,7 +41,7 @@ class Bank implements BankContract
      * 
      * @param string $bank
      * @return bool
-     */ 
+     */
     public static function check(string $bank) : bool
     {
         return in_array($bank, self::getBanks());
@@ -51,7 +51,7 @@ class Bank implements BankContract
      * Get banks
      * 
      * @return array
-     */ 
+     */
     public static function getBanks()
     {
         return [

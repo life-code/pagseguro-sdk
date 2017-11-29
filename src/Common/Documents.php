@@ -33,7 +33,7 @@ class Documents implements DocumentsContract
      * Get item
      * 
      * @return string
-     */ 
+     */
     public function getItem($type)
     {
         return $this->items[$type];
@@ -46,7 +46,7 @@ class Documents implements DocumentsContract
      * @param string $item
      * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
-     */ 
+     */
     public function setItem(string $type, string $item)
     {
         if (!$this->validate($type)) {
@@ -63,7 +63,7 @@ class Documents implements DocumentsContract
      * 
      * @param string $type
      * @return bool
-     */ 
+     */
     public function validate(string $type) : bool
     {
         return in_array($type, $this->getTypes());
@@ -86,7 +86,7 @@ class Documents implements DocumentsContract
      * Get types
      * 
      * @return array
-     */ 
+     */
     public function getTypes()
     {
         return [

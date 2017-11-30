@@ -8,6 +8,7 @@ return [
     '10003' => "Código de segurança inválido.",
     '10004' => "Código de segurança obrigatório.",
     '10006' => "Código de segurança inválido.",
+    '11007' => "URL de redirecionamento inválida.",
     '13001' => "Valor do código de notificação inválido.",
     '13005' => "a data inicial deve ser inferior ao limite permitido.",
     '13009' => "A data final deve ser inferior ao limite permitido.",

@@ -8,6 +8,7 @@ return [
     '10003' => "Invalid security field.",
     '10004' => "security field is mandatory.",
     '10006' => "Security field with invalid length.",
+    '11007' => "Redirect URL invalid value.",
     '13001' => "Invalid notification code value.",
     '13005' => "Initial date must be lower than allowed limit.",
     '13009' => "Final date must be lower than allowed limit.",

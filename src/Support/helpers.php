@@ -48,3 +48,18 @@ if (! function_exists('env')) {
         return $value;
     }
 }
+
+if (! function_exists('toArrayRecursive')) {
+    /**
+     * Convert object in array
+     *
+     * @param mixed $data
+     * @return array
+     */
+    function toArrayRecursive($data) : array
+    {
+        return array_map(function ($value) {
+            return is_object($value) ? toArrayRecursive($value) : $value;
+        }, (array) $data);
+    }
+}

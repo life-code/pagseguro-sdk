@@ -83,13 +83,20 @@ class Request extends BaseRequest
             'items'           => $items,
             'shipping'        => $shipping->toArray(),
             'method'          => $method->getType(),
-            'creditCard'      => [
+        ];
+        
+        if ($method->getBank()) {
+            $data['bank']['name'] = $method->getBank();
+        }
+        
+        if ($method->getType() === 'CREDTCARD') {
+            $data['creditCard'] = [
                 'token'          => $method->getCreditCard()->getToken(),
                 'installment'    => $method->getCreditCard()->getInstallment()->toArray(),
                 'holder'         => $method->getCreditCard()->getHolder()->toArray(true),
                 'billingAddress' => $method->getCreditCard()->getAddress()->toArray(),
-            ],
-        ];
+            ];
+        }
         
         $this->data = ArrayToXml::convert($data, 'payment');
         

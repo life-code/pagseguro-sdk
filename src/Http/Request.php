@@ -102,11 +102,11 @@ abstract class Request extends RequestBuilder implements RequestContract
         $response->setInfo($info);
         
         if ($data === 'Unauthorized') {
-            return $response->setErrors([$data]);
+            return $response->setErrors([401 => $data]);
         }
         
         if ($info['http_code'] === 404) {
-            return $response->setErrors(['Not Found']);
+            return $response->setErrors([404 => 'Not Found']);
         }
         
         return $response->setData($data);

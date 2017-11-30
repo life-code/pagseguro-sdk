@@ -91,6 +91,15 @@ interface Response
     /**
      * Proxy accessing an attribute onto the response data.
      *
+     * @param string $key
+     * @param mixed $value
+     * @return mixed
+     */
+    public function __set(string $key, $value);
+
+    /**
+     * Proxy accessing an attribute onto the response data.
+     *
      * @return json
      */
     public function __toString();

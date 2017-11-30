@@ -56,4 +56,14 @@ class Response extends BaseResponse
         
         return $response;
     }
+    
+    /**
+     * Redirect for PagSeguro 
+     * 
+     * @return string
+     */
+    public function redirect() : string
+    {
+        return $this->paymentLink;
+    }
 }

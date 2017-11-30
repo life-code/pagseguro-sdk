@@ -43,6 +43,13 @@ interface Request
     public function getUrl() : string;
     
     /**
+     * Get response class
+     * 
+     * @return \PagSeguro\Contracts\Http\Response
+     */
+    public function getResponseClass();
+    
+    /**
      * Create response
      * 
      * @param mixed $data

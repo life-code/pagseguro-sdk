@@ -57,6 +57,16 @@ class Request extends BaseRequest
     }
     
     /**
+     * Get response class
+     * 
+     * @return \PagSeguro\Contracts\Http\Response
+     */
+    public function getResponseClass()
+    {
+        return new Response($this->env, 'Transactions');
+    }
+    
+    /**
      * Exchange data
      * 
      * @param \PagSeguro\PreApprovals\Transactions $payment
@@ -88,30 +98,5 @@ class Request extends BaseRequest
         $this->data = ArrayToXml::convert($data, 'checkout');
         
         return $this;
-    }
-    
-    /**
-     * Create response
-     * 
-     * @param mixed $data
-     * @param array $info
-     * @return \PagSeguro\Contracts\Http\Response
-     */
-    public function createResponse($data, array $info)
-    {
-        $response = new Response($this->env, 'Transactions');
-        
-        $response->setStatus($info['http_code']);
-        $response->setInfo($info);
-        
-        if ($data === 'Unauthorized') {
-            return $response->setErrors([$data]);
-        }
-        
-        if ($info['http_code'] === 404) {
-            return $response->setErrors(['Not Found']);
-        }
-        
-        return $response->setData($data);
     }
 }

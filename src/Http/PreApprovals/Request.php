@@ -56,6 +56,16 @@ class Request extends BaseRequest
     }
     
     /**
+     * Get response class
+     * 
+     * @return \PagSeguro\Contracts\Http\Response
+     */
+    public function getResponseClass()
+    {
+        return new Response($this->env, 'PreApprovals');
+    }
+    
+    /**
      * Exchange data
      * 
      * @param \PagSeguro\Contracts\PreApprovals\PreApproval $pre_approval
@@ -81,30 +91,5 @@ class Request extends BaseRequest
         $this->data = json_encode($data);
         
         return $this;
-    }
-    
-    /**
-     * Create response
-     * 
-     * @param mixed $data
-     * @param array $info
-     * @return \PagSeguro\Contracts\Http\Response
-     */
-    public function createResponse($data, array $info)
-    {
-        $response = new Response($this->env, 'PreApprovals');
-        
-        $response->setStatus($info['http_code']);
-        $response->setInfo($info);
-        
-        if ($data === 'Unauthorized') {
-            return $response->setErrors([$data]);
-        }
-        
-        if ($info['http_code'] === 404) {
-            return $response->setErrors(['Not Found']);
-        }
-        
-        return $response->setData($data);
     }
 }

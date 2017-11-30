@@ -107,10 +107,20 @@ class Installment implements InstallmentContract
      */
     public function toArray() : array
     {
-        return [
-            'quantity'                      => $this->getQuantity(),
-            'noInterestInstallmentQuantity' => $this->getNoInterestInstallmentQuantity(),
-            'value'                         => $this->getValue(),
-        ];
+        $response = [];
+        
+        if ($this->getQuantity()) {
+            $response['quantity'] = $this->getQuantity();
+        }
+        
+        if ($this->getNoInterestInstallmentQuantity()) {
+            $response['noInterestInstallmentQuantity'] = $this->getNoInterestInstallmentQuantity();
+        }
+        
+        if ($this->getValue()) {
+            $response['value'] = $this->getValue();
+        }
+        
+        return $response;
     }
 }

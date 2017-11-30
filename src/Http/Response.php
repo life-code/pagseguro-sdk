@@ -99,7 +99,7 @@ abstract class Response implements ResponseContract
      */
     public function toArray() : array
     {
-        return (array) $this->data;
+        return toArrayRecursive($this->data);
     }
     
     /**
@@ -180,7 +180,7 @@ abstract class Response implements ResponseContract
      * @param mixed $value
      * @return mixed
      */
-    public function __set(string $key, mixed $value)
+    public function __set(string $key, $value)
     {
         $this->data->$key = $value;
         

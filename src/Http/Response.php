@@ -85,11 +85,21 @@ abstract class Response implements ResponseContract
     /**
      * Get all data
      * 
-     * @return array
+     * @return object
      */
-    public function all() : array
+    public function all()
     {
         return $this->data;
+    }
+    
+    /**
+     * Get all to array data
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return (array) $this->data;
     }
     
     /**

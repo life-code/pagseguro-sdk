@@ -32,9 +32,16 @@ interface Response
     /**
      * Get all data
      * 
+     * @return object
+     */
+    public function all();
+    
+    /**
+     * Get all to array data
+     * 
      * @return array
      */
-    public function all() : array;
+    public function toArray() : array;
     
     /**
      * Get error

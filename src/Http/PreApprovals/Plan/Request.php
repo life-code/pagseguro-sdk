@@ -4,6 +4,7 @@ namespace PagSeguro\Http\PreApprovals\Plan;
 
 use PagSeguro\Http\Request as BaseRequest;
 use PagSeguro\Http\PreApprovals\Plan\Response;
+use PagSeguro\Contracts\PreApprovals\Plan\PreApproval;
 use PagSeguro\PreApprovals\Plan;
 
 /**
@@ -66,10 +67,22 @@ class Request extends BaseRequest
      * Exchange data
      * 
      * @param \PagSeguro\Contracts\PreApprovals\Plan $plan
+     * @param \PagSeguro\Contracts\PreApprovals\Plan\PreApproval $pre_approval
      * @return $this
      */
-    public function exchangeData(Plan $plan)
+    public function exchangeData(Plan $plan, PreApproval $pre_approval)
     {
+        $data = [
+        	'redirectURL': $plan->getRedirectURL(),
+        	'reference': $plan->getReference(),
+        	'reviewURL': $plan->getReviewURL(),
+        	'maxUses': $plan->getMaxUses(),
+        	'preApproval': $pre_approval->toArray(),
+        	'receiver': [
+        	    'email': $plan->getReceiverEmail(),
+        	],
+        ];
+        
         $this->data = json_encode($data);
         
         return $this;

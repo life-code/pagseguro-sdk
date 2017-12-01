@@ -46,6 +46,11 @@ class Plan implements PlanContract
     /**
      * @var string
      */
+    private $review_url = '';
+    
+    /**
+     * @var string
+     */
     private $receiver_email = '';
     
     /**
@@ -115,6 +120,29 @@ class Plan implements PlanContract
     public function getReceiverEmail() : string
     {
         return $this->receiver_email;
+    }
+    
+    /**
+     * Get review_url
+     * 
+     * @return string
+     */
+    public function getReviewURL() : string
+    {
+        return $this->review_url;
+    }
+    
+    /**
+     * Set review_url
+     * 
+     * @param string $review_url
+     * @return $this
+     */
+    public function setReviewURL(string $review_url)
+    {
+        $this->review_url = $review_url;
+        
+        return $this;
     }
     
     /**

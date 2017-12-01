@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Transactions;
 
-use PagSeguro\Contracts\Transactions\Type as TypeContract;
+use PagSeguro\Contracts\Common\Type as TypeContract;
 
 /**
  * PagSeguro SDK
@@ -19,17 +19,17 @@ class Type implements TypeContract
     /**
      * @var string
      */
-	const CREDITCARD = 'CREDITCARD';
+	const CREDITCARD = 'creditcard';
 	
     /**
      * @var string
      */
-	const EFT = 'EFT';
+	const EFT = 'eft';
 	
     /**
      * @var string
      */
-	const BOLETO = 'BOLETO';
+	const BOLETO = 'boleto';
 	
     /**
      * Validate type

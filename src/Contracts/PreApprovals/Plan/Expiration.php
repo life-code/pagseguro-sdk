@@ -44,4 +44,11 @@ interface Expiration
      * @return $this
      */
     public function setUnit(string $unit);
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array;
 }

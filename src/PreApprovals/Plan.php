@@ -49,6 +49,11 @@ class Plan implements PlanContract
     private $review_url = '';
     
     /**
+     * @var integer
+     */
+    private $max_uses = 0;
+    
+    /**
      * @var string
      */
     private $receiver_email = '';
@@ -141,6 +146,29 @@ class Plan implements PlanContract
     public function setReviewURL(string $review_url)
     {
         $this->review_url = $review_url;
+        
+        return $this;
+    }
+    
+    /**
+     * Get max_uses
+     * 
+     * @return integer
+     */
+    public function getMaxUses() : integer
+    {
+        return $this->max_uses;
+    }
+    
+    /**
+     * Set max_uses
+     * 
+     * @param integer $max_uses
+     * @return $this
+     */
+    public function setMaxUses(integer $max_uses)
+    {
+        $this->max_uses = $max_uses;
         
         return $this;
     }

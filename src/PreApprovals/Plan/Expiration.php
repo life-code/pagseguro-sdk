@@ -78,4 +78,17 @@ class Expiration implements ExpirationContract
         
         return $this;
     }
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return [
+            'value' => $this->getValue(),
+            'unit'  => $this->getUnit(),
+        ];
+    }
 }

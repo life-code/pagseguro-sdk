@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
+use PagSeguro\Contracts\PreApprovals\Plan;
 use PagSeguro\Contracts\PreApprovals\PreApproval;
 use PagSeguro\Contracts\PreApprovals\Notification as NotificationPreApproval;
 use PagSeguro\Contracts\PreApprovals\Cancelation as CancelationPreApproval;
@@ -40,6 +41,16 @@ class PagSeguroTest extends TestCase
     public function testSession()
     {
         $this->assertInstanceOf(Session::class, PagSeguro::session());
+    }
+    
+    /**
+     * Test instance plan
+     *
+     * @return void
+     */
+    public function testPlan()
+    {
+        $this->assertInstanceOf(Plan::class, PagSeguro::plan());
     }
     
     /**

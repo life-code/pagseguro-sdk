@@ -30,6 +30,11 @@ class Plan implements PlanContract
     private $env = '';
     
     /**
+     * @var string
+     */
+    private $redirect_url = '';
+    
+    /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Contracts\Credentials\AccountCredentials $credentials
@@ -40,6 +45,29 @@ class Plan implements PlanContract
     {
         $this->credentials = $credentials;
         $this->env         = $env;
+    }
+    
+    /**
+     * Get redirect_url
+     * 
+     * @return string
+     */
+    public function getRedirectURL() : string
+    {
+        return $this->redirect_url;
+    }
+    
+    /**
+     * Set redirect_url
+     * 
+     * @param string $redirect_url
+     * @return $this
+     */
+    public function setRedirectURL(string $redirect_url)
+    {
+        $this->redirect_url = $redirect_url;
+        
+        return $this;
     }
     
     /**

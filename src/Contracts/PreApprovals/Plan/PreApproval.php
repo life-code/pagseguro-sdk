@@ -2,6 +2,7 @@
 
 namespace PagSeguro\Contracts\PreApprovals\Plan;
 
+use PagSeguro\Contracts\PreApprovals\Plan\Expiration;
 use DateTime;
 
 /**
@@ -169,6 +170,21 @@ interface PreApproval
     public function setTrialPeriodDuration(int $trial_period_duration);
     
     /**
+     * Get expiration
+     * 
+     * @return \PagSeguro\Contracts\PreApprovals\Plan\Expiration
+     */
+    public function getExpiration();
+    
+    /**
+     * Set expiration
+     * 
+     * @param \PagSeguro\Contracts\PreApprovals\Plan\Expiration $expiration
+     * @return $this
+     */
+    public function setExpiration(Expiration $expiration);
+    
+    /**
      * Get details
      * 
      * @return string
@@ -272,4 +288,11 @@ interface PreApproval
      * @return $this
      */
     public function setCancelURL(string $cancel_url);
+    
+    /**
+     * Get all attributes to convert array
+     * 
+     * @return array
+     */
+    public function toArray();
 }

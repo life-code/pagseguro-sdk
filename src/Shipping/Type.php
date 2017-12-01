@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Shipping;
 
-use PagSeguro\Contracts\Shipping\Type as TypeContract;
+use PagSeguro\Contracts\Common\Type as TypeContract;
 
 /**
  * PagSeguro SDK
@@ -32,6 +32,17 @@ class Type implements TypeContract
     const TYPE_UNKNOWN = 3;
     
     /**
+     * Check type exists
+     * 
+     * @param string $type
+     * @return bool
+     */
+    public static function check(string $type) : bool
+    {
+        return in_array((int) $type, self::getTypes());
+    }
+    
+    /**
      * Get types
      * 
      * @return array
@@ -43,16 +54,5 @@ class Type implements TypeContract
             self::TYPE_SEDEX, 
             self::TYPE_UNKNOWN
         ];
-    }
-    
-    /**
-     * Check type exists
-     * 
-     * @param int $type
-     * @return bool
-     */
-    public static function exists(int $type) : bool
-    {
-        return in_array($type, self::getTypes());
     }
 }

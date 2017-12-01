@@ -61,7 +61,7 @@ class Payment implements PaymentContract
     /**
      * @var string
      */
-    private $receive_email = '';
+    private $receiver_email = '';
     
     /**
      * @var string
@@ -183,25 +183,25 @@ class Payment implements PaymentContract
      * 
      * @return string
      */
-    public function getReceiveEmail() : string
+    public function getReceiverEmail() : string
     {
-        return $this->receive_email;
+        return $this->receiver_email;
     }
     
     /**
      * Set receive email
      * 
-     * @param string $receive_email
+     * @param string $receiver_email
      * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
-    public function setReceiveEmail(string $receive_email)
+    public function setReceiverEmail(string $receiver_email)
     {
-        if (!$this->validateEmail($receive_email)) {
-            throw new PagseguroException("The [$receive_email] isn't a valid email.");
+        if (!$this->validateEmail($receiver_email)) {
+            throw new PagseguroException("The [$receiver_email] isn't a valid email.");
         }
         
-        $this->receive_email = $receive_email;
+        $this->receiver_email = $receiver_email;
         
         return $this;
     }

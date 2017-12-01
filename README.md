@@ -1,5 +1,6 @@
 <p align="center">
    <h1 align="center">PagSeguro SDK</h1>
+   <h2  align="center">The most complete integration API with PagSeguro!</h2>
 </p>
 
 <p align="center">

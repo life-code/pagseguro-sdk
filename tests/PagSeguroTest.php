@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\PagSeguro;
 use PagSeguro\Session\Session;
-use PagSeguro\Contracts\PreApprovals\Plan;
+use PagSeguro\Contracts\PreApprovals\Plan\Plan;
 use PagSeguro\Contracts\PreApprovals\PreApproval;
 use PagSeguro\Contracts\PreApprovals\Notification as NotificationPreApproval;
 use PagSeguro\Contracts\PreApprovals\Cancelation as CancelationPreApproval;

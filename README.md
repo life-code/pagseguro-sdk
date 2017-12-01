@@ -36,7 +36,7 @@ The PagSeguro SDK library contains several features that PagSeguro offers in the
 - [SandBox PagSeguro](https://sandbox.pagseguro.uol.com.br/#rmcl)
 
 
-## Isues
+## Issues
 Issues are used to track todos, bugs, feature requests, and more.
 
 

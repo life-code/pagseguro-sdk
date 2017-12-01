@@ -20,6 +20,29 @@ use PagSeguro\Http\PreApprovals\Plan\Request;
 class Plan implements PlanContract
 {
     /**
+     * @var \PagSeguro\Contracts\Credentials\AccountCredentials
+     */
+    private $credentials = '';
+    
+    /**
+     * @var \PagSeguro\Contracts\Credentials\Environment
+     */
+    private $env = '';
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @param \PagSeguro\Contracts\Credentials\AccountCredentials $credentials
+     * @param \PagSeguro\Contracts\Credentials\Environment $env
+     * @return void
+     */
+    public function __construct(AccountCredentials $credentials, Environment $env)
+    {
+        $this->credentials = $credentials;
+        $this->env         = $env;
+    }
+    
+    /**
      * Create new plan
      * 
      * @return \PagSeguro\Contracts\Http\Response

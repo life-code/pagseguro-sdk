@@ -99,11 +99,12 @@ class Shipping implements ShippingContract
      * Set type
      * 
      * @param int $type
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setType(int $type)
     {
-        if (!Type::exists($type)) {
+        if (!Type::check($type)) {
             throw new PagseguroException("The [$type] isn't a valid type.");
         }
         

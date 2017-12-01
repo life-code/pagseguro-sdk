@@ -17,14 +17,14 @@ use PagSeguro\Shipping\Type;
 class ShippingTypeTest extends TestCase
 {
     /**
-     * Test exists
+     * Test check
      *
      * @return void
      */
-    public function testExists()
+    public function testCheck()
     {
-        $this->assertTrue(Type::exists(Type::TYPE_SEDEX));
-        $this->assertTrue(! Type::exists(10));
+        $this->assertTrue(Type::check(Type::TYPE_SEDEX));
+        $this->assertTrue(! Type::check(10));
     }
     
     /**

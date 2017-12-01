@@ -4,6 +4,7 @@ namespace PagSeguro;
 
 use PagSeguro\Support\Factory;
 use PagSeguro\Session\Session;
+use PagSeguro\PreApprovals\Plan;
 use PagSeguro\PreApprovals\PreApproval;
 use PagSeguro\PreApprovals\Cancelation;
 use PagSeguro\PreApprovals\Notification as PreApprovalNotification;
@@ -53,6 +54,19 @@ class PagSeguro
         $credentials = self::getCredentials();
         
         return new Session($credentials, $env);
+    }
+    
+    /**
+     * Handles pagseguro plan instance
+     * 
+     * @return \PagSeguro\PreApprovals\Plan
+     */
+    public static function plan()
+    {
+        $env         = self::getEnv();
+        $credentials = self::getCredentials();
+        
+        return new Plan($credentials, $env);
     }
     
     /**

@@ -35,6 +35,11 @@ class Plan implements PlanContract
     private $redirect_url = '';
     
     /**
+     * @var string
+     */
+    private $reference = '';
+    
+    /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Contracts\Credentials\AccountCredentials $credentials
@@ -66,6 +71,29 @@ class Plan implements PlanContract
     public function setRedirectURL(string $redirect_url)
     {
         $this->redirect_url = $redirect_url;
+        
+        return $this;
+    }
+    
+    /**
+     * Get reference
+     * 
+     * @return string
+     */
+    public function getReference() : string
+    {
+        return $this->reference;
+    }
+    
+    /**
+     * Set reference
+     * 
+     * @param string $reference
+     * @return $this
+     */
+    public function setReference(string $reference)
+    {
+        $this->reference = $reference;
         
         return $this;
     }

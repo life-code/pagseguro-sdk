@@ -18,7 +18,7 @@ The PagSeguro SDK library contains several features that PagSeguro offers in the
 
 - Create **payment requisitions** *(done)*
 - Create **transparent payment requisitions** *(done)*
-- Create **plan signatures** *(doing)*
+- Create **plan signatures** *(done)*
 - Create **signatures requisitions** *(to do)*
 - Create **transparent signatures** *(done)*
 - Cancel **signatures** *(done)*

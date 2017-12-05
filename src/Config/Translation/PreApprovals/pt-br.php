@@ -12,7 +12,7 @@ return [
     '10026' => "Email do comprador não pode estar em branco.",
     '10049' => "Nome do comprador obrigatório.",
     '10050' => "Email do comprador obrigatório.",
-    '11002' => "comprimento inválido do email do receptor.",
+    '11002' => "Comprimento inválido do email do receptor.",
     '11006' => "URL de redirecionamento contém comprimento inválido.",
     '11007' => "URL de redirecionamento contém valor inválido.",
     '11008' => "Referência comprimento inválido.",

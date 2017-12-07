@@ -23,7 +23,7 @@ class Language implements LanguageContract
      * 
      * @var string
      */
-    private $base_path = __DIR__ . '/../Config/Translation/';
+    private $base_path = __DIR__ . '/../Config/Translations/';
     
     /**
      * Translations in file

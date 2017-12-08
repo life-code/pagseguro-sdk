@@ -17,9 +17,10 @@ interface Documents
     /**
      * Get item
      * 
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return string
      */
-    public function getItem($type);
+    public function getItem(string $type) : string;
     
     /**
      * Set item

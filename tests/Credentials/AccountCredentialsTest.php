@@ -75,7 +75,7 @@ class AccountCredentialsTest extends TestCase
      */
     public function testGetToken()
     {
-        $this->assertEquals('654645621635321651687435', $this->instance()->setToken('654645621635321651687435')->getToken());
+        $this->assertEquals('A6S54651GF3A5SDFA6SG54312SADF5FW', $this->instance()->setToken('A6S54651GF3A5SDFA6SG54312SADF5FW')->getToken());
     }
     
     /**
@@ -85,7 +85,18 @@ class AccountCredentialsTest extends TestCase
      */
     public function testSetToken()
     {
-        $this->assertInstanceOf(AccountCredentialsContract::class, $this->instance()->setToken('654645621635321651687435'));
+        $this->assertInstanceOf(AccountCredentialsContract::class, $this->instance()->setToken('A6S54651GF3A5SDFA6SG54312SADF5FW'));
+    }
+    
+    /**
+     * Test throw set token
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetToken()
+    {
+        $this->instance()->setToken('A6S54651GF3A5SDFA6SG54312SADF');
     }
     
     /**

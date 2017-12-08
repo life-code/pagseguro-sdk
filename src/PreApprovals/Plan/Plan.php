@@ -73,7 +73,7 @@ class Plan implements PlanContract
     }
     
     /**
-     * Get redirect_url
+     * Get redirect URL
      * 
      * @return string
      */
@@ -83,13 +83,18 @@ class Plan implements PlanContract
     }
     
     /**
-     * Set redirect_url
+     * Set redirect URL
      * 
      * @param string $redirect_url
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setRedirectURL(string $redirect_url)
     {
+        if (!$this->validateUrl($notification_url)) {
+            throw new PagseguroException("The redirect URL [$notification_url] isn't a valid URL.");
+        }
+        
         $this->redirect_url = $redirect_url;
         
         return $this;
@@ -129,6 +134,24 @@ class Plan implements PlanContract
     }
     
     /**
+     * Set receive email
+     * 
+     * @param string $receiver_email
+     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @return $this
+     */
+    public function setReceiverEmail(string $receiver_email)
+    {
+        if (!$this->validateEmail($receiver_email)) {
+            throw new PagseguroException("The [$receiver_email] isn't a valid email.");
+        }
+        
+        $this->receiver_email = $receiver_email;
+        
+        return $this;
+    }
+    
+    /**
      * Get review_url
      * 
      * @return string
@@ -139,13 +162,18 @@ class Plan implements PlanContract
     }
     
     /**
-     * Set review_url
+     * Set review URL
      * 
      * @param string $review_url
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setReviewURL(string $review_url)
     {
+        if (!$this->validateUrl($review_url)) {
+            throw new PagseguroException("The review URL [$review_url] isn't a valid URL.");
+        }
+        
         $this->review_url = $review_url;
         
         return $this;
@@ -170,24 +198,6 @@ class Plan implements PlanContract
     public function setMaxUses(integer $max_uses)
     {
         $this->max_uses = $max_uses;
-        
-        return $this;
-    }
-    
-    /**
-     * Set receive email
-     * 
-     * @param string $receiver_email
-     * @throws \PagSeguro\Exceptions\PagseguroException
-     * @return $this
-     */
-    public function setReceiverEmail(string $receiver_email)
-    {
-        if (!$this->validateEmail($receiver_email)) {
-            throw new PagseguroException("The [$receiver_email] isn't a valid email.");
-        }
-        
-        $this->receiver_email = $receiver_email;
         
         return $this;
     }

@@ -24,6 +24,16 @@ trait Validator
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
+    /**
+     * Validate ip
+     * 
+     * @param string $ip
+     * @return bool
+     */
+    private function validateIp(string $ip) : bool
+    {
+        return filter_var($ip, FILTER_VALIDATE_IP);
+    }
     
     /**
      * Validate URL

@@ -41,6 +41,7 @@ interface AccountCredentials
      * Set token
      * 
      * @param string $token
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setToken(string $token);

@@ -28,7 +28,7 @@ trait Factory
     private static $credentials;
     
     /**
-     * Get env
+     * Get environment
      * 
      * return \PagSeguro\Contracts\Credentials\Environment
      */

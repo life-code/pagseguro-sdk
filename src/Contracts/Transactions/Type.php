@@ -27,5 +27,5 @@ interface Type
      * 
      * @return array
      */
-    public static function getTypes();
+    public static function getTypes() : array;
 }

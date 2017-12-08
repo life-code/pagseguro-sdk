@@ -62,7 +62,7 @@ class Period implements TypeContract
      * 
      * @return array
      */
-    public static function getTypes()
+    public static function getTypes() : array
     {
         return [
             self::WEEKLY,

@@ -11,6 +11,8 @@ use PagSeguro\Contracts\Shipping\Shipping;
 use PagSeguro\Contracts\Items\Item;
 use PagSeguro\Http\Transactions\Transparent\Request as TransparentRequest;
 use PagSeguro\Http\Transactions\Request;
+use PagSeguro\Transactions\PaymentMode;
+use PagSeguro\Transactions\Currency;
 use PagSeguro\Exceptions\PagseguroException;
 use PagSeguro\Support\Validator;
 
@@ -100,10 +102,15 @@ class Payment implements PaymentContract
      * Set currency
      * 
      * @param string $currency
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setCurrency(string $currency)
     {
+        if (! Currency::check($mode)) {
+            throw new PagseguroException("The currency [$notification_url] isn't a valid payment currency.");
+        }
+        
         $this->currency = $currency;
         
         return $this;
@@ -123,17 +130,22 @@ class Payment implements PaymentContract
      * Set mode
      * 
      * @param string $mode
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setMode(string $mode)
     {
+        if (! PaymentMode::check($mode)) {
+            throw new PagseguroException("The mode [$notification_url] isn't a valid payment mode.");
+        }
+        
         $this->mode = $mode;
         
         return $this;
     }
     
     /**
-     * Get notification_url
+     * Get notification URL
      * 
      * @return string
      */
@@ -143,20 +155,25 @@ class Payment implements PaymentContract
     }
     
     /**
-     * Set notification_url
+     * Set notification URL
      * 
      * @param string $notification_url
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setNotificationURL(string $notification_url)
     {
+        if (!$this->validateUrl($notification_url)) {
+            throw new PagseguroException("The notification URL [$notification_url] isn't a valid URL.");
+        }
+        
         $this->notification_url = $notification_url;
         
         return $this;
     }
     
     /**
-     * Get redirect_url
+     * Get redirect URL
      * 
      * @return string
      */
@@ -166,13 +183,18 @@ class Payment implements PaymentContract
     }
     
     /**
-     * Set redirect_url
+     * Set redirect URL
      * 
      * @param string $redirect_url
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setRedirectURL(string $redirect_url)
     {
+        if (!$this->validateUrl($redirect_url)) {
+            throw new PagseguroException("The redirect URL [$redirect_url] isn't a valid URL.");
+        }
+        
         $this->redirect_url = $redirect_url;
         
         return $this;

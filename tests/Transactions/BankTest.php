@@ -37,6 +37,6 @@ class BankTest extends TestCase
      */
     public function testGetBanks()
     {
-        $this->assertCount(4, Bank::getBanks());
+        $this->assertCount(4, Bank::getTypes());
     }
 }

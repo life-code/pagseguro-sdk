@@ -26,7 +26,7 @@ class Documents implements DocumentsContract
      * @var array
      */
     private $items = [
-        'CPF' => ''
+        self::CPF => ''
     ];
 
     /**

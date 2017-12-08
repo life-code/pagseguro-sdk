@@ -8,6 +8,7 @@ use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\PreApprovals\PreApproval as PreApprovalContract;
 use PagSeguro\Contracts\Transactions\Method;
 use PagSeguro\Http\PreApprovals\Request;
+use PagSeguro\Exceptions\PagseguroException;
 
 /**
  * PagSeguro SDK
@@ -67,11 +68,16 @@ class PreApproval implements PreApprovalContract
     /**
      * Set plan
      * 
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @param string $plan
      * @return $this
      */
     public function setPlan(string $plan)
     {
+        if (strlen($plan) !== 32) {
+            throw new PagSeguroException("The PagSeguro plan [$plan] isn't a valid plan.");
+        }
+        
         $this->plan = $plan;
         
         return $this;

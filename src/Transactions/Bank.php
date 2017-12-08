@@ -2,7 +2,7 @@
 
 namespace PagSeguro\Transactions;
 
-use PagSeguro\Contracts\Transactions\Bank as BankContract;
+use PagSeguro\Contracts\Transactions\Type as TypeContract;
 
 /**
  * PagSeguro SDK
@@ -14,7 +14,7 @@ use PagSeguro\Contracts\Transactions\Bank as BankContract;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Bank implements BankContract
+class Bank implements TypeContract
 {
     /**
      * @var string
@@ -44,7 +44,7 @@ class Bank implements BankContract
      */
     public static function check(string $bank) : bool
     {
-        return in_array($bank, self::getBanks());
+        return in_array($bank, self::getTypes());
     }
     
     /**
@@ -52,7 +52,7 @@ class Bank implements BankContract
      * 
      * @return array
      */
-    public static function getBanks()
+    public static function getTypes() : array
     {
         return [
             self::BANCO_DO_BRASIL,

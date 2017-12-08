@@ -161,6 +161,17 @@ class CustomerTest extends TestCase
     }
     
     /**
+     * Test throw set IP
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetIp()
+    {
+        $this->instance()->setIp('191136030');
+    }
+    
+    /**
      * Test get hash
      *
      * @return void

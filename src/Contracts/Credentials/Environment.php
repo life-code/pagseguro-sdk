@@ -24,6 +24,7 @@ interface Environment
     /**
      * Get email
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getEmail() : string;
@@ -31,6 +32,7 @@ interface Environment
     /**
      * Get token
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getToken() : string;
@@ -38,6 +40,7 @@ interface Environment
     /**
      * Get URL
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getUrl() : string;
@@ -52,6 +55,7 @@ interface Environment
     /**
      * Get location
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getLocation() : string;

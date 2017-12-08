@@ -114,6 +114,17 @@ class HolderTest extends TestCase
     }
     
     /**
+     * Test throw set birth date
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowSetBirthDate()
+    {
+        $this->instance()->setBirthDate('17-08-1995');
+    }
+    
+    /**
      * Test get phone
      *
      * @return void

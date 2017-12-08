@@ -32,11 +32,16 @@ class Documents implements DocumentsContract
     /**
      * Get item
      * 
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return string
      */
-    public function getItem($type)
+    public function getItem(string $type) : string
     {
-        return $this->items[$type];
+        if (! isset($this->items[$type])) {
+            throw new PagseguroException("The [$type] isn't exists in documents.");
+        }
+        
+        return (string) $this->items[$type];
     }
     
     /**

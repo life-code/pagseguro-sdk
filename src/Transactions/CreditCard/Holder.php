@@ -83,10 +83,15 @@ class Holder implements HolderContract
      * Set birth date
      * 
      * @param string $birth_date
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setBirthDate(string $birth_date)
     {
+        if (!$this->validateDate($birth_date, 'pt-br')) {
+            throw new PagseguroException("The [$birth_date] isn't a valid birth date.");
+        }
+        
         $this->birth_date = $birth_date;
         
         return $this;

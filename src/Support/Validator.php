@@ -47,6 +47,38 @@ trait Validator
     }
     
     /**
+     * Validate date
+     * 
+     * @param string $date
+     * @param string $type
+     * @return bool
+     */
+    private function validateDate(string $date, string $type = 'pt-br') : bool
+    {
+        $month  = '';
+        $day    = '';
+        $year   = '';
+        
+        $date = explode('/', $date);
+        
+        if (count($date) !== 3) {
+            return false;
+        }
+        
+        if ($type === 'pt-br') {
+            $month  = $date[1];
+            $day    = $date[0];
+            $year   = $date[2];
+        } else if ($type === 'en') {
+            $month  = $date[1];
+            $day    = $date[2];
+            $year   = $date[0];
+        }
+        
+        return checkdate($month, $day, $year);
+    }
+    
+    /**
      * Validate JSON
      * 
      * @param mixed $data

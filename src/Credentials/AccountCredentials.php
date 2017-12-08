@@ -93,10 +93,15 @@ class AccountCredentials implements AccountCredentialsContract
      * Set token
      * 
      * @param string $token
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setToken(string $token)
     {
+        if (strlen($token) !== 32) {
+            throw new PagSeguroException("The [$token] isn't a valid token.");
+        }
+        
         $this->token = $token;
         
         return $this;

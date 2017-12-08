@@ -52,6 +52,17 @@ class DocumentsTest extends TestCase
     }
     
     /**
+     * Test throw get item
+     *
+     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @return void
+     */
+    public function testThrowGetItem()
+    {
+        $this->instance()->getItem('RG');
+    }
+    
+    /**
      * Test set item
      *
      * @return void

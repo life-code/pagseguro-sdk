@@ -100,6 +100,7 @@ class Customer implements CustomerContract
      * Set name
      * 
      * @param string $name
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setName(string $name)
@@ -127,10 +128,15 @@ class Customer implements CustomerContract
      * Set ip
      * 
      * @param string $ip
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setIp(string $ip)
     {
+        if (!$this->validateIp($ip)) {
+            throw new PagseguroException("The [$ip] isn't a valid IP.");
+        }
+        
         $this->ip = $ip;
         
         return $this;

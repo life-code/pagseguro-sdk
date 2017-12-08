@@ -36,6 +36,22 @@ interface Customer
     public function setEmail(string $email);
     
     /**
+     * Get name
+     * 
+     * @return string
+     */
+    public function getName() : string;
+    
+    /**
+     * Set name
+     * 
+     * @param string $name
+     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @return $this
+     */
+    public function setName(string $name);
+    
+    /**
      * Get ip
      * 
      * @return string
@@ -46,6 +62,7 @@ interface Customer
      * Set ip
      * 
      * @param string $ip
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setIp(string $ip);
@@ -64,21 +81,6 @@ interface Customer
      * @return $this
      */
     public function setHash(string $hash);
-    
-    /**
-     * Get name
-     * 
-     * @return string
-     */
-    public function getName() : string;
-    
-    /**
-     * Set name
-     * 
-     * @param string $name
-     * @return $this
-     */
-    public function setName(string $name);
     
     /**
      * Get phone

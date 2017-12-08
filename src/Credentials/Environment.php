@@ -3,6 +3,9 @@
 namespace PagSeguro\Credentials;
 
 use PagSeguro\Contracts\Credentials\Environment as EnvironmentContract;
+use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Support\Validator;
+use PagSeguro\Languages\Location;
 use Dotenv\Dotenv;
 
 /**
@@ -17,6 +20,8 @@ use Dotenv\Dotenv;
  */
 class Environment implements EnvironmentContract
 {
+    use Validator;
+    
     /**
      * @var string
      */
@@ -51,31 +56,52 @@ class Environment implements EnvironmentContract
     /**
      * Get email
      * 
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return string
      */
     public function getEmail() : string
     {
-        return env('PAGSEGURO_EMAIL', '');
+        $email = env('PAGSEGURO_EMAIL', '');
+        
+        if (!$this->validateEmail($email)) {
+            throw new PagseguroException("The PagSeguro credential [$email] isn't a valid email.");
+        }
+        
+        return $email;
     }
     
     /**
      * Get token
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getToken() : string
     {
-        return env('PAGSEGURO_TOKEN_' . $this->getEnv(), '');
+        $token = env('PAGSEGURO_TOKEN_' . $this->getEnv(), '');
+        
+        if (strlen($token) !== 32) {
+            throw new PagSeguroException("The PagSeguro credential [$token] isn't a valid token.");
+        }
+        
+        return $token;
     }
     
     /**
      * Get URL
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getUrl() : string
     {
-        return str_replace('{PAGSEGURO_ENV}', $this->getReplace(), $this->pagseguro_url);
+        $url = str_replace('{PAGSEGURO_ENV}', $this->getReplace(), $this->pagseguro_url);
+        
+        if (!$this->validateUrl($url)) {
+            throw new PagseguroException("The PagSeguro credential [$url] isn't a valid URL.");
+        }
+        
+        return $url;
     }
     
     /**
@@ -97,10 +123,17 @@ class Environment implements EnvironmentContract
     /**
      * Get location
      * 
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getLocation() : string
     {
-        return env('PAGSEGURO_LOCATION', '');
+        $location = env('PAGSEGURO_LOCATION', 'en');
+        
+        if (! Location::check($location)) {
+            throw new PagSeguroException("The PagSeguro location [$location] isn't a valid location.");
+        }
+        
+        return $location;
     }
 }

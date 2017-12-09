@@ -6,6 +6,7 @@ use PagSeguro\Contracts\PreApprovals\Plan\PreApproval as PreApprovalContract;
 use PagSeguro\Contracts\PreApprovals\Plan\Expiration;
 use PagSeguro\PreApprovals\Plan\Type;
 use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Support\Validator;
 use DateTime;
 
 /**
@@ -20,6 +21,8 @@ use DateTime;
  */
 class PreApproval implements PreApprovalContract
 {
+    use Validator;
+    
     /**
      * @var string
      */
@@ -456,10 +459,15 @@ class PreApproval implements PreApprovalContract
      * Set day of year
      * 
      * @param string $day_of_year
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setDayOfYear(string $day_of_year)
     {
+        if (! $this->validateDayWithYear($day_of_year, 'en')) {
+            throw new PagseguroException("The [$day_of_year] isn't a valid day of year.");
+        }
+        
         $this->day_of_year = $day_of_year;
         
         return $this;
@@ -479,10 +487,15 @@ class PreApproval implements PreApprovalContract
      * Set day of month
      * 
      * @param string $day_of_month
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setDayOfMonth(string $day_of_month)
     {
+        if (! $this->validateDayWithMonth($day_of_month, 'en')) {
+            throw new PagseguroException("The [$day_of_month] isn't a valid day of month.");
+        }
+        
         $this->day_of_month = $day_of_month;
         
         return $this;
@@ -525,10 +538,15 @@ class PreApproval implements PreApprovalContract
      * Set cancel URL
      * 
      * @param string $cancel_url
+     * @throws \PagSeguro\Exceptions\PagseguroException
      * @return $this
      */
     public function setCancelURL(string $cancel_url)
     {
+        if (!$this->validateUrl($cancel_url)) {
+            throw new PagseguroException("The cancel URL [$cancel_url] isn't a valid URL.");
+        }
+        
         $this->cancel_url = $cancel_url;
         
         return $this;
@@ -542,66 +560,66 @@ class PreApproval implements PreApprovalContract
     public function toArray()
     {
         $response = [
-    		'name': $this->getName(),
-    		'charge': $this->getCharge(),
-    		'period': $this->getPeriod(),
-    		'amountPerPayment': $this->getAmountPerPayment(),
+    		'name'             => $this->getName(),
+    		'charge'           => $this->getCharge(),
+    		'period'           => $this->getPeriod(),
+    		'amountPerPayment' => $this->getAmountPerPayment(),
     	];
     	
     	if ($this->getMembershipFee()) {
-    	    $response = ['membershipFee'] = $this->getMembershipFee();
+    	    $response['membershipFee'] = $this->getMembershipFee();
     	}
     	
     	if ($this->getTrialPeriodDuration()) {
-    	    $response = ['trialPeriodDuration'] = $this->getTrialPeriodDuration();
+    	    $response['trialPeriodDuration'] = $this->getTrialPeriodDuration();
     	}
     	
     	if ($this->getExpiration()) {
-    	    $response = ['expiration'] = $this->getExpiration()->toArray();
+    	    $response['expiration'] = $this->getExpiration()->toArray();
     	}
     	
     	if ($this->getDetails()) {
-    	    $response = ['details'] = $this->getDetails();
+    	    $response['details'] = $this->getDetails();
     	}
     	
     	if ($this->getMaxAmountPerPeriod()) {
-    	    $response = ['MaxAmountPerPeriod'] = $this->getMaxAmountPerPeriod();
+    	    $response['MaxAmountPerPeriod'] = $this->getMaxAmountPerPeriod();
     	}
     	
     	if ($this->getAmountPerPayment()) {
-    	    $response = ['MaxAmountPerPayment'] = $this->getAmountPerPayment();
+    	    $response['MaxAmountPerPayment'] = $this->getAmountPerPayment();
     	}
     	
     	if ($this->getMaxTotalAmount()) {
-    	    $response = ['MaxTotalAmount'] = $this->getMaxTotalAmount();
+    	    $response['MaxTotalAmount'] = $this->getMaxTotalAmount();
     	}
     	
     	if ($this->getMaxPaymentsPerPeriod()) {
-    	    $response = ['MaxPaymentsPerPeriod'] = $this->getMaxPaymentsPerPeriod();
+    	    $response['MaxPaymentsPerPeriod'] = $this->getMaxPaymentsPerPeriod();
     	}
     	
     	if ($this->getInitialDate()) {
-    	    $response = ['initialDate'] = $this->getInitialDate();
+    	    $response['initialDate'] = $this->getInitialDate();
     	}
     	
     	if ($this->getFinalDate()) {
-    	    $response = ['finalDate'] = $this->getFinalDate();
+    	    $response['finalDate'] = $this->getFinalDate();
     	}
     	
     	if ($this->getDayOfYear()) {
-    	    $response = ['dayOfYear'] = $this->getDayOfYear();
+    	    $response['dayOfYear'] = $this->getDayOfYear();
     	}
     	
     	if ($this->getDayOfMonth()) {
-    	    $response = ['dayOfMonth'] = $this->getDayOfMonth();
+    	    $response['dayOfMonth'] = $this->getDayOfMonth();
     	}
     	
     	if ($this->getDayOfWeek()) {
-    	    $response = ['dayOfWeek'] = $this->getDayOfWeek();
+    	    $response['dayOfWeek'] = $this->getDayOfWeek();
     	}
     	
     	if ($this->getCancelURL()) {
-    	    $response = ['cancelURL'] = $this->getCancelURL();
+    	    $response['cancelURL'] = $this->getCancelURL();
     	}
     	
     	return $response;

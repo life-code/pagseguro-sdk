@@ -22,4 +22,9 @@ return [
     '2075' => "The pre approvals plan cancel URL [#value#] isn't a valid URL.",
     '2081' => "The pre approvals plan [#value#] isn't a valid plan.",
     '2091' => "The expiration unit [#value#] isn't a valid expiration unit.",
+    '2101' => "The payment currency [#value#] isn't a valid payment currency.",
+    '2102' => "The payment notification mode [#value#] isn't a valid payment notification mode.",
+    '2103' => "The payment notification URL [#value#] isn't a valid URL.",
+    '2104' => "The payment redirect URL [#value#] isn't a valid URL.",
+    '2105' => "The payment receiver email [#value#] isn't a valid email.",
 ];

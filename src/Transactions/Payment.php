@@ -107,8 +107,8 @@ class Payment implements PaymentContract
      */
     public function setCurrency(string $currency)
     {
-        if (! Currency::check($mode)) {
-            throw new PagSeguroException("The currency [$notification_url] isn't a valid payment currency.");
+        if (! Currency::check($currency)) {
+            throw new PagSeguroException($currency, 2101);
         }
         
         $this->currency = $currency;
@@ -136,7 +136,7 @@ class Payment implements PaymentContract
     public function setMode(string $mode)
     {
         if (! PaymentMode::check($mode)) {
-            throw new PagSeguroException("The mode [$notification_url] isn't a valid payment mode.");
+            throw new PagSeguroException($mode, 2102);
         }
         
         $this->mode = $mode;
@@ -164,7 +164,7 @@ class Payment implements PaymentContract
     public function setNotificationURL(string $notification_url)
     {
         if (!$this->validateUrl($notification_url)) {
-            throw new PagSeguroException("The notification URL [$notification_url] isn't a valid URL.");
+            throw new PagSeguroException($notification_url, 2103);
         }
         
         $this->notification_url = $notification_url;
@@ -192,7 +192,7 @@ class Payment implements PaymentContract
     public function setRedirectURL(string $redirect_url)
     {
         if (!$this->validateUrl($redirect_url)) {
-            throw new PagSeguroException("The redirect URL [$redirect_url] isn't a valid URL.");
+            throw new PagSeguroException($redirect_url, 2104);
         }
         
         $this->redirect_url = $redirect_url;
@@ -220,7 +220,7 @@ class Payment implements PaymentContract
     public function setReceiverEmail(string $receiver_email)
     {
         if (!$this->validateEmail($receiver_email)) {
-            throw new PagSeguroException("The [$receiver_email] isn't a valid email.");
+            throw new PagSeguroException($receiver_email, 2105);
         }
         
         $this->receiver_email = $receiver_email;

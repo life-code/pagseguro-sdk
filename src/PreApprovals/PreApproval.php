@@ -75,7 +75,7 @@ class PreApproval implements PreApprovalContract
     public function setPlan(string $plan)
     {
         if (strlen($plan) !== 32) {
-            throw new PagSeguroException("The PagSeguro plan [$plan] isn't a valid plan.");
+            throw new PagSeguroException($plan, 2081);
         }
         
         $this->plan = $plan;

@@ -61,7 +61,7 @@ class Holder implements HolderContract
     public function setName(string $name)
     {
         if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
-            throw new PagSeguroException("The [$name] isn't a valid name. Required first and last name");
+            throw new PagSeguroException($name, 2121);
         }
         
         $this->name = $name;
@@ -89,7 +89,7 @@ class Holder implements HolderContract
     public function setBirthDate(string $birth_date)
     {
         if (!$this->validateDate($birth_date, 'pt-br')) {
-            throw new PagSeguroException("The [$birth_date] isn't a valid birth date.");
+            throw new PagSeguroException($birth_date, 2122);
         }
         
         $this->birth_date = $birth_date;

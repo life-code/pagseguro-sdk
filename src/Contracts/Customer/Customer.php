@@ -5,7 +5,7 @@ namespace PagSeguro\Contracts\Customer;
 use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Contracts\Common\Phone;
 use PagSeguro\Contracts\Common\Documents;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -30,7 +30,7 @@ interface Customer
      * Set email
      * 
      * @param string $email
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setEmail(string $email);
@@ -46,7 +46,7 @@ interface Customer
      * Set name
      * 
      * @param string $name
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setName(string $name);
@@ -62,7 +62,7 @@ interface Customer
      * Set ip
      * 
      * @param string $ip
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setIp(string $ip);

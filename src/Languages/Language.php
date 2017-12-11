@@ -4,7 +4,7 @@ namespace PagSeguro\Languages;
 
 use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\Languages\Language as LanguageContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -79,7 +79,7 @@ class Language implements LanguageContract
     /**
      * Get translations
      * 
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return array
      */
     public function getTranslations() : array

@@ -75,7 +75,7 @@ interface Payment
      * Set receive_email
      * 
      * @param string $receive_email
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setReceiveEmail(string $receive_email);

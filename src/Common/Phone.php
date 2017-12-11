@@ -4,7 +4,7 @@ namespace PagSeguro\Common;
 
 use PagSeguro\Contracts\Common\Phone as PhoneContract;
 use PagSeguro\Support\Mask;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -44,13 +44,13 @@ class Phone implements PhoneContract
      * Set area code
      * 
      * @param string $code
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setAreaCode(string $area_code)
     {
         if (! preg_match('/^([1-9]\d{1})$/', $area_code)) {
-            throw new PagseguroException("The [$area_code] isn't a valid area code");
+            throw new PagSeguroException("The [$area_code] isn't a valid area code");
         }
         
         $this->area_code = $area_code;
@@ -72,13 +72,13 @@ class Phone implements PhoneContract
      * Set number
      * 
      * @param string $number
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function setNumber(string $number)
     {
         if (! preg_match('/^([0-9]\d{7,8})$/', $number)) {
-            throw new PagseguroException("The [$number] isn't a valid number");
+            throw new PagSeguroException("The [$number] isn't a valid number");
         }
         
         $this->number = $number;

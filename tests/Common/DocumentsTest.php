@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Contracts\Common\Documents as DocumentsContract;
 use PagSeguro\Common\Documents;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -54,7 +54,7 @@ class DocumentsTest extends TestCase
     /**
      * Test throw get item
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowGetItem()
@@ -75,7 +75,7 @@ class DocumentsTest extends TestCase
     /**
      * Test throw set item
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetItem()

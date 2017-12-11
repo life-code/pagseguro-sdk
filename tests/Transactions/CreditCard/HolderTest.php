@@ -85,7 +85,7 @@ class HolderTest extends TestCase
     /**
      * Test throw set name
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetName()
@@ -116,7 +116,7 @@ class HolderTest extends TestCase
     /**
      * Test throw set birth date
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetBirthDate()

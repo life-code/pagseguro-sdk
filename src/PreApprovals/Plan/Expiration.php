@@ -4,7 +4,7 @@ namespace PagSeguro\PreApprovals\Plan;
 
 use PagSeguro\Contracts\PreApprovals\Plan\Expiration as ExpirationContract;
 use PagSeguro\PreApprovals\Plan\Type;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -65,13 +65,13 @@ class Expiration implements ExpirationContract
      * Set unit
      * 
      * @param string $unit
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setUnit(string $unit)
     {
         if (!Type::check($unit)) {
-            throw new PagseguroException("The [$unit] isn't a valid unit.");
+            throw new PagSeguroException("The [$unit] isn't a valid unit.");
         }
         
         $this->unit = $unit;

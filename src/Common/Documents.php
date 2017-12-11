@@ -3,7 +3,7 @@
 namespace PagSeguro\Common;
 
 use PagSeguro\Contracts\Common\Documents as DocumentsContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -32,13 +32,13 @@ class Documents implements DocumentsContract
     /**
      * Get item
      * 
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getItem(string $type) : string
     {
         if (! isset($this->items[$type])) {
-            throw new PagseguroException($type, 2001);
+            throw new PagSeguroException($type, 2001);
         }
         
         return (string) $this->items[$type];
@@ -49,13 +49,13 @@ class Documents implements DocumentsContract
      * 
      * @param string $cpf
      * @param string $item
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setItem(string $type, string $item)
     {
         if (!$this->validate($type)) {
-            throw new PagseguroException($type, 2002);
+            throw new PagSeguroException($type, 2002);
         }
         
         $this->items[$type] = $item;

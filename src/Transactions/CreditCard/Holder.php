@@ -5,7 +5,7 @@ namespace PagSeguro\Transactions\CreditCard;
 use PagSeguro\Contracts\Common\Phone;
 use PagSeguro\Contracts\Common\Documents;
 use PagSeguro\Contracts\Transactions\CreditCard\Holder as HolderContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 use PagSeguro\Support\Validator;
 
 /**
@@ -61,7 +61,7 @@ class Holder implements HolderContract
     public function setName(string $name)
     {
         if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
-            throw new PagseguroException("The [$name] isn't a valid name. Required first and last name");
+            throw new PagSeguroException("The [$name] isn't a valid name. Required first and last name");
         }
         
         $this->name = $name;
@@ -83,13 +83,13 @@ class Holder implements HolderContract
      * Set birth date
      * 
      * @param string $birth_date
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setBirthDate(string $birth_date)
     {
         if (!$this->validateDate($birth_date, 'pt-br')) {
-            throw new PagseguroException("The [$birth_date] isn't a valid birth date.");
+            throw new PagSeguroException("The [$birth_date] isn't a valid birth date.");
         }
         
         $this->birth_date = $birth_date;

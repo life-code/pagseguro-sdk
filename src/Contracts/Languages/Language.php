@@ -34,7 +34,7 @@ interface Language
     /**
      * Get translations
      * 
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return array
      */
     public function getTranslations() : array;

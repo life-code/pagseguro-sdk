@@ -43,7 +43,7 @@ interface PreApproval
      * Set charge
      * 
      * @param string $charge
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setCharge(string $charge);
@@ -59,7 +59,7 @@ interface PreApproval
      * Set period
      * 
      * @param string $period
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setPeriod(string $period);

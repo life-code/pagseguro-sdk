@@ -25,7 +25,7 @@ interface Phone
      * Set code
      * 
      * @param string $code
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setAreaCode(string $area_code);
@@ -41,7 +41,7 @@ interface Phone
      * Set number
      * 
      * @param string $number
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function setNumber(string $number);

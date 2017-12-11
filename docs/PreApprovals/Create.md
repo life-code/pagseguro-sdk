@@ -46,7 +46,7 @@ try {
     $address->setNumber('387');
     $address->setComplement(''); // optional
     $customer->setAddress($address);
-} catch (\PagSeguro\Exceptions\PagseguroException $e) {
+} catch (\PagSeguro\Exceptions\PagSeguroException $e) {
     var_dump($e);
     die();
 }
@@ -75,7 +75,7 @@ try {
     $method->setType(\PagSeguro\Transactions\Type::CREDITCARD);
     $method->setCreditCard($credit_card);
     
-} catch (\PagSeguro\Exceptions\PagseguroException $e) {
+} catch (\PagSeguro\Exceptions\PagSeguroException $e) {
     var_dump($e);
     die();
 }

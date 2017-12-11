@@ -6,7 +6,7 @@ use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Contracts\Transactions\CreditCard\Holder;
 use PagSeguro\Contracts\Transactions\CreditCard\Installment;
 use PagSeguro\Contracts\Transactions\CreditCard\CreditCard as CreditCardContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK

@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Contracts\Common\Phone as PhoneContract;
 use PagSeguro\Common\Phone;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -61,7 +61,7 @@ class PhoneTest extends TestCase
     /**
      * Test throw set area code
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetAreaCode()
@@ -93,7 +93,7 @@ class PhoneTest extends TestCase
     /**
      * Test throw set number
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetNumber()

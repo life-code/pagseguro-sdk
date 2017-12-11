@@ -7,7 +7,7 @@ use PagSeguro\Contracts\Credentials\Environment;
 use PagSeguro\Contracts\PreApprovals\Plan\Plan as PlanContract;
 use PagSeguro\PreApprovals\Plan\PreApproval;
 use PagSeguro\Http\PreApprovals\Plan\Request;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 use PagSeguro\Support\Validator;
 
 /**
@@ -86,13 +86,13 @@ class Plan implements PlanContract
      * Set redirect URL
      * 
      * @param string $redirect_url
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setRedirectURL(string $redirect_url)
     {
         if (!$this->validateUrl($notification_url)) {
-            throw new PagseguroException("The redirect URL [$notification_url] isn't a valid URL.");
+            throw new PagSeguroException("The redirect URL [$notification_url] isn't a valid URL.");
         }
         
         $this->redirect_url = $redirect_url;
@@ -137,13 +137,13 @@ class Plan implements PlanContract
      * Set receive email
      * 
      * @param string $receiver_email
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setReceiverEmail(string $receiver_email)
     {
         if (!$this->validateEmail($receiver_email)) {
-            throw new PagseguroException("The [$receiver_email] isn't a valid email.");
+            throw new PagSeguroException("The [$receiver_email] isn't a valid email.");
         }
         
         $this->receiver_email = $receiver_email;
@@ -165,13 +165,13 @@ class Plan implements PlanContract
      * Set review URL
      * 
      * @param string $review_url
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setReviewURL(string $review_url)
     {
         if (!$this->validateUrl($review_url)) {
-            throw new PagseguroException("The review URL [$review_url] isn't a valid URL.");
+            throw new PagSeguroException("The review URL [$review_url] isn't a valid URL.");
         }
         
         $this->review_url = $review_url;

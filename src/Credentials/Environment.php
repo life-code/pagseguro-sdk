@@ -3,7 +3,7 @@
 namespace PagSeguro\Credentials;
 
 use PagSeguro\Contracts\Credentials\Environment as EnvironmentContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 use PagSeguro\Support\Validator;
 use PagSeguro\Languages\Location;
 use Dotenv\Dotenv;
@@ -56,7 +56,7 @@ class Environment implements EnvironmentContract
     /**
      * Get email
      * 
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return string
      */
     public function getEmail() : string
@@ -64,7 +64,7 @@ class Environment implements EnvironmentContract
         $email = env('PAGSEGURO_EMAIL', '');
         
         if (!$this->validateEmail($email)) {
-            throw new PagseguroException("The PagSeguro credential [$email] isn't a valid email.");
+            throw new PagSeguroException("The PagSeguro credential [$email] isn't a valid email.");
         }
         
         return $email;
@@ -98,7 +98,7 @@ class Environment implements EnvironmentContract
         $url = str_replace('{PAGSEGURO_ENV}', $this->getReplace(), $this->pagseguro_url);
         
         if (!$this->validateUrl($url)) {
-            throw new PagseguroException("The PagSeguro credential [$url] isn't a valid URL.");
+            throw new PagSeguroException("The PagSeguro credential [$url] isn't a valid URL.");
         }
         
         return $url;

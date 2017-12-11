@@ -5,7 +5,7 @@ namespace PagSeguro\PreApprovals\Plan;
 use PagSeguro\Contracts\PreApprovals\Plan\PreApproval as PreApprovalContract;
 use PagSeguro\Contracts\PreApprovals\Plan\Expiration;
 use PagSeguro\PreApprovals\Plan\Type;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 use PagSeguro\Support\Validator;
 use DateTime;
 
@@ -150,13 +150,13 @@ class PreApproval implements PreApprovalContract
      * Set charge
      * 
      * @param string $charge
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setCharge(string $charge)
     {
         if (!Type::check($charge)) {
-            throw new PagseguroException("The [$charge] isn't a valid charge.");
+            throw new PagSeguroException("The [$charge] isn't a valid charge.");
         }
         
         $this->charge = $charge;
@@ -178,13 +178,13 @@ class PreApproval implements PreApprovalContract
      * Set period
      * 
      * @param string $period
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setPeriod(string $period)
     {
         if (!Type::check($period)) {
-            throw new PagseguroException("The [$period] isn't a valid period.");
+            throw new PagSeguroException("The [$period] isn't a valid period.");
         }
         
         $this->period = $period;
@@ -459,13 +459,13 @@ class PreApproval implements PreApprovalContract
      * Set day of year
      * 
      * @param string $day_of_year
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setDayOfYear(string $day_of_year)
     {
         if (! $this->validateDayWithYear($day_of_year, 'en')) {
-            throw new PagseguroException("The [$day_of_year] isn't a valid day of year.");
+            throw new PagSeguroException("The [$day_of_year] isn't a valid day of year.");
         }
         
         $this->day_of_year = $day_of_year;
@@ -487,13 +487,13 @@ class PreApproval implements PreApprovalContract
      * Set day of month
      * 
      * @param string $day_of_month
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setDayOfMonth(string $day_of_month)
     {
         if (! $this->validateDayWithMonth($day_of_month, 'en')) {
-            throw new PagseguroException("The [$day_of_month] isn't a valid day of month.");
+            throw new PagSeguroException("The [$day_of_month] isn't a valid day of month.");
         }
         
         $this->day_of_month = $day_of_month;
@@ -538,13 +538,13 @@ class PreApproval implements PreApprovalContract
      * Set cancel URL
      * 
      * @param string $cancel_url
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setCancelURL(string $cancel_url)
     {
         if (!$this->validateUrl($cancel_url)) {
-            throw new PagseguroException("The cancel URL [$cancel_url] isn't a valid URL.");
+            throw new PagSeguroException("The cancel URL [$cancel_url] isn't a valid URL.");
         }
         
         $this->cancel_url = $cancel_url;

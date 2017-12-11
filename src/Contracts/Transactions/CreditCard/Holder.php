@@ -4,7 +4,7 @@ namespace PagSeguro\Contracts\Transactions\CreditCard;
 
 use PagSeguro\Contracts\Common\Phone;
 use PagSeguro\Contracts\Common\Documents;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK

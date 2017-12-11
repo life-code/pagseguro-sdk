@@ -6,7 +6,7 @@ use PagSeguro\Contracts\Customer\Customer as CustomerContract;
 use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Contracts\Common\Phone;
 use PagSeguro\Contracts\Common\Documents;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 use PagSeguro\Support\Validator;
 
 /**
@@ -72,13 +72,13 @@ class Customer implements CustomerContract
      * Set email
      * 
      * @param string $email
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setEmail(string $email)
     {
         if (!$this->validateEmail($email)) {
-            throw new PagseguroException("The [$email] isn't a valid email.");
+            throw new PagSeguroException("The [$email] isn't a valid email.");
         }
         
         $this->email = $email;
@@ -100,13 +100,13 @@ class Customer implements CustomerContract
      * Set name
      * 
      * @param string $name
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setName(string $name)
     {
         if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
-            throw new PagseguroException("The [$name] isn't a valid name. Required first and last name");
+            throw new PagSeguroException("The [$name] isn't a valid name. Required first and last name");
         }
         
         $this->name = $name;
@@ -128,13 +128,13 @@ class Customer implements CustomerContract
      * Set ip
      * 
      * @param string $ip
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setIp(string $ip)
     {
         if (!$this->validateIp($ip)) {
-            throw new PagseguroException("The [$ip] isn't a valid IP.");
+            throw new PagSeguroException("The [$ip] isn't a valid IP.");
         }
         
         $this->ip = $ip;

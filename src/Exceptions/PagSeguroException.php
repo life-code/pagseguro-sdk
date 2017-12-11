@@ -17,7 +17,7 @@ use PagSeguro\Languages\Language;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class PagseguroException extends Exception
+class PagSeguroException extends Exception
 {
     /**
      * Path to language files

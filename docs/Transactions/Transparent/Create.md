@@ -53,7 +53,7 @@ try {
     $phone->setAreaCode('92');
     $phone->setNumber('39545410');
     $customer->setPhone($phone);
-} catch (\PagSeguro\Exceptions\PagseguroException $e) {
+} catch (\PagSeguro\Exceptions\PagSeguroException $e) {
     dd($e);
 }
 
@@ -98,7 +98,7 @@ try {
     $method->setType(\PagSeguro\Transactions\Type::CREDITCARD);
     $method->setCreditCard($credit_card);
     
-} catch (\PagSeguro\Exceptions\PagseguroException $e) {
+} catch (\PagSeguro\Exceptions\PagSeguroException $e) {
     dd($e);
 }
 

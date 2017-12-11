@@ -8,7 +8,7 @@ use PagSeguro\Contracts\Customer\Customer;
 use PagSeguro\Contracts\PreApprovals\PreApproval as PreApprovalContract;
 use PagSeguro\Contracts\Transactions\Method;
 use PagSeguro\Http\PreApprovals\Request;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -68,7 +68,7 @@ class PreApproval implements PreApprovalContract
     /**
      * Set plan
      * 
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @param string $plan
      * @return $this
      */

@@ -3,7 +3,7 @@
 namespace PagSeguro\Items;
 
 use PagSeguro\Contracts\Items\Item as ItemContract;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -84,13 +84,13 @@ class Item implements ItemContract
      * Set description
      * 
      * @param string $description
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setDescription(string $description)
     {
         if (strlen($description) > 100) {
-            throw new PagseguroException("The description [$description] must not exceed 100 characters.");
+            throw new PagSeguroException("The description [$description] must not exceed 100 characters.");
         }
         
         $this->description = $description;

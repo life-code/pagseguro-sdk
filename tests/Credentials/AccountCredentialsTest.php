@@ -60,7 +60,7 @@ class AccountCredentialsTest extends TestCase
     /**
      * Test throw set email
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetEmail()
@@ -91,7 +91,7 @@ class AccountCredentialsTest extends TestCase
     /**
      * Test throw set token
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetToken()

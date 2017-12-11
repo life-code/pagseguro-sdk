@@ -4,7 +4,7 @@ namespace PagSeguro\Shipping;
 
 use PagSeguro\Contracts\Shipping\Shipping as ShippingContract;
 use PagSeguro\Contracts\Common\Address;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 use PagSeguro\Shipping\Type;
 
 /**
@@ -99,13 +99,13 @@ class Shipping implements ShippingContract
      * Set type
      * 
      * @param int $type
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setType(int $type)
     {
         if (!Type::check($type)) {
-            throw new PagseguroException("The [$type] isn't a valid shipping type.");
+            throw new PagSeguroException("The [$type] isn't a valid shipping type.");
         }
         
         $this->type = $type;

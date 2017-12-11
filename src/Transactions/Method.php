@@ -6,7 +6,7 @@ use PagSeguro\Transactions\Type;
 use PagSeguro\Transactions\Bank;
 use PagSeguro\Contracts\Transactions\Method as MethodContract;
 use PagSeguro\Contracts\Transactions\CreditCard\CreditCard;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -49,13 +49,13 @@ class Method implements MethodContract
      * Set type
      * 
      * @param string $type
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setType(string $type)
     {
         if (!Type::check($type)) {
-            throw new PagseguroException("The [$type] isn't a valid payment method.");
+            throw new PagSeguroException("The [$type] isn't a valid payment method.");
         }
         
         $this->type = $type;
@@ -77,13 +77,13 @@ class Method implements MethodContract
      * Set bank
      * 
      * @param string $bank
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setBank(string $bank)
     {
         if (!Bank::check($bank)) {
-            throw new PagseguroException("The [$bank] isn't a valid bank.");
+            throw new PagSeguroException("The [$bank] isn't a valid bank.");
         }
         
         $this->bank = $bank;

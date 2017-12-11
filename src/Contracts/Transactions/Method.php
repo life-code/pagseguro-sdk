@@ -20,7 +20,7 @@ interface Method
      * Set type
      * 
      * @param string $type
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setType(string $type);

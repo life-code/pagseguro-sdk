@@ -54,7 +54,7 @@ class MethodTest extends TestCase
     /**
      * Test throw set type
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetType()
@@ -90,7 +90,7 @@ class MethodTest extends TestCase
     /**
      * Test throw set bank
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetBank()

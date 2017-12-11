@@ -40,7 +40,7 @@ interface Expiration
      * Set unit
      * 
      * @param string $unit
-     * @throws \PagSeguro\Exceptions\PagseguroException
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setUnit(string $unit);

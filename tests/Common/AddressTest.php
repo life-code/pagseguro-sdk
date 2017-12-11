@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Contracts\Common\Address as AddressContract;
 use PagSeguro\Common\Address;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK

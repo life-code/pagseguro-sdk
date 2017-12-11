@@ -6,7 +6,7 @@ use PagSeguro\Shipping\Shipping;
 use PagSeguro\Contracts\Common\Address as AddressContract;
 use PagSeguro\Common\Address;
 use PagSeguro\Shipping\Type;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -103,7 +103,7 @@ class ShippingTest extends TestCase
     /**
      * Test throw set type
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetType()

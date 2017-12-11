@@ -5,7 +5,7 @@ namespace PagSeguro\Contracts\Transactions\CreditCard;
 use PagSeguro\Contracts\Common\Address;
 use PagSeguro\Contracts\Transactions\CreditCard\Holder;
 use PagSeguro\Contracts\Transactions\CreditCard\Installment;
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK

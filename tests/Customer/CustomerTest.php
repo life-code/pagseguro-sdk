@@ -14,7 +14,7 @@ use PagSeguro\Contracts\Common\Address as AddressContract;
 use PagSeguro\Common\Documents;
 use PagSeguro\Contracts\Common\Documents as DocumentsContract;
 
-use PagSeguro\Exceptions\PagseguroException;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -101,7 +101,7 @@ class CustomerTest extends TestCase
     /**
      * Test throw set email
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetEmail()
@@ -132,7 +132,7 @@ class CustomerTest extends TestCase
     /**
      * Test throw set name
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetName()
@@ -163,7 +163,7 @@ class CustomerTest extends TestCase
     /**
      * Test throw set IP
      *
-     * @expectedException \PagSeguro\Exceptions\PagseguroException
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
      */
     public function testThrowSetIp()

@@ -38,7 +38,7 @@ class Documents implements DocumentsContract
     public function getItem(string $type) : string
     {
         if (! isset($this->items[$type])) {
-            throw new PagseguroException("The [$type] isn't exists in documents.");
+            throw new PagseguroException($type, 2001);
         }
         
         return (string) $this->items[$type];
@@ -55,7 +55,7 @@ class Documents implements DocumentsContract
     public function setItem(string $type, string $item)
     {
         if (!$this->validate($type)) {
-            throw new PagseguroException("The [$type] isn't a valid document.");
+            throw new PagseguroException($type, 2002);
         }
         
         $this->items[$type] = $item;

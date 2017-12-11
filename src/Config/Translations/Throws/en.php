@@ -27,6 +27,8 @@ return [
     '2103' => "The payment notification URL [#value#] isn't a valid URL.",
     '2104' => "The payment redirect URL [#value#] isn't a valid URL.",
     '2105' => "The payment receiver email [#value#] isn't a valid email.",
-    '2111' => "The [#value#] isn't a valid payment method.",
-    '2112' => "The [#value#] isn't a valid bank.",
+    '2111' => "The payment method [#value#] isn't a valid payment method.",
+    '2112' => "The bank [#value#] isn't a valid bank.",
+    '2121' => "The holder name [#value#] isn't a valid name. Required first and last name",
+    '2122' => "The holder birth date [#value#] isn't a valid birth date.",
 ];

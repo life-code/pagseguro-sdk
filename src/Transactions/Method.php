@@ -55,7 +55,7 @@ class Method implements MethodContract
     public function setType(string $type)
     {
         if (!Type::check($type)) {
-            throw new PagSeguroException("The [$type] isn't a valid payment method.");
+            throw new PagSeguroException($type, 2111);
         }
         
         $this->type = $type;
@@ -83,7 +83,7 @@ class Method implements MethodContract
     public function setBank(string $bank)
     {
         if (!Bank::check($bank)) {
-            throw new PagSeguroException("The [$bank] isn't a valid bank.");
+            throw new PagSeguroException($bank, 2112);
         }
         
         $this->bank = $bank;

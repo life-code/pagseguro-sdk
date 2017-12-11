@@ -59,6 +59,17 @@ class AddressTest extends TestCase
     }
     
     /**
+     * Test throw set country
+     *
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
+     * @return void
+     */
+    public function testThrowSetCountry()
+    {
+        $this->instance()->setCountry('USA');
+    }
+    
+    /**
      * Test get state
      *
      * @return void

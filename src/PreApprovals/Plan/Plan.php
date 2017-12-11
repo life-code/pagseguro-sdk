@@ -92,7 +92,7 @@ class Plan implements PlanContract
     public function setRedirectURL(string $redirect_url)
     {
         if (!$this->validateUrl($notification_url)) {
-            throw new PagSeguroException("The redirect URL [$notification_url] isn't a valid URL.");
+            throw new PagSeguroException($notification_url, 2061);
         }
         
         $this->redirect_url = $redirect_url;
@@ -143,7 +143,7 @@ class Plan implements PlanContract
     public function setReceiverEmail(string $receiver_email)
     {
         if (!$this->validateEmail($receiver_email)) {
-            throw new PagSeguroException("The [$receiver_email] isn't a valid email.");
+            throw new PagSeguroException($receiver_email, 2062);
         }
         
         $this->receiver_email = $receiver_email;
@@ -171,7 +171,7 @@ class Plan implements PlanContract
     public function setReviewURL(string $review_url)
     {
         if (!$this->validateUrl($review_url)) {
-            throw new PagSeguroException("The review URL [$review_url] isn't a valid URL.");
+            throw new PagSeguroException($review_url, 2063);
         }
         
         $this->review_url = $review_url;

@@ -9,7 +9,7 @@ return [
     '2031' => "The PagSeguro credential [#value#] isn't a valid email.",
     '2032' => "The PagSeguro credential [#value#] isn't a valid token.",
     '2041' => "The customer email [#value#] isn't a valid email.",
-    '2042' => "The customer name [#value#] isn't a valid name. Required first and last name",
+    '2042' => "The customer name [#value#] isn't a valid name. Required first and last name.",
     '2043' => "The customer IP [#value#] isn't a valid IP.",
     '2051' => "The item description [#value#] must not exceed 100 characters.",
     '2061' => "The plan redirect URL [#value#] isn't a valid URL.",
@@ -29,6 +29,6 @@ return [
     '2105' => "The payment receiver email [#value#] isn't a valid email.",
     '2111' => "The payment method [#value#] isn't a valid payment method.",
     '2112' => "The bank [#value#] isn't a valid bank.",
-    '2121' => "The holder name [#value#] isn't a valid name. Required first and last name",
+    '2121' => "The holder name [#value#] isn't a valid name. Required first and last name.",
     '2122' => "The holder birth date [#value#] isn't a valid birth date.",
 ];

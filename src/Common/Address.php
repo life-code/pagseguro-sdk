@@ -3,6 +3,8 @@
 namespace PagSeguro\Common;
 
 use PagSeguro\Contracts\Common\Address as AddressContract;
+use PagSeguro\Common\Country;
+use PagSeguro\Exceptions\PagSeguroException;
 
 /**
  * PagSeguro SDK
@@ -70,10 +72,15 @@ class Address implements AddressContract
      * Set country
      * 
      * @param string $country
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setCountry(string $country)
     {
+        if (! Country::check($country)) {
+            throw new PagSeguroException("The [$country] isn't a valid address country.");
+        }
+        
         $this->country = $country;
         
         return $this;

@@ -71,7 +71,7 @@ class Expiration implements ExpirationContract
     public function setUnit(string $unit)
     {
         if (!Type::check($unit)) {
-            throw new PagSeguroException("The [$unit] isn't a valid unit.");
+            throw new PagSeguroException($unit, 2091);
         }
         
         $this->unit = $unit;

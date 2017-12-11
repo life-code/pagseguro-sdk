@@ -64,7 +64,7 @@ class Environment implements EnvironmentContract
         $email = env('PAGSEGURO_EMAIL', '');
         
         if (!$this->validateEmail($email)) {
-            throw new PagSeguroException($email, 2101);
+            throw new PagSeguroException($email, 2031);
         }
         
         return $email;
@@ -81,7 +81,7 @@ class Environment implements EnvironmentContract
         $token = env('PAGSEGURO_TOKEN_' . $this->getEnv(), '');
         
         if (strlen($token) !== 32) {
-            throw new PagSeguroException($token, 2102);
+            throw new PagSeguroException($token, 2032);
         }
         
         return $token;

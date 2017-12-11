@@ -78,7 +78,7 @@ class Customer implements CustomerContract
     public function setEmail(string $email)
     {
         if (!$this->validateEmail($email)) {
-            throw new PagSeguroException($email, 2201);
+            throw new PagSeguroException($email, 2041);
         }
         
         $this->email = $email;
@@ -106,7 +106,7 @@ class Customer implements CustomerContract
     public function setName(string $name)
     {
         if (! preg_match('/[A-Za-z]* [A-Za-z]*/', $name)) {
-            throw new PagSeguroException($name, 2202);
+            throw new PagSeguroException($name, 2042);
         }
         
         $this->name = $name;
@@ -134,7 +134,7 @@ class Customer implements CustomerContract
     public function setIp(string $ip)
     {
         if (!$this->validateIp($ip)) {
-            throw new PagSeguroException($ip, 2203);
+            throw new PagSeguroException($ip, 2043);
         }
         
         $this->ip = $ip;

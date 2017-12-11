@@ -90,7 +90,7 @@ class Item implements ItemContract
     public function setDescription(string $description)
     {
         if (strlen($description) > 100) {
-            throw new PagSeguroException("The description [$description] must not exceed 100 characters.");
+            throw new PagSeguroException($description, 2051);
         }
         
         $this->description = $description;

@@ -71,7 +71,7 @@ class AccountCredentials implements AccountCredentialsContract
     public function setEmail(string $email)
     {
         if (!$this->validateEmail($email)) {
-            throw new PagSeguroException($email, 2101);
+            throw new PagSeguroException($email, 2031);
         }
         
         $this->email = $email;
@@ -99,7 +99,7 @@ class AccountCredentials implements AccountCredentialsContract
     public function setToken(string $token)
     {
         if (strlen($token) !== 32) {
-            throw new PagSeguroException($token, 2102);
+            throw new PagSeguroException($token, 2032);
         }
         
         $this->token = $token;

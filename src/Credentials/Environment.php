@@ -64,7 +64,7 @@ class Environment implements EnvironmentContract
         $email = env('PAGSEGURO_EMAIL', '');
         
         if (!$this->validateEmail($email)) {
-            throw new PagSeguroException("The PagSeguro credential [$email] isn't a valid email.");
+            throw new PagSeguroException($email, 2101);
         }
         
         return $email;
@@ -81,7 +81,7 @@ class Environment implements EnvironmentContract
         $token = env('PAGSEGURO_TOKEN_' . $this->getEnv(), '');
         
         if (strlen($token) !== 32) {
-            throw new PagSeguroException("The PagSeguro credential [$token] isn't a valid token.");
+            throw new PagSeguroException($token, 2102);
         }
         
         return $token;

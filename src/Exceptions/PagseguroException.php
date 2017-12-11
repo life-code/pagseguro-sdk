@@ -55,9 +55,9 @@ class PagseguroException extends Exception
      */
     private function handlerMessage(string $message = null, int $code = null) : string
     {
-        $language = $this->getLanguage();
+        $translate = $this->getLanguage()->translate((int) $code);
         
-        return $language->translate((int) $code, (string) $message);
+        return str_replace('#value#', $message, $translate);
     }
     
     /**

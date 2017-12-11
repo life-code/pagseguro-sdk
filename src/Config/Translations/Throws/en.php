@@ -12,7 +12,12 @@ return [
     '2042' => "The customer name [#value#] isn't a valid name. Required first and last name",
     '2043' => "The customer IP [#value#] isn't a valid IP.",
     '2051' => "The item description [#value#] must not exceed 100 characters.",
-    '2061' => "The plan redirect URL [#value#] isn't a valid URL."
-    '2062' => "The plan email [#value#] isn't a valid email."
-    '2063' => "The plan review URL [#value#] isn't a valid URL."
+    '2061' => "The plan redirect URL [#value#] isn't a valid URL.",
+    '2062' => "The plan email [#value#] isn't a valid email.",
+    '2063' => "The plan review URL [#value#] isn't a valid URL.",
+    '2071' => "The pre approvals charge [#value#] isn't a valid charge.",
+    '2072' => "The pre approvals period [#value#] isn't a valid period.",
+    '2073' => "The pre approvals day of year [#value#] isn't a valid day of year.",
+    '2074' => "The pre approvals day of month [#value#] isn't a valid day of month.",
+    '2075' => "The pre approvals cancel URL [#value#] isn't a valid URL.",
 ];

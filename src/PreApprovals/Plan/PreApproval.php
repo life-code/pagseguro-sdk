@@ -156,7 +156,7 @@ class PreApproval implements PreApprovalContract
     public function setCharge(string $charge)
     {
         if (!Type::check($charge)) {
-            throw new PagSeguroException("The [$charge] isn't a valid charge.");
+            throw new PagSeguroException($charge, 2071);
         }
         
         $this->charge = $charge;
@@ -184,7 +184,7 @@ class PreApproval implements PreApprovalContract
     public function setPeriod(string $period)
     {
         if (!Type::check($period)) {
-            throw new PagSeguroException("The [$period] isn't a valid period.");
+            throw new PagSeguroException($period, 2072);
         }
         
         $this->period = $period;
@@ -465,7 +465,7 @@ class PreApproval implements PreApprovalContract
     public function setDayOfYear(string $day_of_year)
     {
         if (! $this->validateDayWithYear($day_of_year, 'en')) {
-            throw new PagSeguroException("The [$day_of_year] isn't a valid day of year.");
+            throw new PagSeguroException($day_of_year, 2073);
         }
         
         $this->day_of_year = $day_of_year;
@@ -493,7 +493,7 @@ class PreApproval implements PreApprovalContract
     public function setDayOfMonth(string $day_of_month)
     {
         if (! $this->validateDayWithMonth($day_of_month, 'en')) {
-            throw new PagSeguroException("The [$day_of_month] isn't a valid day of month.");
+            throw new PagSeguroException($day_of_month, 2074);
         }
         
         $this->day_of_month = $day_of_month;
@@ -544,7 +544,7 @@ class PreApproval implements PreApprovalContract
     public function setCancelURL(string $cancel_url)
     {
         if (!$this->validateUrl($cancel_url)) {
-            throw new PagSeguroException("The cancel URL [$cancel_url] isn't a valid URL.");
+            throw new PagSeguroException($cancel_url, 2075);
         }
         
         $this->cancel_url = $cancel_url;

@@ -78,7 +78,7 @@ class Address implements AddressContract
     public function setCountry(string $country)
     {
         if (! Country::check($country)) {
-            throw new PagSeguroException("The [$country] isn't a valid address country.");
+            throw new PagSeguroException($country, 2021);
         }
         
         $this->country = $country;

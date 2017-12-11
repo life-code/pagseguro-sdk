@@ -21,4 +21,5 @@ return [
     '2074' => "The pre approvals plan day of month [#value#] isn't a valid day of month.",
     '2075' => "The pre approvals plan cancel URL [#value#] isn't a valid URL.",
     '2081' => "The pre approvals plan [#value#] isn't a valid plan.",
+    '2091' => "The expiration unit [#value#] isn't a valid expiration unit.",
 ];

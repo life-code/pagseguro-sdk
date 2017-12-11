@@ -50,7 +50,7 @@ class Phone implements PhoneContract
     public function setAreaCode(string $area_code)
     {
         if (! preg_match('/^([1-9]\d{1})$/', $area_code)) {
-            throw new PagSeguroException("The [$area_code] isn't a valid area code");
+            throw new PagSeguroException($area_code, 2011);
         }
         
         $this->area_code = $area_code;
@@ -78,7 +78,7 @@ class Phone implements PhoneContract
     public function setNumber(string $number)
     {
         if (! preg_match('/^([0-9]\d{7,8})$/', $number)) {
-            throw new PagSeguroException("The [$number] isn't a valid number");
+            throw new PagSeguroException($number, 2012);
         }
         
         $this->number = $number;

@@ -12,4 +12,7 @@ return [
     '2042' => "The customer name [#value#] isn't a valid name. Required first and last name",
     '2043' => "The customer IP [#value#] isn't a valid IP.",
     '2051' => "The item description [#value#] must not exceed 100 characters.",
+    '2061' => "The plan redirect URL [#value#] isn't a valid URL."
+    '2062' => "The plan email [#value#] isn't a valid email."
+    '2063' => "The plan review URL [#value#] isn't a valid URL."
 ];

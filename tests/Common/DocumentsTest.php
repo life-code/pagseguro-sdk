@@ -39,7 +39,7 @@ class DocumentsTest extends TestCase
     }
     
     /**
-     * Test instance
+     * Test instance with parameters
      *
      * @return void
      */

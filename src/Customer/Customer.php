@@ -59,6 +59,35 @@ class Customer implements CustomerContract
     private $documents = '';
     
     /**
+     * Make new instance of this class
+     * 
+     * @param string $name
+     * @param string $email
+     * @param string $hash
+     * @param string $ip
+     * @param \PagSeguro\Contracts\Common\Phone $phone
+     * @param \PagSeguro\Contracts\Common\Address $address
+     * @param \PagSeguro\Contracts\Common\Documents $documents
+     * @return void
+     */
+    public function __construct(string $name         = null, 
+                                string $email        = null, 
+                                string $hash         = null, 
+                                string $ip           = null, 
+                                Phone $phone         = null, 
+                                Address $address     = null, 
+                                Documents $documents = null)
+    {
+        ($name)      ? $this->setName($name)           : false;
+        ($email)     ? $this->setEmail($email)         : false;
+        ($hash)      ? $this->setHash($hash)           : false;
+        ($ip)        ? $this->setIp($ip)               : false;
+        ($phone)     ? $this->setPhone($phone)         : false;
+        ($address)   ? $this->setAddress($address)     : false;
+        ($documents) ? $this->setDocuments($documents) : false;
+    }
+
+    /**
      * Get email
      * 
      * @return string

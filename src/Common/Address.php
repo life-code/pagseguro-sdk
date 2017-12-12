@@ -59,6 +59,38 @@ class Address implements AddressContract
     private $complement = '';
     
     /**
+     * Make new instance of this class
+     * 
+     * @param string $country
+     * @param string $state
+     * @param string $city
+     * @param string $cep
+     * @param string $district
+     * @param string $street
+     * @param string $number
+     * @param string $complement
+     * @return void
+     */
+    public function __construct(string $cep        = null, 
+                                string $street     = null, 
+                                string $number     = null, 
+                                string $complement = null, 
+                                string $district   = null, 
+                                string $city       = null, 
+                                string $state      = null, 
+                                string $country    = null)
+    {
+        ($cep)        ? $this->setCep($cep)               : false;
+        ($street)     ? $this->setStreet($street)         : false;
+        ($number)     ? $this->setNumber($number)         : false;
+        ($complement) ? $this->setComplement($complement) : false;
+        ($district)   ? $this->setDistrict($district)     : false;
+        ($city)       ? $this->setCity($city)             : false;
+        ($state)      ? $this->setState($state)           : false;
+        ($country)    ? $this->setCountry($country)       : false;
+    }
+
+    /**
      * Get country
      * 
      * @return string

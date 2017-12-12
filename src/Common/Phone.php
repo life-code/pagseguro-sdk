@@ -31,6 +31,24 @@ class Phone implements PhoneContract
     private $number = '';
     
     /**
+     * Make new instance of this class
+     * 
+     * @param string $area_code
+     * @param string $number
+     * @return void
+     */
+    public function __construct(string $area_code = null, string $number = null)
+    {
+        if ($area_code) {
+            $this->setAreaCode($area_code);
+        }
+        
+        if ($number) {
+            $this->setNumber($number);
+        }
+    }
+
+    /**
      * Get area code
      * 
      * @return string

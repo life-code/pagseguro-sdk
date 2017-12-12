@@ -39,6 +39,20 @@ class DocumentsTest extends TestCase
     }
     
     /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Documents([Documents::CPF => '24227052009']);
+        
+        $this->assertInstanceOf(DocumentsContract::class, $instance);
+        $this->assertEquals('24227052009', $instance->getItem(Documents::CPF));
+        $this->assertCount(2, $instance->toArray());
+    }
+    
+    /**
      * Test get item
      *
      * @return void

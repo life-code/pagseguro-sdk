@@ -28,6 +28,34 @@ class ItemTest extends TestCase
     }
     
     /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $description = 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.';
+        
+        $instance = new Item(
+            '6564621364535',
+            $description,
+            10.00,
+            1,
+            1,
+            10.00
+        );
+        
+        $this->assertInstanceOf(ItemContract::class, $instance);
+        $this->assertEquals('6564621364535', $instance->getId());
+        $this->assertEquals($description, $instance->getDescription());
+        $this->assertEquals('10.00', $instance->getAmount());
+        $this->assertEquals(1, $instance->getQuantity());
+        $this->assertEquals(1, $instance->getWeight());
+        $this->assertEquals('10.00', $instance->getShippingCost());
+        $this->assertCount(6, $instance->toArray());
+    }
+    
+    /**
      * Test instance
      *
      * @return void

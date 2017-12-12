@@ -39,13 +39,8 @@ class Phone implements PhoneContract
      */
     public function __construct(string $area_code = null, string $number = null)
     {
-        if ($area_code) {
-            $this->setAreaCode($area_code);
-        }
-        
-        if ($number) {
-            $this->setNumber($number);
-        }
+        ($area_code) ? $this->setAreaCode($area_code) : false;
+        ($number)    ? $this->setNumber($number)      : false;
     }
 
     /**

@@ -140,4 +140,24 @@ class ItemTest extends TestCase
     {
         $this->assertInstanceOf(ItemContract::class, $this->instance()->setWeight(1));
     }
+    
+    /**
+     * Test get shipping cost
+     *
+     * @return void
+     */
+    public function testGetShippingCost()
+    {
+        $this->assertEquals('10.00', $this->instance()->setShippingCost(10.0)->getShippingCost());
+    }
+    
+    /**
+     * Test set shipping cost
+     *
+     * @return void
+     */
+    public function testSetShippingCost()
+    {
+        $this->assertInstanceOf(ItemContract::class, $this->instance()->setShippingCost(10.0));
+    }
 }

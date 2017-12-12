@@ -39,6 +39,21 @@ class PhoneTest extends TestCase
     }
     
     /**
+     * Test instance
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Phone('82', '28634136');
+        
+        $this->assertInstanceOf(PhoneContract::class, $instance);
+        $this->assertEquals('82', $instance->getAreaCode());
+        $this->assertEquals('28634136', $instance->getNumber());
+        $this->assertCount(2, $instance->toArray());
+    }
+    
+    /**
      * Test get area code
      *
      * @return void

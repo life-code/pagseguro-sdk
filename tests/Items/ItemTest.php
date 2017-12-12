@@ -100,4 +100,24 @@ class ItemTest extends TestCase
     {
         $this->assertInstanceOf(ItemContract::class, $this->instance()->setAmount(10.0));
     }
+    
+    /**
+     * Test get quantity
+     *
+     * @return void
+     */
+    public function testGetQuantity()
+    {
+        $this->assertEquals(1, $this->instance()->setQuantity(1)->getQuantity());
+    }
+    
+    /**
+     * Test set quantity
+     *
+     * @return void
+     */
+    public function testSetQuantity()
+    {
+        $this->assertInstanceOf(ItemContract::class, $this->instance()->setQuantity(1));
+    }
 }

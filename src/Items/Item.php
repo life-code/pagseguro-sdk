@@ -58,7 +58,7 @@ class Item implements ItemContract
      * @param float $shipping_cost
      * @return void
      */
-    public function __construct(string $id              = null, 
+    public function __construct(string $id           = null, 
                                 string $description  = null, 
                                 float $amount        = null, 
                                 int $quantity        = null, 

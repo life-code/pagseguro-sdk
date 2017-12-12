@@ -56,4 +56,28 @@ class ItemTest extends TestCase
     {
         $this->assertInstanceOf(ItemContract::class, $this->instance()->setId('6564621364535'));
     }
+    
+    /**
+     * Test get description
+     *
+     * @return void
+     */
+    public function testGetDescription()
+    {
+        $description = 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.';
+        
+        $this->assertEquals($description, $this->instance()->setDescription($description)->getDescription());
+    }
+    
+    /**
+     * Test set description
+     *
+     * @return void
+     */
+    public function testSetDescription()
+    {
+        $description = 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.';
+        
+        $this->assertInstanceOf(ItemContract::class, $this->instance()->setDescription($description));
+    }
 }

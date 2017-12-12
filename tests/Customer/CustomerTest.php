@@ -79,6 +79,33 @@ class CustomerTest extends TestCase
     }
     
     /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Customer(
+            'Vinicius Pugliesi',
+            'vinicius_puglies@outlook.com',
+            'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs',
+            '191.13.60.30',
+            self::phoneInstance(),
+            self::addressInstance(),
+            self::documentsInstance()
+        );
+        
+        $this->assertInstanceOf(CustomerContract::class, $instance);
+        $this->assertEquals('Vinicius Pugliesi', $instance->getName());
+        $this->assertEquals('vinicius_puglies@outlook.com', $instance->getEmail());
+        $this->assertEquals('Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs', $instance->getHash());
+        $this->assertEquals('191.13.60.30', $instance->getIp());
+        $this->assertInstanceOf(PhoneContract::class, $instance->getPhone());
+        $this->assertInstanceOf(AddressContract::class, $instance->getAddress());
+        $this->assertInstanceOf(DocumentsContract::class, $instance->getDocuments());
+    }
+    
+    /**
      * Test get email
      *
      * @return void

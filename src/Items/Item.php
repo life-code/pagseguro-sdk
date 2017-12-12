@@ -48,6 +48,32 @@ class Item implements ItemContract
     private $shipping_cost = 0;
     
     /**
+     * Make new instance of this class
+     * 
+     * @param string $id
+     * @param string $description
+     * @param float $amount
+     * @param int $quantity
+     * @param int $weight
+     * @param float $shipping_cost
+     * @return void
+     */
+    public function __construct(string $id              = null, 
+                                string $description  = null, 
+                                float $amount        = null, 
+                                int $quantity        = null, 
+                                int $weight          = null, 
+                                float $shipping_cost = null)
+    {
+        ($id)            ? $this->setId($id)                      : false;
+        ($description)   ? $this->setDescription($description)    : false;
+        ($amount)        ? $this->setAmount($amount)              : false;
+        ($quantity)      ? $this->setQuantity($quantity)          : false;
+        ($weight)        ? $this->setWeight($weight)              : false;
+        ($shipping_cost) ? $this->setShippingCost($shipping_cost) : false;
+    }
+
+    /**
      * Get ID
      * 
      * @return string

@@ -28,6 +28,19 @@ class Documents implements DocumentsContract
     private $items = [
         self::CPF => ''
     ];
+    
+    /**
+     * Make new instance of this class
+     * 
+     * @param array $items
+     * @return void
+     */
+    public function __construct(array $items = [])
+    {
+        foreach ($items as $key => $value) {
+            $this->setItem($key, $value);
+        }
+    }
 
     /**
      * Get item

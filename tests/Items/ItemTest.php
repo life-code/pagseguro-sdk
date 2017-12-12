@@ -160,4 +160,14 @@ class ItemTest extends TestCase
     {
         $this->assertInstanceOf(ItemContract::class, $this->instance()->setShippingCost(10.0));
     }
+    
+    /**
+     * Test to array
+     * 
+     * @return void
+     */
+    public function testToArray()
+    {
+        $this->assertCount(6, $this->instance()->toArray());
+    }
 }

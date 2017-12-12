@@ -39,6 +39,36 @@ class AddressTest extends TestCase
     }
     
     /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Address(
+            '57040644',
+            'Rua Dom João VI',
+            '155',
+            'apto. 306',
+            'Jacintinho',
+            'Alvorada',
+            'RS',
+            'BRA'
+        );
+        
+        $this->assertInstanceOf(AddressContract::class, $instance);
+        $this->assertEquals('57040644', $instance->getCep());
+        $this->assertEquals('Rua Dom João VI', $instance->getStreet());
+        $this->assertEquals('155', $instance->getNumber());
+        $this->assertEquals('apto. 306', $instance->getComplement());
+        $this->assertEquals('Jacintinho', $instance->getDistrict());
+        $this->assertEquals('Alvorada', $instance->getCity());
+        $this->assertEquals('RS', $instance->getState());
+        $this->assertEquals('BRA', $instance->getCountry());
+        $this->assertCount(8, $instance->toArray());
+    }
+    
+    /**
      * Test get country
      *
      * @return void
@@ -196,7 +226,7 @@ class AddressTest extends TestCase
      */
     public function testGetComplement()
     {
-        $this->assertEquals('apt. 306', $this->instance()->setComplement('apt. 306')->getComplement());
+        $this->assertEquals('apto. 306', $this->instance()->setComplement('apto. 306')->getComplement());
     }
     
     /**
@@ -206,7 +236,7 @@ class AddressTest extends TestCase
      */
     public function testSetComplement()
     {
-        $this->assertInstanceOf(AddressContract::class, $this->instance()->setComplement('apt. 306'));
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setComplement('apto. 306'));
     }
     
     /**

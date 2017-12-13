@@ -68,4 +68,35 @@ class PaymentTest extends TestCase
     {
         $this->instance()->setCurrency('BR');
     }
+    
+    /**
+     * Test get Mode
+     *
+     * @return void
+     */
+    public function testGetMode()
+    {
+        $this->assertEquals('default', $this->instance()->setMode('default')->getMode());
+    }
+    
+    /**
+     * Test set Mode
+     *
+     * @return void
+     */
+    public function testSetMode()
+    {
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setMode('default'));
+    }
+    
+    /**
+     * Test throw set Mode
+     *
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
+     * @return void
+     */
+    public function testThrowSetMode()
+    {
+        $this->instance()->setMode('credit');
+    }
 }

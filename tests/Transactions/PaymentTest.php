@@ -163,7 +163,7 @@ class PaymentTest extends TestCase
     }
     
     /**
-     * Test get ReceiverEmail
+     * Test get receiver email
      *
      * @return void
      */
@@ -173,7 +173,7 @@ class PaymentTest extends TestCase
     }
     
     /**
-     * Test set ReceiverEmail
+     * Test set receiver email
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class PaymentTest extends TestCase
     }
     
     /**
-     * Test throw set ReceiverEmail
+     * Test throw set receiver email
      *
      * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
@@ -191,5 +191,25 @@ class PaymentTest extends TestCase
     public function testThrowSetReceiverEmail()
     {
         $this->instance()->setReceiverEmail('vinicius_puglies');
+    }
+    
+    /**
+     * Test get reference
+     *
+     * @return void
+     */
+    public function testGetReference()
+    {
+        $this->assertEquals('5341321345', $this->instance()->setReference('5341321345')->getReference());
+    }
+    
+    /**
+     * Test set reference
+     *
+     * @return void
+     */
+    public function testSetReference()
+    {
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setReference('5341321345'));
     }
 }

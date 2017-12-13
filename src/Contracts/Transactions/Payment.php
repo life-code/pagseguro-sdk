@@ -30,6 +30,7 @@ interface Payment
      * Set currency
      * 
      * @param string $currency
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setCurrency(string $currency);
@@ -45,6 +46,7 @@ interface Payment
      * Set mode
      * 
      * @param string $mode
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setMode(string $mode);
@@ -64,6 +66,22 @@ interface Payment
      * @return $this
      */
     public function setNotificationURL(string $notification_url);
+    
+    /**
+     * Get redirect URL
+     * 
+     * @return string
+     */
+    public function getRedirectURL() : string;
+    
+    /**
+     * Set redirect URL
+     * 
+     * @param string $redirect_url
+     * @throws \PagSeguro\Exceptions\PagSeguroException
+     * @return $this
+     */
+    public function setRedirectURL(string $redirect_url);
     
     /**
      * Get receive_email

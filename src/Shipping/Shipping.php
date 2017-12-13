@@ -38,7 +38,21 @@ class Shipping implements ShippingContract
      * @var bool
      */
     private $address_required = false;
-    
+        
+    /**
+     * Make new instance of this class
+     * 
+     * @param \PagSeguro\Contracts\Common\Address $address
+     * @param string $name
+     * @return void
+     */
+    public function __construct(Address $address = null, float $cost = null, int $type = null)
+    {
+        ($address) ? $this->setAddress($address) : false;
+        ($cost)    ? $this->setCost($cost)       : false;
+        ($type)    ? $this->setType($type)       : false;
+    }
+
     /**
      * Get address
      * 

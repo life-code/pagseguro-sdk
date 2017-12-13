@@ -58,6 +58,7 @@ class Shipping implements ShippingContract
     public function setAddress(Address $address)
     {
         $this->address = $address;
+        $this->setAddressRequired(true);
         
         return $this;
     }
@@ -81,6 +82,7 @@ class Shipping implements ShippingContract
     public function setCost(float $cost)
     {
         $this->cost = number_format($cost, 2, '.', '');
+        $this->setAddressRequired(true);
         
         return $this;
     }
@@ -109,6 +111,7 @@ class Shipping implements ShippingContract
         }
         
         $this->type = $type;
+        $this->setAddressRequired(true);
         
         return $this;
     }

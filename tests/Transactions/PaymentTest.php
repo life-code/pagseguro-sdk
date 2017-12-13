@@ -130,4 +130,35 @@ class PaymentTest extends TestCase
     {
         $this->instance()->setNotificationURL('exemplo.com');
     }
+    
+    /**
+     * Test get redirect URL
+     *
+     * @return void
+     */
+    public function testGetRedirectURL()
+    {
+        $this->assertEquals('http://exemplo.com', $this->instance()->setRedirectURL('http://exemplo.com')->getRedirectURL());
+    }
+    
+    /**
+     * Test set redirect URL
+     *
+     * @return void
+     */
+    public function testSetRedirectURL()
+    {
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setRedirectURL('http://exemplo.com'));
+    }
+    
+    /**
+     * Test throw set redirect URL
+     *
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
+     * @return void
+     */
+    public function testThrowSetRedirectURL()
+    {
+        $this->instance()->setRedirectURL('exemplo.com');
+    }
 }

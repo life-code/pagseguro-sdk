@@ -38,12 +38,13 @@ class Shipping implements ShippingContract
      * @var bool
      */
     private $address_required = false;
-        
+    
     /**
      * Make new instance of this class
      * 
      * @param \PagSeguro\Contracts\Common\Address $address
-     * @param string $name
+     * @param float $cost
+     * @param int $type
      * @return void
      */
     public function __construct(Address $address = null, float $cost = null, int $type = null)

@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Shipping\Shipping;
+use PagSeguro\Contracts\Shipping\Shipping as ShippingContract;
 use PagSeguro\Contracts\Common\Address as AddressContract;
 use PagSeguro\Common\Address;
 use PagSeguro\Shipping\Type;
@@ -37,7 +38,22 @@ class ShippingTest extends TestCase
      */
     public function testInstance()
     {
-        $this->assertInstanceOf(Shipping::class, $this->instance());
+        $this->assertInstanceOf(ShippingContract::class, $this->instance());
+    }
+    
+    /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Shipping(new Address(), 100.00, Type::TYPE_PAC);
+        
+        $this->assertInstanceOf(ShippingContract::class, $instance);
+        $this->assertInstanceOf(AddressContract::class, $instance->getAddress());
+        $this->assertEquals('100.00', $instance->getCost());
+        $this->assertEquals(Type::TYPE_PAC, $instance->getType());
     }
     
     /**
@@ -57,7 +73,7 @@ class ShippingTest extends TestCase
      */
     public function testSetAddress()
     {
-        $this->assertInstanceOf(Shipping::class, $this->instance()->setAddress(new Address()));
+        $this->assertInstanceOf(ShippingContract::class, $this->instance()->setAddress(new Address()));
     }
     
     /**
@@ -67,7 +83,7 @@ class ShippingTest extends TestCase
      */
     public function testGetCost()
     {
-        $this->assertEquals('100.00', $this->instance()->setCost('100.00')->getCost());
+        $this->assertEquals('100.00', $this->instance()->setCost(100.00)->getCost());
     }
     
     /**
@@ -77,7 +93,7 @@ class ShippingTest extends TestCase
      */
     public function testSetCost()
     {
-        $this->assertInstanceOf(Shipping::class, $this->instance()->setCost('100.00'));
+        $this->assertInstanceOf(ShippingContract::class, $this->instance()->setCost('100.00'));
     }
     
     /**
@@ -97,7 +113,7 @@ class ShippingTest extends TestCase
      */
     public function testSetType()
     {
-        $this->assertInstanceOf(Shipping::class, $this->instance()->setType(Type::TYPE_PAC));
+        $this->assertInstanceOf(ShippingContract::class, $this->instance()->setType(Type::TYPE_PAC));
     }
     
     /**
@@ -108,6 +124,6 @@ class ShippingTest extends TestCase
      */
     public function testThrowSetType()
     {
-        $this->assertInstanceOf(Shipping::class, $this->instance()->setType(10));
+        $this->assertInstanceOf(ShippingContract::class, $this->instance()->setType(10));
     }
 }

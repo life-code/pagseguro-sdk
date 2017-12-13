@@ -70,7 +70,7 @@ class PaymentTest extends TestCase
     }
     
     /**
-     * Test get Mode
+     * Test get mode
      *
      * @return void
      */
@@ -80,7 +80,7 @@ class PaymentTest extends TestCase
     }
     
     /**
-     * Test set Mode
+     * Test set mode
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class PaymentTest extends TestCase
     }
     
     /**
-     * Test throw set Mode
+     * Test throw set mode
      *
      * @expectedException \PagSeguro\Exceptions\PagSeguroException
      * @return void
@@ -98,5 +98,36 @@ class PaymentTest extends TestCase
     public function testThrowSetMode()
     {
         $this->instance()->setMode('credit');
+    }
+    
+    /**
+     * Test get notification URL
+     *
+     * @return void
+     */
+    public function testGetNotificationURL()
+    {
+        $this->assertEquals('http://exemplo.com', $this->instance()->setNotificationURL('http://exemplo.com')->getNotificationURL());
+    }
+    
+    /**
+     * Test set notification URL
+     *
+     * @return void
+     */
+    public function testSetNotificationURL()
+    {
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setNotificationURL('http://exemplo.com'));
+    }
+    
+    /**
+     * Test throw set notification URL
+     *
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
+     * @return void
+     */
+    public function testThrowSetNotificationURL()
+    {
+        $this->instance()->setNotificationURL('exemplo.com');
     }
 }

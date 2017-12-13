@@ -60,6 +60,7 @@ interface Payment
      * Set notification_url
      * 
      * @param string $notification_url
+     * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
     public function setNotificationURL(string $notification_url);
@@ -69,7 +70,7 @@ interface Payment
      * 
      * @return string
      */
-    public function getReceiveEmail() : string;
+    public function getReceiverEmail() : string;
     
     /**
      * Set receive_email
@@ -78,7 +79,7 @@ interface Payment
      * @throws \PagSeguro\Exceptions\PagSeguroException
      * @return $this
      */
-    public function setReceiveEmail(string $receive_email);
+    public function setReceiverEmail(string $receive_email);
     
     /**
      * Get reference

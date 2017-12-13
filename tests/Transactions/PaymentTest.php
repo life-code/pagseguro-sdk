@@ -4,6 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\PagSeguro;
 use PagSeguro\Contracts\Transactions\Payment as PaymentContract;
+use PagSeguro\Items\Item;
 use PagSeguro\Contracts\Http\Response;
 
 /**
@@ -211,5 +212,30 @@ class PaymentTest extends TestCase
     public function testSetReference()
     {
         $this->assertInstanceOf(PaymentContract::class, $this->instance()->setReference('5341321345'));
+    }
+    
+    /**
+     * Test get Items
+     *
+     * @return void
+     */
+    public function testGetItems()
+    {
+        $item = new Item();
+        
+        $this->assertCount(1, $this->instance()->setItems($item)->getItems());
+        $this->assertCount(2, $this->instance()->setItems($item)->setItems($item)->getItems());
+    }
+    
+    /**
+     * Test set Items
+     *
+     * @return void
+     */
+    public function testSetItems()
+    {
+        $item = new Item();
+        
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setItems($item));
     }
 }

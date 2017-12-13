@@ -161,4 +161,35 @@ class PaymentTest extends TestCase
     {
         $this->instance()->setRedirectURL('exemplo.com');
     }
+    
+    /**
+     * Test get ReceiverEmail
+     *
+     * @return void
+     */
+    public function testGetReceiverEmail()
+    {
+        $this->assertEquals('vinicius_puglies@outlook.com', $this->instance()->setReceiverEmail('vinicius_puglies@outlook.com')->getReceiverEmail());
+    }
+    
+    /**
+     * Test set ReceiverEmail
+     *
+     * @return void
+     */
+    public function testSetReceiverEmail()
+    {
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setReceiverEmail('vinicius_puglies@outlook.com'));
+    }
+    
+    /**
+     * Test throw set ReceiverEmail
+     *
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
+     * @return void
+     */
+    public function testThrowSetReceiverEmail()
+    {
+        $this->instance()->setReceiverEmail('vinicius_puglies');
+    }
 }

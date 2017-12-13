@@ -37,4 +37,35 @@ class PaymentTest extends TestCase
     {
         $this->assertInstanceOf(PaymentContract::class, $this->instance());
     }
+    
+    /**
+     * Test get currency
+     *
+     * @return void
+     */
+    public function testGetCurrency()
+    {
+        $this->assertEquals('BRL', $this->instance()->setCurrency('BRL')->getCurrency());
+    }
+    
+    /**
+     * Test set currency
+     *
+     * @return void
+     */
+    public function testSetCurrency()
+    {
+        $this->assertInstanceOf(PaymentContract::class, $this->instance()->setCurrency('BRL'));
+    }
+    
+    /**
+     * Test throw set currency
+     *
+     * @expectedException \PagSeguro\Exceptions\PagSeguroException
+     * @return void
+     */
+    public function testThrowSetCurrency()
+    {
+        $this->instance()->setCurrency('BR');
+    }
 }

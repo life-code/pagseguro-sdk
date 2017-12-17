@@ -5,6 +5,11 @@ use PHPUnit\Framework\TestCase;
 use PagSeguro\PagSeguro;
 use PagSeguro\Contracts\Transactions\Payment as PaymentContract;
 use PagSeguro\Items\Item;
+use PagSeguro\Shipping\Shipping;
+use PagSeguro\Common\Phone;
+use PagSeguro\Common\Documents;
+use PagSeguro\Common\Address;
+use PagSeguro\Shipping\Type as ShippingType;
 use PagSeguro\Contracts\Http\Response;
 
 /**
@@ -238,4 +243,35 @@ class PaymentTest extends TestCase
         
         $this->assertInstanceOf(PaymentContract::class, $this->instance()->setItems($item));
     }
+    
+    /**
+     * Test transparent pay
+     *
+     * @return void
+     */
+    // public function testTransparentPay()
+    // {
+    //     $phone = new Phone('82', '28634136');
+        
+    //     $documents = new Documents([Documents::CPF => '24227052009']);
+        
+    //     $address = new Address('57040644', 'Rua Dom João VI', '155', 'apto. 306', 'Jacintinho', 'Alvorada', 'RS', 'BRA');
+        
+    //     $shipping = new Shipping($address, 100.00, ShippingType::TYPE_PAC);
+        
+    //     $customer = new Customer(
+    //         'Vinicius Pugliesi',
+    //         'vinicius_puglies@outlook.com',
+    //         'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs',
+    //         '191.13.60.30',
+    //         $phone,
+    //         $address,
+    //         $documents
+    //     );
+        
+    //     $this->assertInstanceOf(
+    //         Response::class, 
+    //         $this->instance()->transparentPay($shipping, $customer, $method
+    //     );
+    // }
 }

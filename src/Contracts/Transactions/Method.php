@@ -16,6 +16,14 @@ use PagSeguro\Contracts\Transactions\CreditCard\CreditCard;
  */
 interface Method
 {
+
+    /**
+     * Get type
+     * 
+     * @return string
+     */
+    public function getType() : string;
+    
     /**
      * Set type
      * 
@@ -24,6 +32,22 @@ interface Method
      * @return $this
      */
     public function setType(string $type);
+    
+    /**
+     * Get bank
+     * 
+     * @return string
+     */
+    public function getBank() : string;
+    
+    /**
+     * Set bank
+     * 
+     * @param string $bank
+     * @throws \PagSeguro\Exceptions\PagSeguroException
+     * @return $this
+     */
+    public function setBank(string $bank);
     
     /**
      * Get credit card

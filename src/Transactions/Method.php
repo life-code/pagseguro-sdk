@@ -34,7 +34,22 @@ class Method implements MethodContract
      * @var \PagSeguro\Contracts\Transactions\CreditCard\CreditCard
      */
     private $credit_card = '';
-    
+     
+    /**
+     * Make new instance of this class
+     * 
+     * @param string $type
+     * @param string $bank
+     * @param \PagSeguro\Contracts\Transactions\CreditCard\CreditCard $credit_card
+     * @return void
+     */
+    public function __construct(string $type = null, string $bank = null, CreditCard $credit_card = null)
+    {
+        ($type)        ? $this->setType($type)              : false;
+        ($bank)        ? $this->setBank($bank)              : false;
+        ($credit_card) ? $this->setCreditCard($credit_card) : false;
+    }
+
     /**
      * Get type
      * 

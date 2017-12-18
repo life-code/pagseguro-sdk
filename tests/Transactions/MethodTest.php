@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\Method;
+use PagSeguro\Contracts\Transactions\Method as MethodContract;
 use PagSeguro\Transactions\CreditCard\CreditCard;
 use PagSeguro\Transactions\Type;
 use PagSeguro\Transactions\Bank;
@@ -36,7 +37,22 @@ class MethodTest extends TestCase
      */
     public function testInstance()
     {
-        $this->assertInstanceOf(Method::class, $this->instance());
+        $this->assertInstanceOf(MethodContract::class, $this->instance());
+    }
+    
+    /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Method(Type::CREDITCARD, Bank::BANCO_DO_BRASIL, new CreditCard());
+        
+        $this->assertInstanceOf(MethodContract::class, $instance);
+        $this->assertEquals(Type::CREDITCARD, $instance->getType());
+        $this->assertEquals(Bank::BANCO_DO_BRASIL, $instance->getBank());
+        $this->assertInstanceOf(CreditCard::class, $instance->getCreditCard());
     }
     
     /**
@@ -69,9 +85,9 @@ class MethodTest extends TestCase
      */
     public function testSetType()
     {
-        $this->assertInstanceOf(Method::class, $this->instance()->setType(Type::CREDITCARD));
-        $this->assertInstanceOf(Method::class, $this->instance()->setType(Type::EFT));
-        $this->assertInstanceOf(Method::class, $this->instance()->setType(Type::BOLETO));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setType(Type::CREDITCARD));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setType(Type::EFT));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setType(Type::BOLETO));
     }
     
     /**
@@ -105,10 +121,10 @@ class MethodTest extends TestCase
      */
     public function testSetBank()
     {
-        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::BANCO_DO_BRASIL));
-        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::BANCO_BANRISUL));
-        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::BRADESCO));
-        $this->assertInstanceOf(Method::class, $this->instance()->setBank(Bank::ITAU));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setBank(Bank::BANCO_DO_BRASIL));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setBank(Bank::BANCO_BANRISUL));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setBank(Bank::BRADESCO));
+        $this->assertInstanceOf(MethodContract::class, $this->instance()->setBank(Bank::ITAU));
     }
     
     /**
@@ -132,7 +148,7 @@ class MethodTest extends TestCase
     public function testSetCreditCard()
     {
         $this->assertInstanceOf(
-            Method::class, 
+            MethodContract::class, 
             $this->instance()->setCreditCard(new CreditCard())
         );
     }

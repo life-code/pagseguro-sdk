@@ -4,7 +4,12 @@ use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\CreditCard\CreditCard;
 use PagSeguro\Contracts\Transactions\CreditCard\CreditCard as CreditCardContract;
+
 use PagSeguro\Transactions\CreditCard\Holder;
+use PagSeguro\Contracts\Transactions\CreditCard\Holder as HolderContract;
+
+use PagSeguro\Transactions\CreditCard\Installment;
+use PagSeguro\Contracts\Transactions\CreditCard\Installment as InstallmentContract;
 
 use PagSeguro\Common\Address;
 use PagSeguro\Contracts\Common\Address as AddressContract;
@@ -36,9 +41,29 @@ class CreditCardTest extends TestCase
      * 
      * @return \PagSeguro\Contracts\Common\Address
      */
-    public static function addressInstance()
+    public function addressInstance()
     {
         return new Address();
+    }
+    
+    /**
+     * Holder Instance
+     * 
+     * @return \PagSeguro\Contracts\Transactions\CreditCard\Holder
+     */
+    public function holderInstance()
+    {
+        return new Holder();
+    }
+    
+    /**
+     * Installment Instance
+     * 
+     * @return \PagSeguro\Contracts\Transactions\CreditCard\Installment
+     */
+    public function installmentInstance()
+    {
+        return new Installment();
     }
     
     /**
@@ -84,7 +109,7 @@ class CreditCardTest extends TestCase
      */
     public function testGetHolder()
     {
-        $this->assertInstanceOf(Holder::class, $this->instance()->setHolder(new Holder())->getHolder());
+        $this->assertInstanceOf(HolderContract::class, $this->instance()->setHolder($this->holderInstance())->getHolder());
     }
     
     /**
@@ -94,7 +119,27 @@ class CreditCardTest extends TestCase
      */
     public function testSetHolder()
     {
-        $this->assertInstanceOf(CreditCardContract::class, $this->instance()->setHolder(new Holder()));
+        $this->assertInstanceOf(CreditCardContract::class, $this->instance()->setHolder($this->holderInstance()));
+    }
+    
+    /**
+     * Test get installment
+     *
+     * @return void
+     */
+    public function testGetInstallment()
+    {
+        $this->assertInstanceOf(InstallmentContract::class, $this->instance()->setInstallment($this->installmentInstance())->getInstallment());
+    }
+    
+    /**
+     * Test set installment
+     *
+     * @return void
+     */
+    public function testSetInstallment()
+    {
+        $this->assertInstanceOf(CreditCardContract::class, $this->instance()->setInstallment($this->installmentInstance()));
     }
     
     /**

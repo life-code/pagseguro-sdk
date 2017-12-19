@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\CreditCard\Holder;
+use PagSeguro\Contracts\Transactions\CreditCard\Holder as HolderContract;
 
 use PagSeguro\Common\Phone;
 use PagSeguro\Contracts\Common\Phone as PhoneContract;
@@ -60,6 +61,27 @@ class HolderTest extends TestCase
     public function testInstance()
     {
         $this->assertInstanceOf(Holder::class, $this->instance());
+    }
+    
+    /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Holder(
+            'Vinicius Pugliesi',
+            '17/08/1995',
+            self::phoneInstance(),
+            self::documentsInstance()
+        );
+        
+        $this->assertInstanceOf(HolderContract::class, $instance);
+        $this->assertEquals('Vinicius Pugliesi', $instance->getName());
+        $this->assertEquals('17/08/1995', $instance->getBirthDate());
+        $this->assertInstanceOf(PhoneContract::class, $instance->getPhone());
+        $this->assertInstanceOf(DocumentsContract::class, $instance->getDocuments());
     }
     
     /**

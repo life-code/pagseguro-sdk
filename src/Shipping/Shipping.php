@@ -171,11 +171,11 @@ class Shipping implements ShippingContract
             'address' => $this->getAddress()->toArray(),
         ];
         
-        if ($type = $ths->getType()) {
+        if ($type = $this->getType()) {
             $response['type'] = $type;
         }
         
-        if ($cost = $ths->getCost()) {
+        if ($cost = $this->getCost()) {
             $response['cost'] = $cost;
         }
         

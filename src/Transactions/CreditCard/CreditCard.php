@@ -36,10 +36,27 @@ class CreditCard implements CreditCardContract
     private $installment = '';
 
     /**
-     * @var PagSeguro\Contracts\Common\Address
+     * @var \PagSeguro\Contracts\Common\Address
      */
     private $address = '';
     
+    /**
+     * Make new instance of this class
+     * 
+     * @param string $token
+     * @param \PagSeguro\Transactions\CreditCard\Holder $holder
+     * @param \PagSeguro\Transactions\CreditCard\Installment $installment
+     * @param \PagSeguro\Contracts\Common\Address $address
+     * @return void
+     */
+    public function __construct(string $token = null, Holder $holder = null, Installment $installment = null, Address $address = null)
+    {
+        ($token)       ? $this->setToken($token)             : false;
+        ($holder)      ? $this->setHolder($holder)           : false;
+        ($installment) ? $this->setInstallment($installment) : false;
+        ($address)     ? $this->setAddress($address)         : false;
+    }
+
     /**
      * Get token
      * 

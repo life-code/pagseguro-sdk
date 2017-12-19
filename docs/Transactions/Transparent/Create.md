@@ -16,7 +16,7 @@ use PagSeguro\PagSeguro;
 $payment = PagSeguro::payment();
 
 $payment->setNotificationURL('http://example.com/notification');
-$payment->setReceiveEmail(env('PAGSEGURO_EMAIL'));
+$payment->setReceiverEmail(env('PAGSEGURO_EMAIL'));
 $payment->setReference('9uggPD8p');
 
 

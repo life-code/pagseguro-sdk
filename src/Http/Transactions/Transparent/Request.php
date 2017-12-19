@@ -87,7 +87,7 @@ class Request extends BaseRequest
             'mode'            => $payment->getMode(),
             'currency'        => $payment->getCurrency(),
             'notificationURL' => $payment->getNotificationURL(),
-            'receiverEmail'   => $payment->getReceiveEmail(),
+            'receiverEmail'   => $payment->getReceiverEmail(),
             'reference'       => $payment->getReference(),
             'sender'          => $customer->toArray(true),
             'items'           => $items,

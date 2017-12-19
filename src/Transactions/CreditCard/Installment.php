@@ -32,6 +32,23 @@ class Installment implements InstallmentContract
     private $value = 0;
     
     /**
+     * Make new instance of this class
+     * 
+     * @param int $quantity
+     * @param int $no_interest_installment_quantity
+     * @param float $value
+     * @return void
+     */
+    public function __construct(int $quantity                         = null, 
+                                int $no_interest_installment_quantity = null,
+                                float $value                          = null)
+    {
+        ($quantity)                         ? $this->setQuantity($quantity)                                              : false;
+        ($no_interest_installment_quantity) ? $this->setNoInterestInstallmentQuantity($no_interest_installment_quantity) : false;
+        ($value)                            ? $this->setValue($value)                                                    : false;
+    }
+
+    /**
      * Get quantity
      * 
      * @return int

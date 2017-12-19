@@ -289,4 +289,43 @@ class PaymentTest extends TestCase
             $this->instance()->transparentPay($shipping, $customer, $method)
         );
     }
+    
+    /**
+     * Test pay
+     *
+     * @return void
+     */
+    public function testPay()
+    {
+        $phone = new Phone('82', '28634136');
+        
+        $documents = new Documents([Documents::CPF => '24227052009']);
+        
+        $address = new Address('57040644', 'Rua Dom João VI', '155', 'apto. 306', 'Jacintinho', 'Alvorada', 'RS', 'BRA');
+        
+        $shipping = new Shipping($address, 100.00, ShippingType::TYPE_PAC);
+        
+        $customer = new Customer(
+            'Vinicius Pugliesi',
+            'vinicius_puglies@outlook.com',
+            'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs',
+            '191.13.60.30',
+            $phone,
+            $address,
+            $documents
+        );
+        
+        $holder = new Holder('Vinicius Pugliesi', '17/08/1995', $phone, $documents);
+        
+        $installment = new Installment(1, 1, 1.00);
+        
+        $credit_card = new CreditCard('$2y$10$fTMKmH8fmR9wUa0x35norOY46Y86T7wwsVz/0FwC7B33T.87WaFAy', $holder, $installment, $address);
+        
+        $method = new Method(MethodType::CREDITCARD, Bank::BANCO_DO_BRASIL, $credit_card);
+        
+        $this->assertInstanceOf(
+            Response::class, 
+            $this->instance()->pay($shipping, $customer, $method)
+        );
+    }
 }

@@ -3,7 +3,11 @@
 use PHPUnit\Framework\TestCase;
 
 use PagSeguro\Transactions\CreditCard\CreditCard;
+use PagSeguro\Contracts\Transactions\CreditCard\CreditCard as CreditCardContract;
 use PagSeguro\Transactions\CreditCard\Holder;
+
+use PagSeguro\Common\Address;
+use PagSeguro\Contracts\Common\Address as AddressContract;
 
 /**
  * PagSeguro SDK
@@ -28,13 +32,23 @@ class CreditCardTest extends TestCase
     }
     
     /**
+     * Address Instance
+     * 
+     * @return \PagSeguro\Contracts\Common\Address
+     */
+    public static function addressInstance()
+    {
+        return new Address();
+    }
+    
+    /**
      * Test instance
      *
      * @return void
      */
     public function testInstance()
     {
-        $this->assertInstanceOf(CreditCard::class, $this->instance());
+        $this->assertInstanceOf(CreditCardContract::class, $this->instance());
     }
     
     /**
@@ -58,7 +72,7 @@ class CreditCardTest extends TestCase
     public function testSetToken()
     {
         $this->assertInstanceOf(
-            CreditCard::class, 
+            CreditCardContract::class, 
             $this->instance()->setToken('$2y$10$fTMKmH8fmR9wUa0x35norOY46Y86T7wwsVz/0FwC7B33T.87WaFAy')
         );
     }
@@ -80,6 +94,26 @@ class CreditCardTest extends TestCase
      */
     public function testSetHolder()
     {
-        $this->assertInstanceOf(CreditCard::class, $this->instance()->setHolder(new Holder()));
+        $this->assertInstanceOf(CreditCardContract::class, $this->instance()->setHolder(new Holder()));
+    }
+    
+    /**
+     * Test get address
+     *
+     * @return void
+     */
+    public function testGetAddress()
+    {
+        $this->assertInstanceOf(AddressContract::class, $this->instance()->setAddress($this->addressInstance())->getAddress());
+    }
+    
+    /**
+     * Test set address
+     *
+     * @return void
+     */
+    public function testSetAddress()
+    {
+        $this->assertInstanceOf(CreditCardContract::class, $this->instance()->setAddress($this->addressInstance()));
     }
 }

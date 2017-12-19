@@ -28,6 +28,21 @@ class InstallmentTest extends TestCase
     }
     
     /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new Installment(1, 1, 1.00);
+        
+        $this->assertInstanceOf(InstallmentContract::class, $instance);
+        $this->assertEquals(1, $instance->getQuantity());
+        $this->assertEquals(1, $instance->getNoInterestInstallmentQuantity());
+        $this->assertEquals('1.00', $instance->getValue());
+    }
+    
+    /**
      * Test instance
      *
      * @return void

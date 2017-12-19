@@ -43,6 +43,26 @@ class Holder implements HolderContract
     private $documents = '';
     
     /**
+     * Make new instance of this class
+     * 
+     * @param string $name
+     * @param string $birth_date
+     * @param \PagSeguro\Contracts\Common\Phone $phone
+     * @param \PagSeguro\Contracts\Common\Documents $documents
+     * @return void
+     */
+    public function __construct(string $name         = null, 
+                                string $birth_date   = null, 
+                                Phone $phone         = null, 
+                                Documents $documents = null)
+    {
+        ($name)       ? $this->setName($name)            : false;
+        ($birth_date) ? $this->setBirthDate($birth_date) : false;
+        ($phone)      ? $this->setPhone($phone)          : false;
+        ($documents)  ? $this->setDocuments($documents)  : false;
+    }
+
+    /**
      * Get name
      * 
      * @return string

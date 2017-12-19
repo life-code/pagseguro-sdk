@@ -77,6 +77,27 @@ class CreditCardTest extends TestCase
     }
     
     /**
+     * Test instance with parameters
+     *
+     * @return void
+     */
+    public function testInstanceWithParameters()
+    {
+        $instance = new CreditCard(
+            '$2y$10$fTMKmH8fmR9wUa0x35norOY46Y86T7wwsVz/0FwC7B33T.87WaFAy',
+            $this->holderInstance(),
+            $this->installmentInstance(),
+            $this->addressInstance()
+        );
+        
+        $this->assertInstanceOf(CreditCardContract::class, $instance);
+        $this->assertEquals('$2y$10$fTMKmH8fmR9wUa0x35norOY46Y86T7wwsVz/0FwC7B33T.87WaFAy', $instance->getToken());
+        $this->assertInstanceOf(HolderContract::class, $instance->getHolder());
+        $this->assertInstanceOf(InstallmentContract::class, $instance->getInstallment());
+        $this->assertInstanceOf(AddressContract::class, $instance->getAddress());
+    }
+    
+    /**
      * Test get token
      *
      * @return void

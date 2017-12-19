@@ -91,7 +91,7 @@ class Request extends BaseRequest
             'items'       => $items,
             'shipping'    => $shipping->toArray(),
             'receiver'    => [
-                'email' => $payment->getReceiveEmail(),
+                'email' => $payment->getReceiverEmail(),
             ],
         ];
         

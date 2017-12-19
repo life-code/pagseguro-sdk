@@ -10,6 +10,12 @@ use PagSeguro\Common\Phone;
 use PagSeguro\Common\Documents;
 use PagSeguro\Common\Address;
 use PagSeguro\Shipping\Type as ShippingType;
+use PagSeguro\Transactions\Method;
+use PagSeguro\Transactions\Type as MethodType;
+use PagSeguro\Transactions\Bank;
+use PagSeguro\Transactions\CreditCard\CreditCard;
+use PagSeguro\Transactions\CreditCard\Holder;
+use PagSeguro\Transactions\CreditCard\Installment;
 use PagSeguro\Contracts\Http\Response;
 
 /**
@@ -268,6 +274,10 @@ class PaymentTest extends TestCase
     //         $address,
     //         $documents
     //     );
+        
+    //     $credit_card = new CreditCard();
+        
+    //     $method = new Method(MethodType::CREDITCARD, Bank::BANCO_DO_BRASIL, $credit_card);
         
     //     $this->assertInstanceOf(
     //         Response::class, 

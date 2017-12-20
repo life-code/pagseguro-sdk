@@ -11,7 +11,7 @@ use PagSeguro\Contracts\Http\Response;
  * PagSeguro SDK
  * 
  * @type        library
- * @version     1.0.2
+ * @version     1.0.3
  * @package     life-code/pagseguro-sdk
  * @copyright   Copyright (c) 2017 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>

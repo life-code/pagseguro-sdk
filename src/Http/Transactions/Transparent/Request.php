@@ -99,7 +99,7 @@ class Request extends BaseRequest
             $data['bank']['name'] = $method->getBank();
         }
         
-        if ($method->getType() === 'CREDITCARD') {
+        if ($method->getType() === 'creditcard') {
             $data['creditCard'] = [
                 'token'          => $method->getCreditCard()->getToken(),
                 'installment'    => $method->getCreditCard()->getInstallment()->toArray(),

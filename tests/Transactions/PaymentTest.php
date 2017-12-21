@@ -258,6 +258,15 @@ class PaymentTest extends TestCase
      */
     public function testTransparentPay()
     {
+        $payment = $this->instance();
+        
+        $payment->setNotificationURL('http://example.com/notification');
+        $payment->setReceiverEmail(env('PAGSEGURO_EMAIL'));
+        $payment->setReference('9uggPD8p');
+        
+        $item = new Item('6564621364535', 'Lorem ipsum', 10.00, 1, 1, 10.00);
+        $payment->setItems($item);
+        
         $phone = new Phone('82', '28634136');
         
         $documents = new Documents([Documents::CPF => '24227052009']);
@@ -266,15 +275,7 @@ class PaymentTest extends TestCase
         
         $shipping = new Shipping($address, 100.00, ShippingType::TYPE_PAC);
         
-        $customer = new Customer(
-            'Vinicius Pugliesi',
-            'vinicius_puglies@outlook.com',
-            'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs',
-            '191.13.60.30',
-            $phone,
-            $address,
-            $documents
-        );
+        $customer = new Customer('Vinicius Pugliesi', 'vinicius_puglies@outlook.com', 'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs', '191.13.60.30', $phone, $address, $documents);
         
         $holder = new Holder('Vinicius Pugliesi', '17/08/1995', $phone, $documents);
         
@@ -284,10 +285,7 @@ class PaymentTest extends TestCase
         
         $method = new Method(MethodType::CREDITCARD, Bank::BANCO_DO_BRASIL, $credit_card);
         
-        $this->assertInstanceOf(
-            Response::class, 
-            $this->instance()->transparentPay($shipping, $customer, $method)
-        );
+        $this->assertInstanceOf(Response::class, $payment->transparentPay($shipping, $customer, $method));
     }
     
     /**
@@ -297,6 +295,15 @@ class PaymentTest extends TestCase
      */
     public function testPay()
     {
+        $payment = $this->instance();
+        
+        $payment->setRedirectURL('http://example.com/payment-completed');
+        $payment->setReceiverEmail(env('PAGSEGURO_EMAIL'));
+        $payment->setReference('9uggPD8p');
+        
+        $item = new Item('6564621364535', 'Lorem ipsum', 10.00, 1, 1, 10.00);
+        $payment->setItems($item);
+        
         $phone = new Phone('82', '28634136');
         
         $documents = new Documents([Documents::CPF => '24227052009']);
@@ -305,17 +312,9 @@ class PaymentTest extends TestCase
         
         $shipping = new Shipping($address, 100.00, ShippingType::TYPE_PAC);
         
-        $customer = new Customer(
-            'Vinicius Pugliesi',
-            'vinicius_puglies@outlook.com',
-            'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs',
-            '191.13.60.30',
-            $phone,
-            $address,
-            $documents
-        );
+        $customer = new Customer('Vinicius Pugliesi', 'vinicius_puglies@outlook.com', 'Qs0TSW3OQjcEJBG23qEanxKWeFTMxuOEdFYxbQBs', '191.13.60.30', $phone, $address, $documents);
         
-        $holder = new Holder('Vinicius Pugliesi', '17/08/1995', $phone, $documents);
+        $holder = new Holder('Vinicius Pugliesi', '17/01/1991', $phone, $documents);
         
         $installment = new Installment(1, 1, 1.00);
         
@@ -323,9 +322,6 @@ class PaymentTest extends TestCase
         
         $method = new Method(MethodType::CREDITCARD, Bank::BANCO_DO_BRASIL, $credit_card);
         
-        $this->assertInstanceOf(
-            Response::class, 
-            $this->instance()->pay($shipping, $customer, $method)
-        );
+        $this->assertInstanceOf(Response::class, $payment->pay($shipping, $customer, $method));
     }
 }
